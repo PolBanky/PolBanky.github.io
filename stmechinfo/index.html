@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+	<!-- Stmech Info -->
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Stmech Info</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../images/Book11_128.png" type="images/x-icon">
+</head>
+
+<body>
+<a href="help-stmechinfo.html" target="_blank">	<!--H E L P-->
+	<img class="imgBtn64" src="../images/pic-question_128.png" alt="Picture Question">
+</a>
+	<h1 id="top"><img class="imgBtn64B" src="../images/Book11_128.png" alt="Pic">Stmech Info</h1>
+
+	<h2>Оглавление</h2>
+<div class="tblOfContent">
+    <ul>
+        <li><a href="#SDR">Что такое SDR для ПНД</a></li>
+    <ul>
+        <li class="sign"><a href="#calcSDR">Расчет трубы ПНД</a></li>
+    </ul>
+		<li><a href="#muftaReg">Муфта регулировочная (вставка демонтажная)</a></li>
+		<li><a href="#muftaOb">Муфта обжимная</a></li>    
+		<li><a href="#muftaSoed">Муфта соединительная</a></li>		
+	</ul> 
+</div>
+
+<hr>
+   
+    <h2 id="SDR">Что такое SDR для труб ПНД</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<p><a href="../data/18599-2001_pnd_pipes.pdf">ГОСТ 18599-2001</a> устанавливает ТУ на трубы напорные ПНД. Стандарт распространяется на напорные трубы из полиэтилена низкого давления, предназначенные для трубопроводов, транспортирующих воду, в том числе для хозяйственно-питьевого водоснабжения, при температуре от 0&#176;С до 40&#176;С, а также другие жидкие и газообразные вещества.</p>
+	<img src="../data/What SDR for PND.png" width="880" alt="SDR for PND" title="Что такое SDR для ПНД">
+
+<fieldset id="calcSDR"> <legend>Расчет толщины стенки трубы из ПЭ100</legend>
+                     <!-- INPUT SDR -->
+    <div>
+<!--        <input type="number" id="SDR_input" placeholder="SDR Value" list="17 11 7" title="Значение SDR">-->
+        <select class="bigAndAline" id="SDR_Value">		<!-- select "kg_or_N" -->
+            <option value="17">SDR17 PN=10bar</option>
+            <option value="11">SDR11 PN=16bar</option>
+            <option value="9">SDR9 PN=20bar</option>
+            <option value="7.4">SDR7,4 PN=25bar</option>
+		</select>
+        <label for="SDR_input" id="lbl_SDR"> Значение SDR</label>
+    </div>
+          <!-- INPUT DIAMETER, mm -->
+    <div>
+        <input type="number" id="dia_ex_input" placeholder="Pipe's Diameter" step="0.01" title="Наружный диаметр трубы">  <!--title="Наружный диаметр трубы"-->
+        <label for="dia_ex_input" id="lbl_dia"> Наружный диаметр трубы, mm</label>	
+    </div>
+    		<!-- BUTTON RUN -->
+<div>
+		<input type="button" id="calc" onclick="Event_PressButton()" value="Calculate Thickness" title="Calculate Thickness">
+</div>
+    <!-- OUTPUT THICKNESS, mm -->
+		<div>
+			<div class="divOutPut" id="thickness_output" title="Толщина стенки">0,000</div>
+			<div class="divLbl" id="lbl_thickness">Толщина стенки, мм</div>
+		</div>
+    </fieldset>
+
+
+	<h2 id="muftaReg">Муфта регулировочная (вставка демонтажная)</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+	<img src="../data/Mufta_Reg_1320.jpg" width="660" alt="Mufta Reg">
+	
+	<h2 id="muftaOb">Муфта обжимная</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+	<img src="../data/Mufta_Obzim_1320.jpg" width="660" alt="Mufta Obzim">
+    
+    <h2 id="muftaSoed">Муфта соединительная</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+    <img src="../data/Mufta_Soed_1320.jpg" width="660" alt="Mufta Soed">
+    			
+													
+	<p class="copyright">Pol Banky &#169; 2018</p>
+	<!--Добавление к пректу JS-->	
+    <script src="../js/calc_SDR.js"></script>
+    <script src="../js/fs.js"></script>	
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+	<!-- Git Info -->
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Progs HotKeys &amp; Info</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../images/favicon_octocat.ico" type="images/x-icon">
+	<style>
+        body { background-color: #d2b48c; }
+    </style>
+</head>
+
+<body> 
+<a href="help-gitinfo.html" target="_blank">	<!--H E L P-->
+<img class="imgBtn64" src="../images/pic-question_128.png" alt="Pic">
+</a>
+    <h1 id="top"><img class="imgBtn64A" src="../images/GitHub3_128.png" alt="Picture OctoCat">Progs HotKeys &amp; Info</h1>	
+	<h2>Оглавление</h2>
+<div class="tblOfContent">
+    <ul>
+        <li><a href="#vscode">VS Code &amp; Embed - Hot Keys</a></li>    
+        <ul>
+            <li><a href="#vscodeExt">Установка расширений VS Code - offline</a></li>
+        </ul>
+        <li><a href="#git">Git - Hot Keys</a></li>
+        <li><a href="#kompas">Компас 3D - Hot Keys</a></li>
+        <ul>
+            <li><a href="#kompasTips">Kompas 3D - Tips</a></li>
+        </ul>
+		<li><a href="#autocad">AutoCad - Hot Keys</a></li>
+        <li><a href="#micro">MicroSoft - Ctrl + Keys</a></li>
+        <li><a href="#howsymb">MicroSoft - Alt + Keys</a></li>
+        <li><a href="#brackets">Brackets &amp; Embed - Hot Keys</a></li>    
+		<li><a href="#symbols">Коды символов Unicode и для HTML</a></li>    
+	</ul> 
+</div>
+<hr>
+    <!-- <body> -->
+
+
+    <!-- VS Code -->
+    <h2 id="vscode">VS Code &amp; Embed - Hot Keys</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<table>
+  <tr><th colspan="2">VS Code - Keys</th></tr>
+  <tr><td>Alt + &#8593; / &#8595;</td><td>Move Line - up/down</td></tr>
+  <tr><td>Alt + Shift + &#8593; / &#8595;</td><td>Copy Line - up/down</td></tr>
+  <tr><td>Ctrl + Delete</td><td>Delete Line</td></tr>
+  <tr><td>Ctrl + /</td><td>Line comment - ON/OFF (Знак / левее Shift)</td></tr>
+  <tr><td>Alt + Shift + A</td><td>Block comment - ON/OFF</td></tr>
+  <tr><td>Ctrl + \</td><td>Split Editor</td></tr>
+  <tr><td>Ctrl + F4</td><td>Close splited part of Editor / Editor</td></tr>
+  <tr><td>Alt + Shift + 1</td><td>Toggle Split Editor ( horizontal / vertical )</td></tr>
+  <tr><td>Ctrl + S</td><td>Save this File</td></tr>
+  <tr><td>Ctrl + Alt + S</td><td>Save all Files</td></tr>
+  <tr><td>Ctrl + Tab</td><td>Open next File</td></tr>
+  <tr><td>Ctrl + Shift + Tab</td><td>Open previous File</td></tr>
+  <tr><td>Tab</td><td>Select code lines and press Tab for move to right</td></tr>
+  <tr><td>Shift + Tab</td><td>Select code lines and press Shift + Tab for move to left</td></tr>
+  <tr><th colspan="2">Emmet - Keys</th></tr>
+  <tr><td>Tab</td><td>Expand Tag</td></tr>  
+  <tr><th colspan="2">View in Browser - Keys</th></tr>
+  <tr><td>Ctrl + F1</td><td>View in Browser</td></tr>  
+  <tr><th colspan="2">CSS Peek - Keys</th></tr>
+  <tr><td>F12</td><td>Open tab with CSS File - in definition's place</td></tr>  
+  <tr><td>Alt + F12</td><td>Open definition's place in new below half-window</td></tr>
+  <tr><td>Ctrl + Hover</td><td>Open definition in new pop-up window</td></tr>
+  <tr><td>Ctrl + Click</td><td>Open tab with CSS File - in definition's place</td></tr>
+</table>
+<hr>
+<img id="pic" class="fs" src="../data/VSCode_HotKeys.png" width="880" alt="Code" title="Click for Full Screen" onclick="fullScreen('pic')">
+
+<h2 id="vscodeExt">Установка расширений VS Code - offline</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<ol>
+    <li>В ОС которая бывает онлайн зайти в: Пользователи - Пользователь - .vscode - extensions</li>
+    <li>Копировать отсюда каталог с расширением VS Code на флешку</li>
+    <li>В ОС которая offline зайти в: Пользователи - Пользователь - .vscode - extensions</li>
+    <li>Копировать сюда каталог с расширением VS Code с флешки</li>
+</ol>
+<!-- VS Code -->
+
+
+<!--   Git -->
+<h2 id="git">Git - Hot Keys</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a> 
+<table>
+    <tr><th colspan="2">Алиасы (если созданы юзером)</th></tr>
+    <tr><td>co</td><td>checkout</td></tr>
+    <tr><td>ci</td><td>commit</td></tr>
+    <tr><td>st</td><td>status</td></tr>
+    <tr><td>br</td><td>branch</td></tr>
+    <tr><td>hist</td><td>history</td></tr>
+    <tr><th colspan="2">Управляющие клавиши во время выполнения команды</th></tr>
+    <tr><td>h</td><td>help</td></tr>
+  <tr><td>q</td><td>exit</td></tr>
+  <tr><td>z</td><td>forward one window</td></tr>
+  <tr><td>w</td><td>backward one window</td></tr>
+  <tr><td>ESC SPACE</td><td>forward one window, but don't stop when EOF</td></tr>
+  <tr><td>r</td><td>repaint screen</td></tr>
+  <tr><th colspan="2">Клонирование репозитория</th></tr>
+  <tr><td>git clone https//github.com<br>/%username%/%reponame%.git</td><td>Команда в каталоге куда клонируется каталог из origin</td></tr>  
+  <tr><th colspan="2">Создание репозитория</th></tr>
+  <tr><td>git init</td><td>Инициализировать новый репо (в каталоге создаваемого репо)</td></tr>  
+  <tr><td>git add name.ext</td><td>Добавить в список готовых к коммиту файл name.ext</td></tr>  
+  <tr><td>git add . </td><td>Добавить в список готовых к коммиту все файлы</td></tr>  
+  <tr><td>git commit -m "comment"<br>git ci -m "comment"</td><td>Сделать коммит - т.е добавить файлы в локальный репозиторий. Камент обязателен!!!</td></tr>
+  <tr><td>git tag v_1.0</td><td>Можно добавить к коммиту таг - т.е метку</td></tr>
+  <tr><td>git diff</td><td>После редактирования можно проверить что изменилось в еще не подготовленных к коммиту файлах (т.е до git add)</td></tr>
+  <tr><td>git diff --staged</td><td>После редактирования можно проверить что изменилось в уже подготовленных к коммиту файлах (т.е после git add)</td></tr>
+  <tr><td>git log --decorate</td><td>Показывает коммиты и где HEAD</td></tr>
+  <tr><th colspan="2">Операции отмены</th></tr> 
+  <tr><td>git rm file.ext</td><td>Удалить файл из отслеживаемых а также из каталога</td></tr>
+  <tr><td>git rm --cached file.ext</td><td>Удалить файл из отслеживаемых но оставить его в каталоге</td></tr>
+  <tr><td>git checkout -- file.ext<br>git co -- file.ext</td><td>Отменить изменения в файле сделанные до команды add (при этом изменения восстановить невозможно)</td></tr>
+  <tr><td>git reset HEAD name.ext</td><td>Отменить команду add для файла</td></tr>
+  <tr><td>git mv old_name.ext new_name.ext</td><td>Переименовать файл</td></tr>
+  <tr><th colspan="2">Создание ветки</th></tr>
+  <tr><td>git branch branch-name<br>git br branch-name</td><td>Создать новую ветку branch-name, но переключения HEAD на нее не происходит</td></tr>
+  <tr><td>git checkout branch-name<br>git co branch-name</td><td>Переключить HEAD на ветку branch-name, ФАЙЛЫ В РАБОЧЕМ КАТАЛОГЕ ПОМЕНЯЮТСЯ (если эти файлы сохранены в репо в разных ветках)</td></tr>
+  <tr><td>git merge branch-name</td><td>Слить ветку branch-name с веткой master. Если была еще ветка, слияние ее не затронет</td></tr>
+  <tr><td>git branch -d branch-name<br>git br -d branch-name</td><td>Удалить ветку branch-name (HEAD = kk3.2)</td></tr>
+</table>
+<!-- Git -->
+
+
+<!-- Kompas -->
+<h2 id="kompas"><img src="../images/smile.gif" alt="smile">Компас 3D - Hot Keys</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<table>
+  <tr><th colspan="2">В чертеже или эскизе</th></tr>
+  <tr><td colspan="2">Геометрия</td></tr>
+  <tr><td>O</td><td>Отрезок</td></tr>
+  <tr><td>L</td><td>Линия - последовательность отрезков и дуг</td></tr>
+  <tr><td>Alt + L</td><td>Непрерывный ввод - последовательность отрезков, дуг, сплайнов</td></tr>
+  <tr><td>C</td><td>Окружность</td></tr>
+  <tr><td>Alt + K</td><td>Прямая на произвольный угол</td></tr>
+  <tr><td>Alt + P</td><td>Прямая параллельная отрезку</td></tr>
+  <tr><td>Alt + G</td><td>Прямая горизонтальная</td></tr>
+  <tr><td>Alt + V</td><td>Прямая вертикальная</td></tr>
+  <tr><td>D</td><td>Линейный размер (Dimension)</td></tr>
+  <tr><td colspan="2">Редактирование</td></tr>
+  <tr><td>Alt + A</td><td>Деформация сдвигом указываемых объектов</td></tr>
+  <tr><td>Alt + C</td><td>Копирование выделенных объектов (Copy)</td></tr>
+  <tr><td>Alt + M</td><td>Перемещение выделенных объектов (Move)</td></tr>
+  <tr><td>Alt + R</td><td>Поворот выделенных объектов (Rotate)</td></tr>
+  <tr><td>Alt + T</td><td>Удлиннить до ближайшего объекта</td></tr>
+  <tr><td>Alt + S</td><td>Усечь участок кривой по границе объектов</td></tr>
+  <tr><td>Alt + Z</td><td>Выровнять объекты по границе</td></tr>
+  <tr><td colspan="2">Управление документом и интерфейсом</td></tr>
+  <tr><td>X</td><td>Открыть/закрыть Окно Переменных</td></tr>
+  <tr><td>V</td><td>Создать новый вид на чертеже</td></tr>
+  <tr><th colspan="2">В 3D сборке</th></tr>
+  <tr><td>M</td><td>Переместить деталь</td></tr>
+  <tr><td>R</td><td>Повернуть деталь</td></tr>
+</table>
+
+<h2 id="kompasTips">Kompas 3D - Tips</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<h4>Линия-выноска позиции с несколькими полками</h4>
+<ol>
+    <li>Выделить обозначение позиции</li>
+    <li>На панели Спецификация - Добавить объект спецификации</li>
+    <li>(Или меню Спецификация - Добавить объект спецификации)</li>
+</ol>
+<h4>3D деталь - создание в ней объекта спецификации в разделе "стандартные"</h4>
+<ol>
+    <li>В свойствах модели ввести ее наименование по ГОСТ (т.е. - Винт... ГОСТ...)</li>
+    <li>Сделать текущей вершину дерева модели - <img src="../data/top model's tree.jpg" alt="tree"></li>
+    <li>На панели Спецификация - Добавить объект спецификации</li>
+    <li>Указать раздел Стандартные изделия - кнопку Создать</li>
+</ol>
+<h4>Выровнять позиционные линии-выноски</h4>
+<ol>
+    <li>Выделить линии-выноски</li>
+    <li>На расширенной панели линий-выносок - <img src="../data/position's lines button.jpg" alt="btn"> - кнопки Выровнять позиции</li>
+    <li>Указать точку выравнивания</li>
+</ol>
+<h4>Размер сопряжения деталей - с допуском посадки</h4>
+<ol>
+    <li>Указать точки привязки размера</li>
+    <li>Клик в поле Текст на Панели Свойств</li>
+    <li>Двойной клик в поле Текст после</li>
+    <li>Выбрать посадку из серии вложенных меню</li>
+</ol>
+<h4>Штамп чертежа - справочник кодов и наименований</h4>
+<ol>
+    <li>Двойной клик на штампе для начала его редактирования</li>
+    <li>Клик правой кнопкой на штампе - вызов контекстного меню</li>
+    <li>Контекстное меню - Вставить код и наименование</li>
+    <li>На появившейся панели - выбрать требуемый раздел и пункт</li>
+</ol>
+<!-- <h3>Порядок создания моделей - чертежей - спецификаций (вариант)</h3> -->
+<h3>Порядок создания моделей - чертежей - спецификаций (вариант)</h3>
+<h4>Создание спецификации по 3D сборке</h4>
+<ol>
+    <li>В документе 3D сборка в меню Спецификация - Создать объекты спецификации (для первого или всех уровней) или Создать спецификацию по (этой) сборке (только для первого уровня)</li>
+    <li>Созданная спецификация нуждается в доработке</li>
+    <ol>
+        <li>В спецификации создать раздел Документация. При этом объектом спецификации указать ранее созданный чертеж.</li>
+        <li>Выделяем каждую из деталей и узлов спецификации, нажимаем кнопку Управление сборкой <img src="../data/btn/btn_Upravlenie_sborkoy.png" alt="btn"> и к имеющимся ссылкам на 3D модели деталей и узлов добавить ссылки на созданные ранее чертежи деталей и узлов. Ссылка на чертеж должна быть сверху - для этого нажатием на кнопку со стрелкой перемещаем ее. При этом в столбце спецификации Формат появляется значение формата чертежа детали или узла.</li>
+        <li>Создать связь между спецификацией и чертежом - для этого переходим в документ Спецификация, на панели Спецификация нажимаем кнопку Управление сборкой <img src="../data/btn/btn_Upravlenie_sborkoy.png" alt="btn"> и в открывшемся диалоге к имеющейся ссылке на 3D модель добавляем ссылку на файл чертежа сборки. Включить опции Передавать изменения в документ и для сборки и для чертежа и выйти из диалога.</li>
+    </ol>
+    <li>Расстановка позиций на чертеже</li>
+    <ol>
+        <li>Закрыть 3D модель сборки, открытые документы чертежа и спецификации размещаем Мозаика - вертикально.</li>
+        <li>В чертеже выделяем позицию, переходим в спецификацию, выделяем соответствующую выделенной позиции строку спецификации и на панели Спецификация нажимаем кнопку Редактировать состав объекта <img src="../data/btn/btn_Redaktirovat_sostav.png" alt="btn">.</li>
+        <li>В появившемся окне выбора сборочного чертежа подтверждаем выбор чертежа и в появившемся диалоге редактирования состава объекта нажимаем кнопку Добавить</li>
+        <li>Повторить для всех позиций сборки</li>
+    </ol>
+    <li>Теперь из спецификации можно просматривать в чертеже соответствующую позициям спецификации подсвеченную зеленым цветом геометрию деталей на всех видах чертежа, а также позиционную линию-выноску.</li>
+</ol>
+<!-- Kompas -->
+
+
+<!-- Autocad -->
+<h2 id="autocad">AutoCad - Hot Keys</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<table>
+    <tr><th colspan="2">В чертеже или эскизе</th></tr>
+    <tr><td>Alt + K</td><td>Отрезок (Line)</td></tr>
+    <tr><td>Alt + K</td><td>Отрезок (Line)</td></tr>  
+</table>
+<!-- Autocad -->
+
+
+<!-- Ctrl + key  MicroSoft -->
+<h2 id="micro">MicroSoft - Ctrl + Keys</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<img id="picCtrl" src="../data/Ctrl+keys.png" width="880" alt="Ctrl+">
+<!-- Ctrl + key  MicroSoft -->
+
+
+<!-- Alt + key  MicroSoft -->
+<h2 id="howsymb">MicroSoft - Alt + Keys</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<img id="ports" src="../data/HowSymbFrKey.png" width="880" alt="symbs">
+<!-- Alt + key  MicroSoft -->
+
+
+<!-- Brackets -->
+<h2 id="brackets">Brackets &amp; Embed - Hot Keys</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<table>
+    <tr><th colspan="2">Brackets - Keys</th></tr>
+    <tr><td>Ctrl + E</td><td>Быстрое редактирование</td></tr>
+    <tr><td>Ctrl + K</td><td>Быстрая документация</td></tr>
+    <tr><td>Ctrl + D</td><td>Дублировать строку</td></tr>
+    <tr><td>Ctrl + G</td><td>Перейти к строке</td></tr>
+    <tr><td>Ctrl + Shift + D</td><td>Delete Line</td></tr>
+    <tr><td>Ctrl + Shift + &#8593; / &#8595;</td><td>Move Line - up/down</td></tr>
+    <tr><td>Ctrl + /</td><td>Line comment - ON/OFF</td></tr>
+    <tr><td>Ctrl + Shift + /</td><td>Block comment - ON/OFF</td></tr>    
+    <tr><td>Ctrl + Pg Down</td><td>Next Document in List</td></tr>    
+    <tr><td>Ctrl + Pg Up</td><td>Prev Document in List</td></tr>    
+    <tr><td>Ctrl + Alt + H</td><td>Left panel show/hide</td></tr>
+    <tr><td>Ctrl + S</td><td>Save this File</td></tr>
+    <tr><td>Ctrl + Alt + S</td><td>Save all Files</td></tr>
+    <tr><th colspan="2">HTML Format - Keys</th></tr>
+    <tr><td>Alt + A</td><td>Anchor</td></tr>
+    <tr><td>Alt + P</td><td>Paragraph</td></tr>
+    <tr><td>Alt + H</td><td>H1</td></tr>
+    <tr><td>Alt + Shift + H</td><td>h4</td></tr>
+    <tr><td>Alt + S</td><td>Span</td></tr>
+    <tr><td>Alt + D</td><td>Div</td></tr>
+    <tr><td>Alt + T</td><td>Empty Tag</td></tr>
+    <tr><th colspan="2">Emmet - Keys</th></tr>
+    <tr><td>Tab</td><td>Expand Tag</td></tr> 
+    <tr><td>Ctrl + Shift + A</td><td>Wrap with abbreviation</td></tr>
+</table>
+    <!-- Brackets -->
+
+
+    <!-- Коды символов Unicode -->
+<h2 id="symbols">Коды символов Unicode и для HTML</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+    <p>Зачетная таблица кодов символов Unicode и для HTML - <a href="https://dev.w3.org/html5/html-author/charref" target="_blank">https://dev.w3.org/html5/html-author/charref</a>. При наведении курсора на квадратик с символом и его аббревиатурой на квадратике кроме этого появляется код символа в десятичной и шестнадцатиричной системах а на всплывающей подсказке - его Unicode код.</p>
+    <p>При отсутствии интернета можно посмотреть <a href="Char_Ref_Chart.html" target="_blank"> оффлайн версию</a></p>
+    <!-- Коды символов Unicode -->
+
+
+    <p class="copyright">Pol Banky &#169; 2018</p>
+    <script src="../js/fs.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+html {
+	background: #e6e9e9;
+    background-image: url("../images/background_31.png");
+}
+
+*{
+	box-sizing: border-box;
+}
+
+body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
+	width: 900px;
+	font-family: "Arial"; /* Семейство шрифтов */
+	color: #b22222;     /* Цвет текста */
+	background-color: white;    
+    /*	background-color: #d2b48c;    */
+	margin: 30px auto 150px auto; /* top right bottom left */
+	border: 5px solid #aa2222;
+	padding: 0px 5px 2px 5px;     /* top right bottom left */
+	box-shadow: 15px -12px 5px rgba(0,0,0,0.2);
+}
+
+h1 {
+	width: 82%;
+	color: #0000ff;    /* Цвет текста */
+	font-size: 3.2em;    /* Размер шрифта */
+	font-family: Times, serif; /* Семейство шрифтов */
+	text-align: left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	/* border: 1px dashed #ff0000; */
+	padding: 16px 0px 5px 40px; /* top right bottom left */
+	transition: color 1s, text-shadow 0.2s;
+}
+h1:hover {
+	color: #ff0000;    /* Цвет текста */
+	text-shadow: 6px -4px 3px rgba(0,0,0,0.3);
+	transition: 2s;
+}
+h2 {
+    display: inline-block;
+    color: darkviolet;
+    margin: 30px 0px 0px 30px;
+    padding: 20px 15px 8px 60px; /* top right bottom left */
+}
+h3 {
+    color: darkgreen;
+    margin: 0px 0px 0px 0px;
+    padding: 8px 0px 5px 15px; /* top right bottom left */
+}
+h4 {
+    color: darkred;
+    margin: 0px 0px 0px 0px;
+    padding: 5px 0px 3px 15px; /* top right bottom left */
+}
+
+p {
+    font-size: 1.0em;      /* Размер шрифта */
+	text-indent: 25px;
+	margin: 0px 0px 0px 0px;  /* top right bottom left */
+/*	border: 1px dashed #d2b48c; */
+	padding: 4px 0px 4px 0px; /* top right bottom left */
+}
+/*p:active {
+    border-color: aquamarine;
+}*/
+.copyright {
+	width: 350px;
+	font-size: 0.8em;
+	text-align: center;
+	margin: 5px auto 0px auto; /* top right bottom left */
+	padding: 0px;              /* top right bottom left */
+}
+p.copyright:first-letter {
+    font-size: 1.0em;
+/*color: #161ee5;*/
+}
+
+div {	
+	color: #aa05bb;    /* Цвет текста */
+	font-size: 1.0em;    /* Размер шрифта */
+	margin: 5px 5px 5px 5px; /* top right bottom left */
+/*	border: 1px dashed #800000;*/
+	padding: 5px 5px 5px 5px; /* top right bottom left */
+}
+div.divLbl {    /* В качестве - LABEL для окон вывода */
+	display: table-cell;
+	height: 1.6em;
+	vertical-align: middle;
+    font-size: 1.1em;  /* Размер шрифта */
+	/* border: dashed #ffff00;
+	border-width: 1px 0px 1px 1px; */
+}
+div.divOutPut {    /* В качестве - ОКНО ВЫВОДА результатов расчетов */
+	display: table-cell;
+	height: 1.6em;
+	width: 250px;
+	vertical-align: middle;
+	font-size: 1.5em;  /* Размер шрифта */
+	color: blue;
+	background-color: #a5a511;
+	border: 2px solid #84e6bd;	
+}
+div.divBtn {    /* В качестве button для кнопок главной панели (без текста) */
+	display: table-cell;
+	width: 143px;
+	height: 148px;
+	vertical-align: middle;
+	/*margin-left: 5px;*/
+	/* border: 1px dashed #333; */
+}
+div.wrap {    /* Обертка главной панели */
+display: inline-block;
+    /* border: 1px dotted #ffffff; */
+}
+div.tblOfContent {     /* ОГЛАВЛЕНИЕ */
+    font-size: 1.3em;  /* Размер шрифта */
+    margin: 0px 5px 5px 5px;  /* top right bottom left */
+    /*	border: 1px dashed #800000;*/
+	padding: 0px 5px 5px 5px; /* top right bottom left */
+}
+
+/* INPUT */
+input {
+	margin: 0px 0px 0px 0px; /* top right bottom left */
+	padding: 5px;            /* top right bottom left */
+}
+input[type="number"] {
+	color: #b22222;   	  /* Цвет текста */
+	font-size: 1.2em; 		/* Размер шрифта */
+    width: 250px;
+	background-color: #eee;
+	border: 3px solid #bb0000;	/* Параметры border */
+	transition: background-color 2s;
+}
+input[type="button"] {
+	color: #bb00bb;    /* Цвет ввода */
+	font-size: 1.2em;    /* Размер шрифта */
+    text-align: center;
+    width: 250px;
+	margin: 0px 0px 0px 0px; /* top right bottom left */
+	padding-top: 5px;
+    padding-bottom: 5px;
+    /*background-image: url("../images/tick_16.png");
+    background-repeat: no-repeat;
+    background-position:left center;*/
+}
+input[type="number"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 2s; }
+input[type="button"]:focus {
+    background-color: palegreen;
+    background-image: url("../images/tick_16.png");
+    background-repeat: no-repeat;
+    background-position: 95% center;
+}
+
+label {
+	font-size: 1.1em; /* Размер шрифта */
+	margin: 0px 0px 0px 0px; /* top right bottom left */
+	/* border: 1px dashed #ffffff; */
+	padding: 4px;            /* top right bottom left */
+}
+
+fieldset {
+    background-color: #d2b48c;
+    margin: 10px 0px 5px 0px; /* top right bottom left */
+}
+legend {
+    color: #d2b48c;
+    background-color: #322cbe;
+	font-size: 1.2em;  /* Размер шрифта */
+	padding: 3px 7px 3px 7px;
+}
+
+select {
+    /*    font-family: monospace;*/
+    font-size: 1.2em; /* Размер шрифта */
+    color: black;     /* Цвет ввода */
+    background-color: lightgrey; 
+}
+select.big {
+    font-size: 1.4em; /* Размер шрифта */
+    color: black;     /* Цвет ввода */
+    background-color: lightgrey; 
+}
+select.bigAndAline {
+    font-size: 1.4em; /* Размер шрифта */
+    width: 250px;
+    color: black;     /* Цвет ввода */
+    background-color: lightgrey; 
+}
+
+#topnav {    /*  ( # )  => по идентификатору */
+	font-size: 1.1em; /* Размер шрифта */
+	text-align: center;
+	background-color: #117711;
+	color: #FFFFFF;   /* Цвет текста */
+	height: 28px;
+    margin-top: 10px;
+	margin-left: 5%;
+	margin-right: 5%;
+	padding-top: 3px; /* От бордера до текста */
+}
+#topnav a { color: #FFFFFF; }
+
+img {
+margin: 0px 0px 0px 0px;
+}
+img.fs {
+    cursor: pointer;
+    /*    cursor: url("../images/Cat_lick_paw.gif"), pointer;*/
+    /*    cursor: url("../images/search_28.png"), pointer;*/
+}
+.fs:-ms-fullscreen { width: 100%; }
+.fs:-webkit-full-screen { width: 100%; }
+.fs:-moz-full-screen { width: 100%; }
+
+/*.fs:-ms-fullscreen { width: 100%; height: 100%; }
+.fs:-webkit-full-screen { width: 100%; height: 100%; }
+.fs:-moz-full-screen { width: 100%; height: 100%; }*/
+
+img.imgBtn128, img.imgBtn128A {	/*For not-transparency and transparency buttons*/
+	width: 128px;
+	height: 128px;
+	transition: 0.1s;
+}
+img.imgBtn128:hover {
+	width: 132px;
+	height: 132px;
+	box-shadow: 6px -4px 3px rgba(0,0,0,0.3);
+}
+img.imgBtn128A:hover {	/*For transparency buttons*/
+	width: 132px;
+	height: 132px;
+}
+
+img.imgBtn64 {    /* Для значков в правом верхнем углу, например -  Help */
+	float: right;
+	width: 64px;
+	margin-top: 10px;	
+	margin-right: 5px;
+	padding: 0px;
+	transition: 0.3s;
+}
+img.imgBtn64:hover {    /* Help Rizing */
+	width: 74px;
+}
+img.imgBtn64A {	/* For circle badge with h1 header */
+	width: 64px;
+	height: 64px;
+	vertical-align: -10px;
+	margin-right: 12px;
+    /*	border: 1px solid rgba(73, 231, 237, 0.62);*/
+	padding: 0px;
+    border-radius: 32px;
+}
+img.imgBtn64B {	/* For (border-radius:10px) badge with h1 header */
+	width: 64px;
+	height: 64px;
+	vertical-align: -10px;
+	margin-right: 12px;
+    /*	border: 1px solid rgba(73, 231, 237, 0.62);*/
+	padding: 0px;
+    border-radius: 10px;
+}
+img.picInTxt {
+    display: block;
+	margin: 5px auto 5px 5px;
+}
+
+table {
+	/* width: 880px; */
+    border: 1px solid black;
+    padding: 0px;
+}
+td {
+	font-size: 1.1em; /* Размер шрифта */
+	text-align: left;
+	padding: 3px 12px 3px 12px;
+    border: 1px solid black;
+}
+th {
+	font-size: 1.2em; /* Размер шрифта */
+	text-align: center;
+    background-color: rgba(79, 217, 154, 0.24);
+	padding: 3px 12px 3px 12px;
+    border: 1px solid black;
+}
+
+ul, ol { /*Неупорядоченный список (маркеры а не цифры); ol - упорядоченные (цифры); li - элемент списка */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+li {    /* li - элемент списка */
+    margin: 0em 0em 0.4em 0em;	/* top right bottom left */
+	padding: 0.1em 0em 0.1em 0em;
+	/* border: 1px dashed #2a35ca; */
+}
+li.sign {
+    list-style-image: url("../images/diamond_aGIF_16.gif");
+    /*    list-style-image: url("../images/pencil2_16.png");*/
+}

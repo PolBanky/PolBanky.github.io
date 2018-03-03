@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+	<!-- Tech Info -->
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Tech Info</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../images/favicon_operator.ico" type="images/x-icon">
+</head>
+
+<body>
+<a href="help-techinfo.html" target="_blank">	<!--H E L P-->
+<img class="imgBtn64" src="../images/pic-question_128.png" alt="Picture Question">
+</a>
+	<h1 id="top"><img class="imgBtn64B" src="../images/machine_operator_128.png" alt="Pic Operator">Tech Info</h1>
+  <h2>Оглавление</h2>
+<div class="tblOfContent">
+   <ul>		
+		<li><a href="#inch">Дюйм и трубный дюйм</a></li>		
+		<li><a href="#angles">Углы конусов</a></li>
+		<li><a href="#keys">Места под ключи</a></li>
+		<li><a href="#Hydro">Hydro Circuit</a></li>
+		<li><a href="#gearmotor">Gear motor</a></li>
+	</ul> 
+</div>
+<hr>
+
+<h2 id="inch">Дюйм и трубный дюйм</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+<p>Как и в Великобритании, с 1958 года американский дюйм приравнивается к 2,54 см — для отличия от остальных эта единица называется международный дюйм. Ранее (с 1866 года) был равен 2,54000508 см (точнее, 10000/3937 см); иногда это старое значение используется и ныне под названием геодезический дюйм.</p>
+<h4>Калибры оружия</h4>
+<p>Калибр стрелкового оружия в США принято измерять в сотых долях дюйма, (в Великобритании — традиционно в тысячных долях). Например, знаменитый 45-й калибр — это 0,45 дюйма (или 11,43 мм); 30-й — это 0,30 дюйма (или 7,62 мм); 50-й — это 0,50 дюйма (или 12,7 мм), и т. д.</p>
+   
+<fieldset>
+	<legend>Калибр в сотых долях дюйма - в миллиметры</legend>		
+<div>	<!-- INPUT CALIBRE -->
+	<input type="number" id="calibre_input" placeholder="Calibre" onchange="Event_TxtChanged()" title="numbers and Press Enter" autofocus>
+		<!-- Chrome = Alt+1 -->     <!-- Firefox = Shift+Alt+1 -->
+	<label for="calibre_input" id="lbl_calibre">Калибр в сотых долях дюйма</label>
+</div>
+	<!-- Вывод результатов -->
+<div>	<!-- OUTPUT AREA, mm -->
+	<div class="divOutPut" id="calibre_output">0.00</div>
+	<div class="divLbl" id="calibre_lbl">Калибр в мм</div>
+</div>		
+</fieldset>
+
+   
+    <h4>Диаметр труб</h4>
+<p>Традиционное обозначение диаметров водо- и газопроводных труб в дюймах не выражает непосредственно ни наружный, ни внутренний диаметры труб. Такое обозначение более близко к обозначению условного прохода трубопроводных элементов, который может выражаться как в англо-американской дюймовой, так и в метрической европейской системе. Тем не менее, не существует какой-либо формулы для перевода «трубных дюймов» в миллиметры или в «обычные» дюймы с целью узнать действительный наружный или внутренний диаметр трубы. Условный проход в метрической системе тоже слабо связан с геометрическим диаметром труб. Для однозначного сопоставления условного дюймового диаметра стандартному наружному диаметру трубы и диаметрам трубной резьбы необходимо пользоваться справочной литературой и нормативной документацией.</p>
+<p><a href="../data/3262-75 water-supply steel pipes.pdf" target="_blank">ГОСТ 3262-75</a> устанавливает технические условия на стальные трубы, применяемые для водопроводов и газопроводов, но он не нормирует и не обозначает диаметр труб в дюймах. При нарезке трубной резьбы необходимо руководствоваться <a href="../data/6357-81 pipe cylindrical thread (BSPP).pdf" target="_blank">ГОСТ 6357-81</a> (<a href="../data/DIN 228.pdf" target="_blank">DIN228</a>), который устанавливает основные размеры трубной цилиндрической резьбы в миллиметрах, но использует обозначение размера резьбы в дюймах. Таким образом, для установления соответствия между дюймовым размером трубы и её действительным геометрическим диаметром необходимо сопоставление данных, приведенных в этих двух стандартах.</p>	
+<p>К примеру, наружный диаметр 1/2" трубы в соответствии с ГОСТами равен 21,3 мм, а 5" трубы — 140,0 мм. При попытке вычислить пересчётный коэффициент обнаруживается, что «трубные дюймы» — больше стандартного значения 25,4 мм и «разные» для разных диаметров трубы. Например обычный дюйм (1") равен 25,4 мм, "трубный дюйм", равен 33,249 мм.</p>
+<p>Приведенная таблица построена на основе упомянутых выше ГОСТов, но не претендует на полноту и не может служить заменой официальной нормативной документации.</p>
+<table>
+	<tr><th>Обозначение резьбы</th><th>DN трубы</th><th>Наружный &#8709; резьбы,мм</th><th>Наружный &#8709; трубы,мм</th></tr>
+	<tr><td>&frac18; </td><td>6</td><td>9,728</td><td>10,2</td></tr>
+	<tr><td>&frac14; </td><td>8</td><td>13,157</td><td>13,5</td></tr>
+	<tr><td>&frac38; </td><td>10</td><td>16,662</td><td>17,0</td></tr>
+	<tr><td>&frac12; </td><td>15</td><td>20,955</td><td>21,3</td></tr>
+	<tr><td>&frac34; </td><td>20</td><td>26,441</td><td>26,8</td></tr>
+	<tr><td>1        </td><td>25</td><td>33,249</td><td>33,5</td></tr>
+	<tr><td>1&frac14;</td><td>32</td><td>41,910</td><td>42,3</td></tr>
+	<tr><td>1&frac12;</td><td>40</td><td>47,803</td><td>48,0</td></tr>
+	<tr><td>2        </td><td>50</td><td>59,614</td><td>60,0</td></tr>
+	<tr><td>2&frac12;</td><td>65</td><td>75,184</td><td>75,5</td></tr>
+	<tr><td>3        </td><td>80</td><td>87,884</td><td>88,5</td></tr>
+	<tr><td>3&frac12;</td><td>90</td><td>100,330</td><td>101,3</td></tr>
+	<tr><td>4        </td><td>100</td><td>113,030</td><td>114,0</td></tr>
+	<tr><td>5        </td><td>125</td><td>138,430</td><td>140,0</td></tr>
+	<tr><td>6        </td><td>150</td><td>163,830</td><td>165,0</td></tr>
+</table>
+    
+	<h2 id="angles">Углы конусов</h2> <a href="#"> <img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+	<img src="../data/AnglesOfCones.png" width="880" alt="Picture 2" title="Углы конусов">
+
+	<h2 id="keys">Места под ключи</h2> <a href="#"> <img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+	<img id="key" class="fs" src="../data/13682-80_width_across_flats_dimensions(table).png" width="880" alt="keys" title="Места под ключи" onclick="fullScreen('key')">
+<!--<img id="cod" class="fs" src="../data/whyCodeSymFail_1764.png" width="880" alt="Code" title="как деды шифровались" onclick="fullScreen('cod')">-->
+
+	<h2 id="Hydro">Гидравлика</h2> <a href="#"> <img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+	<img src="../data/A_kp0_04.gif" width="880" alt="Hydro" title="Hydro">
+	
+	<h2 id="gearmotor">Gear motor</h2> <a href="#"> <img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+	<img src="../data/GearMotor.gif" width="880" alt="Gear" title="Gear">
+	
+	<p class="copyright">Pol Banky &#169; 2018</p>
+	<!--Добавление к пректу JS-->	
+	<script src="../js/fs.js"></script>	
+	<script src="../js/calibre.js"></script>	
+</body>
+</html>
