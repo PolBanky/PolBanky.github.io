@@ -112,7 +112,7 @@
   <tr><td>git rm --cached file.ext</td><td>Удалить файл из отслеживаемых но оставить его в каталоге</td></tr>
   <tr><td>git checkout -- file.ext<br>git co -- file.ext</td><td>Отменить изменения в файле сделанные до команды add (при этом изменения восстановить невозможно)</td></tr>
   <tr><td>git reset HEAD name.ext</td><td>Отменить команду add для файла</td></tr>
-  <tr><td>git mv old_name.ext new_name.ext</td><td>Переименовать файл</td></tr>
+  <tr><td>git mv 'old_name.ext' 'new_name.ext'</td><td>Переименовать файл. Имя - без пробелов !</td></tr>
   <tr><th colspan="2">Создание ветки</th></tr>
   <tr><td>git branch branch-name<br>git br branch-name</td><td>Создать новую ветку branch-name, но переключения HEAD на нее не происходит</td></tr>
   <tr><td>git checkout branch-name<br>git co branch-name</td><td>Переключить HEAD на ветку branch-name, ФАЙЛЫ В РАБОЧЕМ КАТАЛОГЕ ПОМЕНЯЮТСЯ (если эти файлы сохранены в репо в разных ветках)</td></tr>
@@ -127,7 +127,7 @@
 <table>
   <tr><th colspan="2">В чертеже или эскизе</th></tr>
   <tr><td colspan="2">Геометрия</td></tr>
-  <tr><td>O</td><td>Отрезок</td></tr>
+  <tr><td>O</td><td>Отрезок (Offcut)</td></tr>
   <tr><td>L</td><td>Линия - последовательность отрезков и дуг</td></tr>
   <tr><td>Alt + L</td><td>Непрерывный ввод - последовательность отрезков, дуг, сплайнов</td></tr>
   <tr><td>C</td><td>Окружность</td></tr>
@@ -151,6 +151,9 @@
   <tr><th colspan="2">В 3D сборке</th></tr>
   <tr><td>M</td><td>Переместить деталь</td></tr>
   <tr><td>R</td><td>Повернуть деталь</td></tr>
+  <tr><td>A</td><td>Добавить компонент из файла</td></tr>
+  <tr><td>C</td><td>Совпадение объектов</td></tr>
+  <tr><td>S</td><td>Соосность объектов</td></tr>
 </table>
 
 <h2 id="kompasTips">Kompas 3D - Tips</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
