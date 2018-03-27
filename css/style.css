@@ -275,6 +275,9 @@ img.picInTxt {
     display: block;
 	margin: 5px auto 5px 5px;
 }
+img.low {
+	margin-bottom: -6px;
+}
 
 table {
 	/* width: 880px; */
@@ -291,7 +294,7 @@ th {
 	font-size: 1.2em; /* Размер шрифта */
 	text-align: center;
     background-color: rgba(79, 217, 154, 0.24);
-	padding: 3px 12px 3px 12px;
+	padding: 4px 12px 4px 12px;
     border: 1px solid black;
 }
 
