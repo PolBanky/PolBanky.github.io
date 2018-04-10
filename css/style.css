@@ -72,8 +72,13 @@ p {
 	padding: 0px;              /* top right bottom left */
 }
 p.copyright:first-letter {
-    font-size: 1.0em;
-/*color: #161ee5;*/
+	font-size: 1.0em;
+	/*color: #161ee5;*/
+}
+
+span.small {
+	font-size: 0.7em;      /* Размер шрифта */
+	/* color: #8922b2; */     /* Цвет текста */
 }
 
 div {	

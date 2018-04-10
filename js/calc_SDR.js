@@ -5,7 +5,7 @@ var pipe = {
     sdr: 0,     // SDR
     thickness: 0, // thickness, mm
     
-    eval_thickness: function () // расчет площади круга в мм2
+    eval_thickness: function () // расчет толщины стенки трубы в мм
     {   // thickness = dia_ex / sdr
         this.thickness = this.dia_ex / this.sdr; // area of nofmal cut, mm2
     } // function eval_area()    
@@ -20,7 +20,7 @@ function Output_Thickness() {
 // Событие нажатие кнопки Calculate Thickness
 function Event_PressButton() {
     pipe.sdr = document.getElementById('SDR_Value').value;
-    pipe.dia_ex = document.getElementById('dia_ex_input').value;
+    pipe.dia_ex = document.getElementById('input_dia_ex').value;
 //     window.alert("SDR = " + pipe.sdr);
     pipe.eval_thickness();
     Output_Thickness();
