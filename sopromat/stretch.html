@@ -15,7 +15,7 @@
 <a href="help-sopromat.html" target="_blank">	<!--H E L P-->
 	<img class="imgBtn64" src="../images/pic-question_128.png" alt="question">
 </a>
-	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Picture Beam">Stretch</h1>
+	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Pic Beam">Stretch</h1>
 	<figure>    <!-- height="350" -->
 	    <img src="../data/rod_stretch_02.png" height="350" alt="Rod stretched by Force" title="How it works">
 	</figure>		
@@ -24,17 +24,17 @@
 <fieldset>
 	<legend>Исходные данные</legend>		
 <div>	<!-- INPUT EX DIAMETER, mm -->
-	<input type="number" id="input_dia_ex" placeholder="External diameter" accesskey="1" title="Hotkey = Alt+1" autofocus>
+	<input type="number" id="input_dia_ex" placeholder="External diameter" accesskey="1" title="Alt+1" autofocus>
 		<!-- Chrome = Alt+1 -->     <!-- Firefox = Shift+Alt+1 -->
 	<label for="input_dia_ex" id="lbl_ex_dia">Диаметр стержня, mm</label>	
 </div>		
 <div>	<!-- INPUT IN DIAMETER, mm -->
-	<input type="number" id="input_dia_in" placeholder="Internal diameter" accesskey="2" title="Hotkey = Alt+2">
+	<input type="number" id="input_dia_in" placeholder="Internal diameter" accesskey="2" title="Alt+2">
 		<!-- Chrome = Alt+2 -->     <!-- Firefox = Shift+Alt+2 -->
 	<label for="input_dia_in" id="lbl_in_dia">Диаметр отверстия, mm</label>	
 </div>		
 <div>	<!-- INPUT FORCE, N or kg -->
-	<input type="number" id="force_stretch_input" placeholder="Stretch force" accesskey="3" title="Hotkey = Alt+3">
+	<input type="number" id="force_stretch_input" placeholder="Stretch force" accesskey="3" title="Alt+3">
 		<!-- Chrome = Alt+3 -->     <!-- Firefox = Shift+Alt+3 -->
 		<label for="force_stretch_input" id="lbl_frc"> Усилие растяжения, </label>
 		<select id="N_or_kg" onchange="Event_N_or_kg_Changed()">		<!-- select "N_or_kg" -->
@@ -43,7 +43,7 @@
 		</select>
 </div>
 <div>	<!-- BUTTON RUN  галочка на кнопке - см. css -->
-		<input type="button" class="btn" id="calc" onclick="Event_PressButton()" value="Calculate Stress" accesskey="4" title="Hotkey = Alt+4">
+		<input type="button" id="calc" onclick="Event_PressButton()" value="Calculate Stress" accesskey="4" title="Alt+4">
 		<!-- Chrome = Alt+4 -->     <!-- Firefox = Shift+Alt+4 -->
 </div>
 </fieldset>

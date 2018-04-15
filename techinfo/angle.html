@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+	<!-- Angles -->
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Stretch</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../images/favicon_operator.ico" type="images/x-icon">
+	<style>
+        body { background-color: #d2b48c; }
+    </style>
+</head>
+
+<body>
+<a href="help-sopromat.html" target="_blank">	<!--H E L P-->
+	<img class="imgBtn64" src="../images/pic-question_128.png" alt="question">
+</a>
+	<h1 id="top"><img class="imgBtn64B" src="../images/machine_operator_128.png" alt="Pic Beam">Convert Angle</h1>
+			
+		<!-- Form !!!!! -->
+	<form action="" onsubmit="return false;">
+<fieldset>
+	<legend>Исходные данные</legend>		
+<div>	<!-- INPUT DEC ANGLE, GRAD -->
+	<input type="number" id="input_angle_dec" oninput="Event_TxtInput()" placeholder="Decimal Angle" min="0" max="90" autofocus>  <!-- onchange -->
+	<label for="input_angle_dec" id="lbl_angle_dec">Угол, decimal grad</label>	
+</div>		
+<div>	<!-- INPUT MIN/SEC ANGLE, GRAD -->
+	<input type="number" class="grad" id="input_grad" placeholder="Grad" min="0" max="89" step="1">
+	<input type="number" class="minsec" id="input_min" placeholder="Min" min="0" max="59" step="1">
+	<input type="number" class="minsec" id="input_sec" placeholder="Sec"min="0" max="59" step="1">
+	<label for="input_sec" id="lbl_input_angle">Угол, grad min sec</label>	
+</div>		
+
+<div>	<!-- BUTTON RUN  галочка на кнопке - см. css -->
+		<input type="button" id="calc" onclick="Event_PressButton()" value="Calculate Angle's Trig" accesskey="4" title="Alt+4">
+		<!-- Chrome = Alt+4 -->     <!-- Firefox = Shift+Alt+4 -->
+</div>
+</fieldset>
+	<!-- Вывод результатов -->
+<fieldset>
+	<legend>Результаты расчета</legend>
+		<div>	
+			<div class="divOutPut" id="area_output">0.000</div>
+			<div class="divLbl" id="lbl_area">Угол в радианах</div>
+		</div>		
+</fieldset>
+	</form>	<!-- end of Form !!!!! -->
+
+	<p class="copyright">Pol Banky &#169; 2018</p>
+	<script src="../js/angle.js"></script>	
+</body>
+</html>

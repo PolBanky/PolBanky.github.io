@@ -47,13 +47,13 @@
     </div>
           <!-- INPUT DIAMETER, mm -->
     <div>
-        <input type="number" id="input_dia_ex" placeholder="Pipe's Diameter" step="0.01" title="Наружный диаметр трубы">  <!--title="Наружный диаметр трубы"-->
-        <label for="input_dia_ex" id="lbl_dia"> Наружный диаметр трубы, mm</label>	
+        <input type="number" id="input_dia_ex" oninput="Event_TxtInput()" min="0" max="1600" placeholder="Pipe's Diameter" step="0.01">
+        <label for="input_dia_ex" id="lbl_dia_ex"> Наружный диаметр трубы, mm</label>	
     </div>
     		<!-- BUTTON RUN -->
-<div>
+<!-- <div>
 		<input type="button" id="calc" onclick="Event_PressButton()" value="Calculate Thickness" title="Calculate Thickness">
-</div>
+</div> -->
     <!-- OUTPUT THICKNESS, mm -->
 		<div>
 			<div class="divOutPut" id="thickness_output" title="Толщина стенки">0,000</div>

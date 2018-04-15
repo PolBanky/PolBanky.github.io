@@ -1,6 +1,6 @@
 var calibre = {
-    calibreINCH: 0,  // external diameter, mm
-    calibreMM: 0,     // SDR
+    calibreINCH: 0,   // 
+    calibreMM: 0,     //
     
     eval_calibre: function ()
     {
@@ -9,13 +9,13 @@ var calibre = {
 }; // var calibre
 
 
-// Событие ввод числа + Enter
-function Event_TxtChanged() {
-    calibre.calibreINCH = document.getElementById('calibre_input').value;
+// Событие ввод числа
+function Event_TxtInput() {
+    calibre.calibreINCH = document.getElementById('input_calibre').value;
     calibre.eval_calibre();
     // window.alert("Calibre = " + calibre.calibreINCH + " inch and " + calibre.calibreMM + " mm");
     Output_Calibre();
-} // function Event_PressButton()
+} // function Event_TxtInputd()
 
 
 // Вывод калибра в мм

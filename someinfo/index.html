@@ -60,13 +60,14 @@
 	<tr><td>18:00</td><td>6:00 p.m.</td><td>Шесть (часов) дня</td></tr>
 </table>
 
+
 	<h2 id="temperature">Цельсий-Фаренгейт</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
 	<img src="../data/Grad_C-F.png" width="880" alt="Celc-Far" title="Цельсий-Фаренгейт">
 <fieldset id="calcCF"> <legend>Пересчет &#176;C &#8660; &#176;F</legend>
           <!-- INPUT TEMPERATURE in C or F, grad -->
     <div>
-        <input type="number" id="grad_input" placeholder="Цельсий" step="0.01" title="Градусов Цельсия">  <!-- INPUT => id="grad_input"-->
-        <label for="grad_input" id="lbl_grad_in"> Температура, </label>
+        <input type="number" id="input_grad" placeholder="Цельсий" step="0.01" title="Градусов Цельсия">  <!-- INPUT => id="input_grad"-->
+        <label for="input_grad" id="lbl_grad_in"> Температура, </label>
         <select class="big" id="c_or_f" onchange="Event_SelectChanged()"> <!-- select "c_or_f" -->
             <option value="c">&#176;C</option>
             <option value="f">&#176;F</option>
@@ -74,7 +75,7 @@
     </div>
     		<!-- BUTTON RUN -->
 <div>
-		<input type="button" class="btn" id="calc" onclick="Event_PressButton()" value="Calculate &#176;C to &#176;F">
+		<input type="button" id="calc" onclick="Event_PressButton()" value="Calculate &#176;C to &#176;F">
 </div>   
     <!-- OUTPUT CONVERTED TEMPERATURE, c/f -->
 		<div>

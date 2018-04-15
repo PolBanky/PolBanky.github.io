@@ -20,7 +20,7 @@ body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 }
 
 h1 {
-	width: 82%;
+	width: 82%;	
 	color: #0000ff;    /* Цвет текста */
 	font-size: 3.2em;    /* Размер шрифта */
 	font-family: Times, serif; /* Семейство шрифтов */
@@ -31,11 +31,11 @@ h1 {
 	padding: 16px 0px 5px 40px; /* top right bottom left */
 	transition: color 1s, text-shadow 0.2s;
 }
-h1:hover {
-	color: #ff0000;    /* Цвет текста */
+/* h1:hover {
+	color: #ff0000;
 	text-shadow: 6px -4px 3px rgba(0,0,0,0.3);
 	transition: 2s;
-}
+} */
 h2 {
     display: inline-block;
     color: darkviolet;
@@ -145,23 +145,30 @@ input[type="number"] {
     width: 250px;
 	background-color: #eee;
 	border: 3px solid #bb0000;	/* Параметры border */
-	transition: background-color 2s;
+	transition: background-color 1s;
 }
+input[type="number"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
+input[type="number"].grad {
+	width: 100px;	
+}
+input[type="number"].minsec {
+	width: 100px;
+}
+
 input[type="button"] {
 	color: #bb00bb;    /* Цвет ввода */
 	font-size: 1.2em;    /* Размер шрифта */
     text-align: center;
     width: 250px;
-	margin: 0px 0px 0px 0px; /* top right bottom left */
-	padding-top: 5px;
-    padding-bottom: 5px;
     /*background-image: url("../images/tick_16.png");
     background-repeat: no-repeat;
     background-position:left center;*/
 }
-input[type="number"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 2s; }
+input[type="button"]:hover {
+	background-color: bisque;
+}
 input[type="button"]:focus {
-    background-color: palegreen;
+	background-color: palegreen;
     background-image: url("../images/tick_16.png");
     background-repeat: no-repeat;
     background-position: 95% center;
@@ -204,17 +211,18 @@ select.bigAndAline {
 }
 
 #topnav {    /*  ( # )  => по идентификатору */
-	font-size: 1.1em; /* Размер шрифта */
+	font-size: 1.4em; /* Размер шрифта */
 	text-align: center;
 	background-color: #117711;
-	color: #FFFFFF;   /* Цвет текста */
-	height: 28px;
+	color: #FFFFFF;   /* Цвет текста - в этом случае вертикальных палочек */
+	height: 35px;
     margin-top: 10px;
 	margin-left: 5%;
 	margin-right: 5%;
 	padding-top: 3px; /* От бордера до текста */
 }
 #topnav a { color: #FFFFFF; }
+#topnav a:hover { color: rgb(255, 187, 0); }
 
 img {
 margin: 0px 0px 0px 0px;
@@ -222,7 +230,7 @@ margin: 0px 0px 0px 0px;
 img.fs {
     cursor: pointer;
     /*    cursor: url("../images/Cat_lick_paw.gif"), pointer;*/
-    /*    cursor: url("../images/search_28.png"), pointer;*/
+       /* cursor: url("../images/search_28.png"), pointer; */
 }
 .fs:-ms-fullscreen { width: 100%; }
 .fs:-webkit-full-screen { width: 100%; }

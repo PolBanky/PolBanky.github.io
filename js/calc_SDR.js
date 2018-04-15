@@ -17,11 +17,23 @@ function Output_Thickness() {
     document.getElementById('thickness_output').innerHTML = pipe.thickness.toFixed(2);
 } // function Output_Thickness()
 
-// Событие нажатие кнопки Calculate Thickness
-function Event_PressButton() {
+
+// Событие ввод цифры Calculate Thickness
+function Event_TxtInput() {
     pipe.sdr = document.getElementById('SDR_Value').value;
     pipe.dia_ex = document.getElementById('input_dia_ex').value;
 //     window.alert("SDR = " + pipe.sdr);
     pipe.eval_thickness();
     Output_Thickness();
-} // function Event_PressButton()
+} // function Event_TxtInput()
+
+
+
+// Событие нажатие кнопки Calculate Thickness
+// function Event_PressButton() {
+//     pipe.sdr = document.getElementById('SDR_Value').value;
+//     pipe.dia_ex = document.getElementById('input_dia_ex').value;
+//     pipe.eval_thickness();
+//     Output_Thickness();
+// } // function Event_PressButton()
+

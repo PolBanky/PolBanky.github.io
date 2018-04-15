@@ -18,6 +18,7 @@
    <ul>
 		<li><a href="#standard">Most Used Standards</a></li>
 		<li><a href="#inch">Дюйм и трубный дюйм</a></li>
+		<li><a href="angle.html" target="_blank">Convert Angle</a></li>
 		<li><a href="#angles">Углы конусов</a></li>
 		<li><a href="#keys">Места под ключи</a></li>
 		<li><a href="#convert">DIN, ISO</a></li>
@@ -87,9 +88,8 @@
 <fieldset>
 	<legend>Калибр в сотых долях дюйма - в миллиметры</legend>
 <div>	<!-- INPUT CALIBRE -->
-	<input type="number" id="calibre_input" placeholder="Calibre" onchange="Event_TxtChanged()" title="numbers and Press Enter">
-		<!-- Chrome = Alt+1 -->     <!-- Firefox = Shift+Alt+1 -->
-	<label for="calibre_input" id="lbl_calibre">Калибр в сотых долях дюйма</label>
+	<input type="number" id="input_calibre" oninput="Event_TxtInput()" placeholder="Calibre">
+	<label for="input_calibre" id="lbl_calibre">Калибр в сотых долях дюйма</label>
 </div>
 	<!-- Вывод результатов -->
 <div>	<!-- OUTPUT AREA, mm -->
