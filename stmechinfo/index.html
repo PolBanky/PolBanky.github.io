@@ -37,31 +37,36 @@
                      <!-- INPUT SDR -->
     <div>
 <!--        <input type="number" id="SDR_input" placeholder="SDR Value" list="17 11 7" title="Значение SDR">-->
-        <select class="bigAndAline" id="SDR_Value">		<!-- select "kg_or_N" -->
+        <select class="bigAndAline" id="SDR_Value" onchange="Event_SelectChng()">		<!-- select "kg_or_N" -->
             <option value="17">SDR17 PN=10bar</option>
+            <option value="13.6">SDR13,6 PN=12,5bar</option>
             <option value="11">SDR11 PN=16bar</option>
             <option value="9">SDR9 PN=20bar</option>
             <option value="7.4">SDR7,4 PN=25bar</option>
 		</select>
-        <label for="SDR_input" id="lbl_SDR"> Значение SDR</label>
+        <label for="SDR_Value"> Значение SDR</label>
     </div>
           <!-- INPUT DIAMETER, mm -->
     <div>
-        <input type="number" id="input_dia_ex" oninput="Event_TxtInput()" min="0" max="1600" placeholder="Pipe's Diameter" step="0.01">
+        <input type="number" id="input_dia_ex" oninput="Event_Input_Num()" min="0" max="1600" placeholder="Pipe's Diameter" step="0.01">
         <label for="input_dia_ex" id="lbl_dia_ex"> Наружный диаметр трубы, mm</label>	
     </div>
-    		<!-- BUTTON RUN -->
-<!-- <div>
+<!-- <div>     BUTTON RUN
 		<input type="button" id="calc" onclick="Event_PressButton()" value="Calculate Thickness" title="Calculate Thickness">
 </div> -->
-    <!-- OUTPUT THICKNESS, mm -->
+    <!-- OUTPUT THICKNESS AND DIA_IN, mm -->
 		<div>
-			<div class="divOutPut" id="thickness_output" title="Толщина стенки">0,000</div>
+			<div class="divOutPut" id="output_thickness" title="Толщина стенки">0,0</div>
 			<div class="divLbl" id="lbl_thickness">Толщина стенки, мм</div>
+		</div>
+		<div>
+			<div class="divOutPut" id="output_dia_in">0,0</div>
+			<div class="divLbl">Внутренний диаметр трубы, мм</div>
 		</div>
     </fieldset>
     <div class="zero">
-        <iframe width="880" height="495" src="../data/sdr_100_256_840.png" seamless="seamless" frameborder="0"></iframe>
+        <img src="../data/sdr_100_256_840_head.png" alt="header">
+        <iframe width="880" height="200" src="../data/sdr_100_256_840.png" seamless="seamless" frameborder="0"></iframe>
     </div>
 
 	<h2 id="muftaReg">Муфта регулировочная (вставка демонтажная)</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>

@@ -18,11 +18,13 @@
    <ul>
 		<li><a href="#standard">Most Used Standards</a></li>
 		<li><a href="#inch">Дюйм и трубный дюйм</a></li>
-		<li><a href="angle.html" target="_blank">Convert Angle</a></li>
+		<ul>
+			<li><a href="#inch1">Калибр в сотых долях дюйма - в миллиметры</a></li>
+		</ul>
+		<li><a href="angle.html" target="_blank">Convert decimal Angle to grad-min-sec and More</a></li>
 		<li><a href="#angles">Углы конусов</a></li>
 		<li><a href="#keys">Места под ключи</a></li>
 		<li><a href="#convert">DIN, ISO</a></li>
-		<!-- <li><a href="#physics">Курс физики (movie)</a></li> -->
 	</ul>
 </div>
 <hr>
@@ -82,13 +84,13 @@
 	<tr><td>6        </td><td>150</td><td>163,830</td><td>165,0</td></tr>
 </table>
 
-<h4>Калибры оружия</h4>
+<h4 id="inch1">Калибры оружия</h4>
 <p>Калибр стрелкового оружия в США принято измерять в сотых долях дюйма, (в Великобритании — традиционно в тысячных долях). Например, знаменитый 45-й калибр — это 0,45 дюйма (или 11,43 мм); 30-й — это 0,30 дюйма (или 7,62 мм); 50-й — это 0,50 дюйма (или 12,7 мм), и т. д.</p>
 
 <fieldset>
 	<legend>Калибр в сотых долях дюйма - в миллиметры</legend>
 <div>	<!-- INPUT CALIBRE -->
-	<input type="number" id="input_calibre" oninput="Event_TxtInput()" placeholder="Calibre">
+	<input type="number" id="input_calibre" oninput="Event_Input_Num()" placeholder="Calibre">
 	<label for="input_calibre" id="lbl_calibre">Калибр в сотых долях дюйма</label>
 </div>
 	<!-- Вывод результатов -->

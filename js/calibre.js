@@ -10,12 +10,12 @@ var calibre = {
 
 
 // Событие ввод числа
-function Event_TxtInput() {
+function Event_Input_Num() {
     calibre.calibreINCH = document.getElementById('input_calibre').value;
     calibre.eval_calibre();
     // window.alert("Calibre = " + calibre.calibreINCH + " inch and " + calibre.calibreMM + " mm");
     Output_Calibre();
-} // function Event_TxtInputd()
+} // function Event_Input_Numd()
 
 
 // Вывод калибра в мм

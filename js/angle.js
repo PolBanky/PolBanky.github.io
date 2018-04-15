@@ -14,7 +14,7 @@ function Event_PressButton() {
 
 
 // Событие ввод числа + Enter
-function Event_TxtInput() {
+function Event_Input_Num() {
     angleDec = document.getElementById('input_angle_dec').value;
     // window.alert("Angle = " + angleDec);
     document.getElementById('input_grad').value = angleDec;
