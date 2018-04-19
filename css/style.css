@@ -54,9 +54,9 @@ h4 {
 }
 
 p {
-    font-size: 1.0em;      /* Размер шрифта */
-	text-indent: 25px;
-	margin: 0px 0px 0px 0px;  /* top right bottom left */
+    font-size: 1.0em;        /* Размер шрифта */
+	text-indent: 25px;		 /* Отступ первой строки */
+	margin: 0px 0px 0px 0px; /* top right bottom left */
 	/*	border: 1px dashed #d2b48c; */
 	padding: 4px 0px 4px 0px; /* top right bottom left */
 }
@@ -132,6 +132,11 @@ div.tblOfContent {     /* ОГЛАВЛЕНИЕ */
 div.zero {
 	margin: 5px 0px 5px 0px; /* top right bottom left */
 	padding: 5px 0px 5px 0px; /* top right bottom left */
+}
+
+pre {
+	color: #223cb2;   	  /* Цвет текста */
+	font-size: 1.3em; 		/* Размер шрифта */
 }
 
 /* INPUT */
