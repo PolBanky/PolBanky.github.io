@@ -43,6 +43,7 @@ h2 {
     padding: 20px 15px 8px 60px; /* top right bottom left */
 }
 h3 {
+	display: inline-block;
     color: darkgreen;
     margin: 0px 0px 0px 0px;
     padding: 8px 0px 5px 15px; /* top right bottom left */
