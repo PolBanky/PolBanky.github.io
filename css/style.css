@@ -1,5 +1,7 @@
 html {
-	background: #e6e9e9;
+	/* background: #e6e9e9; */
+    /* background-image: url("../images/brown_bump.png"); */
+    /* background-image: url("../images/grass_bermuda.jpg"); */
     background-image: url("../images/background_31.png");
 }
 
@@ -234,9 +236,9 @@ img {
 margin: 0px 0px 0px 0px;
 }
 img.fs {
-    cursor: pointer;
+    /* cursor: pointer; */
     /*    cursor: url("../images/Cat_lick_paw.gif"), pointer;*/
-       /* cursor: url("../images/search_28.png"), pointer; */
+    cursor: url("../images/search_64.png"), pointer;
 }
 .fs:-ms-fullscreen { width: 100%; }
 .fs:-webkit-full-screen { width: 100%; }
