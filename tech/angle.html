@@ -22,14 +22,14 @@
 <fieldset>
 	<legend>Исходные данные</legend>		
 <div>	<!-- INPUT DEC ANGLE, GRAD -->
-	<input type="number" id="input_angle_dec" oninput="Event_Input_Num()" placeholder="Decimal Angle" min="0" max="90" autofocus>  <!-- onchange -->
-	<label for="input_angle_dec" id="lbl_angle_dec">Угол, decimal grad</label>	
+	<input type="number" id="input_deg" oninput="Event_InputDeg()" placeholder="Decimal Angle" min="0" max="90" autofocus><label class="fat"> &#176</label>
+	<label> Angle in decimal grad</label>	
 </div>		
 <div>	<!-- INPUT MIN/SEC ANGLE, GRAD -->
-	<input type="number" class="grad" id="input_grad" placeholder="Grad" min="0" max="89" step="1">
-	<input type="number" class="minsec" id="input_min" placeholder="Min" min="0" max="59" step="1">
-	<input type="number" class="minsec" id="input_sec" placeholder="Sec"min="0" max="59" step="1">
-	<label for="input_sec" id="lbl_input_angle">Угол, grad min sec</label>	
+	<input type="number" class="grad" id="input_grad" oninput="Event_InputGradMinSec()" placeholder="Grad" min="0" max="89" step="1"><label class="fat"> &#176</label>
+	<input type="number" class="minsec" id="input_min" oninput="Event_InputGradMinSec()" placeholder="Min" min="0" max="59" step="1"><label class="fat"> &#39</label>
+	<input type="number" class="minsec" id="input_sec" oninput="Event_InputGradMinSec()" placeholder="Sec" min="0" max="59" step="1"><label class="fat"> &#34</label>
+	<label for="input_sec" id="lbl_input_angle"> Angle in grad, min, sec.</label>	
 </div>		
 
 <div>	<!-- BUTTON RUN  галочка на кнопке - см. css -->
@@ -39,10 +39,10 @@
 </fieldset>
 	<!-- Вывод результатов -->
 <fieldset>
-	<legend>Результаты расчета</legend>
+	<legend>Angle's Trigenometry</legend>
 		<div>	
-			<div class="divOutPut" id="area_output">0.000</div>
-			<div class="divLbl" id="lbl_area">Угол в радианах</div>
+			<div class="divOutPut" id="angl_in_rad_output">0.000</div>
+			<div class="divLbl">Угол в радианах</div>
 		</div>		
 </fieldset>
 	</form>	<!-- end of Form !!!!! -->
