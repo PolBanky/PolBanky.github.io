@@ -21,20 +21,28 @@
 	<form action="" onsubmit="return false;">
 <fieldset>
 	<legend>Исходные данные</legend>		
-<div>	<!-- INPUT DEC ANGLE, GRAD -->
-	<input type="number" id="input_deg" oninput="Event_InputDeg()" placeholder="Decimal Angle" min="0" max="90" autofocus><label class="fat"> &#176</label>
+<div>	<!-- INPUT DEC ANGLE, GRAD     type="number" -->
+	<input type="number" id="input_deg" oninput="Event_InputDeg()" onmouseover="Event_Over()" onfocus="Event_Focus()" onkeydown="Event_KeyDown()" onkeypress="Event_KeyPress()" onkeyup="Event_KeyUp()" placeholder="Angle Decimal">
+	<label class="fat"> &#176</label>
 	<label> Angle in decimal grad</label>	
 </div>		
 <div>	<!-- INPUT MIN/SEC ANGLE, GRAD -->
-	<input type="number" class="grad" id="input_grad" oninput="Event_InputGradMinSec()" placeholder="Grad" min="0" max="89" step="1"><label class="fat"> &#176</label>
-	<input type="number" class="minsec" id="input_min" oninput="Event_InputGradMinSec()" placeholder="Min" min="0" max="59" step="1"><label class="fat"> &#39</label>
-	<input type="number" class="minsec" id="input_sec" oninput="Event_InputGradMinSec()" placeholder="Sec" min="0" max="59" step="1"><label class="fat"> &#34</label>
-	<label for="input_sec" id="lbl_input_angle"> Angle in grad, min, sec.</label>	
+	<input type="number" class="grad" id="input_grad" oninput="Event_InputGradMinSec()" placeholder="Grad">
+	<label class="fat"> &#176</label>
+	<input type="number" class="minsec" id="input_min" oninput="Event_InputGradMinSec()" placeholder="Min">
+	<label class="fat"> &#39</label>
+	<input type="number" class="minsec" id="input_sec" oninput="Event_InputGradMinSec()" placeholder="Sec">
+	<label class="fat"> &#34</label>
+		<label for="input_sec" id="lbl_input_angle"> Angle in grad, min, sec.</label>	
 </div>		
 
 <div>	<!-- BUTTON RUN  галочка на кнопке - см. css -->
-		<input type="button" id="calc" onclick="Event_PressButton()" value="Calculate Angle's Trig" accesskey="4" title="Alt+4">
-		<!-- Chrome = Alt+4 -->     <!-- Firefox = Shift+Alt+4 -->
+		<input type="button" id="btn_calc" value="Calculate Angle's Trig">  <!-- onclick="Event_ClickBtn()" -->
+		<!-- Chrome = Alt+4 -->     <!-- Firefox = Shift+Alt+4 -->  
+</div>
+<div>	<!-- BUTTON RUN  галочка на кнопке - см. css -->
+		<input type="button" id="btn_test" onclick="Event_ClickBtnTest()" value="Test">  <!-- onclick="Event_ClickBtn()" -->
+		<!-- Chrome = Alt+4 -->     <!-- Firefox = Shift+Alt+4 -->  
 </div>
 </fieldset>
 	<!-- Вывод результатов -->
