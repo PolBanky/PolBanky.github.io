@@ -1,4 +1,4 @@
-// Ver. from M + (made in branch test3 (from folder Angle))
+// Ver. from M + (made in branch test3 )
 
 var Angle_Decimal = 0;  // Угол с клавы в ДЕСЯТИЧНЫХ град
 var Angle_Sec = 0;      // Угол с клавы в секундах
@@ -88,28 +88,56 @@ function Event_Focus() {
 }
 
 function Event_KeyDown() {
-    console.log("Event KeyDown");
+    // console.log("Event KeyDown");
     console.log("Type KeyDown =  " + event.type + " on " + event.currentTarget);
 }
 
-function Event_KeyPress() {
-    console.log("Event KeyPress");
+/* function Event_KeyPress(e) */
+input_min.onkeypress = input_grad.onkeypress = function(e) {   
     console.log("Type KeyPress =  " + event.type + " on " + event.currentTarget);
+    e = e || event;
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
+    var chr = getChar(e);
+    console.log("var chr = " + chr);
+    if (chr == null) return;
+    if (chr < '0' || chr > '9') {
+      return false;
+    }
 }
+
+function getChar(event) {
+    console.log("function getChar(event)");
+    if (event.which == null) {
+      if (event.keyCode < 32) return null;
+      return String.fromCharCode(event.keyCode) // IE
+    }
+    if (event.which != 0 && event.charCode != 0) {
+      if (event.which < 32) return null;
+      return String.fromCharCode(event.which) // остальные
+    }
+    return null; // специальная клавиша
+  }
+
+// console.log("Event KeyPress");
+// console.log("Type KeyPress =  " + event.type + " on " + event.currentTarget);
+// var get_charCode = event.charCode;
+// var symb_from_charCode = String.fromCharCode(get_charCode);
+// console.log("Typed charCode = " + get_charCode + ";  and var get_charCode type = " + typeof(get_charCode));    
+// console.log("Symbol from charCode = " + symb_from_charCode + "; and var symb_from_charCode type = " + typeof(symb_from_charCode));
 
 function Event_KeyUp() {
-    console.log("Event KeyUp");
+    // console.log("Event KeyUp");
+    console.log("Type KeyUp =  " + event.type + " on " + event.currentTarget);
 }
 
+    // КНОПКА = input type="button" id="btn_calc"
 btn_calc.onclick = function(event) {
-    console.log("Event Click " + event.type + " on " + event.currentTarget);
+    console.log("Event Button 'Calculate Angle's Trig' = " + event.type + " on " + event.currentTarget);
     console.log("X = " + event.clientX + " Y = " + event.clientY);
-    // console.log("X = " + event.currentTarget.clientX + " Y = " + event.currentTarget.clientY);
-    
 }
 
 function Event_ClickBtnTest() {
-    console.log("Event Click " + event.type + " on " + event.currentTarget);
+    console.log("Event Button 'Test' = " + event.type + " on " + event.currentTarget);
     console.log("X = " + event.clientX + " Y = " + event.clientY);
 }
 
