@@ -147,7 +147,7 @@ input {
 	margin: 0px 0px 0px 0px; /* top right bottom left */
 	padding: 5px;            /* top right bottom left */
 }
-input[type="number"] {
+input[type="number"],input[type="text"] {
 	color: #b22222;   	  /* Цвет текста */
 	font-size: 1.2em; 		/* Размер шрифта */
     width: 250px;
@@ -156,6 +156,7 @@ input[type="number"] {
 	transition: background-color 1s;
 }
 input[type="number"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
+input[type="text"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
 input[type="number"].grad {
 	width: 100px;	
 }

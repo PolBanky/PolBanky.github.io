@@ -1,4 +1,11 @@
-// Ver. from M + (made in branch test3 )
+// 
+var iDec = document.getElementById("IDec");    // ссылка на HTML Input = i(nput)Dec(imal)
+var iG   = document.getElementById('IG');
+var iM   = document.getElementById('IM');
+var iS   = document.getElementById('IS');
+
+var txt = "";
+var num = 0;
 
 var Angle_Decimal = 0;  // Угол с клавы в ДЕСЯТИЧНЫХ град
 var Angle_Sec = 0;      // Угол с клавы в секундах
@@ -16,119 +23,85 @@ var a_dec = 0;          // из deg-min-sec в ДЕСЯТИЧНЫЕ град
 
 var i = 0;              // номера стартов функции события
     
-    // Событие - ввод символа (или удаление)
-    function Event_InputDeg() {
-        console.log("******* Event_InputDeg() -> Start num." + ++i + " *******");
-        
-    var temp_Angle_Decimal = parseFloat(document.getElementById('input_deg').value);
-    console.log("temp_Angle_Decimal after get Input.Value.  Type = " + typeof(temp_Angle_Decimal) + " and Value = " + temp_Angle_Decimal);
-    Angle_Decimal = temp_Angle_Decimal ? temp_Angle_Decimal : Angle_Decimal;
-    console.log("Angle_Decimal after z = x ? x : y   Type = " + typeof(Angle_Decimal) + " and Value = " + Angle_Decimal);
+
+iDec.onkeypress = iS.onkeypress = function(event) {
+    var chr = event.key;
+    if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
+    return false;
+    }   // if
+    if((chr == ',')||(chr == '.')) {
+    var r = txt.indexOf(",");
+    if(r != -1) return false;
+    r = txt.indexOf(".");
+    if(r != -1) return false;
+    }   // if
+}   //  onkeypress    
+
+
+iM.onkeypress = iG.onkeypress = function(event) {   
+    var chr = event.key;
+    if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9') return false;
+}
+
+
+iDec.oninput = function(event) {
+    txt = this.value.replace(/,/,'.');
+    if((txt=="")||(txt==",")||(txt==".")) {
+    num = 0;
+    iG.value = "";
+    iM.value = "";
+    iS.value = "";
+    }
+    else {
+    num = parseFloat(txt);    
+    Angle_Decimal = num;
     Angle_Sec = Angle_Decimal * 3600;   // Угол с клавы в секундах
-    console.log("Angle_Decimal after -> Angle_Sec = Angle_Decimal * 3600;   Type = " + typeof(Angle_Decimal) + " and Value = " + Angle_Decimal);
     deg = Math.floor(Angle_Decimal);    // ГРАДУСЫ
     degSec = deg * 3600;                // ГРАДУСЫ - в секундах
     fracSec = Angle_Sec - degSec;       // Дробная часть градуса - в секундах
     fracMin = fracSec / 60;             // Дробная часть градуса - в минутах
     min = Math.floor(fracMin);          // МИНУТЫ
     minSec = min * 60;                  // МИНУТЫ - в секундах
-    sec = fracSec - minSec;             // СЕКУНДЫ    
-    console.log("Angle_Sec   Type = " + typeof(Angle_Sec) + " and Value = " + Angle_Sec);
-    console.log("deg   Type = " + typeof(deg) + " and Value = " + deg);
-    console.log("degSec   Type = " + typeof(degSec) + " and Value = " + degSec);
-    console.log("fracSec   Type = " + typeof(fracSec) + " and Value = " + fracSec);
-        
-    // console.log("******* After Output ********");
-    document.getElementById('input_grad').value = deg;
-    // console.log("deg   Type = " + typeof(deg) + " and Value = " + deg);
-    document.getElementById('input_min').value = min;
-    // console.log("min   Type = " + typeof(deg) + " and Value = " + min);
-    document.getElementById('input_sec').value = sec.toFixed(2);
-    // console.log("sec   Type = " + typeof(sec) + " and Value = " + sec);
-
-    Trig();
+    sec = fracSec - minSec;             // СЕКУНДЫ        
+    iG.value = deg;
+    iM.value = min;
+    iS.value = sec.toFixed(2);
+    }
 } // function Event_InputDeg()
 
 
-// Событие - ввод символа (или удаление)
-function Event_InputGradMinSec() {
+iG.oninput = iM.oninput = function(event) {
+    Solution();
+}
+
+
+iS.oninput = function(event) {
+    txt = this.value.replace(/,/,'.');
+    if((txt=="")||(txt==",")||(txt==".")) num = 0;
+    else num = parseFloat(txt);
+    this.value = num;
+    Solution();
+}
+
+
+function Solution() {
     a_dec = 0;
-    deg1 = document.getElementById('input_grad').value;
-    min1 = document.getElementById('input_min').value;
-    sec1 = document.getElementById('input_sec').value;
-    
-    console.log("******* Start ********");
-    console.log("deg1 = " + deg1);
-    console.log("min1 = " + min1);
-    console.log("sec1 = " + sec1);
-    console.log("a_dec = " + a_dec);
-    
+    deg1 = iG.value;
+    min1 = iM.value;
+    sec1 = iS.value;
+        
     deg1 = deg1 * 3600;
     min1 = min1 * 60;
     sec1 = sec1 * 1;
     deg1 = deg1 + min1 + sec1;
     a_dec = deg1 / 3600;
 
-    console.log("deg1 = " + deg1);
-    console.log("min1 = " + min1);
-    console.log("sec1 = " + sec1);
-    console.log("a_dec = " + a_dec);
-    
-    document.getElementById('input_deg').value = a_dec;
-    Trig();
+    iDec.value = a_dec;
 } // function Event_InputGradMinSec()
 
 
-function Event_Over() {
-    console.log("Event Over Input");
-}
+// *************************************
 
-function Event_Focus() {
-    console.log("Event Focus in Input");    
-}
-
-function Event_KeyDown() {
-    // console.log("Event KeyDown");
-    console.log("Type KeyDown =  " + event.type + " on " + event.currentTarget);
-}
-
-/* function Event_KeyPress(e) */
-input_min.onkeypress = input_grad.onkeypress = function(e) {   
-    console.log("Type KeyPress =  " + event.type + " on " + event.currentTarget);
-    e = e || event;
-    if (e.ctrlKey || e.altKey || e.metaKey) return;
-    var chr = getChar(e);
-    console.log("var chr = " + chr);
-    if (chr == null) return;
-    if (chr < '0' || chr > '9') {
-      return false;
-    }
-}
-
-function getChar(event) {
-    console.log("function getChar(event)");
-    if (event.which == null) {
-      if (event.keyCode < 32) return null;
-      return String.fromCharCode(event.keyCode) // IE
-    }
-    if (event.which != 0 && event.charCode != 0) {
-      if (event.which < 32) return null;
-      return String.fromCharCode(event.which) // остальные
-    }
-    return null; // специальная клавиша
-  }
-
-// console.log("Event KeyPress");
-// console.log("Type KeyPress =  " + event.type + " on " + event.currentTarget);
-// var get_charCode = event.charCode;
-// var symb_from_charCode = String.fromCharCode(get_charCode);
-// console.log("Typed charCode = " + get_charCode + ";  and var get_charCode type = " + typeof(get_charCode));    
-// console.log("Symbol from charCode = " + symb_from_charCode + "; and var symb_from_charCode type = " + typeof(symb_from_charCode));
-
-function Event_KeyUp() {
-    // console.log("Event KeyUp");
-    console.log("Type KeyUp =  " + event.type + " on " + event.currentTarget);
-}
 
     // КНОПКА = input type="button" id="btn_calc"
 btn_calc.onclick = function(event) {
