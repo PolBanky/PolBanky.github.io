@@ -157,10 +157,10 @@ input[type="number"],input[type="text"] {
 }
 input[type="number"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
 input[type="text"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
-input[type="number"].grad {
+input[type="text"].grad {
 	width: 100px;	
 }
-input[type="number"].minsec {
+input[type="text"].minsec {
 	width: 100px;
 }
 

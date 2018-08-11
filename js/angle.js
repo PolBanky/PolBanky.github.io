@@ -5,8 +5,8 @@ var iM   = document.getElementById('IM');
 var iS   = document.getElementById('IS');
 
 var txt = "";
-var num = 0;
-var numD = 0;
+var numDec = 0;
+var numG = 0;
 var numM = 0;
 var numS = 0;
 
@@ -46,7 +46,7 @@ iDec.onkeypress = iS.onkeypress = function(event) {
 }   //  onkeypress    
 
 
-iM.onkeypress = iG.onkeypress = function(event) {
+iG.onkeypress = iM.onkeypress = function(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     var chr = event.key;
     console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
@@ -58,20 +58,22 @@ iM.onkeypress = iG.onkeypress = function(event) {
 
 
 iDec.oninput = function(event) {
-    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
+    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id + " data == " + event.data + " type == " + typeof(event.data));
+    console.log(event);
     console.log("Значение по ссылке iDec == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     txt = this.value.replace(/,/,'.');
     console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
     if((txt=="")||(txt==",")||(txt==".")) {
-    num = 0;
-    iG.value = "";
-    iM.value = "";
-    iS.value = "";
+    numDec = 0;
+    iG.value = ""; numG = 0;
+    iM.value = ""; numM = 0;
+    iS.value = ""; numS = 0;
     }
     else {
-    num = parseFloat(txt);
-    console.log("Значение num == " + num + "; type == " + typeof(num));
-    Angle_Decimal = num;
+    numDec = parseFloat(txt);
+    console.log("Значение numDec == " + numDec + "; type == " + typeof(numDec));
+    Angle_Decimal = numDec;
+    console.log("Значение Angle_Decimal == " + Angle_Decimal + "; type == " + typeof(Angle_Decimal));
     Angle_Sec = Angle_Decimal * 3600;   // Угол с клавы в секундах
     deg = Math.floor(Angle_Decimal);    // ГРАДУСЫ
     degSec = deg * 3600;                // ГРАДУСЫ - в секундах
@@ -81,8 +83,12 @@ iDec.oninput = function(event) {
     minSec = min * 60;                  // МИНУТЫ - в секундах
     sec = fracSec - minSec;             // СЕКУНДЫ        
     iG.value = deg;
+    numG = deg;
+    console.log("Значение iG.value == " + iG.value + "; type == " + typeof(iG.value));
     iM.value = min;
+    numM = min;
     iS.value = sec.toFixed(2);
+    numS  = sec.toFixed(2);
     }
 } // function Event_InputDeg()
 
@@ -90,31 +96,35 @@ iDec.oninput = function(event) {
 iG.oninput = iM.oninput = function(event) {        
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     console.log("Значение по ссылке == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
+    // txt = this.value;
+    // console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
     switch (this) {
         case iG:
-            console.log("switch");
-            break;
-    
+        if(this.value=="")
+            numG = 0;
+        else{
+            numG = parseFloat(this.value);
+            }
+            console.log("numG == " + numG + "; type == " + typeof(numG));
+            break;    
+        case iM:
+        if(this.value=="")
+            numM = 0;
+        else{
+            numM = parseFloat(this.value);
+        }
+        console.log("numM == " + numM + "; type == " + typeof(numM));
+            break;    
         default:
             break;
-    }
-    txt = this.value;
-    console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
-    if((numD==0)&(numM==1)&(numS==0)) {
+    }   // switch (this)
+    if((numG==0)&(numM==0)&(numS==0)) {
     iDec.value = "";
     }
     else
-    {
-        switch (this) {
-            case iG:
-                console.log("another switch");
-                break;
-        
-            default:
-                break;
-        }
-    num = parseFloat(txt);
-    console.log("Значение переменной num == " + num + "; type == " + typeof(num));
+    {            
+    console.log("Значение numG == " + numG + "; type == " + typeof(numG));
+    console.log("Значение numM == " + numM + "; type == " + typeof(numM));
     Solution();
     }    
 }
@@ -125,10 +135,14 @@ iS.oninput = function(event) {
     console.log("Значение по ссылке iS == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     txt = this.value.replace(/,/,'.');
     console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
-    if((txt=="")||(txt==",")||(txt==".")) num = 0;
+    if((txt=="")||(txt==",")||(txt=="."))  {
+    numS = 0;
+    if((numG==0)&(numM==0)&(numS==0))
+        iDec.value = "";
+    }
     else { 
-    num = parseFloat(txt);
-    console.log("Значение num == " + num + "; type == " + typeof(num));
+    numS = parseFloat(txt);
+    console.log("Значение numS == " + numS + "; type == " + typeof(numS));
     Solution();
     }
 }
@@ -136,9 +150,9 @@ iS.oninput = function(event) {
 
 function Solution() {
     a_dec = 0;
-    deg1 = iG.value;
-    min1 = iM.value;
-    sec1 = num;
+    deg1 = numG;
+    min1 = numM;
+    sec1 = numS;
         
     deg1 = deg1 * 3600;
     min1 = min1 * 60;
