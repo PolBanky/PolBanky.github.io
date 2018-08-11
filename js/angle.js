@@ -5,6 +5,7 @@ var iM   = document.getElementById('IM');
 var iS   = document.getElementById('IS');
 
 var txt = "";
+var tmp = "";
 var numDec = 0;
 var numG = 0;
 var numM = 0;
@@ -34,16 +35,32 @@ iDec.onkeypress = iS.onkeypress = function(event) {
     if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
     console.log("Entered Symbol out of Range and now will be returned value == false");
     return false;
-    }   // if
-    if((chr == ',')||(chr == '.')) {
+}   // if
+if((chr == ',')||(chr == '.')) {
     var r = txt.indexOf(",");
     console.log("Index of ',' == " + r);
     if(r != -1) return false;
     r = txt.indexOf(".");
     console.log("Index of '.' == " + r);
     if(r != -1) return false;
-    }   // if
-}   //  onkeypress    
+}   // if((chr == ',')||(chr == '.'))
+tmp = this.value + chr;
+console.log("Значение tmp == " + tmp + "; type == " + typeof(tmp) + "; length of string == " + tmp.length);
+switch (this) {
+    case iDec:
+    if(+tmp > 359.999) {
+        console.log("Угол д.б. менее 360 град. and now will be returned value == false");
+        return false; }
+        break;    
+    case iS:
+    if(+tmp >= +60) {
+        console.log("В минуте д.б. менее 60 секунд and now will be returned value == false");
+        return false; }
+        break;    
+    default:
+        break;
+    }   // switch (this)
+}       //  onkeypress    
 
 
 iG.onkeypress = iM.onkeypress = function(event) {
@@ -52,8 +69,24 @@ iG.onkeypress = iM.onkeypress = function(event) {
     console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
     if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9') {
     console.log("Entered Symbol out of Range and now will be returned value == false");
-     return false;
+    return false;
     }
+    tmp = this.value + chr;
+console.log("Значение tmp == " + tmp + "; type == " + typeof(tmp) + "; length of string == " + tmp.length);
+switch (this) {
+    case iG:
+    if(+tmp > +359) {
+        console.log("Угол д.б. менее 360 град. and now will be returned value == false");
+        return false; }
+        break;    
+    case iM:
+    if(+tmp > +59) {
+        console.log("В градусе д.б. менее 60 минут and now will be returned value == false");
+        return false; }
+        break;    
+    default:
+        break;
+    }   // switch (this)
 }
 
 
@@ -95,9 +128,7 @@ iDec.oninput = function(event) {
 
 iG.oninput = iM.oninput = function(event) {        
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    console.log("Значение по ссылке == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
-    // txt = this.value;
-    // console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
+    console.log("Значение по ссылке " + event.target.id + " == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     switch (this) {
         case iG:
         if(this.value=="")
