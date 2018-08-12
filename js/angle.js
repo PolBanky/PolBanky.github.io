@@ -26,36 +26,46 @@ var sec1 = 0;           // sec в deg-min-sec
 var a_dec = 0;          // из deg-min-sec в ДЕСЯТИЧНЫЕ град
 
 var i = 0;              // номера стартов функции события
-    
+ 
+function I(txt) {
+    forInfo.innerHTML = txt;
+}
 
 iDec.onkeypress = iS.onkeypress = function(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     var chr = event.key;
     console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
     if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
-    console.log("Entered Symbol out of Range and now will be returned value == false");
-    return false;
-}   // if
+        I("Только цифры и десятичные разделители");
+        return false; }
+    else I("Ready");
 if((chr == ',')||(chr == '.')) {
     var r = txt.indexOf(",");
-    console.log("Index of ',' == " + r);
-    if(r != -1) return false;
+    if(r != -1) {
+        I("Только один десятичный разделитель");
+        return false; }   
     r = txt.indexOf(".");
-    console.log("Index of '.' == " + r);
-    if(r != -1) return false;
+    if(r != -1) {
+        I("Только один десятичный разделитель");
+        return false; }    
+    I("Ready");
 }   // if((chr == ',')||(chr == '.'))
 tmp = this.value + chr;
 console.log("Значение tmp == " + tmp + "; type == " + typeof(tmp) + "; length of string == " + tmp.length);
 switch (this) {
     case iDec:
-    if(+tmp > 359.999) {
-        console.log("Угол д.б. менее 360 град. and now will be returned value == false");
-        return false; }
+        if(+tmp > 359.999) {
+            I("Угол д.б. менее 360 град.");
+            return false; }
+        else
+            I("Ready");
         break;    
     case iS:
-    if(+tmp >= +60) {
-        console.log("В минуте д.б. менее 60 секунд and now will be returned value == false");
-        return false; }
+        if(+tmp >= 60) {
+            I("В минуте д.б. менее 60 секунд");
+            return false; }
+        else
+            I("Ready");
         break;    
     default:
         break;
@@ -68,21 +78,23 @@ iG.onkeypress = iM.onkeypress = function(event) {
     var chr = event.key;
     console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
     if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9') {
-    console.log("Entered Symbol out of Range and now will be returned value == false");
-    return false;
-    }
+        I("Только цифры");
+        return false; }
+    else I("Ready");
     tmp = this.value + chr;
-console.log("Значение tmp == " + tmp + "; type == " + typeof(tmp) + "; length of string == " + tmp.length);
+    console.log("Значение tmp == " + tmp + "; type == " + typeof(tmp) + "; length of string == " + tmp.length);
 switch (this) {
     case iG:
-    if(+tmp > +359) {
-        console.log("Угол д.б. менее 360 град. and now will be returned value == false");
-        return false; }
+        if(+tmp > 359) {
+            I("Угол д.б. менее 360 град.");
+            return false; }
+        else I("Ready");         
         break;    
     case iM:
-    if(+tmp > +59) {
-        console.log("В градусе д.б. менее 60 минут and now will be returned value == false");
-        return false; }
+        if(+tmp > 59) {
+            I("В градусе д.б. менее 60 минут");
+            return false; }
+        else I("Ready");  
         break;    
     default:
         break;
@@ -91,19 +103,27 @@ switch (this) {
 
 
 iDec.oninput = function(event) {
-    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id + " data == " + event.data + " type == " + typeof(event.data));
-    console.log(event);
+    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
+    // console.log(event);
     console.log("Значение по ссылке iDec == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     txt = this.value.replace(/,/,'.');
     console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
     if((txt=="")||(txt==",")||(txt==".")) {
-    numDec = 0;
-    iG.value = ""; numG = 0;
-    iM.value = ""; numM = 0;
-    iS.value = ""; numS = 0;
-    }
+        this.value = ""; numDec = 0;
+        iG.value = ""; numG = 0;
+        iM.value = ""; numM = 0;
+        iS.value = ""; numS = 0;
+        return false; }
     else {
-    numDec = parseFloat(txt);
+            numDec = parseFloat(txt);
+        if(numDec > 359.999) {
+            I("Угол д.б. менее 360 град.");
+            this.value = ""; numDec = 0;
+            iG.value = ""; numG = 0;
+            iM.value = ""; numM = 0;
+            iS.value = ""; numS = 0;
+            return false; }
+        else I("Ready");
     console.log("Значение numDec == " + numDec + "; type == " + typeof(numDec));
     Angle_Decimal = numDec;
     console.log("Значение Angle_Decimal == " + Angle_Decimal + "; type == " + typeof(Angle_Decimal));
@@ -131,31 +151,34 @@ iG.oninput = iM.oninput = function(event) {
     console.log("Значение по ссылке " + event.target.id + " == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     switch (this) {
         case iG:
-        if(this.value=="")
-            numG = 0;
-        else{
-            numG = parseFloat(this.value);
-            }
+            if(this.value=="") numG = 0;
+            else numG = parseFloat(this.value);
+            if(numG > 359) {
+                I("Угол д.б. менее 360 град.");
+                this.value = ""; numG = 0;
+                return false; }
+            else I("Ready");
             console.log("numG == " + numG + "; type == " + typeof(numG));
-            break;    
+            break;
         case iM:
-        if(this.value=="")
-            numM = 0;
-        else{
-            numM = parseFloat(this.value);
-        }
-        console.log("numM == " + numM + "; type == " + typeof(numM));
+            if(this.value=="") numM = 0;
+            else numM = parseFloat(this.value);
+            if(numM > 59) {
+                I("В градусе д.б. менее 60 минут");
+                this.value = ""; numM = 0;
+                return false; }
+            else I("Ready");
+            console.log("numM == " + numM + "; type == " + typeof(numM));
             break;    
         default:
             break;
     }   // switch (this)
-    if((numG==0)&(numM==0)&(numS==0)) {
-    iDec.value = "";
-    }
-    else
-    {            
+    if((numG==0)&(numM==0)&(numS==0))
+    { iDec.value = ""; numDec = 0; }
+    else {            
     console.log("Значение numG == " + numG + "; type == " + typeof(numG));
     console.log("Значение numM == " + numM + "; type == " + typeof(numM));
+    console.log("Значение numS == " + numS + "; type == " + typeof(numS));
     Solution();
     }    
 }

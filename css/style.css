@@ -136,6 +136,13 @@ div.zero {
 	margin: 5px 0px 5px 0px; /* top right bottom left */
 	padding: 5px 0px 5px 0px; /* top right bottom left */
 }
+div.alertString {
+	color: #065e20;    /* Цвет текста */
+	/* font-size: 1.0em;  */   /* Размер шрифта */
+	/* margin: 5px 5px 5px 5px; */ /* top right bottom left */
+	/* padding: 5px 5px 5px 5px; */ /* top right bottom left */
+	border: 1px solid #800000;
+}
 
 pre {						/* Показать текст как есть */
 	color: #223cb2;   	  /* Цвет текста */
