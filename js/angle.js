@@ -1,10 +1,12 @@
 // 
-var iDec = document.getElementById("IDec");    // ссылка на HTML Input = i(nput)Dec(imal)
+var iDec = document.getElementById("IDec");     // ссылка на HTML Input = i(nput)Dec(imal)
 var iG   = document.getElementById('IG');
 var iM   = document.getElementById('IM');
 var iS   = document.getElementById('IS');
-var cl   = document.getElementById('clear');    // Клик для очистки всех инпутов
-var outRad = document.getElementById('angl_in_rad_output'); // Вывод значения угла в радианах
+var cl   = document.getElementById('clear');    // Знак градус после децимал инпута  
+    cl.onclick = clearAll;  // Клик для очистки всех инпутов
+var showRad = document.getElementById('angl_in_rad_output');// Вывод значения угла в радианах
+var showRadLabel = document.getElementById('in_rad_lbl');   // Лебел вывода значения угла в радианах
 
 
 var txt = "";
@@ -14,7 +16,7 @@ var numG = 0;
 var numM = 0;
 var numS = 0;
 
-var numDec = 0;  // Угол с клавы в ДЕСЯТИЧНЫХ град
+var numDec = 0;         // Угол с клавы в ДЕСЯТИЧНЫХ град
 var Angle_Sec = 0;      // Угол с клавы в секундах
 var deg = 0;            // Целых градусов в угле
 var degSec = 0;         // Целых градусов в угле - в секундах
@@ -33,8 +35,6 @@ var i = 0;              // номера стартов функции событ
 function I(txt) {
     forInfo.innerHTML = txt;
 }
-
-cl.onclick = clearAll;
 
 function clearAll() {
     iDec.value = ""; numDec = 0;
@@ -235,5 +235,6 @@ function Trig() {
     var dFactor = Math.PI / 180;  // = 0,01745329251994329576923690768489
     console.log("\nЗначение numDec for Trig() == " + numDec + "; type == " + typeof(numDec));
     var Angle_Rad = numDec * dFactor;
-    outRad.innerHTML = Angle_Rad;
+    showRad.innerHTML = Angle_Rad;
+    showRadLabel.innerHTML = "Угол " + numDec + "\u00B0 - в радианах";
 } // function Event_PressButton()
