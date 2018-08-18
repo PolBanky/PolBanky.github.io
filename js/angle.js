@@ -9,12 +9,12 @@ var outRad = document.getElementById('angl_in_rad_output'); // Вывод зна
 
 var txt = "";
 var tmp = "";
-var numDec = 0;
+// var numDec = 0;
 var numG = 0;
 var numM = 0;
 var numS = 0;
 
-var Angle_Decimal = 0;  // Угол с клавы в ДЕСЯТИЧНЫХ град
+var numDec = 0;  // Угол с клавы в ДЕСЯТИЧНЫХ град
 var Angle_Sec = 0;      // Угол с клавы в секундах
 var deg = 0;            // Целых градусов в угле
 var degSec = 0;         // Целых градусов в угле - в секундах
@@ -121,10 +121,9 @@ iDec.oninput = function(event) {
             I("Угол д.б. менее 360 град.");
             clearAll();
             return false; }
-    Angle_Decimal = numDec;
-    console.log("Значение Angle_Decimal == " + Angle_Decimal + "; type == " + typeof(Angle_Decimal));
-    Angle_Sec = Angle_Decimal * 3600;   // Угол с клавы в секундах
-    deg = Math.floor(Angle_Decimal);    // ГРАДУСЫ
+    console.log("Значение numDec == " + numDec + "; type == " + typeof(numDec));
+    Angle_Sec = numDec * 3600;   // Угол с клавы в секундах
+    deg = Math.floor(numDec);    // ГРАДУСЫ
     degSec = deg * 3600;                // ГРАДУСЫ - в секундах
     fracSec = Angle_Sec - degSec;       // Дробная часть градуса - в секундах
     fracMin = fracSec / 60;             // Дробная часть градуса - в минутах
