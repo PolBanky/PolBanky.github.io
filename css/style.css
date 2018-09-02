@@ -238,8 +238,8 @@ select.bigAndAline {
 	color: #FFFFFF;   /* Цвет текста - в этом случае вертикальных палочек */
 	height: 35px;
     margin-top: 10px;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 1%;
+	margin-right: 1%;
 	padding-top: 3px; /* От бордера до текста */
 }
 #topnav a { color: #FFFFFF; }
@@ -251,7 +251,7 @@ margin: 0px 0px 0px 0px;
 img.fs {
     /* cursor: pointer; */
     /*    cursor: url("../images/Cat_lick_paw.gif"), pointer;*/
-    cursor: url("../images/search_64.png"), pointer;
+    cursor: url("../images/search_48.png"), pointer;
 }
 .fs:-ms-fullscreen { width: 100%; }
 .fs:-webkit-full-screen { width: 100%; }

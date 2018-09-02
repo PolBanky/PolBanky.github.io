@@ -4,7 +4,8 @@ var iG   = document.getElementById('IG');
 var iM   = document.getElementById('IM');
 var iS   = document.getElementById('IS');
 var cl   = document.getElementById('clear');    // Знак градус после децимал инпута  
-    cl.onclick = clearAll;  // Клик для очистки всех инпутов
+    /* cl.onclick = clearAll; */                // Клик для очистки всех инпутов
+var btn = document.getElementById('btn_calc');
 var showRad = document.getElementById('angl_in_rad_output');    // Вывод значения угла в радианах
 var showRadLabel = document.getElementById('in_rad_lbl');       // Лебел вывода значения угла в радианах
 var showSin = document.getElementById('sin_output');
@@ -12,9 +13,9 @@ var showCos = document.getElementById('cos_output');
 var showTg = document.getElementById('tg_output');
 var showCtg = document.getElementById('ctg_output');
 
-
 var txt = "";
 var tmp = "";
+var i = 0;              // номера стартов функции события
 
 var numDec = 0;         // Угол с клавы в ДЕСЯТИЧНЫХ град
 var Angle_Sec = 0;      // Угол с клавы в секундах
@@ -28,16 +29,18 @@ var numS = 0;           // Секунды - то что осталось
 var deg1 = 0;           // deg в deg-min-sec
 var min1 = 0;           // min в deg-min-sec
 var sec1 = 0;           // sec в deg-min-sec
-
 var angleInRad = 0;
 
-var i = 0;              // номера стартов функции события
- 
+cl.addEventListener("click",clearAll);
+btn.addEventListener("click",calcRun);
+
+
 function I(txt) {
     forInfo.innerHTML = txt;
 }
 
 function clearAll() {
+    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     iDec.value = ""; numDec = 0;
     iG.value = ""; numG = 0;
     iM.value = ""; numM = 0;
@@ -207,9 +210,10 @@ function Solution() {
 
 
     // КНОПКА = input type="button" id="btn_calc"
-btn_calc.onclick = function(event) {
+/* btn_calc.onclick =  */
+function calcRun(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    console.log("Event Button 'Calculate Angle's Trig' = " + event.type + " on " + event.currentTarget.id);
+    console.log("Event Button 'Calculate Angle's Trig' = " + event.type + " in id == " + event.currentTarget.id);
     console.log("X = " + event.clientX + " Y = " + event.clientY);
     gradInRad();
     sin();
@@ -250,10 +254,3 @@ function ctg() {
     var ctg1 = (1/Math.tan(angleInRad)).toFixed(6); 
     showCtg.innerHTML = ctg1;
 }
-
-
-
-
-
-
-
