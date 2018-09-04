@@ -5,6 +5,7 @@ var iM   = document.getElementById('IM');
 var iS   = document.getElementById('IS');
 var cl   = document.getElementById('clear');    // Знак градус после децимал инпута  
     /* cl.onclick = clearAll; */                // Клик для очистки всех инпутов
+var inf = document.getElementById('forInfo');
 var btn = document.getElementById('btn_calc');
 var showRad = document.getElementById('angl_in_rad_output');    // Вывод значения угла в радианах
 var showRadLabel = document.getElementById('in_rad_lbl');       // Лебел вывода значения угла в радианах
@@ -36,7 +37,7 @@ btn.addEventListener("click",calcRun);
 
 
 function I(txt) {
-    forInfo.innerHTML = txt;
+    inf.innerHTML = txt;
 }
 
 function clearAll() {
@@ -48,19 +49,22 @@ function clearAll() {
 }
 
 
-iDec.onkeypress = iS.onkeypress = function(event) {
+iDec.onkeypress = iS.onkeypress = function kPressFloat(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     var chr = event.key;
     console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
     if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
         I("Только цифры и десятичные разделители");
+        console.log('Only Numbers and Dividers - now will be return False');
         return false; }
     if((chr == ',')||(chr == '.')) {
         if (this.value.length < 1) {
             I("Десятичный разделитель не надо ставить первым - а для порядка !");
+            console.log('Divider must be not first - now will be return False');
             return false; }
     if ((this.value.indexOf(",") != -1) || (this.value.indexOf(".") != -1)) {
         I("Только один десятичный разделитель");
+        console.log('Only One Divider - now will be return False');
         return false; }    
     }   // if((chr == ',')||(chr == '.'))
     tmp = this.value + chr;
@@ -80,10 +84,10 @@ switch(this) {
         break;
 }   // switch (this)
     I("Ready");
-}       //  onkeypress    
+}   // onkeypress
 
 
-iG.onkeypress = iM.onkeypress = function(event) {
+iG.onkeypress = iM.onkeypress = function kPressInt(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     var chr = event.key;
     console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
@@ -110,7 +114,7 @@ switch(this) {
 }
 
 
-iDec.oninput = function(event) {
+iDec.oninput = function kInputIDec(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     // console.log(event);
     console.log("Значение по ссылке iDec == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
@@ -144,7 +148,7 @@ iDec.oninput = function(event) {
 } // iDec.oninput
 
 
-iG.oninput = iM.oninput = function(event) {        
+iG.oninput = iM.oninput = function kInputInt(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     console.log("Значение по ссылке " + event.target.id + " == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     switch(this) {
@@ -178,7 +182,7 @@ iG.oninput = iM.oninput = function(event) {
 }
 
 
-iS.oninput = function(event) {
+iS.oninput = function kInputIS(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     console.log("Значение по ссылке iS == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     txt = this.value.replace(/,/,'.');
