@@ -1,10 +1,10 @@
 // 
-var iDec = document.getElementById("IDec");     // ссылка на HTML Input = i(nput)Dec(imal)
-var iG   = document.getElementById('IG');
-var iM   = document.getElementById('IM');
-var iS   = document.getElementById('IS');
+var v_iDec = document.getElementById("IDec");   // ссылка на HTML Input = i(nput)Dec(imal)
+var v_iG   = document.getElementById('IG');
+var v_iM   = document.getElementById('IM');
+var v_iS   = document.getElementById('IS');
+
 var cl   = document.getElementById('clear');    // Знак градус после децимал инпута  
-    /* cl.onclick = clearAll; */                // Клик для очистки всех инпутов
 var inf = document.getElementById('forInfo');
 var btn = document.getElementById('btn_calc');
 var showRad = document.getElementById('angl_in_rad_output');    // Вывод значения угла в радианах
@@ -34,6 +34,14 @@ var angleInRad = 0;
 
 cl.addEventListener("click",clearAll);
 btn.addEventListener("click",calcRun);
+v_iDec.addEventListener("keypress",kPressFloat);
+v_iS.addEventListener("keypress",kPressFloat);
+v_iG.addEventListener("keypress",kPressInt);
+v_iM.addEventListener("keypress",kPressInt);
+v_iDec.addEventListener("input",kInputIDec);
+v_iG.addEventListener("input",kInputInt);
+v_iM.addEventListener("input",kInputInt);
+v_iS.addEventListener("input",kInputIS);
 
 
 function I(txt) {
@@ -42,42 +50,47 @@ function I(txt) {
 
 function clearAll() {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    iDec.value = ""; numDec = 0;
-    iG.value = ""; numG = 0;
-    iM.value = ""; numM = 0;
-    iS.value = ""; numS = 0;
+    v_iDec.value = ""; numDec = 0;
+    v_iG.value = ""; numG = 0;
+    v_iM.value = ""; numM = 0;
+    v_iS.value = ""; numS = 0;
 }
 
-
-iDec.onkeypress = iS.onkeypress = function kPressFloat(event) {
+// v_iDec.onkeypress = v_iS.onkeypress = 
+function kPressFloat(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     var chr = event.key;
     console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
     if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
         I("Только цифры и десятичные разделители");
         console.log('Only Numbers and Dividers - now will be return False');
+        event.preventDefault();
         return false; }
     if((chr == ',')||(chr == '.')) {
         if (this.value.length < 1) {
             I("Десятичный разделитель не надо ставить первым - а для порядка !");
             console.log('Divider must be not first - now will be return False');
+            event.preventDefault();
             return false; }
     if ((this.value.indexOf(",") != -1) || (this.value.indexOf(".") != -1)) {
         I("Только один десятичный разделитель");
         console.log('Only One Divider - now will be return False');
+        event.preventDefault();
         return false; }    
     }   // if((chr == ',')||(chr == '.'))
     tmp = this.value + chr;
     console.log("Значение tmp == " + tmp + "; type == " + typeof(tmp) + "; length of string == " + tmp.length);
 switch(this) {
-    case iDec:
+    case v_iDec:
         if(+tmp > 359.999999) {
             I("Угол д.б. менее 360 град.");
+            event.preventDefault();
             return false; }
         break;    
-    case iS:
+    case v_iS:
         if(+tmp >= 60) {
             I("В минуте д.б. менее 60 секунд");
+            event.preventDefault();
             return false; }
         break;    
         default:
@@ -87,24 +100,28 @@ switch(this) {
 }   // onkeypress
 
 
-iG.onkeypress = iM.onkeypress = function kPressInt(event) {
+// v_iG.onkeypress = v_iM.onkeypress = 
+function kPressInt(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     var chr = event.key;
     console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
     if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9') {
         I("Только цифры");
+        event.preventDefault();
         return false; }
     tmp = this.value + chr;
     console.log("Значение tmp == " + tmp + "; type == " + typeof(tmp) + "; length of string == " + tmp.length);
 switch(this) {
-    case iG:
+    case v_iG:
         if(+tmp > 359) {
             I("Угол д.б. менее 360 град.");
+            event.preventDefault();
             return false; }
         break;    
-    case iM:
+    case v_iM:
         if(+tmp > 59) {
             I("В градусе д.б. менее 60 минут");
+            event.preventDefault();
             return false; }
         break;    
             default:
@@ -114,20 +131,23 @@ switch(this) {
 }
 
 
-iDec.oninput = function kInputIDec(event) {
+// v_iDec.oninput = 
+function kInputIDec(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     // console.log(event);
-    console.log("Значение по ссылке iDec == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
+    console.log("Значение по ссылке v_iDec == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     txt = this.value.replace(/,/,'.');
     console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
     if((txt=="")||(txt==",")||(txt==".")) {
         clearAll();        
+        event.preventDefault();
         return false; }
     else {
             numDec = parseFloat(txt);
         if(numDec > 359.999) {
             I("Угол д.б. менее 360 град.");
             clearAll();
+            event.preventDefault();
             return false; }
     console.log("Значение numDec == " + numDec + "; type == " + typeof(numDec));
     Angle_Sec = numDec * 3600;      // Угол с клавы в секундах
@@ -138,35 +158,38 @@ iDec.oninput = function kInputIDec(event) {
     numM = Math.floor(fracMin);     // МИНУТЫ
     minSec = numM * 60;             // МИНУТЫ - в секундах
     numS = fracSec - minSec;        // СЕКУНДЫ        
-    iG.value = numG;
-    console.log("Значение iG.value == " + iG.value + "; type == " + typeof(iG.value));
-    iM.value = numM;
+    v_iG.value = numG;
+    console.log("Значение v_iG.value == " + v_iG.value + "; type == " + typeof(v_iG.value));
+    v_iM.value = numM;
     numS  = numS.toFixed(4);
-    iS.value = numS;
+    v_iS.value = numS;
     }
     I("Ready");
-} // iDec.oninput
+} // v_iDec.oninput
 
 
-iG.oninput = iM.oninput = function kInputInt(event) {
+// v_iG.oninput = v_iM.oninput = 
+function kInputInt(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     console.log("Значение по ссылке " + event.target.id + " == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     switch(this) {
-        case iG:
+        case v_iG:
             if(this.value=="") numG = 0;
             else numG = parseInt(this.value);
             if(numG > 359) {
                 I("Угол д.б. менее 360 град.");
                 this.value = ""; numG = 0;
+                event.preventDefault();
                 return false; }
             console.log("Значение numG == " + numG + "; type == " + typeof(numG));
             break;
-        case iM:
+        case v_iM:
             if(this.value=="") numM = 0;
             else numM = parseInt(this.value);
             if(numM > 59) {
                 I("В градусе д.б. менее 60 минут");
                 this.value = ""; numM = 0;
+                event.preventDefault();
                 return false; }
             console.log("Значение numM == " + numM + "; type == " + typeof(numM));
             break;    
@@ -174,7 +197,7 @@ iG.oninput = iM.oninput = function kInputInt(event) {
             break;
     }   // switch (this)
     if((numG==0)&(numM==0)&(numS==0))
-    { iDec.value = ""; numDec = 0; }
+    { v_iDec.value = ""; numDec = 0; }
     else {    
     Solution();
     }
@@ -182,15 +205,16 @@ iG.oninput = iM.oninput = function kInputInt(event) {
 }
 
 
-iS.oninput = function kInputIS(event) {
+// v_iS.oninput = 
+function kInputIS(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    console.log("Значение по ссылке iS == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
+    console.log("Значение по ссылке v_iS == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
     txt = this.value.replace(/,/,'.');
     console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
     if((txt=="")||(txt==",")||(txt=="."))  {
         this.value = ""; numS = 0;
     if((numG==0)&(numM==0)&(numS==0))
-        iDec.value = ""; numDec = 0;
+        v_iDec.value = ""; numDec = 0;
     }
     else { 
     numS = parseFloat(txt);
@@ -206,7 +230,7 @@ function Solution() {
     sec1 = numS * 1;
     deg1 = deg1 + min1 + sec1;
     numDec = deg1 / 3600;
-    iDec.value = numDec;
+    v_iDec.value = numDec;
 } // function Solution()
 
 
