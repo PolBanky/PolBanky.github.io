@@ -34,10 +34,10 @@ var angleInRad = 0;
 
 cl.addEventListener("click",clearAll);
 btn.addEventListener("click",calcRun);
-v_iDec.addEventListener("keypress",kPressFloat);
-v_iS.addEventListener("keypress",kPressFloat);
-v_iG.addEventListener("keypress",kPressInt);
-v_iM.addEventListener("keypress",kPressInt);
+// v_iDec.addEventListener("keypress",kPressFloat);
+// v_iS.addEventListener("keypress",kPressFloat);
+// v_iG.addEventListener("keypress",kPressInt);
+// v_iM.addEventListener("keypress",kPressInt);
 v_iDec.addEventListener("input",kInputIDec);
 v_iG.addEventListener("input",kInputInt);
 v_iM.addEventListener("input",kInputInt);
@@ -48,6 +48,7 @@ function I(txt) {
     inf.innerHTML = txt;
 }
 
+
 function clearAll() {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     v_iDec.value = ""; numDec = 0;
@@ -56,7 +57,7 @@ function clearAll() {
     v_iS.value = ""; numS = 0;
 }
 
-// v_iDec.onkeypress = v_iS.onkeypress = 
+
 function kPressFloat(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     var chr = event.key;
@@ -100,7 +101,6 @@ switch(this) {
 }   // onkeypress
 
 
-// v_iG.onkeypress = v_iM.onkeypress = 
 function kPressInt(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     var chr = event.key;
@@ -131,19 +131,36 @@ switch(this) {
 }
 
 
-// v_iDec.oninput = 
 function kInputIDec(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    // console.log(event);
-    console.log("Значение по ссылке v_iDec == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
-    txt = this.value.replace(/,/,'.');
-    console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
-    if((txt=="")||(txt==",")||(txt==".")) {
+    console.log("Значение this по ссылке v_iDec == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
+    this.value = this.value.replace(/,/,'.');
+    // txt = this.value;
+    // var chr = txt[txt.length-1];
+    var chr = this.value[this.value.length-1];
+    console.log('Введенный символ = ' + chr);
+
+if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
+    this.value = this.value.substring( 0, this.value.length-1);
+    I('Only Numbers and Dividers => now will be return False');
+    console.log("Input after this.value.substring() = " + this.value);
+    // this.value=txt;
+    event.preventDefault();
+    return false;
+}
+
+    
+    
+    // console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
+    
+    
+    if((this.value=="")||(this.value==",")||(this.value==".")) {
+    // if((txt=="")||(txt==",")||(txt==".")) {
         clearAll();        
         event.preventDefault();
         return false; }
     else {
-            numDec = parseFloat(txt);
+            numDec = parseFloat(this.value);
         if(numDec > 359.999) {
             I("Угол д.б. менее 360 град.");
             clearAll();
@@ -168,7 +185,6 @@ function kInputIDec(event) {
 } // v_iDec.oninput
 
 
-// v_iG.oninput = v_iM.oninput = 
 function kInputInt(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     console.log("Значение по ссылке " + event.target.id + " == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
@@ -201,11 +217,10 @@ function kInputInt(event) {
     else {    
     Solution();
     }
-        I("Ready");
+    I("Ready");
 }
 
 
-// v_iS.oninput = 
 function kInputIS(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     console.log("Значение по ссылке v_iS == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
@@ -238,7 +253,6 @@ function Solution() {
 
 
     // КНОПКА = input type="button" id="btn_calc"
-/* btn_calc.onclick =  */
 function calcRun(event) {
     console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
     console.log("Event Button 'Calculate Angle's Trig' = " + event.type + " in id == " + event.currentTarget.id);
