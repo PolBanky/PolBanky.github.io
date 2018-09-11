@@ -145,7 +145,7 @@ var chr = this.value[this.value.length-1];
 
 if ((chr == '.') && (this.value.indexOf('.') < this.value.length-1)) {
     this.value = this.value.substring( 0, this.value.length-1);
-    I("Только один десятичный разделитель");
+    I("Only one decimal divider");
     console.log('if-2: если есть точка до вводимого сейчас символа => return false');
     event.preventDefault();
     return false;
@@ -164,7 +164,8 @@ if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' 
     numDec = parseFloat(this.value);
 if(numDec > 359.999) {
     I("Угол д.б. менее 360 град.");
-    clearAll();
+    console.log('if-4: this.value before this.value.substring() = ' + this.value + ' >= 360 => return false');
+    this.value = this.value.substring( 0, this.value.length-1);
     event.preventDefault();
     return false;
 }
