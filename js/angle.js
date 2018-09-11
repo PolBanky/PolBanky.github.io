@@ -50,7 +50,7 @@ function I(txt) {
 
 
 function clearAll() {
-    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
+    console.log("\nEvent " + ++i + " function clearAll() => " + event.type + " in id = " + event.target.id);
     v_iDec.value = ""; numDec = 0;
     v_iG.value = ""; numG = 0;
     v_iM.value = ""; numM = 0;
@@ -98,7 +98,7 @@ switch(this) {
         break;
 }   // switch (this)
     I("Ready");
-}   // onkeypress
+}   // kPressFloat(event)
 
 
 function kPressInt(event) {
@@ -128,44 +128,46 @@ switch(this) {
         break;
 }   // switch (this)
     I("Ready");  
-}
+}   // kPressInt(event)
 
 
 function kInputIDec(event) {
-    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    console.log("Значение this по ссылке v_iDec == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
-    this.value = this.value.replace(/,/,'.');
-    // txt = this.value;
-    // var chr = txt[txt.length-1];
-    var chr = this.value[this.value.length-1];
-    console.log('Введенный символ = ' + chr);
+    console.log("\nEvent " + ++i + " => " + event.type + " in id = " + event.target.id);
+    console.log("Значение 'this' before 'value.replace' по ссылке v_iDec = " + this.value + "; type = " + typeof(this.value) + "; length of string = " + this.value.length); 
+if((this.value.length==0)||(this.value==',')||(this.value=='.')) {
+    console.log('if-1: this.value = ' + this.value + ' => return false');
+    clearAll();
+    event.preventDefault();
+    return false;
+}
+this.value = this.value.replace(/,/,'.');
+var chr = this.value[this.value.length-1];
 
-if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
+if ((chr == '.') && (this.value.indexOf('.') < this.value.length-1)) {
     this.value = this.value.substring( 0, this.value.length-1);
-    I('Only Numbers and Dividers => now will be return False');
-    console.log("Input after this.value.substring() = " + this.value);
-    // this.value=txt;
+    I("Только один десятичный разделитель");
+    console.log('if-2: если есть точка до вводимого сейчас символа => return false');
     event.preventDefault();
     return false;
 }
 
-    
-    
-    // console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
-    
-    
-    if((this.value=="")||(this.value==",")||(this.value==".")) {
-    // if((txt=="")||(txt==",")||(txt==".")) {
-        clearAll();        
-        event.preventDefault();
-        return false; }
-    else {
-            numDec = parseFloat(this.value);
-        if(numDec > 359.999) {
-            I("Угол д.б. менее 360 град.");
-            clearAll();
-            event.preventDefault();
-            return false; }
+console.log('Введенный символ = ' + chr);
+if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
+    console.log('if-3: this.value before this.value.substring() = ' + this.value + ' => return false');
+    this.value = this.value.substring( 0, this.value.length-1);
+    I('Only Numbers and Dividers => now will be return False');
+    console.log("Input after this.value.substring() = " + this.value);
+    event.preventDefault();
+    return false;
+}
+
+    numDec = parseFloat(this.value);
+if(numDec > 359.999) {
+    I("Угол д.б. менее 360 град.");
+    clearAll();
+    event.preventDefault();
+    return false;
+}
     console.log("Значение numDec == " + numDec + "; type == " + typeof(numDec));
     Angle_Sec = numDec * 3600;      // Угол с клавы в секундах
     numG = Math.floor(numDec);      // ГРАДУСЫ
@@ -180,9 +182,8 @@ if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' 
     v_iM.value = numM;
     numS  = numS.toFixed(4);
     v_iS.value = numS;
-    }
     I("Ready");
-} // v_iDec.oninput
+} // kInputIDec(event)
 
 
 function kInputInt(event) {
