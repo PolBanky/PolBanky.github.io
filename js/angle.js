@@ -1,3 +1,4 @@
+// Для совместимости с мобильными устройствами события keypress не используются, используется только событие input
 // 
 var v_iDec = document.getElementById("IDec");   // ссылка на HTML Input = i(nput)Dec(imal)
 var v_iG   = document.getElementById('IG');
@@ -34,10 +35,6 @@ var angleInRad = 0;
 
 cl.addEventListener("click",clearAll);
 btn.addEventListener("click",calcRun);
-// v_iDec.addEventListener("keypress",kPressFloat);
-// v_iS.addEventListener("keypress",kPressFloat);
-// v_iG.addEventListener("keypress",kPressInt);
-// v_iM.addEventListener("keypress",kPressInt);
 v_iDec.addEventListener("input",kInputIDec);
 v_iG.addEventListener("input",kInputInt);
 v_iM.addEventListener("input",kInputInt);
@@ -58,109 +55,65 @@ function clearAll() {
 }
 
 
-function kPressFloat(event) {
-    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    var chr = event.key;
-    console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
-    if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
-        I("Только цифры и десятичные разделители");
-        console.log('Only Numbers and Dividers - now will be return False');
-        event.preventDefault();
-        return false; }
-    if((chr == ',')||(chr == '.')) {
-        if (this.value.length < 1) {
-            I("Десятичный разделитель не надо ставить первым - а для порядка !");
-            console.log('Divider must be not first - now will be return False');
-            event.preventDefault();
-            return false; }
-    if ((this.value.indexOf(",") != -1) || (this.value.indexOf(".") != -1)) {
-        I("Только один десятичный разделитель");
-        console.log('Only One Divider - now will be return False');
-        event.preventDefault();
-        return false; }    
-    }   // if((chr == ',')||(chr == '.'))
-    tmp = this.value + chr;
-    console.log("Значение tmp == " + tmp + "; type == " + typeof(tmp) + "; length of string == " + tmp.length);
-switch(this) {
-    case v_iDec:
-        if(+tmp > 359.999999) {
-            I("Угол д.б. менее 360 град.");
-            event.preventDefault();
-            return false; }
-        break;    
-    case v_iS:
-        if(+tmp >= 60) {
-            I("В минуте д.б. менее 60 секунд");
-            event.preventDefault();
-            return false; }
-        break;    
-        default:
-        break;
-}   // switch (this)
-    I("Ready");
-}   // kPressFloat(event)
-
-
-function kPressInt(event) {
-    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    var chr = event.key;
-    console.log("KeyCode==" + event.keyCode + "; Which==" + event.which + "; CharCode==" + event.charCode + "; Char==" + chr);
-    if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9') {
-        I("Только цифры");
-        event.preventDefault();
-        return false; }
-    tmp = this.value + chr;
-    console.log("Значение tmp == " + tmp + "; type == " + typeof(tmp) + "; length of string == " + tmp.length);
-switch(this) {
-    case v_iG:
-        if(+tmp > 359) {
-            I("Угол д.б. менее 360 град.");
-            event.preventDefault();
-            return false; }
-        break;    
-    case v_iM:
-        if(+tmp > 59) {
-            I("В градусе д.б. менее 60 минут");
-            event.preventDefault();
-            return false; }
-        break;    
-            default:
-        break;
-}   // switch (this)
-    I("Ready");  
-}   // kPressInt(event)
-
-
 function kInputIDec(event) {
-    console.log("\nEvent " + ++i + " => " + event.type + " in id = " + event.target.id);
-    console.log("Значение 'this' before 'value.replace' по ссылке v_iDec = " + this.value + "; type = " + typeof(this.value) + "; length of string = " + this.value.length); 
-if((this.value.length==0)||(this.value==',')||(this.value=='.')) {
-    console.log('if-1: this.value = ' + this.value + ' => return false');
-    clearAll();
-    event.preventDefault();
-    return false;
-}
-this.value = this.value.replace(/,/,'.');
-var chr = this.value[this.value.length-1];
+    console.log("\nEvent " + ++i + " = " + event.type + "; event's input type = " + event.inputType + "; event in id = " + event.target.id);
+    console.log("Value in 'this' before 'value.replace' = " + this.value + "; type = " + typeof(this.value) + "; length of string = " + this.value.length);
+    // console.log(event);
+    if((this.value.length==0)||(this.value==',')||(this.value=='.')) {
+        console.log('if-1: this.value = ' + this.value + ' => return false');
+        if(this.value.length==0) {} // if
+        else {
+          I("Decimal divider can't be first symbol");  
+        }   // else
+        clearAll();
+        event.preventDefault();
+        return false;
+    }   // if
+    this.value = this.value.replace(/,/,'.');
+    var ch = '';
+    var di = 0;
+    //  FOR
+    for(var a=0; a<this.value.length; a++) {
+        console.log("Symbol num " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);
+        ch = this.value[a];
+        if (ch != '0' & ch != '1' & ch != '2' & ch != '3' & ch != '4' & ch != '5' & ch != '6' & ch != '7' & ch != '8' & ch != '9' & ch != '.') {
+            console.log("Error " + this.value[a] + " => deleted");
+            this.value = this.value.replace(ch,'');
+            a--;
+        }
+        if(ch == '.') {
+        di++;
+        console.log("Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
+    }   // if
+    if(di>1) {
+        this.value = this.value.replace(ch,'');
+        di--;
+        a--;
+        console.log("Second divider deleted. Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
+        }   // if    
+    }   //  FOR
 
-if ((chr == '.') && (this.value.indexOf('.') < this.value.length-1)) {
-    this.value = this.value.substring( 0, this.value.length-1);
-    I("Only one decimal divider");
-    console.log('if-2: если есть точка до вводимого сейчас символа => return false');
-    event.preventDefault();
-    return false;
-}
 
-console.log('Введенный символ = ' + chr);
-if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.' & chr != ',') {
-    console.log('if-3: this.value before this.value.substring() = ' + this.value + ' => return false');
-    this.value = this.value.substring( 0, this.value.length-1);
-    I('Only Numbers and Dividers => now will be return False');
-    console.log("Input after this.value.substring() = " + this.value);
-    event.preventDefault();
-    return false;
-}
+//**********************************************************************
 
+// var chr = this.value[this.value.length-1];
+// if ((chr == '.') && (this.value.indexOf('.') < this.value.length-1)) {
+//     this.value = this.value.substring( 0, this.value.length-1);
+//     I("Only one decimal divider");
+//     console.log('if-2: если есть точка до вводимого сейчас символа => return false');
+//     event.preventDefault();
+//     return false;
+// }
+// console.log('Введенный символ = ' + chr);
+
+// if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.') {
+//     console.log('if-3: this.value before this.value.substring() = ' + this.value + ' => return false');
+//     this.value = this.value.substring( 0, this.value.length-1);
+//     I('Only Numbers and Dividers');
+//     console.log("Input after this.value.substring() = " + this.value);
+//     event.preventDefault();
+//     return false;
+// }
     numDec = parseFloat(this.value);
 if(numDec > 359.999) {
     I("Угол д.б. менее 360 град.");
