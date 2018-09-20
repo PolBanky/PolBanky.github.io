@@ -59,61 +59,50 @@ function kInputIDec(event) {
     console.log("\nEvent " + ++i + " = " + event.type + "; event's input type = " + event.inputType + "; event in id = " + event.target.id);
     console.log("Value in 'this' before 'value.replace' = " + this.value + "; type = " + typeof(this.value) + "; length of string = " + this.value.length);
     // console.log(event);
-    if((this.value.length==0)||(this.value==',')||(this.value=='.')) {
-        console.log('if-1: this.value = ' + this.value + ' => return false');
-        if(this.value.length==0) {} // if
-        else {
-          I("Decimal divider can't be first symbol");  
-        }   // else
-        clearAll();
-        event.preventDefault();
-        return false;
-    }   // if
-    this.value = this.value.replace(/,/,'.');
+if((this.value.length==0)||(this.value==',')||(this.value=='.')) {
+    console.log('if-1: this.value = ' + this.value + ' => return false');
+if(this.value.length==0) {} // if
+else {
+    I("Decimal divider can't be first symbol");  
+}   // else
+    clearAll();
+    return false;
+}   // if
     var ch = '';
     var di = 0;
     //  FOR
-    for(var a=0; a<this.value.length; a++) {
-        console.log("Symbol num " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);
-        ch = this.value[a];
-        if (ch != '0' & ch != '1' & ch != '2' & ch != '3' & ch != '4' & ch != '5' & ch != '6' & ch != '7' & ch != '8' & ch != '9' & ch != '.') {
+for(var a=0; a<this.value.length; a++) {
+    console.log("Symbol num " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);
+if(this.value[a]==',') {
+    this.value = this.value.replace(/,/,'.');
+    console.log("Symbol num " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);
+    }   // for
+    ch = this.value[a];
+if (ch !== '0' & ch !== '1' & ch !== '2' & ch !== '3' & ch !== '4' & ch !== '5' & ch !== '6' & ch !== '7' & ch !== '8' & ch !== '9' & ch !== '.') {
             console.log("Error " + this.value[a] + " => deleted");
-            this.value = this.value.replace(ch,'');
-            a--;
-        }
-        if(ch == '.') {
-        di++;
-        console.log("Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
+if(a==0) {
+    clearAll();
+    return false;
+    }
+else
+    this.value = this.value.replace(ch,'');
+    a--;
     }   // if
-    if(di>1) {
-        this.value = this.value.replace(ch,'');
-        di--;
-        a--;
-        console.log("Second divider deleted. Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
+if(ch == '.') {
+if(a==0){
+    this.value = this.value.replace(ch,'0.');
+    a++;
+}        
+    di++;
+    console.log("Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
+}   // if
+if(di>1) {
+    this.value = this.value.replace(ch,'');
+    di--;
+    a--;
+    console.log("Second divider deleted. Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
         }   // if    
     }   //  FOR
-
-
-//**********************************************************************
-
-// var chr = this.value[this.value.length-1];
-// if ((chr == '.') && (this.value.indexOf('.') < this.value.length-1)) {
-//     this.value = this.value.substring( 0, this.value.length-1);
-//     I("Only one decimal divider");
-//     console.log('if-2: если есть точка до вводимого сейчас символа => return false');
-//     event.preventDefault();
-//     return false;
-// }
-// console.log('Введенный символ = ' + chr);
-
-// if (chr != '0' & chr != '1' & chr != '2' & chr != '3' & chr != '4' & chr != '5' & chr != '6' & chr != '7' & chr != '8' & chr != '9' & chr != '.') {
-//     console.log('if-3: this.value before this.value.substring() = ' + this.value + ' => return false');
-//     this.value = this.value.substring( 0, this.value.length-1);
-//     I('Only Numbers and Dividers');
-//     console.log("Input after this.value.substring() = " + this.value);
-//     event.preventDefault();
-//     return false;
-// }
     numDec = parseFloat(this.value);
 if(numDec > 359.999) {
     I("Угол д.б. менее 360 град.");
@@ -202,9 +191,6 @@ function Solution() {
     numDec = deg1 / 3600;
     v_iDec.value = numDec;
 } // function Solution()
-
-
-// *************************************
 
 
     // КНОПКА = input type="button" id="btn_calc"
