@@ -36,6 +36,7 @@ var angleInRad = 0;
 cl.addEventListener("click",clearAll);
 btn.addEventListener("click",calcRun);
 v_iDec.addEventListener("input",kInputIDec);
+v_iDec.addEventListener("keyup",kPozIDec);
 v_iG.addEventListener("input",kInputInt);
 v_iM.addEventListener("input",kInputInt);
 v_iS.addEventListener("input",kInputIS);
@@ -55,54 +56,65 @@ function clearAll() {
 }
 
 
+function kPozIDec(event) {
+    console.log("\nEvent " + ++i + " = " + event.type + "; event in id = " + event.target.id + "; cursor position = " + event.target.selectionStart);    
+}
+
+
 function kInputIDec(event) {
-    console.log("\nEvent " + ++i + " = " + event.type + "; event's input type = " + event.inputType + "; event in id = " + event.target.id);
+    curPoz = event.target.selectionStart;
+    console.log("\nEvent " + ++i + " = " + event.type + "; event's input type = " + event.inputType + "; event in id = " + event.target.id + "; cursor position = " + curPoz);
     console.log("Value in 'this' before 'value.replace' = " + this.value + "; type = " + typeof(this.value) + "; length of string = " + this.value.length);
-    // console.log(event);
-if((this.value.length==0)||(this.value==',')||(this.value=='.')) {
-    console.log('if-1: this.value = ' + this.value + ' => return false');
-if(this.value.length==0) {} // if
-else {
-    I("Decimal divider can't be first symbol");  
-}   // else
+if(this.value.length==0) {  // Все символы удалены
     clearAll();
     return false;
 }   // if
-    var ch = '';
-    var di = 0;
-    //  FOR
+var ch = '';    // char
+var curPoz = 0; // cursor position
+var di = 0;     // divider
+    //  FOR - проверка каждого символа имеющейся строки
 for(var a=0; a<this.value.length; a++) {
     console.log("Symbol num " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);
 if(this.value[a]==',') {
-    this.value = this.value.replace(/,/,'.');
-    console.log("Symbol num " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);
-    }   // for
+    this.value = this.value.replace(/,/,'.'); // Если символ = комма то заменяется на дот
+    console.log("After Fix comma - Symbol num " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);
+}   // if
+if(a==1) {
+    if((ch!='.') && (this.value[0]=='0')) {
+        this.value = this.value.replace(this.value[0],'');
+        a--;
+        console.log("After Fix first zero without dot - Symbol num " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);
+    }   // if
+}   // if
     ch = this.value[a];
 if (ch !== '0' & ch !== '1' & ch !== '2' & ch !== '3' & ch !== '4' & ch !== '5' & ch !== '6' & ch !== '7' & ch !== '8' & ch !== '9' & ch !== '.') {
-            console.log("Error " + this.value[a] + " => deleted");
-if(a==0) {
+    console.log("Error with symbol = " + this.value[a] + " => symbol deleted");
+if(this.value.length==1) {  // если нецифра была единственным символом в строке то строка станет пустой после удаления нецифры
     clearAll();
     return false;
-    }
-else
-    this.value = this.value.replace(ch,'');
-    a--;
-    }   // if
-if(ch == '.') {
-if(a==0){
+}   // if
+else {  // если нецифра была НЕ единственным символом в строке
+    this.value = this.value.replace(ch,''); // заменить нецифру на ничто
+    a--;                                    // строка становится короче на 1 символ
+    event.target.selectionStart = (curPoz-1);   // оставить курсор на месте вводившегося и удаленного символа
+    window.getSelection().collapseToStart();    // уменьшить выделение до курсора
+}   // else
+}   // if нецифра
+if(ch == '.') { // если дот
+if(a==0) {      // если дот первый в строке
     this.value = this.value.replace(ch,'0.');
     a++;
-}        
+}   // if  
     di++;
     console.log("Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
-}   // if
-if(di>1) {
+}   // if дот
+if(di>1) {  // если количество дот больше одного
     this.value = this.value.replace(ch,'');
     di--;
     a--;
     console.log("Second divider deleted. Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
-        }   // if    
-    }   //  FOR
+}   // if
+}   //  FOR
     numDec = parseFloat(this.value);
 if(numDec > 359.999) {
     I("Угол д.б. менее 360 град.");
@@ -110,7 +122,7 @@ if(numDec > 359.999) {
     this.value = this.value.substring( 0, this.value.length-1);
     event.preventDefault();
     return false;
-}
+}   // if
     console.log("Значение numDec == " + numDec + "; type == " + typeof(numDec));
     Angle_Sec = numDec * 3600;      // Угол с клавы в секундах
     numG = Math.floor(numDec);      // ГРАДУСЫ
