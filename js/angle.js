@@ -41,6 +41,25 @@ v_iG.addEventListener("input",kInputInt);
 v_iM.addEventListener("input",kInputInt);
 v_iS.addEventListener("input",kInputIS);
 
+window.onload = function ld() {
+    console.log('Window loaded');
+    var stor = localStorage.getItem('DecStor'); // string
+    console.log("Value in local storage = " + stor + "; data type = " + typeof(stor));
+    if(stor !== '0') {
+    v_iDec.value = stor;
+    console.log('Data from last work session = ' + v_iDec.value);
+    numDec = parseFloat(v_iDec.value);
+    Solution();
+    I('Data from last work session');
+    v_iDec.focus();
+}   // if
+}
+
+
+window.onbeforeunload = function bULd() {
+    localStorage.setItem('DecStor',numDec);
+}
+
 
 function I(txt) {
     inf.innerHTML = txt;
@@ -120,24 +139,10 @@ if(numDec > 359.999) {
     I("Угол д.б. менее 360 град.");
     console.log('if-4: this.value before this.value.substring() = ' + this.value + ' >= 360 => return false');
     this.value = this.value.substring( 0, this.value.length-1);
-    event.preventDefault();
     return false;
 }   // if
-    console.log("Значение numDec == " + numDec + "; type == " + typeof(numDec));
-    Angle_Sec = numDec * 3600;      // Угол с клавы в секундах
-    numG = Math.floor(numDec);      // ГРАДУСЫ
-    degSec = numG * 3600;           // ГРАДУСЫ - в секундах
-    fracSec = Angle_Sec - degSec;   // Дробная часть градуса - в секундах
-    fracMin = fracSec / 60;         // Дробная часть градуса - в минутах
-    numM = Math.floor(fracMin);     // МИНУТЫ
-    minSec = numM * 60;             // МИНУТЫ - в секундах
-    numS = fracSec - minSec;        // СЕКУНДЫ        
-    v_iG.value = numG;
-    console.log("Значение v_iG.value == " + v_iG.value + "; type == " + typeof(v_iG.value));
-    v_iM.value = numM;
-    numS  = numS.toFixed(4);
-    v_iS.value = numS;
-    I("Ready");
+    Solution();    
+    // localStorage.setItem('numDec',numDec);
 } // kInputIDec(event)
 
 
@@ -171,7 +176,7 @@ function kInputInt(event) {
     if((numG==0)&(numM==0)&(numS==0))
     { v_iDec.value = ""; numDec = 0; }
     else {    
-    Solution();
+    Solution1();
     }
     I("Ready");
 }
@@ -190,19 +195,38 @@ function kInputIS(event) {
     else { 
     numS = parseFloat(txt);
     console.log("Значение numS == " + numS + "; type == " + typeof(numS));
-    Solution();
+    Solution1();
     }
 }
 
 
 function Solution() {
+    console.log("Значение numDec == " + numDec + "; type == " + typeof(numDec));
+    Angle_Sec = numDec * 3600;      // Угол с клавы в секундах
+    numG = Math.floor(numDec);      // ГРАДУСЫ
+    degSec = numG * 3600;           // ГРАДУСЫ - в секундах
+    fracSec = Angle_Sec - degSec;   // Дробная часть градуса - в секундах
+    fracMin = fracSec / 60;         // Дробная часть градуса - в минутах
+    numM = Math.floor(fracMin);     // МИНУТЫ
+    minSec = numM * 60;             // МИНУТЫ - в секундах
+    numS = fracSec - minSec;        // СЕКУНДЫ        
+    v_iG.value = numG;
+    console.log("Значение v_iG.value == " + v_iG.value + "; type == " + typeof(v_iG.value));
+    v_iM.value = numM;
+    numS  = numS.toFixed(4);
+    v_iS.value = numS;
+    I("Ready");
+}   // Solution()
+
+
+function Solution1() {
     deg1 = numG * 3600;
     min1 = numM * 60;
     sec1 = numS * 1;
     deg1 = deg1 + min1 + sec1;
     numDec = deg1 / 3600;
     v_iDec.value = numDec;
-} // function Solution()
+} // Solution1()
 
 
     // КНОПКА = input type="button" id="btn_calc"
@@ -215,7 +239,7 @@ function calcRun(event) {
     cos();
     tg();
     ctg();
-}
+}   // calcRun(event)
 
 
 function gradInRad() {
