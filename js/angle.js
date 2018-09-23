@@ -44,9 +44,11 @@ v_iS.addEventListener("input",kInputIS);
 
 window.onload = function ld() {
     console.log('Window loaded');
+if(localStorage.getItem('DecStor')) {
     var stor = localStorage.getItem('DecStor'); // string
     console.log("Value in local storage = " + stor + "; data type = " + typeof(stor));
-    if(stor !== '0') {
+// }   // if
+    if((stor !== '0') & (stor !== null)) {
     v_iDec.value = stor;
     console.log('Data from last work session = ' + v_iDec.value);
     numDec = parseFloat(v_iDec.value);
@@ -54,12 +56,13 @@ window.onload = function ld() {
     I('Data from last work session');
     v_iDec.focus();
 }   // if
-}
+}   // if
+}   // window.onload
 
 
 window.onbeforeunload = function bULd() {
     localStorage.setItem('DecStor',numDec);
-}
+}   // window.onbeforeunload
 
 
 function I(txt) {
@@ -230,7 +233,7 @@ function Solution() {
     numS  = numS.toFixed(4);
     v_iS.value = numS;
     I("Ready");
-}   // Solution()
+}   // Solution() for kInputIDec
 
 
 function Solution1() {
@@ -240,7 +243,7 @@ function Solution1() {
     deg1 = deg1 + min1 + sec1;
     numDec = deg1 / 3600;
     v_iDec.value = numDec;
-} // Solution1()
+} // Solution1() for Deg-Min-Sec
 
 
     // КНОПКА = input type="button" id="btn_calc"
