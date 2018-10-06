@@ -98,8 +98,10 @@ if(this.value.length===0) {  // Все символы удалены - maybe by 
     clearAll();
     return false;
 }   // if 'this' empty
+if (comma_RE.test(this.value)) {
 this.value = this.value.replace(comma_RE,'.'); // Если символ = comma то заменяется на dot; глобально - чтоб два раза не вставать
-// console.log("Value after replace commas to dots = " + this.value);
+    console.log("Value after replace commas to dots = " + this.value);
+}   // if (comma_RE)
 var ch = '';    // char
 var di = dotCount(this.value);     // divider
 console.log("kInputIDec: Number of dividers = " + di);
@@ -118,10 +120,6 @@ for(var a=0; a<this.value.length; a++) {    // a - это смещение от 
     di = 0;
     console.log("Symbol number " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);  // num a+1 - т.к. а это не смещение
     ch = this.value[a]; // чтоб следующая строка (кода) была короче и т.д.
-    // console.log("Search = " + ch.search(numDot_RE));
-    // console.log("Test = " + numDot_RE.test(ch));
-// if (ch !== '0' & ch !== '1' & ch !== '2' & ch !== '3' & ch !== '4' & ch !== '5' & ch !== '6' & ch !== '7' & ch !== '8' & ch !== '9' & ch !== '.') {
-    // if (ch.search(numDot_RE!==-1)) {
 if (numDot_RE.test(ch)) {   // true если нецифродот
     console.log("Error with symbol = " + this.value[a] + " => symbol deleted");
 if(this.value.length==1) {  // если нецифродот был единственным символом в строке то строка станет пустой после удаления нецифродота
@@ -162,15 +160,10 @@ if(a==1) {  // (a==1) - если смещение = 1 то это второй �
     numDec = parseFloat(this.value);
 while(numDec > 359.999) {
     console.log('if-4: this.value before this.value.substring() = ' + this.value + ' >= 360');
-    // var tmpTxt = this.value;
     var tmpTxt = cutty(this.value, curPoz);
     curPoz--;
     this.value = tmpTxt;
     numDec = parseFloat(this.value);
-    /* do {
-       this.value = this.value.substring( 0, this.value.length-1);
-       numDec = parseFloat(this.value);
-    } while(numDec > 359.999); */
 }   // while
     Solution();    
 } // kInputIDec(event)
