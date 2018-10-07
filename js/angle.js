@@ -91,30 +91,34 @@ function kPozIDec(event) {
 
 
 function kInputIDec(event) {
-var curPoz = event.target.selectionStart;   // cursor position
-    console.log("\nEvent " + ++i + " type = " + event.type + "-" + event.inputType + " in Element id = " + event.target.id + "; Cursor position = " + curPoz);
-    console.log("Value in 'this' before 'value.replace' = " + this.value + "; type = " + typeof(this.value) + "; length of string = " + this.value.length);
+    var ch = '';    // char
+    var di = 0;
+    var curPoz = event.target.selectionStart;   // cursor position
+    console.log("\nEvent " + ++i + "; type = " + event.type + "-" + event.inputType + " in Element id = " + event.target.id + "; Cursor position = " + curPoz);
+    console.log("this.value before this.value.replace = " + this.value + "; type = " + typeof(this.value) + " with length = " + this.value.length);
 if(this.value.length===0) {  // Все символы удалены - maybe by input type = deleteContentBackward
     clearAll();
     return false;
 }   // if 'this' empty
-if (comma_RE.test(this.value)) {
+if (comma_RE.test(this.value)) {    // если есть запятые
 this.value = this.value.replace(comma_RE,'.'); // Если символ = comma то заменяется на dot; глобально - чтоб два раза не вставать
-    console.log("Value after replace commas to dots = " + this.value);
+    console.log("this.value after replace commas to dots = " + this.value);
 }   // if (comma_RE)
-var ch = '';    // char
-var di = dotCount(this.value);     // divider
-console.log("kInputIDec: Number of dividers = " + di);
+    di = dotCount(this.value);     // divider
+    console.log("Here kInputIDec: Number of dividers = " + di);
+    this.value = dotCutter(this.value);
+    di = dotCount(this.value);     // divider
+    console.log("Here kInputIDec after dotCount: Number of dividers = " + di);
 if(di>1){
-    var ind = 0;    // index    
-    while (di>1) {
+    let ind = 0;    // index    
+    while(di>1) {
         ind = this.value.lastIndexOf('.');  // возвращает смещение от указателя, т.е. для символа 1 индекс == 0
         console.log("Index of last divider = " + ind);
         this.value = cutty(this.value, ind+1);
         di = dotCount(this.value);;
         console.log("while (di>1): Value in 'this' = " + this.value + "; length of string = " + this.value.length);        
-    }   // while
-}   // if
+    }   // while(di>1)
+}   // if(di>1)
     //  FOR - проверка каждого символа имеющейся строки
 for(var a=0; a<this.value.length; a++) {    // a - это смещение от указателя
     di = 0;
@@ -132,7 +136,7 @@ else {  // если нецифродот был НЕ единственным с
     event.target.selectionStart = (curPoz-1);   // оставить курсор на месте вводившегося и удаленного символа
     window.getSelection().collapseToStart();    // уменьшить выделение до курсора
 }   // if(this.value.length==1) else
-}   // if НЕЦИФРОДОТ
+}   // if НЕцифродот
 if(ch == '.') { // если dot
 if(a==0) {      // если dot первый в строке
     this.value = this.value.replace(ch,'0.');
@@ -178,20 +182,34 @@ function cutty(text, cutter) {  // cutter - это номер символа в 
 
 
 function dotCount(text) {
-    var cnt = 0;
-    var poz = 0;
+    let cnt = 0;
+    let poz = 0;
     console.log("Here function dotCount: text for search = " + text);
     while (poz!==-1) {
         poz = text.indexOf('.', poz);
-        console.log("dotCount: dot's poz = " + poz);
+        console.log("dotCount: pointer's offset for dot = " + poz);
         if(poz!==-1) {
             cnt++;
             poz++;
-        }
-        console.log("Here function dotCount: now will be return dot's number = " + cnt);
-    }
+        }   // if(poz!==-1)
+    }   // while (poz!==-1)
+    console.log("Here function dotCount: now will be return dot's number = " + cnt);
     return cnt;
 }   // function dotCount(text)
+
+function dotCutter(textIn) {
+    let txtHere = textIn;
+    let poz = 0;
+    while (poz!==-1) {
+    poz = txtHere.lastIndexOf('.');
+    if(poz!==-1) {
+        txtHere = cutty(txtHere,poz+1);
+    }   // if(poz!==-1)
+    }   // while (poz!==-1)
+    console.log("Here function dotCutter: now will be return txt string = " + txtHere);
+
+    return txtHere;
+}
 
 
 function kInputInt(event) {
