@@ -33,6 +33,7 @@ var deg1 = 0;           // deg в deg-min-sec
 var min1 = 0;           // min в deg-min-sec
 var sec1 = 0;           // sec в deg-min-sec
 var angleInRad = 0;
+
 var numDot_RE = /[^\d.]/;   // not g - поиск в строке из 1 символа
 var a_RE = /[^\d.]/g;
 var dot_RE = /[.]/g;
@@ -52,7 +53,7 @@ window.addEventListener("beforeunload",bULd);
 
 function ld() {
     console.log('Window loaded');
-    console.log(window);
+    // console.log(window);
 if(localStorage.getItem('DecStor')) {
     var stor = localStorage.getItem('DecStor'); // string
     console.log("Value in local storage = " + stor + "; data type = " + typeof(stor));
@@ -83,6 +84,7 @@ function clearAll() {
     v_iG.value = ""; numG = 0;
     v_iM.value = ""; numM = 0;
     v_iS.value = ""; numS = 0;
+    // console.clear();
 }   // clearAll()
 
 
@@ -93,11 +95,11 @@ function kPozIDec(event) {
 
 function kInputIDec(event) {
     var ch = '';    // char
-    var di = 0;     // divider
+    // var di = 0;     // dividers
     var curPoz = event.target.selectionStart;   // cursor position
     console.log("\nEvent " + ++i + "; type = " + event.type + "-" + event.inputType + " in Element id = " + event.target.id + "; Cursor position = " + curPoz);
     console.log("this.value before this.value.replace = " + this.value + "; type = " + typeof(this.value) + " with length = " + this.value.length);
-if(this.value.length===0) {  // Все символы удалены - maybe by input type = deleteContentBackward
+if(this.value.length===0) {  // Если все символы удалены - maybe by input type = deleteContentBackward
     clearAll();
     return false;
 }   // if 'this' empty
@@ -109,23 +111,15 @@ if (a_RE.test(this.value)) {    // если есть буквы
     this.value = this.value.replace(a_RE,'');
     console.log("this.value after replace letters to nothing = " + this.value + "; length = " + this.value.length);
 }   // if (a_RE)
-    var info = dotCount1(this.value);
-    console.log("Info from dotCount1 = " + info);
-    di = dotCount(this.value);     // divider
-    console.log("Here kInputIDec: Number of dividers = " + di);
-    this.value = dotCutter(this.value);
-    di = dotCount(this.value);     // divider
-    console.log("Here kInputIDec after dotCount: Number of dividers = " + di);
-if(di>1){
-    let ind = 0;    // index    
-    while(di>1) {
-        ind = this.value.lastIndexOf('.');  // возвращает смещение от указателя, т.е. для символа 1 индекс == 0
-        console.log("Index of last divider = " + ind);
-        this.value = cutty(this.value, ind+1);
-        di = dotCount(this.value);;
-        console.log("while (di>1): Value in 'this' = " + this.value + "; length of string = " + this.value.length);        
-    }   // while(di>1)
-}   // if(di>1)
+// ***  Ниже в инпуте цифры и дивидеры  ***
+    var info = dotCount(this.value);   // количество дивидеров
+    console.log("Info from dotCount = " + info.toString());
+    if(info.cnt > 1) {  // если дивидеров > 1
+    this.value = dotCutter(this.value, info.firstPoz);
+    info = dotCount(this.value);
+    console.log("Info from dotCount = " + info.toString());
+    }   // if(info.cnt
+    return false;
     //  FOR - проверка каждого символа имеющейся строки
 for(var a=0; a<this.value.length; a++) {    // a - это смещение от указателя
     di = 0;
@@ -188,46 +182,34 @@ function cutty(text, cutter) {  // cutter - это номер символа в 
 }   // function cutty(text, cutter)
 
 
-function dotCount(text) {
-    let cnt = 0;
-    let poz = -1;
+function dotCount(text) {   // определяет количество дивидеров
+    var info = {    // объект - чтоб можно было из функции вернуть несколько значений
+        cnt: 0,     // counter
+        poz: -1,    // position of divider
+        firstPoz: 0,// first position
+        toString: function() {
+return ' dotCount\'s inner function = info.toString: count of dividers = ' + this.cnt + '; offset from first pointer to divider = ' + this.firstPoz
+        }   // toString: function()
+    };  // var info
     console.log("Here function dotCount: text for search = " + text);
-    while ((poz = text.indexOf('.', poz+1)) !== -1) {
-        cnt++;
-        console.log("dotCount: pointer's offset for dot = " + poz + "; divider's number = " + cnt);
-    }    
-    console.log("Here function dotCount: now will be return divider's number = " + cnt);
-    return cnt;
-}   // function dotCount(text)
-
-
-function dotCount1(text) {
-    var info = {
-        cnt: 0,
-        poz: -1,
-        firstPoz: 0
-    };
-    console.log("Here function dotCount1: text for search = " + text);
     while ((info.poz = text.indexOf('.', info.poz+1)) !== -1) {
         info.cnt++;
         if(info.cnt === 1) info.firstPoz = info.poz;
-        console.log("dotCount: pointer's offset for first dot = " + info.firstPoz + "; divider's number = " + info.cnt);
-    }    
-    console.log("Here function dotCount1: now will be return info = " + info);
+        console.log("In dotCount while: offset from pointer to divider = " + info.poz + "; divider's number = " + info.cnt);
+    }   // while    
     console.log(info);
+    // console.log("Here function dotCount: now will be return info = " + info);
     return info;
-}   // function dotCount1(text)
+}   // function dotCount(text)
 
 
-function dotCutter(textIn) {
-    let poz = 0;
-    while (poz!==-1) {
-    poz = textIn.lastIndexOf('.');
-    if(poz!==-1) {
-        textIn = cutty(textIn,poz+1);
-    }   // if(poz!==-1)
-    }   // while (poz!==-1)
-    console.log("Here function dotCutter: now will be return txt string = " + textIn);
+function dotCutter(textIn, firstDivider) {
+    let poz = textIn.length;
+    console.log("dotCutter: first Divider's position = " + firstDivider + "; position from end = " + poz);
+    while ((poz = textIn.lastIndexOf('.', poz)) > firstDivider) {
+        textIn = cutty(textIn, poz+1);
+        console.log("dotCutter: deleted divider's position = " + poz);
+    }   // while ((poz
     return textIn;
 }   // dotCutter()
 
