@@ -111,15 +111,28 @@ if (a_RE.test(this.value)) {    // если есть буквы
     this.value = this.value.replace(a_RE,'');
     console.log("this.value after replace letters to nothing = " + this.value + "; length = " + this.value.length);
 }   // if (a_RE)
-// ***  Ниже в инпуте цифры и дивидеры  ***
-    var info = dotCount(this.value);   // количество дивидеров
-    console.log("Info from dotCount = " + info.toString());
-    if(info.cnt > 1) {  // если дивидеров > 1
-    this.value = dotCutter(this.value, info.firstPoz);
-    info = dotCount(this.value);
-    console.log("Info from dotCount = " + info.toString());
-    }   // if(info.cnt
+// debugger;
+// ***  Ниже в инпуте уже только цифры и дивидеры  ***
+    var info1 = dotCount(this.value);   // количество дивидеров and offset from pointer to divider
+    console.log("kInputIDec: Info1 from dotCount = " + info1.toString());
+    console.log("kInputIDec: Info1.cnt = " + info1.cnt + "; this.lenght = " + this.value.length);
+if((info1.cnt == 1) && (info1.firstPoz == 0)) {  // если дивидеров = 1 и дивидер первый символ
+    this.value = this.value.replace('.','0.');
+    info1 = dotCount(this.value);
+}   // if((info
+
+if((this.value.length > 1) && (this.value[0]=='0') && (this.value[1]!='.')) {  // т.е. строка типа '04'
+    this.value = this.value.replace(this.value[0],'');  // удалить ненужный ноль, => строка = '4'
+}   // if((this.value.length > 1)
+
+if(info1.cnt > 1) {  // если дивидеров > 1
+    this.value = dotCutter(this.value, info1.firstPoz);
+    info1 = dotCount(this.value);
+    console.log("kInputIDec: Info1 from dotCount = " + info1.toString());
+}   // if(info.cnt
+
     return false;
+    
     //  FOR - проверка каждого символа имеющейся строки
 for(var a=0; a<this.value.length; a++) {    // a - это смещение от указателя
     di = 0;
@@ -177,35 +190,34 @@ while(numDec > 359.999) {
 function cutty(text, cutter) {  // cutter - это номер символа в строке (= номер позиции курсора); или индекс смещения + 1
     var txt1 = text.slice(0,cutter-1);
     var txt2 = text.slice(cutter);
-    console.log('cutty here! cutter pos. = ' + cutter + '; Half-Strings:  txt1 = ' + txt1 + '; cutted = ' + text[cutter-1] + '; txt2 = ' + txt2);
+    console.log('cutty() here! cutter position = ' + cutter + '; Half-Strings:  txt1 = ' + txt1 + '; cutted = ' + text[cutter-1] + '; txt2 = ' + txt2);
     return txt1 + txt2;  
 }   // function cutty(text, cutter)
 
 
 function dotCount(text) {   // определяет количество дивидеров
     var info = {    // объект - чтоб можно было из функции вернуть несколько значений
-        cnt: 0,     // counter
-        poz: -1,    // position of divider
-        firstPoz: 0,// first position
-        toString: function() {
-return ' dotCount\'s inner function = info.toString: count of dividers = ' + this.cnt + '; offset from first pointer to divider = ' + this.firstPoz
+        cnt: 0,     // count of dividers
+        poz: -1,    // position of divider (нумерация символов - с нуля, т.е смещение от указателя)
+        firstPoz: 0,// first position of divider (нумерация символов - с нуля, т.е смещение от указателя)
+        toString: function() {  // overload function toString()
+return 'Here dotCount()\'s inner var info\'s function = info.toString: count of dividers = ' + this.cnt + '; offset from pointer to first divider = ' + this.firstPoz
         }   // toString: function()
     };  // var info
-    console.log("Here function dotCount: text for search = " + text);
-    while ((info.poz = text.indexOf('.', info.poz+1)) !== -1) {
+    console.log("Here start dotCount(): text for search dividers = " + text);
+    while ((info.poz = text.indexOf('.', info.poz+1)) !== -1) { // text.indexOf() возвращает смещение от указателя (т.е позиции символов нумеруются с нуля)
         info.cnt++;
         if(info.cnt === 1) info.firstPoz = info.poz;
-        console.log("In dotCount while: offset from pointer to divider = " + info.poz + "; divider's number = " + info.cnt);
+        console.log("We in dotCount()\'s cycle while(): now offset from pointer to divider = " + info.poz + "; count of dividers = " + info.cnt);
     }   // while    
     console.log(info);
-    // console.log("Here function dotCount: now will be return info = " + info);
     return info;
 }   // function dotCount(text)
 
 
 function dotCutter(textIn, firstDivider) {
     let poz = textIn.length;
-    console.log("dotCutter: first Divider's position = " + firstDivider + "; position from end = " + poz);
+    console.log("dotCutter(): first Divider's position = " + firstDivider + "; position from end = " + poz);
     while ((poz = textIn.lastIndexOf('.', poz)) > firstDivider) {
         textIn = cutty(textIn, poz+1);
         console.log("dotCutter: deleted divider's position = " + poz);
