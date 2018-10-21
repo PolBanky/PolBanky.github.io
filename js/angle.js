@@ -42,7 +42,7 @@ var comma_RE = /[,]/g;
 cl.addEventListener("click",clearAll);
 btn.addEventListener("click",calcRun);
 v_iDec.addEventListener("input",kInputIDec);
-v_iDec.addEventListener("keyup",kPozIDec);
+v_iDec.addEventListener("keyup",kPozIDec);  // keyup
 v_iDec.addEventListener("click",kPozIDec);  // click
 v_iG.addEventListener("input",kInputInt);
 v_iM.addEventListener("input",kInputInt);
@@ -51,13 +51,13 @@ window.addEventListener("load",ld);
 window.addEventListener("beforeunload",bULd);
 
 
-function ld() {
+function ld() { // load
     console.log('Window loaded');
     // console.log(window);
 if(localStorage.getItem('DecStor')) {
     var stor = localStorage.getItem('DecStor'); // string
     console.log("Value in local storage = " + stor + "; data type = " + typeof(stor));
-    if((stor !== '0') & (stor !== null)) {
+if((stor !== '0') & (stor !== null)) {
     v_iDec.value = stor;
     numDec = parseFloat(v_iDec.value);
     Solution();
@@ -68,7 +68,7 @@ if(localStorage.getItem('DecStor')) {
 }   // function ld()
 
 
-function bULd() {
+function bULd() {   // beforeunload
     localStorage.setItem('DecStor',numDec);
 }   // function bULd()
 
@@ -79,107 +79,72 @@ function I(txt) {
 
 
 function clearAll() {
-    console.log("\nEvent " + ++i + " = " + event.type + " in id = " + event.target.id + " => function clearAll()");
+    console.log("\nClear All:  Event " + ++i + "; type = " + event.type + "-" + event.inputType + " in Element id = " + event.target.id);
     v_iDec.value = ""; numDec = 0;
     v_iG.value = ""; numG = 0;
     v_iM.value = ""; numM = 0;
     v_iS.value = ""; numS = 0;
-    // console.clear();
 }   // clearAll()
 
 
-function kPozIDec(event) {
-    console.log("\nEvent " + ++i + " type = " + event.type + " in Element id = " + event.target.id + "; Cursor position = " + event.target.selectionStart);    
+function kPozIDec(event) {  // keyup & click
+    console.log("\nEvent " + ++i + " type = " + event.type + " in Element id = " + event.target.id + "; Cursor position = " + event.target.selectionStart);
+    // I('id=' + event.target.id + ' Pos=' + event.target.selectionStart);
+    I('Pos=' + event.target.selectionStart);
 }   // kPozIDec(event)
 
 
-function kInputIDec(event) {
-    var ch = '';    // char
-    // var di = 0;     // dividers
-    var curPoz = event.target.selectionStart;   // cursor position
-    console.log("\nEvent " + ++i + "; type = " + event.type + "-" + event.inputType + " in Element id = " + event.target.id + "; Cursor position = " + curPoz);
+function kInputIDec(event) {    // kInputIDec(event)
+    console.log("\nEvent " + ++i + "; type = " + event.type + "-" + event.inputType + " in Element id = " + event.target.id);
     console.log("this.value before this.value.replace = " + this.value + "; type = " + typeof(this.value) + " with length = " + this.value.length);
-if(this.value.length===0) {  // Если все символы удалены - maybe by input type = deleteContentBackward
+        // Если все символы удалены - maybe by input type = deleteContentBackward
+if(this.value.length===0) {
     clearAll();
     return false;
 }   // if 'this' empty
-if (comma_RE.test(this.value)) {    // если есть запятые
+        // Если есть запятые
+if(comma_RE.test(this.value)) {
     this.value = this.value.replace(comma_RE,'.'); // Если символ = comma то заменяется на dot; глобально - чтоб два раза не вставать
     console.log("this.value after replace commas to dots = " + this.value + "; length = " + this.value.length);
 }   // if (comma_RE)
-if (a_RE.test(this.value)) {    // если есть буквы
+        // Если есть буквы
+if(a_RE.test(this.value)) {
+if(this.value.length===1) {
+    clearAll();
+    return false;    
+    }
+else {
     this.value = this.value.replace(a_RE,'');
+    if(this.value.length===0) {
+        clearAll();
+        return false;    
+        }
     console.log("this.value after replace letters to nothing = " + this.value + "; length = " + this.value.length);
+}   // else
 }   // if (a_RE)
-// debugger;
-// ***  Ниже в инпуте уже только цифры и дивидеры  ***
+        // ***  Ниже в инпуте уже только цифры и дивидеры  ***
     var info1 = dotCount(this.value);   // количество дивидеров and offset from pointer to divider
     console.log("kInputIDec: Info1 from dotCount = " + info1.toString());
-    console.log("kInputIDec: Info1.cnt = " + info1.cnt + "; this.lenght = " + this.value.length);
-if((info1.cnt == 1) && (info1.firstPoz == 0)) {  // если дивидеров = 1 и дивидер первый символ
+    // console.log("kInputIDec: Info1.cnt = " + info1.cnt + "; this.lenght = " + this.value.length);
+        // Если дивидеров = 1 и дивидер первый символ
+if((info1.cnt == 1) && (info1.firstPoz == 0)) {
     this.value = this.value.replace('.','0.');
     info1 = dotCount(this.value);
 }   // if((info
-
-if((this.value.length > 1) && (this.value[0]=='0') && (this.value[1]!='.')) {  // т.е. строка типа '04'
+        // Строка типа '04'
+if((this.value.length > 1) && (this.value[0]=='0') && (this.value[1]!='.')) {
     this.value = this.value.replace(this.value[0],'');  // удалить ненужный ноль, => строка = '4'
 }   // if((this.value.length > 1)
-
-if(info1.cnt > 1) {  // если дивидеров > 1
+        // Если дивидеров > 1
+if(info1.cnt > 1) {
     this.value = dotCutter(this.value, info1.firstPoz);
     info1 = dotCount(this.value);
     console.log("kInputIDec: Info1 from dotCount = " + info1.toString());
 }   // if(info.cnt
-
-    return false;
-    
-    //  FOR - проверка каждого символа имеющейся строки
-for(var a=0; a<this.value.length; a++) {    // a - это смещение от указателя
-    di = 0;
-    console.log("Symbol number " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length);  // num a+1 - т.к. а это не смещение
-    ch = this.value[a]; // чтоб следующая строка (кода) была короче и т.д.
-if (numDot_RE.test(ch)) {   // true если нецифродот
-    console.log("Error with symbol = " + this.value[a] + " => symbol deleted");
-if(this.value.length==1) {  // если нецифродот был единственным символом в строке то строка станет пустой после удаления нецифродота
-    clearAll();
-    return false;
-}   // if(this.value.length==1)
-else {  // если нецифродот был НЕ единственным символом в строке
-    this.value = this.value.replace(ch,''); // заменить нецифродот на ничто (в любом месте строки)
-    a--;                                    // строка становится короче на 1 символ
-    event.target.selectionStart = (curPoz-1);   // оставить курсор на месте вводившегося и удаленного символа
-    window.getSelection().collapseToStart();    // уменьшить выделение до курсора
-}   // if(this.value.length==1) else
-}   // if НЕцифродот
-if(ch == '.') { // если dot
-if(a==0) {      // если dot первый в строке
-    this.value = this.value.replace(ch,'0.');
-    a++;
-}   // if(a==0)  
-    di++;
-    console.log("Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
-}   // if(ch == '.')
-if(di>1) {  // если количество dot больше одного
-    this.value = cutty(this.value,curPoz);
-    di--;
-    a--;
-    event.target.selectionStart = (curPoz-1);   // оставить курсор на месте вводившегося и удаленного символа
-    window.getSelection().collapseToStart();    // уменьшить выделение до курсора
-    console.log("Second divider deleted. Number decimal Dividers di = " + di + "; this.value.length = " + this.value.length);
-}   // if
-if(a==1) {  // (a==1) - если смещение = 1 то это второй символ строки
-    if((this.value[a]!='.') && (this.value[0]=='0')) {  // т.е. строка типа '04'
-        this.value = this.value.replace(this.value[0],'');  // удалить ненужный ноль, => строка = '4'
-        a--;
-        console.log("After Fix first zero without dot - Symbol num " + (a+1) + " = " + this.value[a] + "; this.value.length = " + this.value.length + "; cursor position = " + event.target.selectionStart);
-    }   // if((this.value[a]!='.') && (this.value[0]=='0'))
-}   // if(a==1)
-}   //  FOR
     numDec = parseFloat(this.value);
-while(numDec > 359.999) {
+while(numDec > 359.999) {   // while т.к. может быть копипаста
     console.log('if-4: this.value before this.value.substring() = ' + this.value + ' >= 360');
-    var tmpTxt = cutty(this.value, curPoz);
-    curPoz--;
+    var tmpTxt = cutty(this.value, event.target.selectionStart);
     this.value = tmpTxt;
     numDec = parseFloat(this.value);
 }   // while
@@ -258,7 +223,7 @@ function kInputInt(event) {
     else {    
     Solution1();
     }
-    I("Ready");
+    // I("Ready");
 }
 
 
@@ -295,7 +260,7 @@ function Solution() {   // for kInputIDec
     v_iM.value = numM;
     numS  = numS.toFixed(4);
     v_iS.value = numS;
-    I("Ready");
+    // I("Ready");
 }   // Solution() for kInputIDec
 
 
