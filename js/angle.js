@@ -6,47 +6,57 @@ var v_iG   = document.getElementById('IG');
 var v_iM   = document.getElementById('IM');
 var v_iS   = document.getElementById('IS');
 
-var cl   = document.getElementById('clear');    // Знак градус после децимал инпута  
+var cl  = document.getElementById('clear');    // Знак градус после децимал инпута  
 var inf = document.getElementById('forInfo');
 var btn = document.getElementById('btn_calc');
 var showRad = document.getElementById('angl_in_rad_output');    // Вывод значения угла в радианах
 var showRadLabel = document.getElementById('in_rad_lbl');       // Лебел вывода значения угла в радианах
 var showSin = document.getElementById('sin_output');
 var showCos = document.getElementById('cos_output');
-var showTg = document.getElementById('tg_output');
+var showTg  = document.getElementById('tg_output');
 var showCtg = document.getElementById('ctg_output');
 
-var txt = "";
-var tmp = "";
-var i = 0;              // номера стартов функции события
+var i = 0;          // номера стартов функции события
 
-var numDec = 0;         // Угол с клавы в ДЕСЯТИЧНЫХ град
-var Angle_Sec = 0;      // Угол с клавы в секундах
-var numG = 0;           // Целых градусов в угле
-var degSec = 0;         // Целых градусов в угле - в секундах
-var fracSec = 0;        // Дробная часть градуса - в секундах
-var fracMin = 0;        // Дробная часть градуса - в минутах
-var numM = 0;           // Целых минут в дробной части
-var minSec = 0;         // Целых минут в дробной части - в секундах
-var numS = 0;           // Секунды - то что осталось
-var deg1 = 0;           // deg в deg-min-sec
-var min1 = 0;           // min в deg-min-sec
-var sec1 = 0;           // sec в deg-min-sec
-var angleInRad = 0;     // Угол numDec в радианах
+var numDec = 0;     // Угол с клавы в ДЕСЯТИЧНЫХ град
+var Angle_Sec = 0;  // Угол с клавы в секундах
+var numG = 0;       // Целых градусов в угле
+var degSec = 0;     // Целых градусов в угле - в секундах
+var fracSec = 0;    // Дробная часть градуса - в секундах
+var fracMin = 0;    // Дробная часть градуса - в минутах
+var numM = 0;       // Целых минут в дробной части
+var minSec = 0;     // Целых минут в дробной части - в секундах
+var numS = 0;       // Секунды - то что осталось
+var deg1 = 0;       // deg в deg-min-sec
+var min1 = 0;       // min в deg-min-sec
+var sec1 = 0;       // sec в deg-min-sec
+var angleInRad = 0; // Угол numDec в радианах
 
 var numDot_RE = /[^\d.]/;   // not g - поиск в строке из 1 символа
 var a_RE = /[^\d.]/g;
 var dot_RE = /[.]/g;
 var comma_RE = /[,]/g;
+var notD_RE = /[^\d]/g;
 
 cl.addEventListener("click",clearAll);
 btn.addEventListener("click",calcRun);
-v_iDec.addEventListener("input",kInputIDec);
-v_iDec.addEventListener("keyup",kPozIDec);  // keyup
-v_iDec.addEventListener("click",kPozIDec);  // click
-v_iG.addEventListener("input",kInputInt);
-v_iM.addEventListener("input",kInputInt);
-v_iS.addEventListener("input",kInputIS);
+
+v_iDec.addEventListener("input",inputIDec); // Dec
+v_iDec.addEventListener("keyup",cursorPos); // keyup
+v_iDec.addEventListener("click",cursorPos); // click
+
+v_iS.addEventListener("input",inputIS);     // Sec
+v_iS.addEventListener("keyup",cursorPos);   // keyup
+v_iS.addEventListener("click",cursorPos);   // click
+
+v_iG.addEventListener("input",inputIG);     // Grad
+v_iG.addEventListener("keyup",cursorPos);   // keyup
+v_iG.addEventListener("click",cursorPos);   // click
+
+v_iM.addEventListener("input",inputIM);     // Min
+v_iM.addEventListener("keyup",cursorPos);   // keyup
+v_iM.addEventListener("click",cursorPos);   // click
+
 window.addEventListener("load",ld);
 window.addEventListener("beforeunload",bULd);
 
@@ -73,29 +83,10 @@ function bULd() {   // beforeunload
 }   // function bULd()
 
 
-function I(txt) {
-    inf.innerHTML = txt;
-}   // I(txt)
-
-
-function clearAll() {
-    console.log("\nClear All:  Event num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
-    v_iDec.value = ""; numDec = 0;
-    v_iG.value = ""; numG = 0;
-    v_iM.value = ""; numM = 0;
-    v_iS.value = ""; numS = 0;
-}   // clearAll()
-
-
-function kPozIDec(event) {  // keyup & click
-    console.log("\nEvent num " + ++i + ", type = " + event.type + " in Element id = " + event.target.id + "; Cursor position = " + event.target.selectionStart);
-    I('Pos=' + event.target.selectionStart);
-}   // kPozIDec(event)
-
-
-function kInputIDec(event) {    // kInputIDec(event)
+function inputIDec(event) {    // inputIDec(event)
     console.log("\nEvent num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
         //  Вызов общей функции
+    // событие в котором все символы были удалены ИЛИ символы были но недопустимые и они были удалены в checkFix()    
 if((this.value==='')||((this.value = checkFix(this.value))==='')) {
     clearAll();
     return false;   // Если все символы удалены - maybe by input type = deleteContentBackward
@@ -108,64 +99,79 @@ while(numDec > 359.999) {   // while т.к. может быть копипаст
     numDec = parseFloat(this.value);
 }   // while
     Solution();    
-} // kInputIDec(event)
+}   // inputIDec(event)
 
 
-function kInputInt(event) {
-    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    console.log("Значение по ссылке " + event.target.id + " == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
-    switch(this) {
-        case v_iG:
-            if(this.value=="") numG = 0;
-            else numG = parseInt(this.value);
-            if(numG > 359) {
-                I("Угол д.б. менее 360 град.");
-                this.value = ""; numG = 0;
-                event.preventDefault();
-                return false; }
-            console.log("Значение numG == " + numG + "; type == " + typeof(numG));
-            break;
-        case v_iM:
-            if(this.value=="") numM = 0;
-            else numM = parseInt(this.value);
-            if(numM > 59) {
-                I("В градусе д.б. менее 60 минут");
-                this.value = ""; numM = 0;
-                event.preventDefault();
-                return false; }
-            console.log("Значение numM == " + numM + "; type == " + typeof(numM));
-            break;    
-        default:
-            break;
-    }   // switch (this)
-    if((numG==0)&(numM==0)&(numS==0))
-    { v_iDec.value = ""; numDec = 0; }
-    else {    
+function inputIG(event) {
+    console.log("\nEvent num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
+        //  Вызов общей функции
+    // событие в котором все символы были удалены ИЛИ символы были но недопустимые и они были удалены в checkFix()
+if((this.value==='')||((this.value = checkFixInt(this.value))==='')) {
+if((numM==0)&&(numS==0)){
+    clearAll();
+    return false; 
+}   // if((v_iM.value==='0')
+numG = 0;
+}   // if(this.value==='')
+    else numG = parseInt(this.value);
+while(numG > 359) {   // while т.к. может быть копипаста
+    console.log('if-4: this.value before this.value.substring() = ' + this.value + ' > 359');
+    var tmpTxt = cutty(this.value, event.target.selectionStart);
+    this.value = tmpTxt;
+    numG = parseInt(this.value);
+    console.log("Значение numG == " + numG + "; type == " + typeof(numG));
+}   // while
     Solution1();
-    }
-    // I("Ready");
-}
+}   // inputIG(event)
 
 
-function kInputIS(event) {
-    console.log("\nEvent " + ++i + " => " + event.type + " in id == " + event.target.id);
-    console.log("Значение по ссылке v_iS == " + this.value + "; type == " + typeof(this.value) + "; length of string == " + this.value.length);
-    txt = this.value.replace(/,/,'.');
-    console.log("Значение txt == " + txt + "; type == " + typeof(txt) + "; length of string == " + txt.length);
-    if((txt=="")||(txt==",")||(txt=="."))  {
-        this.value = ""; numS = 0;
-    if((numG==0)&(numM==0)&(numS==0))
-        v_iDec.value = ""; numDec = 0;
-    }
-    else { 
-    numS = parseFloat(txt);
+function inputIM(event) {
+    console.log("\nEvent num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
+        //  Вызов общей функции
+    // событие в котором все символы были удалены ИЛИ символы были но недопустимые и они были удалены в checkFix()
+if((this.value==='')||((this.value = checkFixInt(this.value))==='')) {
+if((numG==0)&&(numS==0)){
+    clearAll();
+    return false; 
+}   // if((v_iG.value==='0')
+numM = 0;
+}   // if(this.value==='')
+    else numM = parseInt(this.value);
+while(numM > 59) {   // while т.к. может быть копипаста
+    console.log('if-4: this.value before this.value.substring() = ' + this.value + ' > 59');
+    var tmpTxt = cutty(this.value, event.target.selectionStart);
+    this.value = tmpTxt;
+    numM = parseInt(this.value);
+    console.log("Значение numM == " + numM + "; type == " + typeof(numM));
+}   // while
+    Solution1();
+}   // inputIM(event)
+
+
+function inputIS(event) {
+    console.log("\nEvent num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
+        //  Вызов общей функции
+    // событие в котором все символы были удалены ИЛИ символы были но недопустимые и они были удалены в checkFix()
+if((this.value==='')||((this.value = checkFix(this.value))==='')) {
+if((numG==0)&&(numM==0)){
+    clearAll();
+    return false; 
+}   // if((v_iG.value==='0')
+numS = 0;
+}   // if(this.value==='')
+    else numS = parseFloat(this.value);
+while(numS > 59.99999) {   // while т.к. может быть копипаста
+    console.log('if-4: this.value before this.value.substring() = ' + this.value + ' >= 60');
+    var tmpTxt = cutty(this.value, event.target.selectionStart);
+    this.value = tmpTxt;
+    numS = parseFloat(this.value);
     console.log("Значение numS == " + numS + "; type == " + typeof(numS));
+}   // while
     Solution1();
-    }
-}
+}   // inputIS(event)
 
 
-function Solution() {   // for kInputIDec
+function Solution() {   // for inputIDec
     console.log("Значение numDec = " + numDec + "; type = " + typeof(numDec));
     Angle_Sec = numDec * 3600;      // Угол с клавы в секундах
     numG = Math.floor(numDec);      // ГРАДУСЫ
@@ -181,7 +187,7 @@ function Solution() {   // for kInputIDec
     numS  = numS.toFixed(4);
     v_iS.value = numS;
     // I("Ready");
-}   // Solution() for kInputIDec
+}   // Solution() for inputIDec
 
 
 function Solution1() {

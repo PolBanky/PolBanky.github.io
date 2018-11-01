@@ -1,5 +1,26 @@
 'use strict';
 
+function I(txt) {
+    inf.innerHTML = txt;
+}   // I(txt)
+
+
+function clearAll() {
+    console.log("\nClear All:  Event num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
+    v_iDec.value = ""; numDec = 0;
+    v_iG.value = ""; numG = 0;
+    v_iM.value = ""; numM = 0;
+    v_iS.value = ""; numS = 0;
+    I('Ready');
+}   // clearAll()
+
+
+function cursorPos(event) {  // keyup & click
+    console.log("\nEvent num " + ++i + ", type = " + event.type + " in Element id = " + event.target.id + "; Cursor position = " + event.target.selectionStart);
+    I('Pos=' + event.target.selectionStart);
+}   // cursorPos(event)
+
+
 function checkFix(inTxt) {
     console.log('We in checkFix():  inTxt = ' + inTxt + '; length = ' + inTxt.length);
         // Если есть запятые
@@ -37,6 +58,22 @@ if((info1.count == 1) && (info1.firstPosition == 0)) {
 }   // if((info
     return inTxt;
 }   // function checkFix(inTxt)
+
+
+function checkFixInt(inTxt) {   // INT
+    console.log('We in checkFixInt():  inTxt = ' + inTxt + '; length = ' + inTxt.length);
+if(notD_RE.test(inTxt)) {
+    inTxt = inTxt.replace(notD_RE,''); // Если символы = comma или dot или нецифра то заменяется на ничто; глобально - чтоб два раза не вставать
+    console.log("inTxt after replace commas, dots, letters = " + inTxt + "; length = " + inTxt.length);
+}   // if(notD_RE.test)
+    // ***  Ниже в инпуте уже только цифры  ***
+        // Строка типа '04'
+if(inTxt[0]=='0') {
+    inTxt = inTxt.replace(inTxt[0],'');  // удалить ненужный ноль, => строка = '4'
+    console.log("inTxt after: first zero;  inTxt = " + inTxt);
+}   // if((this.value.length > 1)
+    return inTxt;
+}   // function checkFixInt(inTxt)
 
 
 function cutty(text, cutter) {  // cutter - это номер символа в строке (= номер позиции курсора); или индекс смещения + 1
