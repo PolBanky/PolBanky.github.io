@@ -1,5 +1,12 @@
 'use strict';
 
+// var numDot_RE = /[^\d.]/;   // not g - поиск в строке из 1 символа
+var a_RE = /[^\d.]/g;
+// var dot_RE = /[.]/g;
+var comma_RE = /[,]/g;
+var notD_RE = /[^\d]/g;
+
+
 function I(txt) {
     inf.innerHTML = txt;
 }   // I(txt)
@@ -31,10 +38,10 @@ if(comma_RE.test(inTxt)) {
         // Если есть буквы
 if(a_RE.test(inTxt)) {
 if((inTxt = inTxt.replace(a_RE,''))==='') {
-    console.log("inTxt after: replace ALL letters to nothing = " + inTxt + "; length = " + inTxt.length);
+    console.log("inTxt after: replace ALL letters with nothing = " + inTxt + "; length = " + inTxt.length);
     return '';
 }   // if
-    console.log("inTxt after: replace letters to nothing = " + inTxt + "; length = " + inTxt.length);
+    console.log("inTxt after: replace letters with nothing = " + inTxt + "; length = " + inTxt.length);
 }   // if(a_RE)
     // ***  Ниже в инпуте уже только цифры и дивидеры  ***
     var info1 = dotCount(inTxt);   // количество дивидеров and offset from pointer to divider
@@ -64,7 +71,7 @@ function checkFixInt(inTxt) {   // INT
     console.log('We in checkFixInt():  inTxt = ' + inTxt + '; length = ' + inTxt.length);
 if(notD_RE.test(inTxt)) {
     inTxt = inTxt.replace(notD_RE,''); // Если символы = comma или dot или нецифра то заменяется на ничто; глобально - чтоб два раза не вставать
-    console.log("inTxt after replace commas, dots, letters = " + inTxt + "; length = " + inTxt.length);
+    console.log("inTxt after replace commas, dots, letters with nothing = " + inTxt + "; length = " + inTxt.length);
 }   // if(notD_RE.test)
     // ***  Ниже в инпуте уже только цифры  ***
         // Строка типа '04'

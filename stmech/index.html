@@ -33,11 +33,10 @@
 <p><a href="../data/18599-2001_pnd_pipes.pdf" target="_blank">ГОСТ 18599-2001</a> устанавливает ТУ на трубы напорные ПНД. Стандарт распространяется на напорные трубы из полиэтилена низкого давления, предназначенные для трубопроводов, транспортирующих воду, в том числе для хозяйственно-питьевого водоснабжения, при температуре от 0&#176;С до 40&#176;С, а также другие жидкие и газообразные вещества.</p>
 	<img src="../data/What_SDR_for_PND.png" width="880" alt="SDR for PND" title="Что такое SDR для ПНД">
 
-<fieldset id="calcSDR"> <legend>Расчет толщины стенки трубы из ПЭ100</legend>
-                     <!-- INPUT SDR -->
+<fieldset id="calcSDR"> <legend>Расчет трубы из ПЭ100</legend>
+        <!-- SELECT SDR -->
     <div>
-<!--        <input type="number" id="SDR_input" placeholder="SDR Value" list="17 11 7" title="Значение SDR">-->
-        <select class="bigAndAline" id="SDR_Value" onchange="Event_SelectChng()">		<!-- select "kg_or_N" -->
+        <select class="bigAndAline" id="SDR_Value">		<!-- select SDR -->
             <option value="17">SDR17 PN=10bar</option>
             <option value="13.6">SDR13,6 PN=12,5bar</option>
             <option value="11">SDR11 PN=16bar</option>
@@ -46,27 +45,27 @@
 		</select>
         <label for="SDR_Value"> Значение SDR</label>
     </div>
-          <!-- INPUT DIAMETER, mm -->
+        <!-- INPUT EXT DIAMETER, mm -->
     <div>
-        <input type="number" id="input_dia_ex" oninput="Event_Input_Num()" min="0" max="1600" placeholder="Pipe's Diameter" step="0.01">
-        <label for="input_dia_ex" id="lbl_dia_ex"> Наружный диаметр трубы, mm</label>	
+        <input type="text" id="input_dia_ex" placeholder="Pipe's Diameter">
+        <label for="input_dia_ex" id="lbl_dia_ex"> Наружный диаметр трубы, мм</label>	
     </div>
-<!-- <div>     BUTTON RUN
-		<input type="button" id="calc" onclick="Event_PressButton()" value="Calculate Thickness" title="Calculate Thickness">
-</div> -->
-    <!-- OUTPUT THICKNESS AND DIA_IN, mm -->
-		<div>
-			<div class="divOutPut" id="output_thickness" title="Толщина стенки">0,0</div>
-			<div class="divLbl" id="lbl_thickness">Толщина стенки, мм</div>
-		</div>
-		<div>
-			<div class="divOutPut" id="output_dia_in">0,0</div>
-			<div class="divLbl">Внутренний диаметр трубы, мм</div>
-		</div>
-    </fieldset>
+        <!-- OUTPUT THICKNESS, mm -->
+    <div>
+        <div class="divOutPut" id="output_thickness">0.0</div>
+        <div class="divLbl" id="lbl_thickness"> Толщина стенки трубы, мм</div>
+    </div>
+        <!-- OUTPUT INNER DIAMETER, mm -->
+    <div>
+        <div class="divOutPut" id="output_dia_in">0.0</div>
+        <div class="divLbl"> Внутренний диаметр трубы, мм</div>
+    </div>
+</fieldset>
+
     <div class="zero">
-        <img src="../data/sdr_100_256_840_head.png" alt="header">
-        <iframe width="880" height="200" src="../data/sdr_100_256_840.png" seamless="seamless" frameborder="0"></iframe>
+        <img src="../data/sdr_100_256_840_head.png" alt="header">   <!-- Заголовок таблицы --> 
+        <iframe src="../data/sdr_100_256_840.png" width="880" height="200" frameborder="0">if you read this = iframe not support here</iframe>
+        <!-- <iframe width="880" height="200" src="../data/sdr_100_256_840.png" seamless="seamless" frameborder="0"></iframe> -->
     </div>
 
 	<h2 id="muftaReg">Муфта регулировочная (вставка демонтажная)</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
@@ -81,7 +80,8 @@
 													
 	<p class="copyright">Pol Banky &#169; 2018</p>
 	<!--Добавление к пректу JS-->	
-    <script src="../js/calc_SDR.js"></script>
     <script src="../js/fs.js"></script>	
+	<script src="../js/float.js"></script>
+    <script src="../js/calc_SDR.js"></script>
 </body>
 </html>

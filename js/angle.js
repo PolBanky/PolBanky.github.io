@@ -32,12 +32,6 @@ var min1 = 0;       // min в deg-min-sec
 var sec1 = 0;       // sec в deg-min-sec
 var angleInRad = 0; // Угол numDec в радианах
 
-var numDot_RE = /[^\d.]/;   // not g - поиск в строке из 1 символа
-var a_RE = /[^\d.]/g;
-var dot_RE = /[.]/g;
-var comma_RE = /[,]/g;
-var notD_RE = /[^\d]/g;
-
 cl.addEventListener("click",clearAll);
 btn.addEventListener("click",calcRun);
 
@@ -186,7 +180,6 @@ function Solution() {   // for inputIDec
     v_iM.value = numM;
     numS  = numS.toFixed(4);
     v_iS.value = numS;
-    // I("Ready");
 }   // Solution() for inputIDec
 
 
@@ -218,25 +211,25 @@ function gradInRad() {
     angleInRad = numDec * dFactor;
     showRad.innerHTML = angleInRad.toFixed(6);
     showRadLabel.innerHTML = "Угол " + numDec + "\u00B0 - в радианах";
-} // function Event_PressButton()
+} // function gradInRad()
 
 
 function sin() {
     var sin1 = Math.sin(angleInRad).toFixed(6); 
     showSin.innerHTML = sin1;
-}
+}   // sin
 
 
 function cos() {
     var cos1 = Math.cos(angleInRad).toFixed(6); 
     showCos.innerHTML = cos1;
-}
+}   // cos
 
 
 function tg() {
     var tg1 = Math.tan(angleInRad).toFixed(6); 
     showTg.innerHTML = tg1;
-}
+}   // tg
 
 
 function ctg() {
@@ -244,4 +237,4 @@ function ctg() {
 if((Math.tan(angleInRad).toFixed(6))!=0)
     ctg1 = (1/Math.tan(angleInRad)).toFixed(6);
     showCtg.innerHTML = ctg1;
-}
+}   // ctg

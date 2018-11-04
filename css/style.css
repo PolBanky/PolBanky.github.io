@@ -212,7 +212,9 @@ legend {
 	font-size: 1.2em;  /* Размер шрифта */
 	padding: 3px 7px 3px 7px;
 }
-
+legend.button {
+	cursor: pointer; 
+}
 select {
     /*    font-family: monospace;*/
     font-size: 1.2em; /* Размер шрифта */
