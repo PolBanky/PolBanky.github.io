@@ -1,14 +1,14 @@
 'use strict';
 // Для совместимости с мобильными устройствами события keypress не используются, используется только событие input
 // 
-var v_iDec = document.getElementById("IDec");   // ссылка на HTML Input = i(nput)Dec(imal)
+var v_iDec = document.getElementById("IDec");   // HTML Input = i(nput)Dec(imal)
 var v_iG   = document.getElementById('IG');
 var v_iM   = document.getElementById('IM');
 var v_iS   = document.getElementById('IS');
 
-var cl  = document.getElementById('clear');    // Знак градус после децимал инпута  
-var inf = document.getElementById('forInfo');
-var btn = document.getElementById('btn_calc');
+var cl  = document.getElementById('clear');     // элемент legend панели ввода данных
+var inf = document.getElementById('forInfo');   // строка состояния
+var btn = document.getElementById('btn_calc');  // кнопка считать тригенометрию
 var showRad = document.getElementById('angl_in_rad_output');    // Вывод значения угла в радианах
 var showRadLabel = document.getElementById('in_rad_lbl');       // Лебел вывода значения угла в радианах
 var showSin = document.getElementById('sin_output');
@@ -16,24 +16,9 @@ var showCos = document.getElementById('cos_output');
 var showTg  = document.getElementById('tg_output');
 var showCtg = document.getElementById('ctg_output');
 
-var i = 0;          // номера стартов функции события
-
-var numDec = 0;     // Угол с клавы в ДЕСЯТИЧНЫХ град
-var Angle_Sec = 0;  // Угол с клавы в секундах
-var numG = 0;       // Целых градусов в угле
-var degSec = 0;     // Целых градусов в угле - в секундах
-var fracSec = 0;    // Дробная часть градуса - в секундах
-var fracMin = 0;    // Дробная часть градуса - в минутах
-var numM = 0;       // Целых минут в дробной части
-var minSec = 0;     // Целых минут в дробной части - в секундах
-var numS = 0;       // Секунды - то что осталось
-var deg1 = 0;       // deg в deg-min-sec
-var min1 = 0;       // min в deg-min-sec
-var sec1 = 0;       // sec в deg-min-sec
-var angleInRad = 0; // Угол numDec в радианах
 
 cl.addEventListener("click",clearAll);
-btn.addEventListener("click",calcRun);
+btn.addEventListener("click",calcRun);      // Нажатие кнопки
 
 v_iDec.addEventListener("input",inputIDec); // Dec
 v_iDec.addEventListener("keyup",cursorPos); // keyup
@@ -53,6 +38,22 @@ v_iM.addEventListener("click",cursorPos);   // click
 
 window.addEventListener("load",ld);
 window.addEventListener("beforeunload",bULd);
+
+var i = 0;          // номера стартов функции события
+
+var numDec = 0;     // Угол с клавы в ДЕСЯТИЧНЫХ град
+var Angle_Sec = 0;  // Угол с клавы в секундах
+var numG = 0;       // Целых градусов в угле
+var degSec = 0;     // Целых градусов в угле - в секундах
+var fracSec = 0;    // Дробная часть градуса - в секундах
+var fracMin = 0;    // Дробная часть градуса - в минутах
+var numM = 0;       // Целых минут в дробной части
+var minSec = 0;     // Целых минут в дробной части - в секундах
+var numS = 0;       // Секунды - то что осталось
+var deg1 = 0;       // deg в deg-min-sec
+var min1 = 0;       // min в deg-min-sec
+var sec1 = 0;       // sec в deg-min-sec
+var angleInRad = 0; // Угол numDec в радианах
 
 
 function ld() { // load

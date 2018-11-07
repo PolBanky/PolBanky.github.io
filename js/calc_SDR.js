@@ -1,4 +1,5 @@
 'use strict';
+//  ../stmech/index.html
 
 var v_sl   = document.getElementById("SDR_Value");          // ссылка на HTML Select
 var v_in   = document.getElementById("input_dia_ex");       // ссылка на HTML Input

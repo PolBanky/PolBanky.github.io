@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-	<!-- Сопромат -->
 <html lang="ru">
-<head>
+<head>	<!-- ../js/sopromat.js -->
 	<meta charset="utf-8">
 	<title>Stretch</title>
 	<link rel="stylesheet" href="../css/style.css">
@@ -13,48 +12,43 @@
 
 <body>
 <a href="help-sopromat.html" target="_blank">	<!--H E L P-->
-	<img class="imgBtn64" src="../images/pic-question_128.png" alt="question">
+	<img class="imgBtn64" src="../images/pic-question_128.png" alt="question"> <!-- знак вопроса -->
 </a>
 	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Pic Beam">Stretch</h1>
 	<figure>    <!-- height="350" -->
 	    <img src="../images/btn128circle.svg" height="350" alt="Rod stretched by Force" title="How it works">
-	    <!-- <img src="../data/rod_stretch_02.png" height="350" alt="Rod stretched by Force" title="How it works"> -->
 	</figure>		
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
 <fieldset>
-	<legend>Исходные данные</legend>		
+	<legend>Исходные данные</legend>	<!-- Исходные данные -->
 <div>	<!-- INPUT EX DIAMETER, mm -->
-	<input type="number" id="input_dia_ex" placeholder="External diameter" accesskey="1" title="Alt+1" autofocus>
-		<!-- Chrome = Alt+1 -->     <!-- Firefox = Shift+Alt+1 -->
-	<label for="input_dia_ex" id="lbl_ex_dia">Диаметр стержня, mm</label>	
+	<input type="text" id="input_dia_ex" placeholder="External diameter" accesskey="1" title="Alt+1" autofocus>	<!-- Chrome = Alt+1 -->
+	<label for="input_dia_ex"> External diameter D, mm</label>	
 </div>		
 <div>	<!-- INPUT IN DIAMETER, mm -->
-	<input type="number" id="input_dia_in" placeholder="Internal diameter" accesskey="2" title="Alt+2">
-		<!-- Chrome = Alt+2 -->     <!-- Firefox = Shift+Alt+2 -->
-	<label for="input_dia_in" id="lbl_in_dia">Диаметр отверстия, mm</label>	
+	<input type="text" id="input_dia_in" placeholder="Internal diameter" accesskey="2" title="Alt+2">
+	<label for="input_dia_in"> Internal diameter d, mm</label>	
 </div>		
 <div>	<!-- INPUT FORCE, N or kg -->
-	<input type="number" id="force_stretch_input" placeholder="Stretch force" accesskey="3" title="Alt+3">
-		<!-- Chrome = Alt+3 -->     <!-- Firefox = Shift+Alt+3 -->
-		<label for="force_stretch_input" id="lbl_frc"> Усилие растяжения, </label>
-		<select id="N_or_kg" onchange="Event_N_or_kg_Changed()">		<!-- select "N_or_kg" -->
+	<input type="text" id="input_force_stretch" placeholder="Stretch force" accesskey="3" title="Alt+3">
+		<label for="input_force_stretch"> Stretch force F, </label>
+		<select id="N_or_kg">		<!-- select "N_or_kg"   onchange="Event_N_or_kg_Changed()" -->
 			<option value="n">N</option>
 			<option value="kg">кг</option>
 		</select>
 </div>
-<div>	<!-- BUTTON RUN  галочка на кнопке - см. css -->
-		<input type="button" id="calc" onclick="Event_PressButton()" value="Calculate Stress" accesskey="4" title="Alt+4">
-		<!-- Chrome = Alt+4 -->     <!-- Firefox = Shift+Alt+4 -->
+<div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) -->
+	<input type="button" id="buttonRUN" value="Calculate Stress" accesskey="4" title="Alt+4"> <!-- onclick="Event_PressButton()" -->
 </div>
 </fieldset>
 	<!-- Вывод результатов -->
 <fieldset>
 	<legend>Результаты расчета</legend>
 		<div>	<!-- OUTPUT AREA, mm2 or cm2 -->
-			<div class="divOutPut" id="area_output">0.000</div>
+			<div class="divOutPut" id="output_area">0.000</div>
 			<div class="divLbl" id="lbl_area">Площадь сечения стержня,
-				<select id="mm_or_cm" onchange="Event_mm_or_cm_Changed()">		<!-- select "mm_or_cm" -->
+				<select id="mm_or_cm">		<!-- select "mm_or_cm"  onchange="Event_mm_or_cm_Changed() -->
 					<option value="mm">mm</option>
 					<option value="cm">cm</option>
 				</select>
@@ -62,13 +56,14 @@
 			</div>	<!--class="divLbl"-->
 		</div>		
 		<div>	<!-- OUTPUT STRESS, MPa (N/mm2) -->
-			<div class="divOutPut" id="stress_output">0.000</div>
+			<div class="divOutPut" id="output_stress">0.000</div>
 			<div class="divLbl" id="lbl_stress">Напряжение в стержне, MPa (N/mm<sup>2</sup>)</div>
 		</div>
 </fieldset>
 	</form>	<!-- end of Form !!!!! -->
 
 	<p class="copyright">Pol Banky &#169; 2018</p>
+	<script src="../js/float.js"></script>
 	<script src="../js/sopromat.js"></script>	
 </body>
 </html>

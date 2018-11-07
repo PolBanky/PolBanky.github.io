@@ -350,3 +350,7 @@ li.sign {
     list-style-image: url("../images/diamond_aGIF_16.gif");
     /*    list-style-image: url("../images/pencil2_16.png");*/
 }
+
+iframe {
+	border: 0px;
+}
