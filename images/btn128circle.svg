@@ -6,9 +6,9 @@
 
      <!-- <circle cx="15px" cy="15px" r="10px" stroke="green" stroke-width="12px"/> -->
 
-    <g fill-opacity="1.0" stroke="black" stroke-width="2px">
-        <circle cx="64px" cy="48px" r="44px" fill="none" fill-opacity="0.5"/>
-        <circle cx="64px" cy="48px" r="36px" fill="none" fill-opacity="1"/>
+    <g fill-opacity="1.0" stroke="black" stroke-width="1.5">
+        <circle cx="64px" cy="48px" r="44px" fill="yellow" fill-opacity="0.5"/>
+        <circle cx="64px" cy="48px" r="36px" fill="blue" fill-opacity="0.3"/>
         <!-- <circle cx="64px" cy="48px" r="36px" fill="Aquamarine" fill-opacity="0.9"/> -->
 	</g>
     <g font-family="monospace" font-size="14" fill="blue">	

@@ -16,16 +16,16 @@
      
 	 <g stroke="black" stroke-width="2px">
         <rect x="34" y="5" rx="8" ry="8" width="60" height="85"
-            style="fill:yellow;fill-opacity:0.3"/>
+            style="fill:yellow;fill-opacity:0.5"/>
         <rect x="42" y="13" rx="3" ry="3" width="44" height="69"
-            style="fill:white;fill-opacity:1.0"/>
+            style="fill:blue;fill-opacity:0.3"/>
 	</g>
 	<g font-family="monospace" font-size="14" fill="blue">	<!-- <g font-family="Verdana"> -->
 		<text x="65" y="120">B</text>
 		<text x="24" y="106">S</text>
 		<text x="60" y="106">b</text>
 		<text x="15" y="54">H</text>
-		<text x="103" y="54">h</text>		
+		<text x="104" y="54">h</text>		
     </g>
 <!-- Линии размеров снизу -->
     <g stroke="red" stroke-width="1px" stroke-opacity="0.9">
