@@ -31,8 +31,8 @@
 	<label for="input_dia_in"> Internal diameter d, mm</label>	
 </div>		
 <div>	<!-- INPUT FORCE, N or kg -->
-	<input type="text" id="input_force_stretch" placeholder="Stretch force" accesskey="3" title="Alt+3">
-		<label for="input_force_stretch"> Stretch force F, </label>
+	<input type="text" id="input_F_stretch" placeholder="Stretch force" accesskey="3" title="Alt+3">
+		<label for="input_F_stretch"> Stretch force F, </label>
 		<select id="N_or_kg">		<!-- select "N_or_kg"   onchange="Event_N_or_kg_Changed()" -->
 			<option value="n">N</option>
 			<option value="kg">кг</option>
@@ -45,25 +45,29 @@
 	<!-- Вывод результатов -->
 <fieldset>
 	<legend>Результаты расчета</legend>
+		<div>	<!-- OUTPUT THICKNESS, mm -->
+			<div class="divOutPut" id="output_thick">0.000</div>
+			<div class="divLbl"> Толщина стенки, мм</div>	<!--class="divLbl"-->
+		</div>	<!-- OUTPUT THICKNESS, mm -->
 		<div>	<!-- OUTPUT AREA, mm2 or cm2 -->
 			<div class="divOutPut" id="output_area">0.000</div>
-			<div class="divLbl" id="lbl_area"> Площадь сечения стержня,
-				<select id="mm_or_cm">		<!-- select "mm_or_cm"  onchange="Event_mm_or_cm_Changed() -->
+			<div class="divLbl"> Площадь сечения стержня, 
+				<select id="mm_or_cm">		<!-- select "mm_or_cm" -->
 					<option value="mm">mm</option>
 					<option value="cm">cm</option>
 				</select>
 				<sup>2</sup> <!-- т.к. мм или см в квадрате -->
-			</div>	<!--class="divLbl"-->
-		</div>		
+			</div>			 <!-- class="divLbl" -->
+		</div>	<!-- OUTPUT AREA, mm2 or cm2 -->		
 		<div>	<!-- OUTPUT STRESS, MPa (N/mm2) -->
 			<div class="divOutPut" id="output_stress">0.000</div>
-			<div class="divLbl" id="lbl_stress"> Напряжение в стержне, MPa (N/mm<sup>2</sup>)</div>
+			<div class="divLbl"> Напряжение в стержне, MPa (N/mm<sup>2</sup>)</div>
 		</div>
 </fieldset>
 	</form>	<!-- end of Form !!!!! -->
 
 	<p class="copyright">Pol Banky &#169; 2018</p>
 	<script src="../js/float.js"></script>
-	<script src="../js/sopromat.js"></script>	
+	<script src="../js/tubeC.js"></script>	
 </body>
 </html>

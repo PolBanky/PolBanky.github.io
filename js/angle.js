@@ -78,12 +78,22 @@ function bULd() {   // beforeunload
 }   // function bULd()
 
 
+function clearAll_angle() {
+    // console.log("\nClear All:  Event num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
+    v_iDec.value = ""; numDec = 0;
+    v_iG.value = ""; numG = 0;
+    v_iM.value = ""; numM = 0;
+    v_iS.value = ""; numS = 0;
+    I('Ready');
+}   // clearAll_angle()
+
+
 function inputIDec(event) {    // inputIDec(event)
     console.log("\nEvent num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
         //  Вызов общей функции
     // событие в котором все символы были удалены ИЛИ символы были но недопустимые и они были удалены в checkFix()    
 if((this.value==='')||((this.value = checkFix(this.value))==='')) {
-    clearAll();
+    clearAll_angle();
     return false;   // Если все символы удалены - maybe by input type = deleteContentBackward
 }   // if(this.value==='')
     numDec = parseFloat(this.value);
@@ -103,7 +113,7 @@ function inputIG(event) {
     // событие в котором все символы были удалены ИЛИ символы были но недопустимые и они были удалены в checkFix()
 if((this.value==='')||((this.value = checkFixInt(this.value))==='')) {
 if((numM==0)&&(numS==0)){
-    clearAll();
+    clearAll_angle();
     return false; 
 }   // if((v_iM.value==='0')
 numG = 0;
@@ -126,7 +136,7 @@ function inputIM(event) {
     // событие в котором все символы были удалены ИЛИ символы были но недопустимые и они были удалены в checkFix()
 if((this.value==='')||((this.value = checkFixInt(this.value))==='')) {
 if((numG==0)&&(numS==0)){
-    clearAll();
+    clearAll_angle();
     return false; 
 }   // if((v_iG.value==='0')
 numM = 0;
@@ -149,7 +159,7 @@ function inputIS(event) {
     // событие в котором все символы были удалены ИЛИ символы были но недопустимые и они были удалены в checkFix()
 if((this.value==='')||((this.value = checkFix(this.value))==='')) {
 if((numG==0)&&(numM==0)){
-    clearAll();
+    clearAll_angle();
     return false; 
 }   // if((v_iG.value==='0')
 numS = 0;

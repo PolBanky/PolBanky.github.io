@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>	<!-- ../js/sopromat.js -->
+	<meta charset="utf-8">
+	<title>Stretch</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../images/beam_on_bearings_128.ico" type="images/x-icon">
+	<style>
+        body { background-color: #d2b48c; }
+    </style>
+</head>
+
+<body>
+<a href="help-sopromat.html" target="_blank">	<!--H E L P-->
+	<img class="imgBtn64" src="../images/pic-question_128.png" alt="question"> <!-- знак вопроса -->
+</a>
+	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Pic Beam">Stretch</h1>
+	<figure>    <!-- height="350" -->
+	    <img src="../images/btn128rectangle.svg" height="200" alt="Rod stretched by Force">
+	</figure>		
+		<!-- Form !!!!! -->
+	<form action="" onsubmit="return false;">
+<fieldset>
+	<legend>Исходные данные</legend>	<!-- Исходные данные -->
+<div>	<!-- INPUT EX DIAMETER, mm -->
+	<input type="text" id="input_dia_ex" placeholder="External width" accesskey="1" title="Alt+1" autofocus>	<!-- Chrome = Alt+1 -->
+	<label for="input_dia_ex"> External width B, mm</label>
+</div>		
+<div>	<!-- INPUT IN DIAMETER, mm -->
+	<input type="text" id="input_dia_in" placeholder="External height" accesskey="2" title="Alt+2">
+	<label for="input_dia_in"> External height H, mm</label>	
+</div>		
+<div>	<!-- INPUT FORCE, N or kg -->
+	<input type="text" id="input_F_stretch" placeholder="Stretch force" accesskey="3" title="Alt+3">
+		<label for="input_F_stretch"> Stretch force F, </label>
+		<select id="N_or_kg">		<!-- select "N_or_kg"   onchange="Event_N_or_kg_Changed()" -->
+			<option value="n">N</option>
+			<option value="kg">кг</option>
+		</select>
+</div>
+<div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) -->
+	<input type="button" id="buttonRUN" value="Calculate Stress" accesskey="4" title="Alt+4"> <!-- onclick="Event_PressButton()" -->
+</div>
+</fieldset>
+	<!-- Вывод результатов -->
+<fieldset>
+	<legend>Результаты расчета</legend>
+		<div>	<!-- OUTPUT THICKNESS, mm -->
+			<div class="divOutPut" id="output_thick">0.000</div>
+			<div class="divLbl"> Толщина стенки, мм</div>	<!--class="divLbl"-->
+		</div>	<!-- OUTPUT THICKNESS, mm -->
+		<div>	<!-- OUTPUT AREA, mm2 or cm2 -->
+			<div class="divOutPut" id="output_area">0.000</div>
+			<div class="divLbl"> Площадь сечения стержня, 
+				<select id="mm_or_cm">		<!-- select "mm_or_cm" -->
+					<option value="mm">mm</option>
+					<option value="cm">cm</option>
+				</select>
+				<sup>2</sup> <!-- т.к. мм или см в квадрате -->
+			</div>			 <!-- class="divLbl" -->
+		</div>	<!-- OUTPUT AREA, mm2 or cm2 -->		
+		<div>	<!-- OUTPUT STRESS, MPa (N/mm2) -->
+			<div class="divOutPut" id="output_stress">0.000</div>
+			<div class="divLbl"> Напряжение в стержне, MPa (N/mm<sup>2</sup>)</div>
+		</div>
+</fieldset>
+	</form>	<!-- end of Form !!!!! -->
+
+	<p class="copyright">Pol Banky &#169; 2018</p>
+	<script src="../js/float.js"></script>
+	<script src="../js/tubeR.js"></script>	
+</body>
+</html>

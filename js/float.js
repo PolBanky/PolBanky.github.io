@@ -12,16 +12,6 @@ function I(txt) {
 }   // I(txt)
 
 
-function clearAll() {
-    // console.log("\nClear All:  Event num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
-    v_iDec.value = ""; numDec = 0;
-    v_iG.value = ""; numG = 0;
-    v_iM.value = ""; numM = 0;
-    v_iS.value = ""; numS = 0;
-    I('Ready');
-}   // clearAll()
-
-
 function evaluate(val) {
     if(val == '') return 0;
     else return parseFloat(val);
