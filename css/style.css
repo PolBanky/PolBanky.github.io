@@ -100,7 +100,8 @@ div.divLbl {    /* В качестве - LABEL для окон вывода */
 	display: table-cell;
 	height: 1.6em;
 	vertical-align: middle;
-    font-size: 1.1em;  /* Размер шрифта */
+	font-size: 1.1em;  /* Размер шрифта */
+	padding-left: 7px;
 	/* border: dashed #ffff00;
 	border-width: 1px 0px 1px 1px; */
 }
