@@ -15,9 +15,10 @@
 	<img class="imgBtn64" src="../images/pic-question_128.png" alt="question"> <!-- знак вопроса -->
 </a>
 	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Pic Beam">Circle Tube</h1>
-	<figure>
-	    <img src="../images/btn128ring.svg" height="200" alt="Rod">
-	</figure>		
+<figure>
+	<img src="../images/pic128ring.svg" height="200" alt="tube">
+	<img src="../images/pic128stretch.svg" height="200" alt="stretch" id="choice_load" title="Растяжение">
+</figure>
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
 <fieldset>
@@ -39,18 +40,33 @@
 </div>
 
 <div>	<!-- МАРКА СТАЛИ -->
-	<select id="steel">
+	<select class="big" id="steel_sort">
 		<option value="st3">Сталь 3</option>
-		<option value="st20">Сталь 20</option>
-		<option value="st45">Сталь 45</option>
-		<option value="st40x">Сталь 40Х</option>
+		<option value="st20n">Сталь 20 (Н)</option>
+		<option value="st20c-b59">Сталь 20 (Ц-В59)</option>
+		<option value="st45n">Сталь 45 (Н)</option>
+		<option value="st45u">Сталь 45 (У)</option>
+		<option value="st45m35">Сталь 45 (М35)</option>
+		<option value="st45b42">Сталь 45 (В42)</option>
+		<option value="st45b42">Сталь 45 (В48)</option>
+		<option value="st45b42">Сталь 45 (ТВЧ56)</option>
+		<option value="st40xn">Сталь 40Х (Н)</option>
+		<option value="st40xu">Сталь 40Х (У)</option>
+		<option value="st40xm39">Сталь 40Х (М39)</option>
+		<option value="st40xm48">Сталь 40Х (М48)</option>
 		<option value="st09g2s">Сталь 09Г2С</option>
 	</select>
 	<label for="steel"> Марка стали</label>
 </div>
 
 <div>
-	
+	<div class="divOutPutMLine" id="steel_data">
+		1 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>
+		2 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>
+		3 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>
+		4 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>
+		5 Проверка class="divOutPutMLine" Проверка class  Проверка class
+	</div>	
 </div>
 
 <div>	<!-- INPUT FORCE, N or kg -->

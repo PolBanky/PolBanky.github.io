@@ -1,11 +1,14 @@
 'use strict';
 //  ../sopromat/tubeC.html  //
 
+var v_choice_load= document.getElementById("choice_load");           // HTML Picture
 var v_dia_ex     = document.getElementById("input_dia_ex");          // HTML Input
 var v_dia_in     = document.getElementById("input_dia_in");          // HTML Input
 var v_length     = document.getElementById("input_length");          // HTML Input
+var v_steel_sort = document.getElementById("steel_sort");            // HTML Select steel
+var v_steel_data = document.getElementById("steel_data");            // HTML Output steel
 var v_F_stretch  = document.getElementById("input_F_stretch");       // HTML Input
-var v_N_or_kg    = document.getElementById("N_or_kg");               // HTML Select
+var v_N_or_kg    = document.getElementById("N_or_kg");               // HTML Select Force in N or kg
 
 var v_buttonRUN  = document.getElementById("buttonRUN");             // HTML Input.Button
 
@@ -17,6 +20,7 @@ var v_out_wp     = document.getElementById("output_wp");             // HTML Out
 var v_out_thick  = document.getElementById("output_thick");          // HTML Output
 var v_out_massa  = document.getElementById("output_massa");          // HTML Output
 
+v_choice_load.addEventListener("click",Event_choice_load);  // Picture
 v_dia_ex.addEventListener("input",inputIDec);               // Input
 v_dia_in.addEventListener("input",inputIDec);               // Input
 v_F_stretch.addEventListener("input",inputIDec);            // Input
@@ -25,7 +29,7 @@ v_N_or_kg.addEventListener("change",Event_N_or_kg);         // Select - change  
 v_mm_or_cm.addEventListener("change",Event_mm_or_cm);       // Select - change  mm_cm
 
 // var i = 0;      // номера стартов функции события
-
+var i1 = 2;
 
 // концепт: размеры в mm, площадь в mm2, сила в N, напряжение в N/mm2 (MPa)
 var cil = {       // Объект цилиндр !!!!!!!
@@ -89,6 +93,34 @@ var cil = {       // Объект цилиндр !!!!!!!
         return 'It\'s cil.toString(): dia_ex = ' + this.dia_ex + '; dia_in = ' + this.dia_in
     }       // toString: function()
 }           // var cil
+
+
+function Event_choice_load() {
+    switch (i1) {
+        case 1:
+    v_choice_load.src="../images/pic128stretch.svg";
+    v_choice_load.title="Растяжение";
+    i1++;            
+            break;
+        case 2:
+    v_choice_load.src="../images/pic128bend.svg";
+    v_choice_load.title="Изгиб";
+    i1++;            
+            break;
+        case 3:
+    v_choice_load.src="../images/pic128ring.svg";
+    v_choice_load.title="Кручение";
+    i1++;            
+            break;
+        case 4:
+    v_choice_load.src="../images/pic128bend.svg";
+    v_choice_load.title="Срез";
+    i1 = 1;            
+            break;    
+        default:
+            break;
+    }
+}   // Event_choice_load()
 
 
 function clearAll_sopr() {
