@@ -283,6 +283,9 @@ img.picInTxt {
 img.low {
 	margin-bottom: -6px;
 }
+img.btnNext {
+	cursor: pointer;
+}
 
 table {
     border: 1px solid black;

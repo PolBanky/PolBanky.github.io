@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version = "1.1"
+     baseProfile="full"
+     xmlns = "http://www.w3.org/2000/svg"     
+     height = "128px" width = "128px">    
+
+    <g stroke="pink" stroke-width="0.5">
+        <rect x="0" y="0" height="128" width="128" fill="none"/>
+	</g>
+        <!-- штриховка слева -->
+    <path d="M 19,38 l -5,2 m 1.5,3 l -5,2 m 4.5,3 l -5,2 m 5.5,3 l -5,2 m 8.5,3 l -5,2" stroke="red" stroke-width="0.5"/>
+        <!-- деталь -->
+    <g stroke="black" stroke-width="1.5">
+        <path d="M 20,38 l 70,0 a 4,10 0 1,0 0,20 l -70,0 a 4,10 0 1 1 0,-20" fill="yellow" fill-opacity="0.5"/>
+        <ellipse cx="90" cy="48" rx="4" ry="10" fill="green" fill-opacity="0.3"/>
+        <!-- <ellipse cx="90" cy="48" rx="12" ry="18" stroke="olive" stroke-width="0.5" fill="none"/> -->   <!-- CONTROL ELLIPSE -->
+        <!-- temp; ОСЬ ДЕТАЛИ Y = 48;  cx="90" cy="48" -->
+    <!-- <line x1="90" y1="30" x2="90" y2="66" stroke="blue" stroke-width="0.5"/>  -->
+	</g>        <!-- rx=12  ry=18 -->
+    <!-- <path d="M 90,30 a 12,18 0 1,1 0,36" fill="none" stroke="green" stroke-width="1"/> -->   <!-- дуга от 0 (верх) до 6 (низ) -->
+    <!-- <path d="M 78,48 a 12,18 0 1,0 24,0" fill="none" stroke="olive" stroke-width="1"/> -->   <!-- дуга от 9 (лево) до 3 (право) -->
+    <path d="M 99.964379,37.970041 A 12,18 0 0 1 97.992176,61.426896 12,18 0 0 1 82.231604,61.719222" fill="none" stroke="red" stroke-width="1.5"/>
+        <!-- треугольник стрелки -->
+    <path d="M 94,30 l 3.5,10 5,-3 Z" stroke="red" stroke-width="0.5" fill="red" fill-opacity="0.9"/>
+    <!-- Буквы F and L -->
+    <g font-family="monospace" fill="blue">	
+        <text x="101" y="81" style="font-size:35">M</text>
+    </g>
+
+</svg>

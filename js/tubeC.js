@@ -108,12 +108,12 @@ function Event_choice_load() {
     i1++;            
             break;
         case 3:
-    v_choice_load.src="../images/pic128ring.svg";
+    v_choice_load.src="../images/pic128twist.svg";
     v_choice_load.title="Кручение";
     i1++;            
             break;
         case 4:
-    v_choice_load.src="../images/pic128bend.svg";
+    v_choice_load.src="../images/pic128cut.svg";
     v_choice_load.title="Срез";
     i1 = 1;            
             break;    
