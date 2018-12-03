@@ -3,7 +3,7 @@
 
 var v_dia_ex     = document.getElementById("input_dia_ex");          // HTML Input
 var v_dia_in     = document.getElementById("input_dia_in");          // HTML Input
-var v_F_stretch  = document.getElementById("input_F_stretch");       // HTML Input
+var v_F_stretch  = document.getElementById("input_F");       // HTML Input
 var v_N_or_kg    = document.getElementById("N_or_kg");               // HTML Select
 var v_buttonRUN  = document.getElementById("buttonRUN");             // HTML Input.Button 
 var v_out_thick  = document.getElementById("output_thick");          // HTML Output

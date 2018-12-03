@@ -17,7 +17,7 @@ var showTg  = document.getElementById('tg_output');
 var showCtg = document.getElementById('ctg_output');
 
 
-cl.addEventListener("click",clearAll);
+cl.addEventListener("click",clearAll_angle);
 btn.addEventListener("click",calcRun);      // Нажатие кнопки
 
 v_iDec.addEventListener("input",inputIDec); // Dec

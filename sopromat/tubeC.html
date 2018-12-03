@@ -14,24 +14,24 @@
 <a href="help-sopromat.html" target="_blank">	<!--H E L P-->
 	<img class="imgBtn64" src="../images/pic-question_128.png" alt="question"> <!-- знак вопроса -->
 </a>
-	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Pic Beam">Circle Tube</h1>
+	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Beam">Circle Tube</h1>
 <figure>
 	<img src="../images/pic128ring.svg" height="200" alt="tube">
-	<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="stretch" id="choice_load" title="Растяжение">
+	<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="Load" id="choice_force" title="Растяжение">
 </figure>
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
 <fieldset>
-	<legend>Исходные данные</legend>	<!-- Исходные данные -->
+	<legend id="src_data">Исходные данные</legend>	<!-- Исходные данные -->
 
 <div>	<!-- INPUT EX DIAMETER, mm -->
 	<input type="text" id="input_dia_ex" placeholder="External diameter" accesskey="1" title="Alt+1" autofocus>	<!-- if Chrome = Alt+1 -->
-	<label for="input_dia_ex"> External diameter D, mm</label>	
+	<label for="input_dia_ex"> Diameter External D, mm</label>	
 </div>
 
 <div>	<!-- INPUT IN DIAMETER, mm -->
 	<input type="text" id="input_dia_in" placeholder="Internal diameter" accesskey="2" title="Alt+2">
-	<label for="input_dia_in"> Internal diameter d, mm</label>	
+	<label for="input_dia_in"> Diameter Internal d, mm</label>	
 </div>
 
 <div>	<!-- INPUT LENGTH, mm -->
@@ -41,41 +41,46 @@
 
 <div>	<!-- МАРКА СТАЛИ -->
 	<select class="big" id="steel_sort">
-		<option value="st3">Сталь 3</option>
+	<optgroup label="380-2005 Углеродистая">
+		<option value="st3" selected>Сталь 3</option>
+	</optgroup>
+	<optgroup label="1050-88 Качественная">
 		<option value="st20n">Сталь 20 (Н)</option>
-		<option value="st20c-b59">Сталь 20 (Ц-В59)</option>
+		<option value="st20cb59">Сталь 20 (Ц-В59)</option>
 		<option value="st45n">Сталь 45 (Н)</option>
 		<option value="st45u">Сталь 45 (У)</option>
 		<option value="st45m35">Сталь 45 (М35)</option>
 		<option value="st45b42">Сталь 45 (В42)</option>
 		<option value="st45b42">Сталь 45 (В48)</option>
 		<option value="st45b42">Сталь 45 (ТВЧ56)</option>
+	</optgroup>	
+	<optgroup label="4543-71 Легированная">
 		<option value="st40xn">Сталь 40Х (Н)</option>
 		<option value="st40xu">Сталь 40Х (У)</option>
 		<option value="st40xm39">Сталь 40Х (М39)</option>
 		<option value="st40xm48">Сталь 40Х (М48)</option>
+	</optgroup>
+	<optgroup label="19281-2014 Прокатная">
 		<option value="st09g2s">Сталь 09Г2С</option>
+	</optgroup>
 	</select>
 	<label for="steel"> Марка стали</label>
 </div>
 
-<div>
+<div>	<!-- ДАННЫЕ СТАЛИ -->
 	<div class="divOutPutMLine" id="steel_data">
-		1 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>
-		2 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>
-		3 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>
-		4 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>
-		5 Проверка class="divOutPutMLine" Проверка class  Проверка class
+		<!-- 1 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>
+		2 Проверка class="divOutPutMLine" Проверка class  Проверка class <br>  -->
 	</div>	
 </div>
 
 <div>	<!-- INPUT FORCE, N or kg -->
-	<input type="text" id="input_F_stretch" placeholder="Stretch force" accesskey="4" title="Alt+4">
-		<label for="input_F_stretch"> Stretch force F, </label>
-		<select id="N_or_kg">
+	<input type="text" id="input_F" placeholder="Force" accesskey="4" title="Alt+4">
+		<label for="input_F" id="label_input_F"> Stretch force F, kg</label>
+		<!-- <select id="N_or_kg">
 			<option value="n">N</option>
 			<option value="kg">kg</option>
-		</select>
+		</select> -->
 </div>
 
 <div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) -->
@@ -94,12 +99,12 @@
 
 <div>	<!-- OUTPUT AREA, mm2 or cm2 -->
 	<div class="divOutPut" id="output_area">0.0000</div>
-	<div class="divLbl"> Площадь сечения стержня, 
-		<select id="mm_or_cm">		<!-- select "mm_or_cm" -->
+	<div class="divLbl"> Площадь сечения стержня, cm<sup>2</sup>
+		<!-- <select id="mm_or_cm">
 			<option value="cm">cm</option>
 			<option value="mm">mm</option>
-		</select>
-		<sup>2</sup> <!-- т.к. мм или см в квадрате -->
+		</select> -->
+		<!-- <sup>2</sup> --> <!-- т.к. мм или см в квадрате -->
 	</div>			 <!-- class="divLbl" -->
 </div>
 
