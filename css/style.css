@@ -33,12 +33,13 @@ h2 {
     color: darkviolet;
     margin: 30px 0px 0px 30px;
     padding: 20px 15px 8px 60px; /* top right bottom left */
+    /* text-shadow: 3px 4px 4px #bbbbbb; */
 }
 h3 {
 	display: inline-block;
     color: darkgreen;
     margin: 0px 0px 0px 0px;
-    padding: 8px 0px 5px 15px; /* top right bottom left */
+    padding: 8px 0px 5px 15px; /* top right bottom left */    
 }
 h4 {
     color: darkred;
@@ -95,7 +96,17 @@ div.divOutPut {    /* В качестве - ОКНО ВЫВОДА результ
 	background-color: #a5a511;
 	border: 2px solid #84e6bd;	
 }
-div.divOutPutMLine {    /* В качестве - ОКНО ВЫВОДА результатов расчетов */
+div.divOutPutMini {    /* В качестве - ОКНО ВЫВОДА результатов расчетов */
+	display: inline;
+	/* height: 1.4em; */
+	/* width: 150px; */
+	vertical-align: middle;
+	font-size: 1.3em;  /* Размер шрифта */
+	color: blue;
+	background-color: #a5a511;
+	border: 2px solid #84e6bd;	
+}
+div.divOutPutMLine {    /* В качестве - ОКНО ВЫВОДА результатов расчетов в сопромате */
 	display: table-cell;
 	height: 75px;
 	width: 400px;
@@ -206,7 +217,7 @@ select.big {
     color: black;   /* Цвет ввода    */
 	background-color: lightgrey;
     width: 250px;
-	padding: 10px 3px 10px 3px;
+	padding: 8px 3px 8px 3px;
 }
 
 #topnav {    /*  ( # )  => по идентификатору */
@@ -290,17 +301,36 @@ table {
     border: 1px solid black;
     padding: 0px;
 }
+th {
+	font-size: 1.2em; /* Размер шрифта */
+	text-align: center;
+    background-color: rgba(79, 217, 154, 0.24);
+	padding: 4px 12px 4px 12px;
+    border: 1px solid black;
+}
 td {
 	font-size: 1.1em; /* Размер шрифта */
 	text-align: left;
 	padding: 3px 12px 3px 12px;
     border: 1px solid black;
 }
-th {
+table.compact {
+    border-collapse: collapse;
+    padding: 0px;
+    font-size: 1.0em; /* Размер шрифта */
+}
+th.a {
 	font-size: 1.2em; /* Размер шрифта */
 	text-align: center;
     background-color: rgba(79, 217, 154, 0.24);
 	padding: 4px 12px 4px 12px;
+    border: 1px solid black;
+    width: 77px;
+}
+td.b {
+	font-size: 1.1em; /* Размер шрифта */
+	text-align: center;
+	padding: 8px 12px 8px 12px;
     border: 1px solid black;
 }
 

@@ -8,6 +8,7 @@ var v_length     = document.getElementById("input_length");     // HTML Input
 var v_St_choice  = document.getElementById("steel_sort");     // HTML Select steel
 var v_out_St     = document.getElementById("steel_data");       // HTML Output steel data
 var v_F          = document.getElementById("input_F");          // HTML Input
+var v_lbl_F      = document.getElementById("label_input_F");    // HTML Label
 
 var v_buttonRUN  = document.getElementById("buttonRUN");        // HTML Button RUN
 
@@ -19,7 +20,7 @@ var v_out_thick  = document.getElementById("output_thick");     // HTML Output
 var v_out_massa  = document.getElementById("output_massa");     // HTML Output
 
 window.addEventListener("load",page_onload);                    // onLoad
-v_F_choice.addEventListener("click",Event_F_choice);        // Picture
+v_F_choice.addEventListener("click",Event_F_choice);      // Picture
 v_dia_ex.addEventListener("input",inputIDec);                   // Input
 v_dia_in.addEventListener("input",inputIDec);                   // Input
 v_length.addEventListener("input",inputIDec);                   // Input
@@ -55,21 +56,22 @@ var steels = [
 ];
 //**********************************************************************
 
+
 var F_sort = -1;
 var F_sort_txt = ["При растяжении ", "При изгибе ", "При кручении ", "При срезе "];
 
 // концепт: размеры в mm, площадь в mm2, сила в N, напряжение в N/mm2 (MPa)
-var cil = {       // Объект цилиндр !!!!!!!
-    dia_ex: 0,    // external diameter, mm
-    dia_in: 0,    // internal diameter, mm
-    lenght: 0,    // lenght, mm
-    density: 0.00782, // density, g/mm3
-    force: 0,     // force in normal cut, N
+var cil = {  // Объект цилиндр !!!!!!!
+    dia_ex: 0,       // external diameter, mm
+    dia_in: 0,       // internal diameter, mm
+    lenght: 0,       // lenght, mm
+    density: 0.00782,// density, g/mm3
+    force: 0,        // force in normal cut, N
     koef_N_kg: 10,   // koef
     koef_mm_cm: 10,  // koef
     PiDiv16: 0.19634954, // Pi/16
     PiDiv32: 0.09817477, // Pi/32
-    stress: function() {    // расчет напряжения в MPa (N/mm2)
+    stress: function() { // расчет напряжения в MPa (N/mm2)
         if(this.area() == 0) return 0;
         else {
             return this.force / this.area(); }
@@ -119,7 +121,7 @@ var cil = {       // Объект цилиндр !!!!!!!
     toString: function() {  // overload function toString()
         return 'It\'s cil.toString(): dia_ex = ' + this.dia_ex + '; dia_in = ' + this.dia_in
     }       // toString: function()
-}           // var cil
+}            // var cil
 
 
 function page_onload() {
@@ -135,18 +137,22 @@ function Event_F_choice() {
         case 0:
     v_F_choice.src="../images/pic128stretch.svg";
     v_F_choice.title="Растяжение";
+    v_lbl_F.innerHTML = " Stretch Force F, kg";
             break;
         case 1:
     v_F_choice.src="../images/pic128bend.svg";
     v_F_choice.title="Изгиб";
+    v_lbl_F.innerHTML = " Bend Force F, kg";
             break;
         case 2:
     v_F_choice.src="../images/pic128twist.svg";
     v_F_choice.title="Кручение";
+    v_lbl_F.innerHTML = " Twist Moment M, kg &#215 metre";
             break;
         case 3:
     v_F_choice.src="../images/pic128cut.svg";
     v_F_choice.title="Срез";
+    v_lbl_F.innerHTML = " Cut Force F, kg";
             break;    
         default:
             break;
@@ -156,9 +162,8 @@ function Event_F_choice() {
 
 
 function Event_St_choice() {
-    // console.log(v_St_choice.value);
-    // console.log(v_St_choice.selectedIndex);
-    v_out_St.innerText = "Марка стали = " + steels[v_St_choice.selectedIndex][0] + 
+    v_out_St.innerText = 
+    "Марка стали = " + steels[v_St_choice.selectedIndex][0] + 
     "\nВременное сопротивление = " + steels[v_St_choice.selectedIndex][1] + " MPa" +
     "\nПредел текучести = " + steels[v_St_choice.selectedIndex][2] + " MPa\n" +
     F_sort_txt[F_sort] + " допустимое напряжение = " + steels[v_St_choice.selectedIndex][(F_sort+3)] + " MPa";
@@ -167,11 +172,11 @@ function Event_St_choice() {
 
 function clearAll_sopr() {
     v_out_stress.innerHTML = '0.0000';
-    v_out_area.innerHTML = '0.0000';
-    v_out_wx.innerHTML = '0.0000';
-    v_out_wp.innerHTML = '0.0000';
-    v_out_thick.innerHTML = '0.0000';
-    v_out_massa.innerHTML = '0.0000';
+    v_out_area.innerHTML   = '0.0000';
+    v_out_wx.innerHTML     = '0.0000';
+    v_out_wp.innerHTML     = '0.0000';
+    v_out_thick.innerHTML  = '0.0000';
+    v_out_massa.innerHTML  = '0.0000';
 }   // clearAll_sopr()
 
 
@@ -182,13 +187,6 @@ function inputIDec(event) {    // inputIDec(event)
 
 
 function Event_click_Button(event) {  // Событие нажатие кнопки Calculate Stress
-    console.log(v_St_choice.value);
-    console.log(v_St_choice.selectedIndex);
-    console.log(steels[v_St_choice.selectedIndex]);
-    console.log(steels[v_St_choice.selectedIndex][0]);
-    console.log(steels[v_St_choice.selectedIndex][1]);
-    // console.log("\nEvent num " + ++i + ", type == " + event.type + " in Element id == " + event.target.id);
-    // console.log("v_dia_ex.value  == " + v_dia_ex.value + "; type == " + typeof(v_dia_ex.value));
     cil.dia_ex = evaluate(v_dia_ex.value);    // mm
     cil.dia_in = evaluate(v_dia_in.value);    // mm
     cil.lenght = evaluate(v_length.value);    // mm
@@ -204,7 +202,6 @@ if(cil.dia_ex <= cil.dia_in) {   // если внутр. диа. больше н
     v_dia_in.focus();
     return false;
 }   // if()
-// debugger;
     cil.output_stress();
     cil.output_area();
     cil.output_w_axial();
@@ -213,40 +210,3 @@ if(cil.dia_ex <= cil.dia_in) {   // если внутр. диа. больше н
     cil.output_massa();
 }   // Event_click_Button
 
-
-/* function Event_N_or_kg(event) {  // Event_N_or_kg()
-    // console.log("\nEvent num " + ++i + ", type = " + event.type + " in Element id == " + event.target.id + "; v_N_or_kg.value = " + v_N_or_kg.value);
-    // console.log(cil);
-        // var force_tmp = v_F.value;
-    switch (v_N_or_kg.value) {  // select
-        case 'n':
-        cil.koef_N_kg = 1;      
-        if(v_F.value != '')
-        v_F.value = v_F.value * 10; // кг вв ньютоны
-            break;
-        case 'kg':
-        cil.koef_N_kg = 10;  
-        if(v_F.value != '')        
-        v_F.value = v_F.value / 10; // ньютоны в кг
-            break;
-        default:
-        console.log("Myswitch = default");
-}   // switch()
-}   // Event_N_or_kg */
-
-
-/* function Event_mm_or_cm(event) { // Event_mm_or_cm()
-    // console.log("\nEvent num " + ++i + ", type = " + event.type + " in Element id == " + event.target.id + "; v_mm_or_cm.value = " + v_mm_or_cm.value);
-    // console.log(cil);
-    switch (v_mm_or_cm.value) {
-        case 'cm':
-            cil.koef_mm_cm = 10;
-            break;
-        case 'mm':
-            cil.koef_mm_cm = 1;
-            break;
-        default:
-            console.log("Myswitch = default");
-    } // switch(ch)
-    cil.output_area();
-}   // Event_mm_or_cm */
