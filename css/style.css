@@ -315,23 +315,17 @@ td {
     border: 1px solid black;
 }
 table.compact {
-    border-collapse: collapse;
-    padding: 0px;
-    font-size: 1.0em; /* Размер шрифта */
+	border-collapse: collapse;
+	border: 3px solid green;
 }
-th.a {
-	font-size: 1.2em; /* Размер шрифта */
-	text-align: center;
-    background-color: rgba(79, 217, 154, 0.24);
-	padding: 4px 12px 4px 12px;
-    border: 1px solid black;
-    width: 77px;
+table.compact th {	
+	width: 77px;
+	border: 2px solid green;	
 }
-td.b {
-	font-size: 1.1em; /* Размер шрифта */
+table.compact td {
 	text-align: center;
 	padding: 8px 12px 8px 12px;
-    border: 1px solid black;
+	border: 2px solid green;
 }
 
 ul, ol { /*Неупорядоченный список (маркеры а не цифры); ol - упорядоченные (цифры); li - элемент списка */
