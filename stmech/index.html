@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     <!-- Stmech -->
-    
+
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
@@ -25,13 +25,13 @@
         </li>
         <li><a href="#flanges">Фланцы ГОСТ 33259-2015</a></li>
 		<li><a href="#muftaReg">Муфта регулировочная (вставка демонтажная)</a></li>
-		<li><a href="#muftaOb">Муфта обжимная</a></li>    
-		<li><a href="#muftaSoed">Муфта соединительная</a></li>		
-	</ul> 
+		<li><a href="#muftaOb">Муфта обжимная</a></li>
+		<li><a href="#muftaSoed">Муфта соединительная</a></li>
+	</ul>
 </div>
 
 <hr>
-   
+
     <h2 id="SDR">Что такое SDR для труб ПНД</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
 <p><a href="../data/18599-2001_pnd_pipes.pdf" target="_blank">ГОСТ 18599-2001</a> устанавливает ТУ на трубы напорные ПНД. Стандарт распространяется на напорные трубы из полиэтилена низкого давления, предназначенные для трубопроводов, транспортирующих воду, в том числе для хозяйственно-питьевого водоснабжения, при температуре от 0&#176;С до 40&#176;С, а также другие жидкие и газообразные вещества.</p>
 	<img src="../data/What_SDR_for_PND.png" width="880" alt="SDR for PND" title="Что такое SDR для ПНД">
@@ -51,7 +51,7 @@
         <!-- INPUT EXT DIAMETER, mm -->
     <div>
         <input type="text" id="input_dia_ex" placeholder="Pipe's Diameter">
-        <label for="input_dia_ex" id="lbl_dia_ex"> Наружный диаметр трубы, мм</label>	
+        <label for="input_dia_ex" id="lbl_dia_ex"> Наружный диаметр трубы, мм</label>
     </div>
         <!-- OUTPUT THICKNESS, mm -->
     <div>
@@ -66,7 +66,7 @@
 </fieldset>
 
     <div class="zero">  <!-- iframe -->
-        <img src="../data/sdr_100_256_840_head.png" alt="header">   <!-- Заголовок таблицы --> 
+        <img src="../data/sdr_100_256_840_head.png" alt="header">   <!-- Заголовок таблицы -->
         <iframe src="../data/sdr_100_256_840.png" width="880" height="200">
             <p>Your browser does not support iframes</p>
         </iframe>
@@ -75,13 +75,16 @@
 
     <h2 id="flanges">Фланцы ГОСТ 33259-2015</h2><a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
         <table> <!-- Таблица - ГОСТы про фланцы -->
-    <tr><th>№ ГОСТ</th><th>Наименование</th></tr>    
+    <tr><th>№ ГОСТ</th><th>Наименование</th></tr>
     <tr><td><a href="../data/33259-2015_flanges_to_pn250.pdf" target="_blank">33259-2015</a></td><td>Фланцы арматуры, соединительных частей и трубопроводов до PN250</td></tr>
     <tr><td><a href="../data/33259-2015_what_changed.pdf" target="_blank">33259-2015</a></td><td>Фланцы - Что изменилось в ГОСТе</td></tr>
         </table>
-    <img class="picInTxt" src="../data/Flanges_GOST_33259-2015.png" height="600" alt="flanges">
-    <div>   <!-- DN -->
-        <select class="big" id="dn_choice">     
+        <!-- IMG  FLANGE -->
+    <div class="columns">
+    <img src="../data/Flanges_GOST_33259-2015.png" height="600" alt="flanges">
+    </div>
+    <div class="wrap1">   <!-- DN -->
+        <select class="big" id="dn_choice">
             <option value="50"> DN 50 </option>
             <option value="65"> DN 65 </option>
             <option value="80"> DN 80 </option>
@@ -102,11 +105,11 @@
             <option value="1000"> DN 1000 </option>
             <option value="1200"> DN 1200 </option>
             <option value="1400"> DN 1400 </option>
-            <option value="1600"> DN 1600 </option>            
+            <option value="1600"> DN 1600 </option>
         </select>
         <label for="dn"> Значение DN</label>
     </div>
-    <div>   <!-- PN -->
+    <div class="wrap">   <!-- PN -->
         <select class="big" id="pn_choice">
             <option value='6'> PN 6 bar </option>
             <option value='10' selected="selected"> PN 10 bar </option>
@@ -114,9 +117,11 @@
         </select>
         <label for="pn"> Значение PN</label>
     </div>
+    <div>   <!-- Flange Data Output -->
         <table class="compact"> <!-- Flange Data Output -->
     <tr>    <!-- Строка наименований -->
         <th>DN</th>
+		<th>PN</th>
         <th>D</th>
         <th>D<sub>1</sub></th>
         <th>D<sub>2</sub></th>
@@ -125,11 +130,12 @@
         <th>h</th>
         <th>d</th>
         <th>n</th>
-        <th>M, kg</th>
+        <th>M,kg</th>
         <th>Pin</th>
     </tr>
     <tr>    <!-- Строка вывода данных -->
         <td id="_DN">_</td>
+		<td id="_PN">_</td>
         <td id="_D"></td>
         <td id="_D1"></td>
         <td id="_D2"></td>
@@ -139,23 +145,23 @@
         <td id="_d"></td>
         <td id="_n"></td>
         <td id="_M"></td>
-        <td id="_pin"></td>    
+        <td id="_pin"></td>
     </tr>
         </table> <!-- Flange Data Output -->
-        
+    </div>  <!-- Flange Data Output -->
 	<h2 id="muftaReg">Муфта регулировочная (вставка демонтажная)</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
 	<img src="../data/Mufta_Reg_1320.jpg" width="660" alt="Mufta Reg">
-	
+
 	<h2 id="muftaOb">Муфта обжимная</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
 	<img src="../data/Mufta_Obzim_1320.jpg" width="660" alt="Mufta Obzim">
-    
+
     <h2 id="muftaSoed">Муфта соединительная</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
     <img src="../data/Mufta_Soed_1320.jpg" width="660" alt="Mufta Soed">
-    			
-													
+
+
 	<p class="copyright">Pol Banky &#169; 2018</p>
-	<!--Добавление к пректу JS-->	
-    <script src="../js/fs.js"></script>	
+	<!--Добавление к пректу JS-->
+    <script src="../js/fs.js"></script>
 	<script src="../js/float.js"></script>
     <script src="../js/calc_SDR.js"></script>
     <script src="../js/flange.js"></script>

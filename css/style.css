@@ -1,5 +1,5 @@
 html {
-    background-image: url("../images/background_31.png");
+  background-image: url("../images/background_31.png");
 }
 
 *{
@@ -10,7 +10,7 @@ body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 	width: 900px;
 	font-family: "Arial"; /* Семейство шрифтов */
 	color: #b22222;     /* Цвет текста */
-	background-color: white;    
+	background-color: white;
 	margin: 30px auto 150px auto; /* top right bottom left */
 	border: 5px solid #aa2222;
 	padding: 0px 5px 2px 5px;     /* top right bottom left */
@@ -18,7 +18,7 @@ body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 }
 
 h1 {
-	width: 82%;	
+	width: 82%;
 	color: #0000ff;    /* Цвет текста */
 	font-size: 3.2em;    /* Размер шрифта */
 	font-family: Times, serif; /* Семейство шрифтов */
@@ -29,26 +29,26 @@ h1 {
 	transition: color 1s, text-shadow 0.2s;
 }
 h2 {
-    display: inline-block;
-    color: darkviolet;
-    margin: 30px 0px 0px 30px;
-    padding: 20px 15px 8px 60px; /* top right bottom left */
+  display: inline-block;
+  color: darkviolet;
+  margin: 30px 0px 0px 30px;
+  padding: 20px 15px 8px 60px; /* top right bottom left */
     /* text-shadow: 3px 4px 4px #bbbbbb; */
 }
 h3 {
 	display: inline-block;
-    color: darkgreen;
-    margin: 0px 0px 0px 0px;
-    padding: 8px 0px 5px 15px; /* top right bottom left */    
+  color: darkgreen;
+  margin: 0px 0px 0px 0px;
+  padding: 8px 0px 5px 15px; /* top right bottom left */
 }
 h4 {
-    color: darkred;
-    margin: 0px 0px 0px 0px;
-    padding: 5px 0px 3px 15px; /* top right bottom left */
+  color: darkred;
+  margin: 0px 0px 0px 0px;
+  padding: 5px 0px 3px 15px; /* top right bottom left */
 }
 
 p {
-    font-size: 1.0em;        /* Размер шрифта 			*/
+  font-size: 1.0em;        /* Размер шрифта 			*/
 	text-indent: 25px;		 /* Отступ первой строки 	*/
 	margin: 0px 0px 0px 0px; /* top right bottom left 	*/
 	padding: 4px 0px 4px 0px;/* top right bottom left 	*/
@@ -70,43 +70,44 @@ span.small {
 	font-size: 0.7em;      /* Размер шрифта */
 }
 
-div {	
+div {
 	color: #aa05bb;    /* Цвет текста */
 	font-size: 1.0em;    /* Размер шрифта */
 	margin: 5px 5px 5px 5px; /* top right bottom left */
 	padding: 5px 5px 5px 5px; /* top right bottom left */
+	/*border: 1px dashed magenta;*/
 }
 div.center {
 	text-align: center;
 }
-div.divLbl {    /* В качестве - LABEL для окон вывода */
-	display: table-cell;
+div.divLbl {    			/* LABEL для окон вывода */
+	display: inline-block;
 	height: 1.6em;
 	vertical-align: middle;
 	font-size: 1.1em;  /* Размер шрифта */
 	padding-left: 7px;
 }
-div.divOutPut {    /* В качестве - ОКНО ВЫВОДА результатов расчетов */
-	display: table-cell;
+div.divOutPut {    			/* ОКНО ВЫВОДА результатов расчетов */
+	display: inline-block;
 	height: 1.6em;
 	width: 250px;
 	vertical-align: middle;
 	font-size: 1.5em;  /* Размер шрифта */
 	color: blue;
 	background-color: #a5a511;
-	border: 2px solid #84e6bd;	
+	border: 2px solid #84e6bd;
 }
-div.divOutPutMini {    /* В качестве - ОКНО ВЫВОДА результатов расчетов */
-	display: inline;
-	/* height: 1.4em; */
-	/* width: 150px; */
+div.divOutPutMini {    		/* ОКНО ВЫВОДА результатов расчетов */
+	display: inline-block;
+	height: 1.6em;
+	width: 140px;
 	vertical-align: middle;
-	font-size: 1.3em;  /* Размер шрифта */
+	font-size: 1.5em;  /* Размер шрифта */
 	color: blue;
 	background-color: #a5a511;
-	border: 2px solid #84e6bd;	
+	border: 2px solid #84e6bd;
 }
-div.divOutPutMLine {    /* В качестве - ОКНО ВЫВОДА результатов расчетов в сопромате */
+div.divOutPutMLine {    	/* ОКНО ВЫВОДА результатов расчетов в сопромате */
 	display: table-cell;
 	height: 75px;
 	width: 400px;
@@ -114,20 +115,24 @@ div.divOutPutMLine {    /* В качестве - ОКНО ВЫВОДА резу�
 	font-size: 0.8em;  /* Размер шрифта */
 	color: black;
 	background-color: #a3c489;
-	border: 2px solid #849be6;	
+	border: 2px solid #849be6;
 }
-div.divBtn {    /* В качестве button для кнопок главной панели (без текста) */
+div.divBtn {    			/* BUTTON для кнопок главной панели (без текста) */
 	display: table-cell;
 	width: 143px;
 	height: 148px;
 	vertical-align: middle;
 }
 div.wrap {    /* Обертка главной панели */
-display: inline-block;
+  display: inline-block;
+}
+div.wrap1 {   /* Обертка селекта и лебела в стмех */
+  display: inline-block;
+  margin: 400px 5px 5px 5px; /* top right bottom left */
 }
 div.tblOfContent {     /* ОГЛАВЛЕНИЕ */
-    font-size: 1.3em;  /* Размер шрифта */
-    margin: 0px 5px 5px 5px;  /* top right bottom left */
+  font-size: 1.3em;  				/* Размер шрифта */
+  margin: 0px 5px 5px 5px;  /* top right bottom left */
 	padding: 0px 5px 5px 5px; /* top right bottom left */
 }
 div.zero {
@@ -137,6 +142,12 @@ div.zero {
 div.alertString {
 	color: #065e20;    /* Цвет текста */
 	border: 1px solid #800000;
+}
+div.columns {
+	width: 360px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
 }
 
 pre {						/* Показать текст как есть */
@@ -152,7 +163,7 @@ input {
 input[type="number"],input[type="text"] {
 	color: #b22222;   	  /* Цвет текста */
 	font-size: 1.2em; 		/* Размер шрифта */
-    width: 250px;
+  width: 250px;
 	background-color: #eee;
 	border: 3px solid #bb0000;	/* Параметры border */
 	transition: background-color 1s;
@@ -160,7 +171,7 @@ input[type="number"],input[type="text"] {
 input[type="number"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
 input[type="text"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
 input[type="text"].grad {
-	width: 100px;	
+	width: 100px;
 }
 input[type="text"].minsec {
 	width: 100px;
@@ -169,17 +180,17 @@ input[type="text"].minsec {
 input[type="button"] {
 	color: #bb00bb;    /* Цвет ввода */
 	font-size: 1.2em;    /* Размер шрифта */
-    text-align: center;
-    width: 250px;
+  text-align: center;
+  width: 250px;
 }
 input[type="button"]:hover {
 	background-color: bisque;
 }
 input[type="button"]:focus {
 	background-color: palegreen;
-    background-image: url("../images/tick_16.png");
-    background-repeat: no-repeat;
-    background-position: 95% center;
+  background-image: url("../images/tick_16.png");
+  background-repeat: no-repeat;
+  background-position: 95% center;
 }
 
 label {
@@ -194,29 +205,29 @@ label.fat {
 }
 
 fieldset {
-    background-color: #d2b48c;
-    margin: 10px 0px 5px 0px; /* top right bottom left */
+  background-color: #d2b48c;
+  margin: 10px 0px 5px 0px; /* top right bottom left */
 }
 legend {
-    color: #d2b48c;
-    background-color: #322cbe;
+  color: #d2b48c;
+  background-color: #322cbe;
 	font-size: 1.2em;  /* Размер шрифта */
 	padding: 3px 7px 3px 7px;
 }
 legend.button {
-	cursor: pointer; 
+	cursor: pointer;
 }
 select {
-    font-size: 1.2em; /* Размер шрифта */
-    color: black;   /* Цвет ввода    */
+  font-size: 1.2em; /* Размер шрифта */
+  color: black;   /* Цвет ввода    */
 	background-color: lightgrey;
-	padding: 3px 1px 3px 1px;	
+	padding: 3px 1px 3px 1px;
 }
 select.big {
-    font-size: 1.2em; /* Размер шрифта */
-    color: black;   /* Цвет ввода    */
+  font-size: 1.2em; /* Размер шрифта */
+  color: black;   /* Цвет ввода    */
 	background-color: lightgrey;
-    width: 250px;
+  width: 250px;
 	padding: 8px 3px 8px 3px;
 }
 
@@ -226,7 +237,7 @@ select.big {
 	background-color: #117711;
 	color: #FFFFFF;	/* Цвет текста - в этом случае вертикальных палочек */
 	height: 35px;
-    margin-top: 10px;
+  margin-top: 10px;
 	margin-left: 1%;
 	margin-right: 1%;
 	padding-top: 3px; /* От бордера до текста */
@@ -235,10 +246,10 @@ select.big {
 #topnav a:hover { color: rgb(255, 187, 0); }
 
 img {
-margin: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 img.fs {
-    cursor: url("../images/search_48.png"), pointer;
+  cursor: url("../images/search_48.png"), pointer;
 }
 .fs:-ms-fullscreen { width: 100%; }
 .fs:-webkit-full-screen { width: 100%; }
@@ -262,7 +273,7 @@ img.imgBtn128A:hover {	/*For transparency buttons*/
 img.imgBtn64 {    /* Для значков в правом верхнем углу, например -  Help */
 	float: right;
 	width: 64px;
-	margin-top: 10px;	
+	margin-top: 10px;
 	margin-right: 5px;
 	padding: 0px;
 	transition: 0.3s;
@@ -276,7 +287,7 @@ img.imgBtn64A {	/* For circle badge with h1 header */
 	vertical-align: -10px;
 	margin-right: 12px;
 	padding: 0px;
-    border-radius: 32px;
+  border-radius: 32px;
 }
 img.imgBtn64B {	/* For (border-radius:10px) badge with h1 header */
 	width: 64px;
@@ -284,10 +295,10 @@ img.imgBtn64B {	/* For (border-radius:10px) badge with h1 header */
 	vertical-align: -10px;
 	margin-right: 12px;
 	padding: 0px;
-    border-radius: 10px;
+  border-radius: 10px;
 }
 img.picInTxt {
-    display: block;
+  display: block;
 	margin: 5px auto 5px 5px;
 }
 img.low {
@@ -298,51 +309,56 @@ img.btnNext {
 }
 
 table {
-    border: 1px solid black;
-    padding: 0px;
+  border: 1px solid black;
+  padding: 0px;
 }
 th {
 	font-size: 1.2em; /* Размер шрифта */
 	text-align: center;
-    background-color: rgba(79, 217, 154, 0.24);
+  background-color: rgba(79, 217, 154, 0.24);
 	padding: 4px 12px 4px 12px;
-    border: 1px solid black;
+  border: 1px solid black;
 }
 td {
 	font-size: 1.1em; /* Размер шрифта */
 	text-align: left;
 	padding: 3px 12px 3px 12px;
-    border: 1px solid black;
+  border: 1px solid black;
 }
 table.compact {
 	border-collapse: collapse;
 	border: 3px solid green;
+  position: static;
 }
-table.compact th {	
-	width: 77px;
-	border: 2px solid green;	
+table.compact th {
+	width: 74px;
+  padding: 8px 12px 8px 12px;
+	border: 2px solid green;
 }
 table.compact td {
 	text-align: center;
-	padding: 8px 12px 8px 12px;
+	padding: 10px 12px 10px 12px;
 	border: 2px solid green;
 }
 
-ul, ol { /*Неупорядоченный список (маркеры а не цифры); ol - упорядоченные (цифры); li - элемент списка */
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+ul, ol {	/* Неупорядоченный список (маркеры а не цифры); ol - упорядоченные (цифры); li - элемент списка */
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
-
 li {    /* li - элемент списка */
-    margin: 0em 0em 0.4em 0em;	/* top right bottom left */
-	padding: 0.1em 0em 0.1em 0em;
+  margin: 4px 0px 4px 0px;	/* top right bottom left */
+	padding: 2px 0px 2px 0px;	/* top right bottom left */
 }
 li.sign {
-    list-style-image: url("../images/diamond_aGIF_16.gif");
+  list-style-image: url("../images/diamond_aGIF_16.gif");
+}
+li>a {    /* для элемента = a - где контейнер = li  */
+  margin: 4px 0px 4px 0px;	/* top right bottom left */
+	padding: 2px 0px 2px 0px;	/* top right bottom left */
 }
 
 iframe {
-	border: 0px;
+  border: 0px;
 }

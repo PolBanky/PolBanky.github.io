@@ -1,11 +1,11 @@
 'use strict';
 //  ../sopromat/tubeC.html
 
-
     // HTML Elements
 var v_DN_choice  = document.getElementById("dn_choice");     // HTML Select DN
 var v_PN_choice  = document.getElementById("pn_choice");     // HTML Select PN
 var v_DN = document.getElementById("_DN");  // HTML Output
+var v_PN = document.getElementById("_PN");  // HTML Output
 var v_D = document.getElementById("_D");    // HTML Output
 var v_D1 = document.getElementById("_D1");  // HTML Output
 var v_D2 = document.getElementById("_D2");  // HTML Output
@@ -16,16 +16,14 @@ var v_d = document.getElementById("_d");    // HTML Output
 var v_n = document.getElementById("_n");    // HTML Output
 var v_M = document.getElementById("_M");    // HTML Output
 var v_pin = document.getElementById("_pin"); // HTML Output
-
     // Events
 window.addEventListener("load",page_onload);              // onLoad
 v_DN_choice.addEventListener("change",Event_DN_choice);   // Select DN
 v_PN_choice.addEventListener("change",Event_PN_choice);   // Select PN
-
-
+    // DATA
 var flanges6 = [    // READY
-//DN,    D,   D1,   D2,  dv,   b, h, d,   n, Масса, Шпилька
-//0     +1    +2    +3   +4    +5 +6  +7  +8    +9    +10
+//DN,    D,   D1,   D2,   dv,  b,  h, d,   n, Масса, Шпилька
+//0      1     2     3     4   5   6  7    8    9     10
 [50,    140,  110,   90,   59, 16, 3, 14,  4,  1.32, 'М12'],
 [65,    160,  130,  110,   78, 16, 3, 14,  4,  1.62, 'М12'],
 [80,    185,  150,  128,   91, 18, 3, 18,  4,  2.43, 'М16'],
@@ -48,7 +46,6 @@ var flanges6 = [    // READY
 [1400, 1620, 1560, 1510, 1425, 48, 5, 33, 36, 154.6, 'М30'],
 [1600, 1820, 1760, 1710, 1625, 53, 5, 33, 40, 194.4, 'М30']
 ];
-
 
 var flanges10 = [
 //DN,    D,   D1,   D2,  dв,   b,  h, d,  n, Масса, Шпилька
@@ -75,7 +72,6 @@ var flanges10 = [
 [1400, 1675, 1590, 1530, 1425, 65, 5, 45, 36, 278.9, 'М42'],
 [1600, 1915, 1820, 1750, 1625, 75, 5, 52, 40, 422.6, 'М50']
 ];
-
 
 var flanges16 = [    // READY
 //DN,    D,   D1,   D2,   dв,   b,  h, d,  n, Масса, Шпилька
@@ -108,15 +104,13 @@ var flanges = flanges10;
 
 
 function page_onload() {
-    // console.log("page_onload");
-    Event_DN_choice();  
+    Event_DN_choice();
 }   // page_onload()
 
     // выбор DN
 function Event_DN_choice() {
-    // console.log('choiced DN = ' + v_DN_choice.value);
-    // console.log(flanges);
-    v_DN.innerHTML  = flanges[v_DN_choice.selectedIndex][0];
+    v_DN.innerHTML  = flanges[v_DN_choice.selectedIndex][0];    // подтверждение срабатывания селекта
+    v_PN.innerHTML  = v_PN_choice.value;                        // подтверждение срабатывания селекта
     v_D.innerHTML   = flanges[v_DN_choice.selectedIndex][1];
     v_D1.innerHTML  = flanges[v_DN_choice.selectedIndex][2];
     v_D2.innerHTML  = flanges[v_DN_choice.selectedIndex][3];
@@ -131,26 +125,18 @@ function Event_DN_choice() {
 
     // выбор PN
 function Event_PN_choice() {
-    // console.log('choiced PN = ' + v_PN_choice.value);
 switch (v_PN_choice.value) {
     case '6':
     flanges = flanges6;
-    console.log('Выбран PN 6');
-    console.log(flanges);
         break;
     case '10':
     flanges = flanges10;
-    console.log('Выбран PN 10');
-    console.log(flanges);
         break;
     case '16':
     flanges = flanges16;
-    console.log('Выбран PN 16');
-    console.log(flanges);
-        break;            
-    default:
-    console.log('PN - ни один из вариантов');
         break;
-}   // switch    
+    default:
+        break;
+}   // switch
 Event_DN_choice();
 }   // Event_PN_choice()
