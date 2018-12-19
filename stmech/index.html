@@ -66,24 +66,32 @@
 </fieldset>
 
     <div class="zero">  <!-- iframe -->
-        <img src="../data/sdr_100_256_840_head.png" alt="header">   <!-- Заголовок таблицы -->
-        <iframe src="../data/sdr_100_256_840.png" width="880" height="200">
-            <p>Your browser does not support iframes</p>
+        <img src="../data/sdr_100_256_840_head.png" alt="header">   <!-- Заголовок таблицы  -->
+        <iframe src="../data/sdr_100_256_840.png" width="880" height="200"><p>Not support iframes</p>
         </iframe>
-        <!-- <iframe width="880" height="200" src="../data/sdr_100_256_840.png" seamless="seamless" frameborder="0"></iframe> -->
     </div>
-
+        
     <h2 id="flanges">Фланцы ГОСТ 33259-2015</h2><a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
-        <table> <!-- Таблица - ГОСТы про фланцы -->
-    <tr><th>№ ГОСТ</th><th>Наименование</th></tr>
-    <tr><td><a href="../data/33259-2015_flanges_to_pn250.pdf" target="_blank">33259-2015</a></td><td>Фланцы арматуры, соединительных частей и трубопроводов до PN250</td></tr>
-    <tr><td><a href="../data/33259-2015_what_changed.pdf" target="_blank">33259-2015</a></td><td>Фланцы - Что изменилось в ГОСТе</td></tr>
-        </table>
+    <!-- table - ГОСТы про фланцы -->
+        <table>
+    <tr>
+        <th>№ ГОСТ</th>
+        <th>Наименование</th>
+    </tr>
+    <tr>
+        <td><a href="../data/33259-2015_flanges_to_pn250.pdf" target="_blank">33259-2015</a></td>
+        <td>Фланцы арматуры, соединительных частей и трубопроводов до PN250</td>
+    </tr>
+    <tr>
+        <td><a href="../data/33259-2015_what_changed.pdf" target="_blank">33259-2015</a></td>
+        <td>Фланцы - Что изменилось в ГОСТе</td>
+    </tr>
+        </table> <!-- /table - ГОСТы про фланцы -->
         <!-- IMG  FLANGE -->
-    <div class="columns">
-    <img src="../data/Flanges_GOST_33259-2015.png" height="600" alt="flanges">
+    <div>
+    <img src="../data/Flanges_GOST_33259-2015.png" height="600" alt="flange">
     </div>
-    <div class="wrap1">   <!-- DN -->
+    <div>   <!-- DN -->
         <select class="big" id="dn_choice">
             <option value="50"> DN 50 </option>
             <option value="65"> DN 65 </option>
@@ -107,7 +115,7 @@
             <option value="1400"> DN 1400 </option>
             <option value="1600"> DN 1600 </option>
         </select>
-        <label for="dn"> Значение DN</label>
+        <label for="dn_choice"> Значение DN</label>
     </div>
     <div class="wrap">   <!-- PN -->
         <select class="big" id="pn_choice">
@@ -117,8 +125,8 @@
         </select>
         <label for="pn"> Значение PN</label>
     </div>
-    <div>   <!-- Flange Data Output -->
-        <table class="compact"> <!-- Flange Data Output -->
+    <!-- Flange Data Output -->
+<table class="compact"> <!-- Flange Data Output -->
     <tr>    <!-- Строка наименований -->
         <th>DN</th>
 		<th>PN</th>
@@ -147,8 +155,8 @@
         <td id="_M"></td>
         <td id="_pin"></td>
     </tr>
-        </table> <!-- Flange Data Output -->
-    </div>  <!-- Flange Data Output -->
+</table> <!-- Flange Data Output -->
+    
 	<h2 id="muftaReg">Муфта регулировочная (вставка демонтажная)</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
 	<img src="../data/Mufta_Reg_1320.jpg" width="660" alt="Mufta Reg">
 
