@@ -1,10 +1,6 @@
-html {
-    background-image: url("../images/background_31.png");
-}
+html { background-image: url("../images/background_31.png"); }
 
-*{
-	box-sizing: border-box;
-}
+*{ box-sizing: border-box; }
 
 	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
 body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
@@ -34,7 +30,6 @@ h2 {
     color: darkviolet;
     margin: 30px 0px 0px 30px;
     padding: 20px 15px 8px 60px; /* top right bottom left */
-    /* text-shadow: 3px 4px 4px #bbbbbb; */
 }
 h3 {
 	display: inline-block;
@@ -333,19 +328,34 @@ table.compact td {
 	border: 2px solid green;
 }
 
-ul, ol { /* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */
+ul {	/* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */
     margin-top: 0px;
     margin-bottom: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
 }
-
 li {	/* li - элемент списка */
-    margin: 0em 0em 0.4em 0em;	/* top right bottom left */
-	padding: 0.1em 0em 0.1em 0em;
+    margin: 0em 0em 0em 0em;	/* top right bottom left */
+	padding: 0em 0em 0em 0em;
 }
 li.sign {	/* li - элемент списка с рисунком */
     list-style-image: url("../images/diamond_aGIF_16.gif");
+}
+
+ul.tblCont {	/* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */
+	font-size: 1.3em;  /* Размер шрифта */
+}
+ul.tblCont li {	/* li - элемент списка */
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+ul.tblCont li > a {	/* li - элемент списка */
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+ul.tblCont li > ul {	/* li - элемент списка */
+    padding-top: 4px;
 }
 
 iframe {
