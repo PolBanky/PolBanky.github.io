@@ -86,11 +86,9 @@
     </tr>
         </table> <!-- /table - ГОСТы про фланцы -->
         <!-- IMG  FLANGE -->
-    <div>
-    <img src="../data/Flanges_GOST_33259-2015.png" height="600" alt="flange">
-    </div>
-    <div>   <!-- DN -->
-        <select class="big" id="dn_choice">
+    <img class="columnLeft" src="../data/Flanges_GOST_33259-2015.png" alt="flange">
+       <!-- select DN -->
+        <select class="big1" id="dn_choice">
             <option value="50"> DN 50 </option>
             <option value="65"> DN 65 </option>
             <option value="80"> DN 80 </option>
@@ -114,15 +112,13 @@
             <option value="1600"> DN 1600 </option>
         </select>
         <label for="dn_choice"> Значение DN</label>
-    </div>
-    <div class="wrap">   <!-- PN -->
-        <select class="big" id="pn_choice">
+       <!-- select PN -->
+        <select class="big2" id="pn_choice">
             <option value='6'> PN 6 bar </option>
             <option value='10' selected="selected"> PN 10 bar </option>
             <option value='16'> PN 16 bar </option>
         </select>
-        <label for="pn"> Значение PN</label>
-    </div>
+        <label for="pn_choice"> Значение PN</label>
     <!-- Flange Data Output -->
 <table class="compact"> <!-- Flange Data Output -->
     <tr>    <!-- Строка наименований -->

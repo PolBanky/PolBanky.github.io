@@ -134,6 +134,11 @@ div.alertString {
 	color: #065e20;    /* Цвет текста */
 	border: 1px solid #800000;
 }
+.columnLeft {
+	height: 600px;
+	width: 360px;
+	float: left;
+}
 
 pre {						/* Показать текст как есть */
 	color: #223cb2;   	  /* Цвет текста */
@@ -209,12 +214,24 @@ select {
 	padding: 3px 1px 3px 1px;	
 }
 select.big {
-    font-size: 1.2em; /* Размер шрифта */
-    color: black;   /* Цвет ввода    */
-	background-color: lightgrey;
-    width: 250px;
-	padding: 8px 3px 8px 3px;
+	width: 250px;
+	padding: 8px 3px 8px 3px;	
 }
+select.big1 {
+	width: 250px;
+	margin-top: 400px;
+	margin-bottom: 4px;
+	margin-left: 10px;
+	padding: 8px 3px 8px 3px;	
+}
+select.big2 {
+	width: 250px;
+	margin-top: 20px;
+	margin-bottom: 4px;
+	margin-left: 10px;
+	padding: 8px 3px 8px 3px;	
+}
+
 
 #topnav {    /*  ( # )  => по идентификатору */
 	font-size: 1.4em; /* Размер шрифта */
