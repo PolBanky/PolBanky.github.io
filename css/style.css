@@ -82,7 +82,7 @@ div.divLbl {    /* LABEL для окон вывода */
 	font-size: 1.1em;  /* Размер шрифта */
 	padding-left: 7px;
 }
-div.divOutPut {    /* ОКНО ВЫВОДА результатов расчетов ГЛАВНОЕ */
+div.divOutPut {    /* СТРОКА ВЫВОДА результата расчета */
 	display: table-cell;
 	height: 1.6em;
 	width: 250px;
@@ -92,10 +92,13 @@ div.divOutPut {    /* ОКНО ВЫВОДА результатов расчет�
 	background-color: #a5a511;
 	border: 2px solid #84e6bd;	
 }
-div.divOutPutMini {    /* ОКНО ВЫВОДА результатов расчетов ВСПОМОГАТЕЛЬНОЕ */
-	display: inline;
-	/* height: 1.4em; */
-	/* width: 150px; */
+div.divOutPutMini {    /* СТРОКА ВЫВОДА результатов расчетов ВСПОМОГАТЕЛЬНАЯ */
+	display: inline-block;
+	height: 1.4em;
+	width: 140px;
+	padding-top: 1px;
+	margin-top: 1px;
+	margin-right: 0px;
 	vertical-align: middle;
 	font-size: 1.3em;  /* Размер шрифта */
 	color: blue;
@@ -105,9 +108,21 @@ div.divOutPutMini {    /* ОКНО ВЫВОДА результатов расч�
 div.divOutPutMLine {    /* В качестве - ОКНО ВЫВОДА результатов расчетов в сопромате */
 	display: table-cell;
 	height: 75px;
-	width: 400px;
+	width: 440px;
 	vertical-align: text-top;
+	font-family: Consolas, monospace;
 	font-size: 0.8em;  /* Размер шрифта */
+	color: black;
+	background-color: #a3c489;
+	border: 2px solid #849be6;	
+}
+div.divOutPutMLine1 {    /* В качестве - ОКНО ВЫВОДА результатов расчетов в сопромате */
+	display: table-cell;
+	height: 75px;
+	width: 880px;
+	vertical-align: text-top;
+	font-family: Consolas, monospace;
+	font-size: 1.0em;  /* Размер шрифта */
 	color: black;
 	background-color: #a3c489;
 	border: 2px solid #849be6;	
@@ -146,7 +161,7 @@ pre {						/* Показать текст как есть */
 }
 
 /* INPUT */
-input {
+input {		/* input native = display: inline-block */
 	margin: 0px 0px 0px 0px; /* top right bottom left */
 	padding: 5px;            /* top right bottom left */
 }
@@ -166,7 +181,6 @@ input[type="text"].grad {
 input[type="text"].minsec {
 	width: 100px;
 }
-
 input[type="button"] {
 	color: #bb00bb;    /* Цвет ввода */
 	font-size: 1.2em;    /* Размер шрифта */
@@ -183,7 +197,7 @@ input[type="button"]:focus {
     background-position: 95% center;
 }
 
-label {
+label {						 /* default display: inline */
 	font-size: 1.1em; 		 /* Размер шрифта         */
 	margin: 0px 0px 0px 0px; /* top right bottom left */
 	padding: 4px;            /* top right bottom left */
@@ -192,6 +206,11 @@ label.fat {
 	font-size: 1.3em;
 	font-weight: bold;
 	padding: 0px;
+}
+label.blk {	/*  */
+	display: inline-block;
+	/* background: rgba(108, 168, 52, 0.15); */
+	width: 240px;
 }
 
 fieldset {

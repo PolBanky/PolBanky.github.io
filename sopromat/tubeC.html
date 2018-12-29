@@ -74,9 +74,9 @@
 
 <div>	<!-- INPUT FORCE, N or kg -->
 	<input type="text" id="input_F" placeholder="Force" accesskey="4" title="Alt+4">
-	<label for="input_F" id="label_input_F"> Force F, kg</label>
-	<div class="divOutPutMini" id="output_moment">0.0000</div>   <!-- style="display:none" -->
-	<div class="divLbl"> Moment M, kg &#215 metre</div><!--<label for="output_moment" id="label_input_M" hidden="hidden"> Moment M, kg &#215 metre</label>-->	
+	<label class="blk" for="input_F" id="label_input_F"> Force F, kg</label>
+	<div class="divOutPutMini" id="output_bend_M" style="display:none">0.0000</div>					<!-- display: inline-block -->
+	<label for="output_bend_M" id="label_bend_M" style="display:none"> Moment M, kg &#215 m</label>	<!-- default display: inline -->
 </div>
 
 <div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) -->
@@ -87,6 +87,11 @@
 	<!-- Вывод результатов -->
 <fieldset>
 	<legend>Результаты расчета</legend>
+
+<div>	<!-- ПОРЯДОК РАСЧЕТА НАПРЯЖЕНИЯ -->
+	<div class="divOutPutMLine1" id="how_calc_stress">
+	</div>	
+</div>
 
 <div>	<!-- OUTPUT STRESS, MPa (N/mm2) -->
 	<div class="divOutPut" id="output_stress">0.0000</div>
