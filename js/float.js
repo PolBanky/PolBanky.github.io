@@ -11,12 +11,6 @@ function I(txt) {
     inf.innerHTML = txt;
 }   // I(txt)
 
-
-function evaluate(val) {
-    if(val == '') return 0;
-    else return parseFloat(val);
- }   // evaluate(val)
-
  
 function cursorPos(event) {  // keyup & click
     // console.log("\nEvent num " + ++i + ", type = " + event.type + " in Element id = " + event.target.id + "; Cursor position = " + event.target.selectionStart);
@@ -86,12 +80,12 @@ function cutty(text, cutter) {  // cutter - это номер символа в 
 }   // function cutty(text, cutter)
 
 
-function dotCount(text) { // определяет количество дивидеров
-    var info = {          // объект - чтоб можно было из функции вернуть несколько значений
-        count: 0,         // count of dividers
-        positions: -1,    // position of divider (нумерация символов - с нуля, т.е смещение от указателя)
-        firstPosition: -1,// first position of divider (нумерация символов - с нуля, т.е смещение от указателя)
-        toString: function() {  // overload function toString()
+function dotCount(text) {  // определяет количество дивидеров
+    var info = {           // объект - чтоб можно было из функции вернуть несколько значений
+        count: 0,          // count of dividers
+        positions: -1,     // position of divider (нумерация символов - с нуля, т.е смещение от указателя)
+        firstPosition: -1, // first position of divider (нумерация символов - с нуля, т.е смещение от указателя)
+        toString: function() { // overload function toString()
 return 'It\'s info.toString(): count of dividers = ' + this.count + '; offset from pointer to first divider = ' + this.firstPosition
         }   // toString: function()
     };      // var info

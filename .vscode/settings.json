@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 16,
-    "editor.fontFamily": "Consolas, 'Century Gothic', monospace",
-    "editor.wordWrap": "on"
+    "editor.fontFamily": "Consolas",
+    "editor.wordWrap": "on",
+    "editor.fontSize": 16
 }

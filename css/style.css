@@ -58,9 +58,11 @@ p {
 	margin: 5px auto 0px auto; /* top right bottom left */
 	padding: 0px;              /* top right bottom left */
 }
-p.copyright:first-letter {
-	font-size: 1.0em;
-}
+/* .copyright:first-letter {
+	color: #3a0bbd;
+	font-size: 1.2em;
+	font-weight: bold;
+} */
 
 span.small {
 	font-size: 0.7em;      /* Размер шрифта */
