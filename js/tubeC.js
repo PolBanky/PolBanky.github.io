@@ -1,14 +1,14 @@
 'use strict';
 //  ../sopromat/tubeC.html
 
-var v_F_choice   = document.getElementById("choice_force");     // HTML Picture
+var v_LOAD_choice= document.getElementById("choice_load");      // HTML Picture
 var v_dia_ex     = document.getElementById("input_dia_ex");     // HTML Input
 var v_dia_in     = document.getElementById("input_dia_in");     // HTML Input
 var v_length     = document.getElementById("input_length");     // HTML Input
-var v_St_choice  = document.getElementById("steel_sort");   // HTML Select steel
-var v_out_St     = document.getElementById("steel_data");       // HTML Output steel data
-var v_Force          = document.getElementById("input_F");          // HTML Input
-var v_lbl_F      = document.getElementById("label_input_F");    // HTML Label
+var v_St_choice  = document.getElementById("steel_sort");       // HTML Select steel
+var v_St_out     = document.getElementById("steel_data");       // HTML Output steel data
+var v_LOAD       = document.getElementById("input_LOAD");       // HTML Input
+var v_LOAD_lbl   = document.getElementById("label_input_LOAD"); // HTML Label
 
 var v_buttonRUN  = document.getElementById("buttonRUN");        // HTML Button RUN
 
@@ -23,12 +23,12 @@ var v_out_bend_M = document.getElementById("output_bend_M");    // HTML Output
 var v_lbl_bend_M = document.getElementById("label_bend_M");     // HTML Label
 
 window.addEventListener("load",page_onload);                    // onLoad
-v_F_choice.addEventListener("click",Event_F_choice);      // Picture
+v_LOAD_choice.addEventListener("click",Event_F_choice);      // Picture
 v_dia_ex.addEventListener("input",inputIDec);                   // Input
 v_dia_in.addEventListener("input",inputIDec);                   // Input
 v_length.addEventListener("input",inputIDec);                   // Input
 v_St_choice.addEventListener("change",Event_St_choice);   // Select
-v_Force.addEventListener("input",inputIDec);                        // Input
+v_LOAD.addEventListener("input",inputIDec);                        // Input
 v_buttonRUN.addEventListener("click",Event_click_Button);       // Клик на кнопке
 
 //**********************************************************************
@@ -70,57 +70,58 @@ var cil = {  // Объект цилиндр !!!!!!!
     lenght: 0,          // lenght, mm
     density: 0.00782,   // density, g/mm3
     force: 0,           // force
-    moment: 0,      // moment
+    moment: 0,          // moment
     PiDiv16: 0.19634954, // Pi/16
     PiDiv32: 0.09817477, // Pi/32
-    stress: function() { // расчет напряжения в MPa (N/mm2)
-var t = 0;
-    if(this.area() == 0)
-        return 0;
-    else {
-        switch (F_sort) {                
-    case 0:    // Stretch - растяжение  // console.log('F_sort == ' + F_sort);
-        t = this.force / this.area();    //  сила растяжения N / площадь сечения mm2  //  v_calc_stress
-        v_calc_stress.innerText =
-        "Напряжение растяжения \u03C3, MPa (N/mm\u00B2) = " +
-        "\nСила растяжения " + this.force + " N / Площадь сечения " + this.area().toFixed(2) + " mm" + "\u00B2  = " + t.toFixed(4) + " MPa";
-        return t;
-    case 1:    // Bend - изгиб  // console.log('F_sort == ' + F_sort);
-        t = this.bend_moment() / this.w_axial();
-        v_calc_stress.innerText =
-        "Напряжение изгиба \u03C3, MPa (N/mm\u00B2) = " +
-        "\nМомент изгиба " + this.bend_moment() + " N\u00D7mm / Момент сопротивления осевой " + this.w_axial().toFixed(2) + " mm" + "\u00B3  = " +
-        t.toFixed(4) + " MPa";
-        return t;
-    case 2:    // Twist - кручение // console.log('F_sort == ' + F_sort);
-        t = this.force / this.w_polar(); // this.force = момент крутящий в этом контексте
-        v_calc_stress.innerText =
-        "Напряжение кручения \u03C4, MPa (N/mm\u00B2) = " +
-        "\nМомент кручения " + this.force + " N\u00D7mm / Момент сопротивления полярный " + this.w_polar().toFixed(2) + " mm" + "\u00B3  = " +
-        t.toFixed(4) + " MPa";
-        return t;
-    case 3:    // Cut - срез   // console.log('F_sort == ' + F_sort);
-        t = this.force / this.area();
-        v_calc_stress.innerText =
-        "Напряжение среза \u03C3, MPa (N/mm\u00B2) = " +
-        "\nСила среза " + this.force + " N / Площадь сечения " + this.area().toFixed(2) + " mm" + "\u00B2  = " + t.toFixed(4) + " MPa";
-        return t;    //  сила среза / площадь сечения   // break;         
-    default:
-            break;
-        } // switch
-    }     // else
-},        // stress: function() in N/mm2 (MPa)
-    area: function() {    // расчет площади круга в mm2        
-        if (this.dia_ex > this.dia_in) {
-            return ((Math.PI * Math.pow(this.dia_ex, 2)) - (Math.PI * Math.pow(this.dia_in, 2))) / 4;  // mm2
-        } else return 0;
-    },      // area() of nofmal cut, mm2
-    w_axial: function() { // расчет момента сопротивления осевого в mm3
-        return Math.pow(this.dia_ex, 3.0) * this.PiDiv32 * (1.0 - Math.pow((this.dia_in / this.dia_ex), 4.0));
-    },      // w_axial()
-    w_polar: function() { // расчет момента сопротивления полярного в mm3
-        return Math.pow(this.dia_ex, 3.0) * this.PiDiv16 * (1.0 - Math.pow((this.dia_in / this.dia_ex), 4.0));
-    },      // w_polar()
+    
+area: function() {    // расчет площади круга в mm2        
+    if (this.dia_ex > this.dia_in) {
+        return ((Math.PI * Math.pow(this.dia_ex, 2)) - (Math.PI * Math.pow(this.dia_in, 2))) / 4;  // mm2
+    } else return 0;
+},      // area() of nofmal cut, mm2
+w_axial: function() { // расчет момента сопротивления осевого в mm3
+    return Math.pow(this.dia_ex, 3.0) * this.PiDiv32 * (1.0 - Math.pow((this.dia_in / this.dia_ex), 4.0));
+},      // w_axial()
+w_polar: function() { // расчет момента сопротивления полярного в mm3
+    return Math.pow(this.dia_ex, 3.0) * this.PiDiv16 * (1.0 - Math.pow((this.dia_in / this.dia_ex), 4.0));
+},      // w_polar()
+stress: function() { // расчет напряжения в MPa (N/mm2)
+    var t = 0;
+        if(this.area() == 0)
+            return 0;
+        else {
+            switch (F_sort) {                
+        case 0:    // Stretch - растяжение  // console.log('F_sort == ' + F_sort);
+            t = this.force / this.area();    //  сила растяжения N / площадь сечения mm2  //  v_calc_stress
+            v_calc_stress.innerText =
+            "Напряжение растяжения \u03C3, MPa (N/mm\u00B2) = " +
+            "\nСила растяжения " + this.force + " N / Площадь сечения " + this.area().toFixed(2) + " mm" + "\u00B2  = " + t.toFixed(4) + " MPa";
+            return t;
+        case 1:    // Bend - изгиб  // console.log('F_sort == ' + F_sort);
+            t = this.bend_moment() / this.w_axial();
+            v_calc_stress.innerText =
+            "Напряжение изгиба \u03C3, MPa (N/mm\u00B2) = " +
+            "\nМомент изгиба " + this.bend_moment() + " N\u00D7mm / Момент сопротивления осевой " + this.w_axial().toFixed(2) + " mm" + "\u00B3  = " +
+            t.toFixed(4) + " MPa";
+            return t;
+        case 2:    // Twist - кручение // console.log('F_sort == ' + F_sort);
+            t = this.force / this.w_polar(); // this.force = момент крутящий в этом контексте
+            v_calc_stress.innerText =
+            "Напряжение кручения \u03C4, MPa (N/mm\u00B2) = " +
+            "\nМомент кручения " + this.force + " N\u00D7mm / Момент сопротивления полярный " + this.w_polar().toFixed(2) + " mm" + "\u00B3  = " +
+            t.toFixed(4) + " MPa";
+            return t;
+        case 3:    // Cut - срез   // console.log('F_sort == ' + F_sort);
+            t = this.force / this.area();
+            v_calc_stress.innerText =
+            "Напряжение среза \u03C3, MPa (N/mm\u00B2) = " +
+            "\nСила среза " + this.force + " N / Площадь сечения " + this.area().toFixed(2) + " mm" + "\u00B2  = " + t.toFixed(4) + " MPa";
+            return t;    //  сила среза / площадь сечения   // break;         
+        default:
+                break;
+            } // switch
+        }     // else
+    },        // stress: function() in N/mm2 (MPa)
     thickness: function() {    // расчет толщины стенки в mm        
         if (this.dia_ex > this.dia_in) {
             return (this.dia_ex - this.dia_in) / 2;  // mm
@@ -135,7 +136,7 @@ var t = 0;
     bend_moment: function() {    // изгибающий момент: force (N) x length (mm) => N x mm
             return this.force * this.lenght;  // N x mm
     },      // mass()
-        // OUTPUT    
+        // OUTPUT
     output_stress: function() {
         v_out_stress.innerHTML = this.stress().toFixed(4);        // N/mm2
     },      // output_stress()
@@ -168,28 +169,30 @@ function page_onload() {
 }   // page_onload()
 
 
-function evaluate(val) {    // для размеров в миллиметрах
+    // для размеров в миллиметрах
+function evaluate(val) {
     if(val == '') return 0;
     else return parseFloat(val);
 }   // evaluate(val)
 
 
-function evaluateF(val) {   // для сил и моментов
+    // для сил и моментов
+function evaluateF(val) {
         var v;
     if(val == '') return 0;
         else {
     v = parseFloat(val);
         switch(F_sort) {
-    case 0:     // Растяжение
+    case 0:         // Растяжение
         v = v * 10; // kg -> N
         break;      
-    case 1:     // Изгиб
+    case 1:         // Изгиб
         v = v * 10; // kg -> N   
         break;
-    case 2:     // Кручение
+    case 2:         // Кручение
         v = v * 10;// kg*mm -> N*mm   
         break;
-    case 3:     // Срез
+    case 3:         // Срез
         v = v * 10; // kg -> N   
         break;    
     default:
@@ -200,34 +203,35 @@ function evaluateF(val) {   // для сил и моментов
 }   // evaluate(val)
 
 
+    // Выбор типа нагружения детали
 function Event_F_choice() {
     if(F_sort < 3) {
         F_sort++;
     } else F_sort = 0;
     switch (F_sort) {
         case 0:     // Растяжение
-    v_F_choice.src    = "../images/pic128stretch.svg";
-    v_F_choice.title  = "Растяжение";
-    v_lbl_F.innerHTML = " Stretch Force F, kg";
+    v_LOAD_choice.src    = "../images/pic128stretch.svg";
+    v_LOAD_choice.title  = "Растяжение";
+    v_LOAD_lbl.innerHTML = " Stretch Force F, kg";
             break;
         case 1:     // Изгиб
-    v_F_choice.src    = "../images/pic128bend.svg";
-    v_F_choice.title  = "Изгиб";
-    v_lbl_F.innerHTML = " Bend Force F, kg";
+    v_LOAD_choice.src    = "../images/pic128bend.svg";
+    v_LOAD_choice.title  = "Изгиб";
+    v_LOAD_lbl.innerHTML = " Bend Force F, kg";
     v_out_bend_M.style.display='inline-block';
     v_lbl_bend_M.style.display='inline';
             break;
         case 2:     // Кручение
-    v_F_choice.src    = "../images/pic128twist.svg";
-    v_F_choice.title  = "Кручение";
-    v_lbl_F.innerHTML = " Twist Moment M, kg &#215 mm";    
+    v_LOAD_choice.src    = "../images/pic128twist.svg";
+    v_LOAD_choice.title  = "Кручение";
+    v_LOAD_lbl.innerHTML = " Twist Moment M, kg &#215 mm";    
     v_out_bend_M.style.display='none';
     v_lbl_bend_M.style.display='none';
             break;
         case 3:     // Срез
-    v_F_choice.src    = "../images/pic128cut.svg";
-    v_F_choice.title  = "Срез";
-    v_lbl_F.innerHTML = " Cut Force F, kg";
+    v_LOAD_choice.src    = "../images/pic128cut.svg";
+    v_LOAD_choice.title  = "Срез";
+    v_LOAD_lbl.innerHTML = " Cut Force F, kg";
             break;    
         default:
             break;
@@ -236,8 +240,9 @@ function Event_F_choice() {
 }   // Event_F_choice()
 
 
+    // Выбор материала детали
 function Event_St_choice() {
-    v_out_St.innerText = 
+    v_St_out.innerText = 
     "Марка стали = " + steels[v_St_choice.selectedIndex][0] +
     "\nВременное сопротивление = " + steels[v_St_choice.selectedIndex][1] + " MPa" +
     "\nПредел текучести = " + steels[v_St_choice.selectedIndex][2] + " MPa\n" +
@@ -245,6 +250,7 @@ function Event_St_choice() {
 }   // Event_St_choice()
 
 
+    // Очистка окон вывода расчетных значений
 function clearOut_sopr() {  // 
     v_out_stress.innerHTML = '0.0000';
     v_out_area.innerHTML   = '0.0000';
@@ -261,12 +267,13 @@ function inputIDec() {    // inputIDec(event)
     this.value = checkFix(this.value);
 }   // inputIDec()
 
-    //  B U T T O N !!!!!
+
+    //  B U T T O N      !!!!!
 function Event_click_Button() { // Событие нажатие кнопки Event_click_Button
     cil.dia_ex = evaluate(v_dia_ex.value);  // mm; функция evaluate в файле float.js !!! - уже не там а в этом файле
     cil.dia_in = evaluate(v_dia_in.value);  // mm
     cil.lenght = evaluate(v_length.value);  // mm
-    cil.force = evaluateF(v_Force.value);  // cil.force в ньютонах;  * cil.koef_N_kg = для пересчета в ньютоны
+    cil.force  = evaluateF(v_LOAD.value);  // cil.force в ньютонах;  * cil.koef_N_kg = для пересчета в ньютоны
 if(cil.dia_ex == 0) {  // если нет наружного диаметра
     clearOut_sopr();
     v_dia_ex.focus();

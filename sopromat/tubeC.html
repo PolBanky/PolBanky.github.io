@@ -17,7 +17,7 @@
 	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Beam">Circle Tube</h1>
 <figure>
 	<img src="../images/pic128ring.svg" height="200" alt="tube">
-	<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="Load" id="choice_force" title="Растяжение">
+	<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="Load" id="choice_load" title="Растяжение">
 </figure>
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
@@ -39,7 +39,7 @@
 	<label for="input_length"> Length L, mm</label>	
 </div>
 
-<div>	<!-- МАРКА СТАЛИ -->
+<div>	<!-- ВЫБОР МАРКИ СТАЛИ -->
 	<select class="big" id="steel_sort">
 	<optgroup label="380-2005 Углеродистая">
 		<option value="st3" selected>Сталь 3</option>
@@ -67,14 +67,14 @@
 	<label for="steel"> Марка стали</label>
 </div>
 
-<div>	<!-- ДАННЫЕ ВЫБРАННОЙ СТАЛИ -->
+<div>	<!-- ВЫВОД ДАННЫХ ВЫБРАННОЙ СТАЛИ -->
 	<div class="divOutPutMLine" id="steel_data">
 	</div>	
 </div>
 
-<div>	<!-- INPUT FORCE, N or kg -->
-	<input type="text" id="input_F" placeholder="Force" accesskey="4" title="Alt+4">
-	<label class="blk" for="input_F" id="label_input_F"> Force F, kg</label>
+<div>	<!-- INPUT LOAD, N or kg or kg*mm -->
+	<input type="text" id="input_LOAD" placeholder="Force" accesskey="4" title="Alt+4">
+	<label class="blk" for="input_LOAD" id="label_input_LOAD"> Force F, kg</label>
 	<div class="divOutPutMini" id="output_bend_M" style="display:none">0.0000</div>					 <!-- display: inline-block -->
 	<label for="output_bend_M" id="label_bend_M" style="display:none"> Moment M, kg &#215 mm</label> <!-- default display: inline -->
 </div>
