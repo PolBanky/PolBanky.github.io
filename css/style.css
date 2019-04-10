@@ -5,8 +5,8 @@ html { background-image: url("../images/background_31.png"); }
 	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
 body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 	width: 900px;
-	font-family: "Arial"; /* Семейство шрифтов */
-	color: #b22222;     /* Цвет текста */
+	font-family: "Arial"; 		  /* Семейство шрифтов */
+	color: #b22222;     		/* Цвет текста */
 	background-color: white;    
 	margin: 30px auto 150px auto; /* top right bottom left */
 	border: 5px solid #aa2222;	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
@@ -16,9 +16,9 @@ body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 
 h1 {
 	width: 82%;	
-	color: #0000ff;    /* Цвет текста */
-	font-size: 3.2em;    /* Размер шрифта */
-	font-family: Times, serif; /* Семейство шрифтов */
+	color: #0000ff;    		  /* Цвет текста */
+	font-size: 3.2em;    		/* Размер шрифта */
+	font-family: Times, serif; 	/* Семейство шрифтов */
 	text-align: left;
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -32,7 +32,7 @@ h2 {
     padding: 20px 15px 8px 60px; /* top right bottom left */
 }
 h3 {
-	display: inline-block;
+	/* display: inline-block; */
     color: darkgreen;
     margin: 0px 0px 0px 0px;
     padding: 8px 0px 5px 15px; /* top right bottom left */    
@@ -339,6 +339,8 @@ th {
     background-color: rgba(79, 217, 154, 0.24);
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-left: 3px;
+	padding-right: 3px;
 	border: 1px solid black;
 }
 td {
