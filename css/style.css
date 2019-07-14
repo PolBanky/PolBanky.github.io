@@ -334,6 +334,9 @@ img.btnNext {
 table {
     border: 1px solid black;
 }
+table.wdt {	/* wdt == width 880 */
+width: 880px;
+}
 th {
 	font-size: 1.2em; /* Размер шрифта */
     background-color: rgba(79, 217, 154, 0.24);
@@ -351,6 +354,14 @@ td {
 	padding-left: 8px;
 	padding-right: 8px;
     border: 1px solid black;
+}
+td.pipe {
+	color: #ff00ff;    		  /* Цвет текста */
+	font-weight: bold;
+}
+td.hex {
+	color: #056e1b;    		  /* Цвет текста */
+	font-weight: bold;
 }
 table.compact {
 	width: 880px;  /* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
@@ -400,4 +411,11 @@ ul.tblCont li > ul {	/* li - элемент списка */
 
 iframe {
 	border: 0px;
+}
+
+a.big1 {
+	display: block;
+	padding: 10px 0px 10px 50px;     /* top right bottom left */
+	font-weight: bold;
+	font-size: 1.5em;  /* Размер шрифта */
 }
