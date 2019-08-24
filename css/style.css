@@ -44,10 +44,10 @@ h4 {
 }
 
 p {
-    font-size: 1.0em;        /* Размер шрифта 			*/
-	text-indent: 25px;		 /* Отступ первой строки 	*/
-	margin: 0px 0px 0px 0px; /* top right bottom left 	*/
-	padding: 4px 0px 4px 0px;/* top right bottom left 	*/
+    font-size: 1.0em;        /* Размер шрифта 		*/
+	text-indent: 25px;		 /* Отступ первой строки */
+	margin: 0px 0px 0px 0px; /* top right bottom left */
+	padding: 4px 0px 4px 0px;/* top right bottom left */
 }
 
 .copyright {
@@ -355,12 +355,16 @@ td {
 	padding-right: 8px;
     border: 1px solid black;
 }
-td.pipe {
-	color: #ff00ff;    		  /* Цвет текста */
+td.pipe {				/* Трубы круглые для трубопроводов */
+	color: #ff00ff;	  /* Цвет текста */
 	font-weight: bold;
 }
-td.hex {
-	color: #056e1b;    		  /* Цвет текста */
+td.hex {				/* Болты гайки шайбы */
+	color: #056e1b;   /* Цвет текста */
+	font-weight: bold;
+}
+td.weld {				/* Болты гайки шайбы */
+	color: #ec0000;   /* Цвет текста */
 	font-weight: bold;
 }
 table.compact {
@@ -409,13 +413,13 @@ ul.tblCont li > ul {	/* li - элемент списка */
     padding-top: 4px;
 }
 
-iframe {
+iframe {				/* Окно для вывода файла */
 	border: 0px;
 }
 
-a.big1 {
+a.big1 {				/* Спец ссылка большого размера шрифта */
 	display: block;
-	padding: 10px 0px 10px 50px;     /* top right bottom left */
+	padding: 10px 0px 10px 50px; /* top right bottom left */
 	font-weight: bold;
 	font-size: 1.5em;  /* Размер шрифта */
 }
