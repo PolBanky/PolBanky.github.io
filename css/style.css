@@ -216,8 +216,14 @@ label.blk {	/*  */
 }
 
 fieldset {
-    background-color: #d2b48c;
-    margin: 10px 0px 5px 0px; /* top right bottom left */
+    background-color: #d2b48c;/* #d2b48c don't touch !!! */
+    margin: 10px 0px 5px 0px; 	/* top right bottom left   */
+}
+fieldset.input {
+    background-color: #aabbcc;	/* #f7f1c1 */
+}
+fieldset.output {
+    background-color: #ccbbaa;	/* #f7f1c1 */
 }
 legend {
     color: #d2b48c;

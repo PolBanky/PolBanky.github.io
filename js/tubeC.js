@@ -22,14 +22,14 @@ var v_out_massa   = document.getElementById("output_massa");     // HTML Output
 var v_out_bend_M  = document.getElementById("output_bend_M");    // HTML Output
 var v_lbl_bend_M  = document.getElementById("label_bend_M");     // HTML Label
 
-window.addEventListener("load",page_onload);                    // onLoad
-v_LOAD_choice.addEventListener("click",Event_F_choice);      // Picture
-v_dia_ex.addEventListener("input",inputIDec);                   // Input
-v_dia_in.addEventListener("input",inputIDec);                   // Input
-v_length.addEventListener("input",inputIDec);                   // Input
-v_St_choice.addEventListener("change",Event_St_choice);   // Select
-v_LOAD.addEventListener("input",inputIDec);                        // Input
-v_buttonRUN.addEventListener("click",Event_click_Button);       // Клик на кнопке
+window.addEventListener("load",page_onload);                     // onLoad
+v_LOAD_choice.addEventListener("click",Event_F_choice);          // Picture
+v_dia_ex.addEventListener("input",inputIDec);                    // Input
+v_dia_in.addEventListener("input",inputIDec);                    // Input
+v_length.addEventListener("input",inputIDec);                    // Input
+v_St_choice.addEventListener("change",Event_St_choice);          // Select
+v_LOAD.addEventListener("input",inputIDec);                      // Input
+v_buttonRUN.addEventListener("click",Event_click_Button);        // Клик на кнопке
 
 //**********************************************************************
 // 0  steelName = a1;                 // Марка стали

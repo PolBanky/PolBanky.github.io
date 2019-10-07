@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>	<!-- ../js/sopromat.js -->
+<head>
 	<meta charset="utf-8">
 	<title>Circle Tube</title>
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="shortcut icon" href="../images/beam_on_bearings_128.ico" type="images/x-icon">
 	<style>
-        body { background-color: #d2b48c; }
+        body { background-color: #d2b48c; } /* don't touch !!! */
     </style>
 </head>
 
@@ -21,7 +21,8 @@
 </figure>
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
-<fieldset>
+		<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
+<fieldset class="input">
 	<legend id="src_data">Исходные данные</legend>	<!-- Исходные данные -->
 
 <div>	<!-- INPUT EX DIAMETER, mm -->
@@ -82,10 +83,10 @@
 <div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) -->
 	<input type="button" id="buttonRUN" value="Calculate" accesskey="5" title="Alt+5">
 </div>
-</fieldset>
+</fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
 
-	<!-- Вывод результатов -->
-<fieldset>
+		<!-- ПАНЕЛЬ ВЫВОДА РЕЗУЛЬТАТОВ РАСЧЕТА -->
+<fieldset class="output">
 	<legend>Результаты расчета</legend>
 
 <div>	<!-- ПОРЯДОК РАСЧЕТА НАПРЯЖЕНИЯ -->
@@ -125,7 +126,7 @@
 	<div class="divLbl"> Масса детали, kg</div>
 </div>
 
-</fieldset>
+</fieldset>	<!-- ПАНЕЛЬ ВЫВОДА РЕЗУЛЬТАТОВ РАСЧЕТА -->
 	</form>	<!-- end of Form !!!!! -->
 
 	<p class="copyright">Pol Banky &#169; 2019</p>

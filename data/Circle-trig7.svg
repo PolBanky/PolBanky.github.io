@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg1505"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docbase="/home/Omni/Desktop"
+   sodipodi:docname="Circle-trig7.svg"
+   x="0px"
+   y="0px"
+   width="338px"
+   height="235px"
+   viewBox="0 0 338 235"
+   enable-background="new 0 0 338 235"
+   xml:space="preserve"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"><metadata
+   id="metadata4573"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs4571"><inkscape:perspective
+     sodipodi:type="inkscape:persp3d"
+     inkscape:vp_x="0 : 117.5 : 1"
+     inkscape:vp_y="0 : 1000 : 0"
+     inkscape:vp_z="338 : 117.5 : 1"
+     inkscape:persp3d-origin="169 : 78.333333 : 1"
+     id="perspective4575" /></defs>
+<sodipodi:namedview
+   id="base"
+   inkscape:current-layer="svg1505"
+   inkscape:window-y="22"
+   inkscape:window-x="0"
+   inkscape:window-width="1280"
+   inkscape:pageopacity="0.0"
+   inkscape:pageshadow="2"
+   inkscape:window-height="752"
+   inkscape:cy="117.5"
+   inkscape:cx="169"
+   inkscape:zoom="2.3361702"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   showgrid="false">
+	</sodipodi:namedview>
+<line
+   id="line1420_1_"
+   stroke-miterlimit="10"
+   x1="94.621"
+   y1="23.68"
+   x2="63.913"
+   y2="23.68"
+   stroke-dasharray="2.7915,4.1874"
+   stroke-width="1.439"
+   stroke="#000000"
+   fill="none" />
+<circle
+   id="circle1416"
+   sodipodi:cx="63.779999"
+   sodipodi:cy="87.085999"
+   sodipodi:rx="63.280998"
+   sodipodi:ry="63.280998"
+   stroke-miterlimit="10"
+   cx="94.621"
+   cy="125.328"
+   r="91.401"
+   stroke-width="0.9963"
+   stroke="#000000"
+   fill="none">
+</circle>
+<line
+   id="line1418"
+   stroke-miterlimit="10"
+   x1="133.549"
+   y1="208.822"
+   x2="94.621"
+   y2="125.327"
+   stroke-width="1.439"
+   stroke="#000000"
+   fill="none" />
+<line
+   id="line1420"
+   stroke-miterlimit="10"
+   x1="94.621"
+   y1="125.327"
+   x2="63.913"
+   y2="125.327"
+   stroke-dasharray="2.7915,4.1874"
+   stroke-width="1.439"
+   stroke="#000000"
+   fill="none" />
+<line
+   id="line1422"
+   stroke-miterlimit="10"
+   x1="94.621"
+   y1="125.327"
+   x2="133.549"
+   y2="41.836"
+   stroke-width="1.439"
+   stroke="#000000"
+   fill="none" />
+<line
+   id="line1424"
+   stroke-miterlimit="10"
+   x1="133.549"
+   y1="41.836"
+   x2="146.527"
+   y2="14.01"
+   stroke-dasharray="2.7914,4.1869"
+   stroke-width="1.439"
+   stroke="#000000"
+   fill="none" />
+<line
+   id="line1426"
+   stroke-miterlimit="10"
+   x1="133.549"
+   y1="208.822"
+   x2="133.549"
+   y2="125.327"
+   stroke-width="1.439"
+   stroke="#000000"
+   fill="none" />
+<text
+   id="text1428"
+   transform="matrix(1, 0, 0, 1, 102.579, 140.686)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'"
+   fill="#1D0E81">cos</text>
+
+<line
+   id="line1430"
+   stroke-miterlimit="10"
+   x1="94.621"
+   y1="125.327"
+   x2="133.549"
+   y2="125.327"
+   stroke-width="1.439"
+   stroke="#1D0E81"
+   fill="none" />
+<text
+   transform="translate(230.624,140.686)"
+   font-size="17.3324"
+   id="text4521"
+   style="font-size:17.33239937px;fill:#f0037f;font-family:TimesNewRomanPSMT">exsec</text>
+
+<text
+   transform="matrix(1, 0, 0, 1, 238.316, 140.686)"
+   font-size="17.3324"
+   id="text4523"
+   font-family="'TimesNewRomanPSMT'"> </text>
+
+
+<line
+   id="line1438"
+   stroke-miterlimit="10"
+   x1="186.74"
+   y1="125.327"
+   x2="312.598"
+   y2="125.327"
+   stroke-width="1.439"
+   stroke="#F0037F"
+   fill="none" />
+<text
+   font-size="17.3324"
+   id="text4528"
+   style="font-size:16.22621918px;fill:#159133;font-family:TimesNewRomanPSMT"
+   x="135.20894"
+   y="139.84557">versin</text>
+
+<text
+   transform="matrix(1, 0, 0, 1, 147.842, 140.686)"
+   font-size="17.3324"
+   id="text4530"
+   font-family="'TimesNewRomanPSMT'"> </text>
+
+
+<line
+   id="line1446"
+   stroke-miterlimit="10"
+   x1="133.549"
+   y1="125.327"
+   x2="186.74"
+   y2="125.327"
+   stroke-width="1.439"
+   stroke="#159133"
+   fill="none" />
+<text
+   id="text1448"
+   sodipodi:linespacing="125%"
+   transform="matrix(0.9063134,0.4226062,-0.4226062,0.9063134,0,0)"
+   enable-background="new    "
+   font-size="17.3324"
+   x="96.426445"
+   y="-20.863218"
+   style="font-size:17.33214378px;line-height:125%;fill:#f88011;font-family:TimesNewRomanPSMT">cot</text>
+
+<line
+   id="line1450"
+   stroke-miterlimit="10"
+   x1="94.621"
+   y1="23.68"
+   x2="133.549"
+   y2="41.836"
+   stroke-width="1.439"
+   stroke="#F88011"
+   fill="none" />
+<text
+   id="text1452"
+   transform="matrix(0.9063, 0.4226, -0.4226, 0.9063, 201.359, 70.0518)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'"
+   fill="#BF803F">tan</text>
+
+<line
+   id="line1454"
+   stroke-miterlimit="10"
+   x1="133.549"
+   y1="41.836"
+   x2="312.598"
+   y2="125.327"
+   stroke-width="1.439"
+   stroke="#BF803F"
+   fill="none" />
+<text
+   id="text1456"
+   transform="matrix(1, 0, 0, 1, 47.2871, 72.1523)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'"
+   fill="#F671BF">csc</text>
+
+<line
+   id="line1458"
+   stroke-miterlimit="10"
+   x1="94.621"
+   y1="33.623"
+   x2="94.621"
+   y2="23.68"
+   stroke-width="1.439"
+   stroke="#666666"
+   fill="#666666" />
+<text
+   id="text1460"
+   transform="matrix(1, 0, 0, 1, 135.123, 89.9229)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'"
+   fill="#FB0F0C">sin</text>
+
+<line
+   id="line1462"
+   stroke-miterlimit="10"
+   x1="133.549"
+   y1="41.836"
+   x2="133.549"
+   y2="125.327"
+   stroke-width="1.439"
+   stroke="#FB0F0C"
+   fill="none" />
+<text
+   id="text1464"
+   transform="matrix(1, 0, 0, 1, 192.583, 168.332)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'"
+   fill="#00A0C6">sec</text>
+
+<g
+   id="g4544">
+	
+		<line
+   id="line1466"
+   stroke-miterlimit="10"
+   x1="311.877"
+   y1="161.071"
+   x2="311.877"
+   y2="150.998"
+   stroke-width="1.439"
+   stroke="#00A0C6"
+   fill="none" />
+	
+		<line
+   id="line1470"
+   stroke-miterlimit="10"
+   x1="95.338"
+   y1="150.998"
+   x2="95.338"
+   y2="161.071"
+   stroke-width="1.439"
+   stroke="#00A0C6"
+   fill="none" />
+	<polyline
+   id="polyline1468"
+   points="299.789,160.352 311.877,156.037 299.789,151.719 299.789,156.037"
+   fill="#00A0C6" />
+	<polyline
+   id="polyline1472"
+   points="107.426,151.719 95.338,156.038 107.426,160.352 107.426,156.038"
+   fill="#00A0C6" />
+	
+		<line
+   id="line1474"
+   stroke-miterlimit="10"
+   x1="299.789"
+   y1="156.036"
+   x2="107.426"
+   y2="156.037"
+   stroke-width="1.439"
+   stroke="#00A0C6"
+   fill="none" />
+</g>
+<polyline
+   id="polyline1476"
+   stroke-miterlimit="10"
+   points="125.204,37.942 129.098,29.596 137.443,33.489"
+   stroke-width="0.9963"
+   stroke="#000000"
+   fill="none" />
+<polyline
+   id="polyline1478"
+   stroke-miterlimit="10"
+   points="85.409,125.328 85.409,116.116 94.621,116.116"
+   stroke-width="0.9963"
+   stroke="#000000"
+   fill="none" />
+<path
+   id="path1480"
+   stroke-miterlimit="10"
+   d="M106.902,125.327  c0-4.773-2.766-9.115-7.092-11.131"
+   stroke-width="1.439"
+   stroke="#000000"
+   fill="none" />
+<text
+   id="text1482"
+   transform="matrix(1, 0, 0, 1, 93.0776, 180.747)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'">1</text>
+
+<text
+   id="text1484"
+   transform="matrix(1, 0, 0, 1, 111.173, 118.116)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPS-ItalicMT'">θ</text>
+
+<text
+   id="text1486"
+   transform="matrix(1, 0, 0, 1, 131.789, 232.575)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'">B</text>
+
+<text
+   id="text1488"
+   transform="matrix(1, 0, 0, 1, 193.536, 144.115)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'">D</text>
+
+<text
+   id="text1490"
+   transform="matrix(1, 0, 0, 1, 140.824, 118.065)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'">C</text>
+
+<text
+   id="text1492"
+   transform="matrix(1, 0, 0, 1, 84.8276, 15.7402)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'">F</text>
+
+<text
+   id="text1494"
+   transform="matrix(1, 0, 0, 1, 144.633, 41.3027)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'">A</text>
+
+<text
+   id="text1496"
+   transform="matrix(1, 0, 0, 1, 321.632, 132.628)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'">E</text>
+
+<text
+   id="text1498"
+   transform="matrix(1, 0, 0, 1, 75.3594, 144.115)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'">O</text>
+
+<line
+   id="line1466_1_"
+   stroke-miterlimit="10"
+   x1="50.432"
+   y1="23.68"
+   x2="40.358"
+   y2="23.68"
+   stroke-width="1.439"
+   stroke="#F671BF"
+   fill="#F671BF" />
+<line
+   id="line1470_1_"
+   stroke-miterlimit="10"
+   x1="40.362"
+   y1="125.327"
+   x2="50.436"
+   y2="125.327"
+   stroke-width="1.439"
+   stroke="#F671BF"
+   fill="#F671BF" />
+<polyline
+   id="polyline1468_1_"
+   points="49.712,35.768 45.397,23.68 41.079,35.768 45.397,35.768"
+   fill="#F671BF" />
+<polyline
+   id="polyline1472_1_"
+   points="41.083,113.517 45.402,125.605 49.715,113.517 45.402,113.517"
+   fill="#F671BF" />
+<line
+   id="line1474_1_"
+   stroke-miterlimit="10"
+   x1="45.396"
+   y1="35.768"
+   x2="45.397"
+   y2="113.717"
+   stroke-width="1.439"
+   stroke="#F671BF"
+   fill="#F671BF" />
+<line
+   id="line1458_1_"
+   stroke-miterlimit="10"
+   x1="94.621"
+   y1="125.327"
+   x2="94.621"
+   y2="33.623"
+   stroke-width="1.439"
+   stroke="#000000"
+   fill="none" />
+<text
+   id="text1456_1_"
+   sodipodi:linespacing="125%"
+   enable-background="new    "
+   font-size="17.3324"
+   x="54.116226"
+   y="32.803154"
+   style="font-size:14.12944508px;line-height:125%;fill:#666666;font-family:TimesNewRomanPSMT">excsc</text>
+
+<text
+   id="text1482_1_"
+   transform="matrix(1, 0, 0, 1, 81.6182, 88.0957)"
+   enable-background="new    "
+   font-size="17.3324"
+   sodipodi:linespacing="125%"
+   font-family="'TimesNewRomanPSMT'">1</text>
+
+</svg>
