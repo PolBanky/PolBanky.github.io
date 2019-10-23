@@ -19,7 +19,7 @@ function cursorPos(event) {  // keyup & click
 
 
 function checkFix(inTxt) {
-    // console.log('We in checkFix():  inTxt = ' + inTxt + '; length = ' + inTxt.length);
+    console.log("checkFix(" + inTxt + ")  (float.js)");
         // Если есть запятые
 if(comma_RE.test(inTxt)) {
     inTxt = inTxt.replace(comma_RE,'.'); // Если символ = comma то заменяется на dot; глобально - чтоб два раза не вставать
@@ -58,7 +58,7 @@ if((info1.count == 1) && (info1.firstPosition == 0)) {
 
 
 function checkFixInt(inTxt) {   // INT
-    // console.log('We in checkFixInt():  inTxt = ' + inTxt + '; length = ' + inTxt.length);
+    console.log("checkFixInt("+ inTxt +")  (float.js)");
 if(notD_RE.test(inTxt)) {   // если нецифры
     inTxt = inTxt.replace(notD_RE,''); // Если символы = comma или dot или нецифра то заменяется на ничто; глобально - чтоб два раза не вставать
     // console.log("inTxt after replace commas, dots, letters with nothing = " + inTxt + "; length = " + inTxt.length);

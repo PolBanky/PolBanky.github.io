@@ -14,16 +14,20 @@
 <a href="help-sopromat.html" target="_blank">	<!--H E L P-->
 	<img class="imgBtn64" src="../images/pic-question_128.png" alt="question"> <!-- знак вопроса -->
 </a>
+			<!-- h1 -->	
 	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Beam">Circle Tube</h1>
-<figure>
+
+<figure>	<!-- Эскиз детали + кнопка выбора типа нагрузки -->
 	<img src="../images/pic128ring.svg" height="200" alt="tube">
 	<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="Load" id="choice_load" title="Растяжение">
-</figure>
+</figure>   <!-- Эскиз детали + кнопка выбора типа нагрузки -->
+
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
+		
 		<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
 <fieldset class="input">
-	<legend id="src_data">Исходные данные</legend>	<!-- Исходные данные -->
+	<legend>Исходные данные</legend>	<!-- Заголовок панели исходных данных -->
 
 <div>	<!-- INPUT EX DIAMETER, mm -->
 	<input type="text" id="input_dia_ex" placeholder="External diameter" accesskey="1" title="Alt+1" autofocus>	<!-- if Chrome = Alt+1 -->
@@ -65,7 +69,7 @@
 		<option value="st09g2s">Сталь 09Г2С</option>
 	</optgroup>
 	</select>
-	<label for="steel"> Марка стали</label>
+	<label> Марка стали</label>
 </div>
 
 <div>	<!-- ВЫВОД ДАННЫХ ВЫБРАННОЙ СТАЛИ -->
@@ -75,9 +79,10 @@
 
 <div>	<!-- INPUT LOAD, N or kg or kg*mm -->
 	<input type="text" id="input_LOAD" placeholder="Force" accesskey="4" title="Alt+4">
-	<label class="blk" for="input_LOAD" id="label_input_LOAD"> Force F, kg</label>
-	<div class="divOutPutMini" id="output_bend_M" style="display:none">0.0000</div>					 <!-- display: inline-block -->
-	<label for="output_bend_M" id="label_bend_M" style="display:none"> Moment M, kg &#215 mm</label> <!-- default display: inline -->
+	<label class="blk" for="input_LOAD" id="label_input_LOAD"> Force F, N</label>
+		<!-- поле вывода расчетного значения момента при изгибе -->
+	<div class="divOutPutMini" id="output_bend_M" style="display:none">0.0000</div>					 	<!-- display: inline-block -->
+	<label id="label_bend_M" style="display:none" title="newton &#215 millimetre"> Moment M, N&#215mm</label> 	<!-- default display: inline -->
 </div>
 
 <div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) -->
@@ -87,9 +92,9 @@
 
 		<!-- ПАНЕЛЬ ВЫВОДА РЕЗУЛЬТАТОВ РАСЧЕТА -->
 <fieldset class="output">
-	<legend>Результаты расчета</legend>
+	<legend>Результаты расчета</legend>	<!-- Заголовок панели результатов расчета -->
 
-<div>	<!-- ПОРЯДОК РАСЧЕТА НАПРЯЖЕНИЯ -->
+<div>	<!-- ПОЛЕ ДЛЯ НАГЛЯДНОГО ОПИСАНИЯ РАСЧЕТА НАПРЯЖЕНИЯ -->
 	<div class="divOutPutMLine1" id="how_calc_stress">
 	</div>	
 </div>

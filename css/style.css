@@ -97,7 +97,7 @@ div.divOutPut {    /* СТРОКА ВЫВОДА результата расче�
 div.divOutPutMini {    /* СТРОКА ВЫВОДА результатов расчетов ВСПОМОГАТЕЛЬНАЯ */
 	display: inline-block;
 	height: 1.4em;
-	width: 140px;
+	width: 180px;
 	padding-top: 1px;
 	margin-top: 1px;
 	margin-right: 0px;
@@ -212,7 +212,7 @@ label.fat {
 label.blk {	/*  */
 	display: inline-block;
 	/* background: rgba(108, 168, 52, 0.15); */
-	width: 240px;
+	width: 220px;
 }
 
 fieldset {
@@ -220,10 +220,10 @@ fieldset {
     margin: 10px 0px 5px 0px; 	/* top right bottom left   */
 }
 fieldset.input {
-    background-color: #aabbcc;	/* #f7f1c1 */
+    background-color: #d4e09e;	/* #f7f1c1 */
 }
 fieldset.output {
-    background-color: #ccbbaa;	/* #f7f1c1 */
+    background-color: #a0da55;	/* #f7f1c1  #effdaf */
 }
 legend {
     color: #d2b48c;
@@ -237,7 +237,7 @@ legend.button {
 select {
     font-size: 1.2em; /* Размер шрифта */
     color: black;   /* Цвет ввода    */
-	background-color: lightgrey;
+	background-color: azure;
 	padding: 3px 1px 3px 1px;	
 }
 select.big {
@@ -278,11 +278,12 @@ img {
 margin: 0px 0px 0px 0px;
 }
 img.fs {
-    cursor: url("../images/search_48.png"), pointer;
+	/* cursor: url("../images/search_48.png"), pointer; */
+	cursor: zoom-in;
 }
-.fs:-ms-fullscreen { width: 100%; }
-.fs:-webkit-full-screen { width: 100%; }
-.fs:-moz-full-screen { width: 100%; }
+.fs:-ms-fullscreen { width: 100%; cursor: not-allowed; }
+.fs:-webkit-full-screen { width: 100%; cursor: not-allowed; }
+.fs:-moz-full-screen { width: 100%; cursor: not-allowed; }
 
 img.imgBtn128, img.imgBtn128A {	/* For not-transparency and transparency buttons */
 	width: 128px;

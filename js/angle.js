@@ -1,11 +1,10 @@
 'use strict';
 // Для совместимости с мобильными устройствами события keypress не используются, используется только событие input
-// 
+    // Переменные = ссылки на HTML элементы
 var v_iDec = document.getElementById("IDec");   // HTML Input = i(nput)Dec(imal)
 var v_iG   = document.getElementById('IG');
 var v_iM   = document.getElementById('IM');
 var v_iS   = document.getElementById('IS');
-
 var cl  = document.getElementById('clear');     // элемент legend панели ввода данных
 var inf = document.getElementById('forInfo');   // строка состояния
 var btn = document.getElementById('btn_calc');  // кнопка считать тригенометрию
@@ -16,7 +15,7 @@ var showCos = document.getElementById('cos_output');
 var showTg  = document.getElementById('tg_output');
 var showCtg = document.getElementById('ctg_output');
 
-
+    // События на HTML элементах (и ссылки на функции - обработчики событий)
 cl.addEventListener("click",clearAll_angle);
 btn.addEventListener("click",calcRun);      // Нажатие кнопки
 
