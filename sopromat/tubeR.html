@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>	<!-- ../js/sopromat.js -->
 	<meta charset="utf-8">
-	<title>Stretch</title>
+	<title>Rectangle Tube</title>
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="shortcut icon" href="../images/beam_on_bearings_128.ico" type="images/x-icon">
 	<style>
@@ -14,13 +14,14 @@
 <a href="help-sopromat.html" target="_blank">	<!--H E L P-->
 	<img class="imgBtn64" src="../images/pic-question_128.png" alt="question"> <!-- знак вопроса -->
 </a>
-	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Pic Beam">Stretch</h1>
-	<figure>    <!-- height="350" -->
-	    <img src="../images/btn128rectangle.svg" height="200" alt="Rod stretched by Force">
+	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Pic Beam">Rectangle Tube</h1>
+	<figure>    	<!-- Эскиз детали + кнопка выбора типа нагрузки -->
+		<img src="../images/btn128rectangle.svg" height="200" alt="Rod stretched by Force">
+		<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="Load" id="choice_load">		
 	</figure>		
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
-<fieldset>
+<fieldset class="input">
 	<legend>Исходные данные</legend>	<!-- Исходные данные -->
 <div>	<!-- INPUT EX DIAMETER, mm -->
 	<input type="text" id="input_dia_ex" placeholder="External width" accesskey="1" title="Alt+1" autofocus>	<!-- Chrome = Alt+1 -->
@@ -33,9 +34,9 @@
 <div>	<!-- INPUT FORCE, N or kg -->
 	<input type="text" id="input_LOAD" placeholder="Stretch force" accesskey="3" title="Alt+3">
 		<label for="input_LOAD"> Stretch force F, </label>
-		<select id="N_or_kg">		<!-- select "N_or_kg"   onchange="Event_N_or_kg_Changed()" -->
+		<select id="N_or_kg" class="in_input">		<!-- select "N_or_kg"   onchange="Event_N_or_kg_Changed()" -->
 			<option value="n">N</option>
-			<option value="kg">кг</option>
+			<option value="kg">Kg</option>
 		</select>
 </div>
 <div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) -->
@@ -43,7 +44,7 @@
 </div>
 </fieldset>
 	<!-- Вывод результатов -->
-<fieldset>
+<fieldset class="output">
 	<legend>Результаты расчета</legend>
 		<div>	<!-- OUTPUT THICKNESS, mm -->
 			<div class="divOutPut" id="output_thick">0.000</div>
@@ -52,7 +53,7 @@
 		<div>	<!-- OUTPUT AREA, mm2 or cm2 -->
 			<div class="divOutPut" id="output_area">0.000</div>
 			<div class="divLbl"> Площадь сечения стержня, 
-				<select id="mm_or_cm">		<!-- select "mm_or_cm" -->
+				<select id="mm_or_cm" class="in_output">		<!-- select "mm_or_cm" -->
 					<option value="mm">mm</option>
 					<option value="cm">cm</option>
 				</select>
@@ -66,7 +67,7 @@
 </fieldset>
 	</form>	<!-- end of Form !!!!! -->
 
-	<p class="copyright">Pol Banky &#169; 2018</p>
+	<p class="copyright">Pol Banky &#169; 2019</p>
 	<script src="../js/float.js"></script>
 	<script src="../js/tubeR.js"></script>	
 </body>

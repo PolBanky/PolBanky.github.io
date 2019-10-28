@@ -209,11 +209,6 @@ label.fat {
 	font-weight: bold;
 	padding: 0px;
 }
-label.blk {	/*  */
-	display: inline-block;
-	/* background: rgba(108, 168, 52, 0.15); */
-	width: 220px;
-}
 
 fieldset {
     background-color: #d2b48c;/* #d2b48c don't touch !!! */
@@ -236,9 +231,15 @@ legend.button {
 }
 select {
     font-size: 1.2em; /* Размер шрифта */
-    color: black;   /* Цвет ввода    */
+    color: #aa05bb; /* Цвет ввода    */
 	background-color: azure;
 	padding: 3px 1px 3px 1px;	
+}
+select.in_input {
+	background-color: #d4e09e;
+}
+select.in_output {
+	background-color: #a0da55;
 }
 select.big {
 	width: 250px;
@@ -402,6 +403,12 @@ li {	/* li - элемент списка */
 }
 li.sign {	/* li - элемент списка с рисунком */
     list-style-image: url("../images/diamond_aGIF_16.gif");
+}
+li.sign1 {	/* li - элемент списка с рисунком */
+    list-style-image: url("../images/pencil_16.png");
+}
+li.sign2 {	/* li - элемент списка с рисунком */
+    list-style-image: url("../images/smile.gif");
 }
 
 ul.tblCont {	/* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */

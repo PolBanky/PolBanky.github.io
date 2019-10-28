@@ -4,9 +4,9 @@
      xmlns = "http://www.w3.org/2000/svg"     
      height = "128px" width = "128px">    
 
-    <g stroke="pink" stroke-width="0.5">
+    <!-- <g stroke="pink" stroke-width="0.5">
         <rect x="0" y="0" height="128" width="128" fill="none"/>
-	</g>
+	</g> -->
         <!-- штриховка слева -->
     <path d="M 19,38 l -5,2 m 1.5,3 l -5,2 m 4.5,3 l -5,2 m 5.5,3 l -5,2 m 8.5,3 l -5,2" stroke="red" stroke-width="0.5"/>
         <!-- деталь -->

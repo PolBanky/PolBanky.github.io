@@ -9,6 +9,7 @@ var v_St_choice   = document.getElementById("steel_sort");       // HTML Select 
 var v_St_out      = document.getElementById("steel_data");       // HTML Output steel data
 var v_LOAD        = document.getElementById("input_LOAD");       // HTML Input
 var v_LOAD_lbl    = document.getElementById("label_input_LOAD"); // HTML Label - лебел меняется при смене нагрузки
+var v_N_or_kg     = document.getElementById("N_or_kg");          // HTML Select
 var v_buttonRUN   = document.getElementById("buttonRUN");        // HTML Button RUN
 var v_calc_stress = document.getElementById("how_calc_stress");  // HTML Output
 var v_out_stress  = document.getElementById("output_stress");    // HTML Output
@@ -28,6 +29,7 @@ v_dia_in.addEventListener("input",inputIDec);                    // Input
 v_length.addEventListener("input",inputIDec);                    // Input
 v_St_choice.addEventListener("change",Event_STEEL_choice);       // Select
 v_LOAD.addEventListener("input",inputIDec);                      // Input
+v_N_or_kg.addEventListener("change",Event_N_or_kg);              // Select - change  N_kg
 v_buttonRUN.addEventListener("click",Event_click_Button);        // Клик на кнопке
     // Переменные массивы, индексы, и всякое такое
 var LOAD_sort = -1; // выбранный тип нагрузки
@@ -67,8 +69,9 @@ var cil = {
     PiDiv16: 0.19634954,// Pi/16
     PiDiv32: 0.09817477,// Pi/32    
     density: 0.00782,   // density, g/mm3  (7.82 g/cm3)
+    koef_N_kg: 1.0,
 dia_ex: function() {
-console.log("dia_ex(" + v_dia_ex.value + ")");
+console.table("dia_ex(" + v_dia_ex.value + ")");
     if((v_dia_ex.value !='') & (v_dia_ex.value !='0')) {
         return parseFloat(v_dia_ex.value);  // mm
     } // if((v_dia_ex.value !='') & (v_dia_ex.value !='0'))
@@ -110,10 +113,10 @@ console.log("LOAD(" + v_LOAD.value + ")");
     let v = parseFloat(v_LOAD.value);  // N or N*mm
     switch(LOAD_sort) {
         case 0:         // Растяжение
-        varload = v;    // N
+        varload = v * this.koef_N_kg;    // N
             break;      
         case 1:         // Изгиб
-        varload = v * this.length(); // N*mm
+        varload = v * this.koef_N_kg * this.length(); // N*mm
             break;
         case 2:         // Кручение
         varload = v;    // N*mm   
@@ -228,38 +231,59 @@ function Event_LOAD_choice() {
     } else LOAD_sort = 0;
     switch (LOAD_sort) {
         case 0:     // Растяжение
-    v_LOAD_choice.src = "../images/pic128stretch.svg";
+    v_LOAD_choice.setAttribute("src","../images/pic128stretch.svg");
     v_LOAD_choice.title  = "Растяжение";
-    v_LOAD.placeholder  = "Stretch Force";
-    v_LOAD_lbl.innerHTML = " Stretch Force F, N";
+    v_LOAD.setAttribute("placeholder", "Stretch Force");
+    v_LOAD_lbl.innerHTML = " Stretch Force F,";
             break;
         case 1:     // Изгиб
-    v_LOAD_choice.src = "../images/pic128bend.svg";
+    v_LOAD_choice.setAttribute("src","../images/pic128bend.svg");
     v_LOAD_choice.title  = "Изгиб";
-    v_LOAD.placeholder  = "Bend Force";
-    v_LOAD_lbl.innerHTML = " Bend Force F, N";
+    v_LOAD.setAttribute("placeholder", "Bend Force");
+    v_LOAD_lbl.innerHTML = " Bend Force F,";
     v_out_bend_M.style.display='inline-block';  // показать окно вывода момента
     v_lbl_bend_M.style.display='inline';        // показать лебел окна вывода момента
             break;
         case 2:     // Кручение
-    v_LOAD_choice.src = "../images/pic128twist.svg";
+    v_LOAD_choice.setAttribute("src","../images/pic128twist.svg");
     v_LOAD_choice.title  = "Кручение";
-    v_LOAD.placeholder  = "Twist Moment";
+    v_LOAD.setAttribute("placeholder", "Twist Moment");
     v_LOAD_lbl.innerHTML = " Twist Moment M, N &#215 mm";    
     v_out_bend_M.style.display='none';     // скрыть окно вывода момента
     v_lbl_bend_M.style.display='none';     // скрыть лебел окна вывода момента
             break;
         case 3:     // Срез
-    v_LOAD_choice.src = "../images/pic128cut.svg";
+    v_LOAD_choice.setAttribute("src","../images/pic128cut.svg");
     v_LOAD_choice.title  = "Срез";
-    v_LOAD.placeholder  = "Cut Force";
-    v_LOAD_lbl.innerHTML = " Cut Force F, N";
+    v_LOAD.setAttribute("placeholder", "Cut Force");
+    v_LOAD_lbl.innerHTML = " Cut Force F,";
             break;    
         default:
             break;
     }   // switch
     Event_STEEL_choice();
 }   // Event_LOAD_choice()
+
+
+function Event_N_or_kg(event) {  // Event_N_or_kg()
+    console.log("\nEvent type = " + event.type + " in Element id == " + event.target.id + "; v_N_or_kg.value = " + v_N_or_kg.value);
+    console.log(cil);
+        // var force_tmp = v_F_stretch.value;
+    switch (v_N_or_kg.value) {  // select
+        case 'n':
+            cil.koef_N_kg = 1.0;      
+            if(v_LOAD.value != '')
+            v_LOAD.value = v_LOAD.value * 10; // кг вв ньютоны
+                break;
+            case 'kg':
+            cil.koef_N_kg = 10.0;  
+            if(v_LOAD.value != '')        
+            v_LOAD.value = v_LOAD.value / 10; // ньютоны в кг
+                break;
+        default:
+        console.log("Myswitch = default");
+}   // switch()
+}   // Event_N_or_kg
 
 
     // Обработчик выбора материала детали
@@ -288,7 +312,8 @@ function clearOut_sopr() {  //
 
     // inputIDec(event)
 function inputIDec() {
-console.log("inputIDec(); Event Type=" + event.type + "." + event.inputType + " in Element id=" + event.target.id + "; this.value=" + this.value + " Type=" + typeof(this.value));
+console.log("inputIDec(); Event Type = " + event.type + "." + event.inputType + " in HTML_Element id = " + event.target.id + "; this.value = " + this.value + "; Type = " + typeof(this.value));
+console.log(event);
     this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в файле float.js
 }   // inputIDec(event)
 

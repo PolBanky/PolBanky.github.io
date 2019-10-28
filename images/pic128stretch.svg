@@ -4,9 +4,9 @@
      xmlns = "http://www.w3.org/2000/svg"     
      height = "128px" width = "128px">    
 
-    <g stroke="pink" stroke-width="0.5">
+    <!-- <g stroke="pink" stroke-width="0.5">
         <rect x="0" y="0" height="128" width="128" fill="none"/>
-	</g>
+	</g> -->
 
         <!-- прямоугольник - по оси отверстия  -->
     <g stroke="black" stroke-width="1.5">

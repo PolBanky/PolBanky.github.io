@@ -19,7 +19,7 @@
 
 <figure>	<!-- Эскиз детали + кнопка выбора типа нагрузки -->
 	<img src="../images/pic128ring.svg" height="200" alt="tube">
-	<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="Load" id="choice_load" title="Растяжение">
+	<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="Load" id="choice_load">
 </figure>   <!-- Эскиз детали + кнопка выбора типа нагрузки -->
 
 		<!-- Form !!!!! -->
@@ -79,7 +79,11 @@
 
 <div>	<!-- INPUT LOAD, N or kg or kg*mm -->
 	<input type="text" id="input_LOAD" placeholder="Force" accesskey="4" title="Alt+4">
-	<label class="blk" for="input_LOAD" id="label_input_LOAD"> Force F, N</label>
+	<label for="input_LOAD" id="label_input_LOAD"> Force F,</label>
+	<select id="N_or_kg" class="in_input">		<!-- select "N_or_kg"   onchange="Event_N_or_kg_Changed()" -->
+		<option value="n">N</option>
+		<option value="kg">Kg</option>
+	</select>
 		<!-- поле вывода расчетного значения момента при изгибе -->
 	<div class="divOutPutMini" id="output_bend_M" style="display:none">0.0000</div>					 	<!-- display: inline-block -->
 	<label id="label_bend_M" style="display:none" title="newton &#215 millimetre"> Moment M, N&#215mm</label> 	<!-- default display: inline -->
