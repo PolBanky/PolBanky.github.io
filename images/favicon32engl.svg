@@ -4,18 +4,18 @@
      xmlns = "http://www.w3.org/2000/svg"     
      width = "32px" height = "32px">
 
-    <g stroke="greenyellow" stroke-width="2px">
+    <!-- <g stroke="greenyellow" stroke-width="2px">
 		<line x1="2" y1="2" x2="30" y2="2"/>
 		<line x1="30" y1="2" x2="30" y2="30"/>
 		<line x1="30" y1="30" x2="2" y2="30"/>
 		<line x1="2" y1="30" x2="2" y2="2"/>
-    </g>
+    </g> -->
 
-    <!-- <g stroke="pink" stroke-width="0.5">
-        <rect x="0" y="0" height="32" width="32" fill="none"/> 	</g> -->
+    <g stroke="greenyellow" stroke-width="2px">
+        <rect x="2" y="2" height="28" width="28" fill="linen"/></g>
 		
     <g font-family="monospace" font-size="22" fill="red">	<!-- <g font-family="Verdana"> -->
-		<text x="4" y="23">En</text>
+		<text x="3.5" y="23">En</text>
 		<!-- <text x="65" y="120">"&alpha;"</text> -->
     </g>
 </svg>
