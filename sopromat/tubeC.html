@@ -14,10 +14,10 @@
 			<!-- h1 -->	
 	<h1 id="top"><img class="imgBtn64B" src="../images/beam_on_bearings_128.svg" alt="Beam">Circle Tube</h1>
 
-<figure>	<!-- Эскиз детали + кнопка выбора типа нагрузки -->
+<figure>	<!-- Эскиз детали + кнопка выбора типа нагрузки: растяжение, изгиб и т.д  -->
 	<img src="../images/pic128ring.svg" height="200" alt="tube">
-	<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="Load" id="choice_load">
-</figure>   <!-- Эскиз детали + кнопка выбора типа нагрузки -->
+	<img class="btnNext" src="../images/pic128stretch.svg" height="200" alt="Load" id="loadSelector_html">
+</figure>   <!-- Эскиз детали + кнопка выбора типа нагрузки: растяжение, изгиб и т.д -->
 
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
@@ -42,7 +42,7 @@
 </div>
 
 <div>	<!-- ВЫБОР МАРКИ СТАЛИ -->
-	<select class="big" id="steel_sort">
+	<select class="big" id="steelSelector">
 	<optgroup label="380-2005 Углеродистая">
 		<option value="st3" selected>Сталь 3</option>
 	</optgroup>
@@ -75,9 +75,9 @@
 </div>
 
 <div>	<!-- INPUT LOAD, N or kg or kg*mm -->
-	<input type="text" id="input_LOAD" placeholder="Force" accesskey="4" title="Alt+4">
-	<label for="input_LOAD" id="label_input_LOAD"> Force F,</label>
-	<select id="N_or_kg" class="in_input">		<!-- select "N_or_kg"   onchange="Event_N_or_kg_Changed()" -->
+	<input type="text" id="inputLoad" placeholder="Load" accesskey="4" title="Alt+4">
+	<label for="inputLoad" id="label_inputLoad"> Force F,</label>
+	<select id="measureSelector" class="in_input">		<!-- select measure -->
 		<option value="n">N</option>
 		<option value="kg">Kg</option>
 	</select>
