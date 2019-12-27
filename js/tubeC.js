@@ -143,7 +143,7 @@ var load = {
     measureKoef: 1.0,
     selectedLoad: -1.0, // выбранный тип нагрузки
     selectedLoadTxt: ["При растяжении ", "При изгибе ", "При кручении ", "При срезе "], // для вывода параметров стали
-    from: 'nxm', 
+    from: 'nxm', // Для селекта с более чем двумя пунктами выбора
 loadSortSet: function() { // Обработчик события на v_loadSelector (эскиз нагрузки): установка типа нагрузки (изгиб, срез и т.п) на панели ввода
     if(load.selectedLoad < 3) {
         load.selectedLoad++;
@@ -163,24 +163,24 @@ console.log("Method load.loadSortSet(); Event type = " + event.type + " in Eleme
     v_load.setAttribute("placeholder", "Bend Force");
     v_loadLbl.innerHTML = " Bend Force F,";
     v_out_bend_M.style.display='inline-block';  // показать окно вывода момента
-    v_lbl_bend_M.style.display='inline';        // показать лебел окна вывода момента
+    v_lbl_bend_M.style.display='inline-block';  // показать лебел окна вывода момента
+    v_measureSelector1.style.display='inline-block'; // показать селект окна вывода момента
+    v_out_bend_M.innerHTML = load.loadAction().toFixed(1);
             break;
         case 2:     // Кручение
     v_measureSelector.length = 0;    
-    // v_measureSelector.add(new Option('N\u00D7mm', 'nxmm', true, true));
     v_measureSelector.add(new Option('N\u00D7mm', 'nxmm', false, false));
     v_measureSelector.add(new Option('N\u00D7metr', 'nxm', true, true));
-    // v_measureSelector.add(new Option('N\u00D7metr', 'nxm', false, false));
     v_measureSelector.add(new Option('Kg\u00D7metr', 'kgxm', false, false));
     load.measureKoef = 1000.0;
     v_loadSelector.setAttribute("src","../images/pic128twist.svg");
     v_loadSelector.title  = "Кручение";
     v_load.setAttribute("placeholder", "Twist Moment");
-    // v_loadLbl.innerHTML = " Twist Moment M, N &#215 mm";    
-    v_loadLbl.innerHTML = " Twist Moment M, ";
+    v_loadLbl.innerHTML = " Twist Moment M, "; // далее селектор
     v_load.value = '';
-    v_out_bend_M.style.display='none';     // скрыть окно вывода момента
-    v_lbl_bend_M.style.display='none';     // скрыть лебел окна вывода момента
+    v_out_bend_M.style.display='none';       // скрыть окно вывода момента
+    v_lbl_bend_M.style.display='none';       // скрыть лебел окна вывода момента
+    v_measureSelector1.style.display='none'; // скрыть селект окна вывода момента
             break;
         case 3:     // Срез
     v_measureSelector.length = 0;    
@@ -293,19 +293,20 @@ console.log("Method (input data) load.loadAction(" + v_load.value + ")");
 
 
     // Переменные = ссылки на HTML элементы
-var v_loadSelector= document.getElementById("loadSelector_html");// HTML PICTURE: выбор типа нагрузки - растяжение, изгиб и т.д
-var v_dia_ex      = document.getElementById("input_dia_ex");     // HTML Input: диаметр наружный
-var v_dia_in      = document.getElementById("input_dia_in");     // HTML Input: диаметр внутренний
-var v_length      = document.getElementById("input_length");     // HTML Input: длина
-var v_steelSelector = document.getElementById("steelSelector");        // HTML Select: steelSort - выбор стали из списка
-var v_out_steel   = document.getElementById("steel_data");       // HTML Output: вывод данных выбранной стали 
-var v_load        = document.getElementById("inputLoad");       // HTML Input: ввод величины нагрузки в выбраных единицах измерения
-var v_loadLbl     = document.getElementById("label_inputLoad"); // HTML Label: лебел ввода величины нагрузки, меняется при смене типа нагрузки
-var v_measureSelector = document.getElementById("measureSelector");          // HTML Select: выбор единиц измерения нагрузки
+var v_loadSelector  = document.getElementById("loadSelector_html");  // HTML PICTURE: выбор типа нагрузки - растяжение, изгиб и т.д
+var v_dia_ex        = document.getElementById("input_dia_ex");       // HTML Input: диаметр наружный
+var v_dia_in        = document.getElementById("input_dia_in");       // HTML Input: диаметр внутренний
+var v_length        = document.getElementById("input_length");       // HTML Input: длина
+var v_steelSelector = document.getElementById("steelSelector");      // HTML Select: steelSort - выбор стали из списка
+var v_out_steel     = document.getElementById("steel_data");         // HTML Output: вывод данных выбранной стали 
+var v_load          = document.getElementById("inputLoad");          // HTML Input: ввод величины нагрузки в выбраных единицах измерения
+var v_loadLbl       = document.getElementById("label_inputLoad");    // HTML Label: лебел ввода величины нагрузки, меняется при смене типа нагрузки
+var v_measureSelector  = document.getElementById("measureSelector"); // HTML Select: выбор единиц измерения нагрузки
+var v_measureSelector1 = document.getElementById("measureSelector1");// HTML Select: выбор единиц измерения нагрузки
 
 var v_buttonRUN   = document.getElementById("buttonRUN");        // HTML Button RUN !!!
 
-var v_out_Calc_Stress = document.getElementById("how_calc_stress");  // HTML Output
+var v_out_Calc_Stress = document.getElementById("how_calc_stress"); // HTML Output
 var v_out_stress  = document.getElementById("output_stress");    // HTML Output
 var v_out_area    = document.getElementById("output_area");      // HTML Output
 var v_out_wx      = document.getElementById("output_wx");        // HTML Output
@@ -318,11 +319,11 @@ var v_lbl_bend_M  = document.getElementById("label_bend_M");     // HTML Label  
     // События на HTML элементах (и ссылки на функции - обработчики событий)
 window.addEventListener("load",page_onload);                 // onLoad
 v_loadSelector.addEventListener("click",load.loadSortSet);   // Pictures changes
-v_dia_ex.addEventListener("input",inputIDec);                // Input
-v_dia_in.addEventListener("input",inputIDec);                // Input
-v_length.addEventListener("input",inputIDec);                // Input
+v_dia_ex.addEventListener("input",inputIDec);                // Input v_dia_ex
+v_dia_in.addEventListener("input",inputIDec);                // Input v_dia_in
+v_length.addEventListener("input",inputIDec);                // Input v_length
 v_steelSelector.addEventListener("change",cil.output_steel); // Select
-v_load.addEventListener("input",inputIDec);                  // Input
+v_load.addEventListener("input",inputIDec);                  // Input v_load
 v_measureSelector.addEventListener("change",load.loadMeasureSet); // Select - change measure
 v_buttonRUN.addEventListener("click",Event_click_Button);    // Клик на кнопке
 
@@ -333,6 +334,7 @@ var event1 = new Event("click");
 function page_onload() { // Обработчик события загрузки страницы
     console.log("page_onload()");    
     v_loadSelector.dispatchEvent(event1); // Клик на кнопке с эскизом нагрузки. Обработчик load.loadSortSet()
+    // console.log('v_dia_ex client Height = ' + v_dia_ex.clientHeight);
     // load.loadSortSet();
 }   // page_onload()
 
@@ -352,7 +354,7 @@ function clearOut_sopr() {  //
 
     // inputIDec(event)
 function inputIDec() {
-console.log("Function inputIDec(); Event Type = " + event.type + "." + event.inputType + " in HTML_Element id = " + event.target.id + "; this.value = " + this.value + "; Type = " + typeof(this.value));
+// console.log("Function inputIDec(); Event Type = " + event.type + "." + event.inputType + " in HTML_Element id = " + event.target.id + "; this.value = " + this.value + "; Type = " + typeof(this.value));
 // console.log(event);
     this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в файле float.js
 }   // inputIDec(event)

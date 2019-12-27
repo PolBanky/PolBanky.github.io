@@ -2,18 +2,19 @@ html { background-image: url("../images/background_31.png"); }
 
 *{ box-sizing: border-box; }
 
-	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
+	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY = 900-2*border-2*padding = 880px  !!!!!!!!! */
 body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 	width: 900px;
-	font-family: "Arial"; 		  /* Семейство шрифтов */
-	color: #b22222;     		/* Цвет текста */
-	background-color: white;    
+	font-family: "Arial"; 		/* Семейство шрифтов */
+	font-size: 16px;			/* Размер шрифтов */
+	color: #b22222;     	  /* Цвет текста */
+	background-color: #ffffff; /* #fffafa color == snow */   
 	margin: 30px auto 150px auto; /* top right bottom left */
 	border: 5px solid #aa2222;	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
 	padding: 0px 5px 2px 5px;     /* top right bottom left */
 	box-shadow: 15px -12px 5px rgba(0,0,0,0.2);
 }
-body.clr {
+body.clr { /* clr == color */
 background-color: #d2b48c;;	
 }
 
@@ -26,7 +27,6 @@ h1 {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding: 16px 0px 5px 40px; /* top right bottom left */
-	transition: color 1s, text-shadow 0.2s;
 }
 h2 {
     display: inline-block;
@@ -73,15 +73,19 @@ span.small {
 
 div {	
 	color: #aa05bb;    /* Цвет текста */
-	font-size: 1.0em;    /* Размер шрифта */
+	/* font-size: 1.0em; */    /* Размер шрифта */
 	margin: 5px 5px 5px 5px; /* top right bottom left */
 	padding: 5px 5px 5px 5px; /* top right bottom left */
+	vertical-align: middle;
 }
 div.center {
 	text-align: center;
 }
+div.smallPaddings {
+	padding: 0px 4px 0px 4px; /* top right bottom left */
+}
 div.divLbl {    /* LABEL для окон вывода */
-	display: table-cell;
+	display: table-cell; /* table-cell == margins отключены */
 	height: 1.6em;
 	vertical-align: middle;
 	font-size: 1.1em;  /* Размер шрифта */
@@ -99,30 +103,29 @@ div.divOutPut {    /* СТРОКА ВЫВОДА результата расче�
 }
 div.divOutPutMini {    /* СТРОКА ВЫВОДА результатов расчетов ВСПОМОГАТЕЛЬНАЯ */
 	display: inline-block;
-	height: 1.4em;
 	width: 180px;
-	padding-top: 1px;
-	margin-top: 1px;
-	margin-right: 0px;
+	height: 34px;
+	margin: 0px 0px 0px 10px;
 	vertical-align: middle;
-	font-size: 1.3em;  /* Размер шрифта */
+	font-size: 1.2em;  /* Размер шрифта */
 	color: blue;
 	background-color: #a5a511;
-	border: 2px solid #84e6bd;	
+	border: 1px solid #84e6bd;	
 }
-div.divOutPutMLine {    /* В качестве - ОКНО ВЫВОДА результатов расчетов в сопромате */
-	display: table-cell;
+div.divOutPutMLine {    /* многострочное half size ОКНО ВЫВОДА результатов расчетов в сопромате */
+	display: inline-block; /* inline-block == height and width EXIST but it inline */
 	height: 75px;
-	width: 440px;
+	width: 412px;
 	vertical-align: text-top;
 	font-family: Consolas, monospace;
 	font-size: 0.8em;  /* Размер шрифта */
 	color: black;
-	background-color: #a3c489;
-	border: 2px solid #849be6;	
+	background-color: #a3c48948;
+	border: 2px solid #849be6;
+	margin: 5px 1px 5px 1px; /* top right bottom left */
 }
-div.divOutPutMLine1 {    /* В качестве - ОКНО ВЫВОДА результатов расчетов в сопромате */
-	display: table-cell;
+div.divOutPutMLine1 {    /* многострочное full size ОКНО ВЫВОДА результатов расчетов в сопромате */
+	display: table-cell; /* table-cell == margins отключены */
 	height: 75px;
 	width: 880px;
 	vertical-align: text-top;
@@ -167,13 +170,14 @@ pre {						/* Показать текст как есть */
 
 /* INPUT */
 input {		/* input native = display: inline-block */
-	margin: 0px 0px 0px 0px; /* top right bottom left */
-	padding: 5px;            /* top right bottom left */
+	font-size: 1.2em;  /* Размер шрифта */
+	padding: 5px;      /* top right bottom left */
 }
 input[type="number"],input[type="text"] {
-	color: #b22222;   	  /* Цвет текста */
-	font-size: 1.2em; 		/* Размер шрифта */
-    width: 250px;
+	color: #b22222;  /* Цвет текста */
+	width: 250px;
+	height: 38px;
+	vertical-align: middle;
 	background-color: #eee;
 	border: 3px solid #bb0000;	/* Параметры border */
 	transition: background-color 1s;
@@ -183,12 +187,11 @@ input[type="text"]:focus { background-color: moccasin; border: 3px solid turquoi
 input[type="text"].grad {
 	width: 100px;	
 }
-input[type="text"].minsec {
+input[type="text"].minsec { /* Для инпута в Angle = minsec */	
 	width: 100px;
 }
 input[type="button"] {
 	color: #bb00bb;    /* Цвет ввода */
-	font-size: 1.2em;    /* Размер шрифта */
     text-align: center;
     width: 250px;
 }
@@ -211,6 +214,7 @@ label.fat {
 	font-size: 1.3em;
 	font-weight: bold;
 	padding: 0px;
+	vertical-align: middle;
 }
 
 fieldset {
@@ -236,7 +240,8 @@ select {
     font-size: 1.2em; /* Размер шрифта */
     color: #aa05bb; /* Цвет ввода    */
 	background-color: azure;
-	padding: 3px 1px 3px 1px;	
+	padding: 2px 1px 2px 1px;	
+	/* vertical-align: middle; */
 }
 select.in_input {
 	background-color: #d4e09e;

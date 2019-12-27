@@ -69,9 +69,9 @@
 	<label> Марка стали</label>
 </div>
 
-<div>	<!-- ВЫВОД ДАННЫХ ВЫБРАННОЙ СТАЛИ -->
-	<div class="divOutPutMLine" id="steel_data">
-	</div>	
+<div class="smallPaddings">	<!-- ВЫВОД ДАННЫХ ВЫБРАННОЙ СТАЛИ -->
+	<div class="divOutPutMLine" id="steel_data"></div>	
+	<div class="divOutPutMLine">Н - нормализация, У - улучшение, Ц - цементация,<br>ТВЧ - закалка с нагревом ТВЧ, В - закалка с охлаждением<br>в воде, М - закалка с охлаждением в масле.<br>Число после М,В,Н - твердость по HRC</div>	
 </div>
 
 <div>	<!-- INPUT LOAD, N or kg or kg*mm -->
@@ -82,8 +82,13 @@
 		<option value="kg">Kg</option>
 	</select>
 		<!-- поле вывода расчетного значения момента при изгибе -->
-	<div class="divOutPutMini" id="output_bend_M" style="display:none">0.0000</div>					 	<!-- display: inline-block -->
-	<label id="label_bend_M" style="display:none" title="newton &#215 millimetre"> Moment M, N&#215mm</label> 	<!-- default display: inline -->
+	<div class="divOutPutMini" id="output_bend_M" style="display:none">0.0000</div>	<!-- display: inline-block -->
+	<label id="label_bend_M" style="display:none"> Moment M,</label> 	 <!-- default display: inline -->
+	<select id="measureSelector1" class="in_input" style="display:none"> <!-- select measure -->
+		<option value="nxmm">N&#x000D7;mm</option>
+		<option value="nxm" selected>N&#x000D7;metr</option>             
+		<option value="kgxm">Kg&#x000D7;metr</option>
+	</select>
 </div>
 
 <div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) -->
@@ -135,7 +140,7 @@
 </fieldset>	<!-- ПАНЕЛЬ ВЫВОДА РЕЗУЛЬТАТОВ РАСЧЕТА -->
 	</form>	<!-- end of Form !!!!! -->
 
-	<p class="copyright">Pol Banky &#169; 2019</p>
+	<p class="copyright">Pol Banky &#169; 2020</p>
 	<script src="../js/float.js"></script>
 	<script src="../js/tubeC.js"></script>	
 </body>

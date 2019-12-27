@@ -48,7 +48,7 @@ function cursorPos(event) {  // keyup & click
 
 
 function checkFix(inTxt) {
-console.log("Function checkFix(" + inTxt + ")  (float.js)");
+// console.log("Function checkFix(" + inTxt + ")  (float.js)");
         // Если есть запятые
 if(comma_RE.test(inTxt)) {
     inTxt = inTxt.replace(comma_RE,'.'); // Если символ = comma то заменяется на dot; глобально - чтоб два раза не вставать
