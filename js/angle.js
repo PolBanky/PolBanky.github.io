@@ -17,7 +17,7 @@ var showCtg = document.getElementById('ctg_output');
 
     // События на HTML элементах (и ссылки на функции - обработчики событий)
 cl.addEventListener("click",clearAll_angle);
-btn.addEventListener("click",calcRun);      // Нажатие кнопки
+btn.addEventListener("click",calcRun);      // Нажатие кнопки считать тригенометрию
 
 v_iDec.addEventListener("input",inputIDec); // Dec
 v_iDec.addEventListener("keyup",cursorPos); // keyup

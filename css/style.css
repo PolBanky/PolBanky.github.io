@@ -1,6 +1,6 @@
 html { background-image: url("../images/background_31.png"); }
 
-*{ box-sizing: border-box; }
+*{ box-sizing: border-box; } /* Setting height or width will control the size of the entire element, including its padding and border */
 
 	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY = 900-2*border-2*padding = 880px  !!!!!!!!! */
 body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
@@ -114,11 +114,11 @@ div.divOutPutMini {    /* СТРОКА ВЫВОДА результатов ра�
 }
 div.divOutPutMLine {    /* многострочное half size ОКНО ВЫВОДА результатов расчетов в сопромате */
 	display: inline-block; /* inline-block == height and width EXIST but it inline */
-	height: 75px;
+	height: 88px;
 	width: 412px;
 	vertical-align: text-top;
-	font-family: Consolas, monospace;
-	font-size: 0.8em;  /* Размер шрифта */
+	/* font-family: monospace, Consolas; */
+	font-size: 0.875em;  /* Размер шрифта */
 	color: black;
 	background-color: #a3c48948;
 	border: 2px solid #849be6;
@@ -176,7 +176,7 @@ input {		/* input native = display: inline-block */
 input[type="number"],input[type="text"] {
 	color: #b22222;  /* Цвет текста */
 	width: 250px;
-	height: 38px;
+	/* height: 38px; */
 	vertical-align: middle;
 	background-color: #eee;
 	border: 3px solid #bb0000;	/* Параметры border */

@@ -352,14 +352,6 @@ function clearOut_sopr() {  //
 }   // clearOut_sopr()
 
 
-    // inputIDec(event)
-function inputIDec() {
-// console.log("Function inputIDec(); Event Type = " + event.type + "." + event.inputType + " in HTML_Element id = " + event.target.id + "; this.value = " + this.value + "; Type = " + typeof(this.value));
-// console.log(event);
-    this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в файле float.js
-}   // inputIDec(event)
-
-
     // обработчик события  B U T T O N   R U N   !!!!!
 function Event_click_Button() { // Событие нажатие кнопки Event_click_Button
 console.log("___Event_click_Button() = RUN__!!!__");

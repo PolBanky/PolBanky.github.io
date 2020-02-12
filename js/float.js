@@ -36,6 +36,14 @@ var steels = [
     //**********************************************************************
 
 
+    // inputIDec(event)
+function inputIDec() {
+    // console.log("Function inputIDec(); Event Type = " + event.type + "." + event.inputType + " in HTML_Element id = " + event.target.id + "; this.value = " + this.value + "; Type = " + typeof(this.value));
+    // console.log(event);
+        this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в файле float.js
+    }   // inputIDec(event)
+
+
 function I(txt) {
     inf.innerHTML = txt;
 }   // I(txt)
