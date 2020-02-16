@@ -14,7 +14,7 @@ body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 	padding: 0px 5px 2px 5px;     /* top right bottom left */
 	box-shadow: 15px -12px 5px rgba(0,0,0,0.2);
 }
-body.clr { /* clr == color */
+body.color { /* Сделать фон страницы цветным вместо стандартного белого */
 background-color: #d2b48c;;	
 }
 
@@ -73,7 +73,6 @@ span.small {
 
 div {	
 	color: #aa05bb;    /* Цвет текста */
-	/* font-size: 1.0em; */    /* Размер шрифта */
 	margin: 5px 5px 5px 5px; /* top right bottom left */
 	padding: 5px 5px 5px 5px; /* top right bottom left */
 	vertical-align: middle;
@@ -141,7 +140,7 @@ div.divBtn {    /* В качестве button для кнопок главной
 	height: 148px;
 	vertical-align: middle;
 }
-div.wrap {    /* Обертка главной панели */
+div.mainPanelWrap {    /* Обертка главной панели */
 display: inline-block;
 }
 div.tblOfContent {     /* ОГЛАВЛЕНИЕ */
@@ -273,11 +272,11 @@ select.big2 {
 	font-size: 1.4em; /* Размер шрифта */
 	text-align: center;
 	background-color: #117711;
-	color: #FFFFFF;	/* Цвет текста - в этом случае вертикальных палочек */
+	color: #FFFFFF;	/* Цвет текста - в этом случае: вертикальных палочек */
 	height: 35px;
     margin-top: 10px;
-	margin-left: 1%;
-	margin-right: 1%;
+	margin-left: 5px;
+	margin-right: 5px;
 	padding-top: 3px; /* От бордера до текста */
 }
 #topnav a { color: #FFFFFF; }
