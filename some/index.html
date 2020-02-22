@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title>Some Info</title>
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/per_cents.css">
 	<link rel="shortcut icon" href="../images/emotions_128.gif" type="images/x-icon">
 </head>
 
@@ -47,6 +48,7 @@
 	<li><a href="#sport3">Sport 3</a></li>
 	<li><a href="#k2019">Календарь 2019</a></li>
 	<li><a href="#k2020">Календарь 2020</a></li>
+	<li class="sign"><a href="#pc">Per Cents</a></li>
 	<li class="sign1"><a href="engl.html" target="_blank">Some about English</a></li>
 </ul> 
 
@@ -203,6 +205,33 @@
 	
 	<h2 id="k2020">Календарь 2020</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
 	<img src="../data/2020.png" width="880" alt="K2020">
+	
+	<h2 id="pc">Per Cents</h2> <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a>
+	<div>
+		<input is="hello-input" id="percent" placeholder="Per cent" title="Per cent">
+		<label for="percent">Per cent</label>
+	</div>
+	<div>
+		<input is="hello-input" id="srcSum" placeholder="src Sum" title="src Sum">
+		<label for="srcSum">src Sum</label>
+	</div>
+	<table id="tbl_pc">
+		<tr>	<!-- Заголовок таблицы -->
+			<th class="num">&numero;</th> <th id="sum">Sum</th> <th id="pc">Per cents</th>
+		</tr>	<!-- Заголовок таблицы -->
+		<tr>
+			<td>1</td> <td id="cell_10"></td> <td id="cell_11"></td>
+		</tr>
+		<tr>
+			<td>2</td> <td id="cell_20"></td> <td id="cell_21"></td>
+		</tr>
+		<tr>
+			<td>3</td> <td id="cell_30"></td> <td id="cell_31"></td>
+		</tr>
+		<tr>
+			<th>&sum;</th> <th id="sumAll" title="Result"></th> <th id="sumProfit" title="Profit"></th>
+		</tr>
+	</table>
 
 	<hr>
 	<div class="center">
@@ -210,6 +239,8 @@
 	</div>
 								
 	<p class="copyright">Pol Banky &#169; 2020</p>
+	<script src="../js/hello_input.js"></script>
+	<script src="../js/dep.js"></script>
 	<script src="../js/calc_C_to_F.js"></script>
     <script src="../js/fs.js"></script>	
 </body>

@@ -1,0 +1,20 @@
+#tbl_pc {
+	border: 3px solid green;
+	border-collapse: collapse;
+}
+#tbl_pc th {
+	border: 3px solid green;
+}
+#tbl_pc td {
+	border: 2px solid green;
+}
+#sum {
+	width: 250px;
+}
+#pc {
+	width: 200px;
+}
+.num {
+	width: 30px;
+	text-align: center;
+}
