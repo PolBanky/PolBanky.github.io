@@ -36,12 +36,12 @@ function sol() { // call from => function hello_inputIDec() in hello_input.js
     ar[6] = ar[4] + ar[5];
     ar[7] = ar[1] + ar[3] + ar[5];
 
-    v_cell_10.textContent = ar[0].toFixed(2);
-    v_cell_11.textContent = ar[1].toFixed(2);
-    v_cell_20.textContent = ar[2].toFixed(2);
-    v_cell_21.textContent = ar[3].toFixed(2);
-    v_cell_30.textContent = ar[4].toFixed(2);
-    v_cell_31.textContent = ar[5].toFixed(2);
-    v_sumAll.textContent  = ar[6].toFixed(2);
-    v_sumProfit.textContent = ar[7].toFixed(2);
+    v_cell_10.textContent = ar[0].toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    v_cell_11.textContent = ar[1].toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    v_cell_20.textContent = ar[2].toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    v_cell_21.textContent = ar[3].toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    v_cell_30.textContent = ar[4].toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    v_cell_31.textContent = ar[5].toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    v_sumAll.textContent  = ar[6].toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    v_sumProfit.textContent = ar[7].toFixed(2).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 } // function sol()
