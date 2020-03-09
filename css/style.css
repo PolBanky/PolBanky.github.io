@@ -29,11 +29,13 @@ h1 {
 	padding: 16px 0px 5px 40px; /* top right bottom left */
 }
 h2 {
-    display: inline-block;
     color: darkviolet;
-    margin: 30px 0px 0px 30px;
-    padding: 20px 15px 8px 60px; /* top right bottom left */
+    margin: 30px 0px 0px 20px;
+    padding: 20px 15px 8px 40px; /* top right bottom left */
 }
+/* h2::after {
+	content: url("../images/tick_16.png");
+} */
 h3 {
     color: darkgreen;
     margin: 0px 0px 0px 0px;
@@ -46,7 +48,6 @@ h4 {
 }
 
 p {
-    font-size: 1.0em;        /* Размер шрифта 		*/
 	text-indent: 25px;		 /* Отступ первой строки */
 	margin: 0px 0px 0px 0px; /* top right bottom left */
 	padding: 4px 0px 4px 0px;/* top right bottom left */
@@ -60,16 +61,12 @@ p {
 	margin: 5px auto 0px auto; /* top right bottom left */
 	padding: 0px;              /* top right bottom left */
 }
-/* .copyright:first-letter {
-	color: #3a0bbd;
-	font-size: 1.2em;
-	font-weight: bold;
-} */
 
 span.small {
 	font-size: 0.7em;      /* Размер шрифта */
 }
 
+/* div is without any properties */
 div.adv {	
 	color: #aa05bb;         /* Цвет текста           */
 	margin: 5px 5px 5px 5px;  /* top right bottom left */
@@ -183,7 +180,6 @@ input {		/* input native = display: inline-block */
 input[type="text"],input[type="number"] {
 	color: #b22222;  /* Цвет текста */
 	width: 250px;
-	/* height: 38px; */
 	vertical-align: middle;
 	background-color: #eee;
 	border: 3px solid #bb0000;	/* Параметры border */
@@ -308,9 +304,10 @@ img.imgBtn128, img.imgBtn128A {	/* For not-transparency and transparency buttons
 	transition: 0.1s;
 }
 img.imgBtn128:hover {
-	width: 132px;
+	/* width: 132px;
 	height: 132px;
-	box-shadow: 6px -4px 3px rgba(0,0,0,0.3);
+	box-shadow: 6px -4px 3px rgba(0,0,0,0.3); */
+	background-color: lightgreen;
 }
 img.imgBtn128A:hover {	/*For transparency buttons*/
 	width: 132px;
@@ -372,7 +369,6 @@ th {
 }
 td {
 	font-size: 1.1em; /* Размер шрифта */
-	/* text-align: left; */
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 8px;
@@ -381,14 +377,17 @@ td {
 }
 td.pipe {				/* Трубы круглые для трубопроводов */
 	color: #ff00ff;	  /* Цвет текста */
+	background-color: #ff00ff25;
 	font-weight: bold;
 }
 td.hex {				/* Болты гайки шайбы */
 	color: #056e1b;   /* Цвет текста */
+	background-color: #056e1b25;
 	font-weight: bold;
 }
 td.weld {				/* Болты гайки шайбы */
 	color: #ec0000;   /* Цвет текста */
+	background-color: #ec000025;
 	font-weight: bold;
 }
 table.compact {
