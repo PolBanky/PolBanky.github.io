@@ -66,7 +66,8 @@ span.small {
 	font-size: 0.7em;      /* Размер шрифта */
 }
 
-/* div is without any properties */
+		/* DIV IS WITHOUT ANY PROPERTIES */
+
 div.adv {	
 	color: #aa05bb;         /* Цвет текста           */
 	margin: 5px 5px 5px 5px;  /* top right bottom left */
@@ -79,16 +80,7 @@ div.center {
 div.smallPaddings {
 	padding: 0px 4px 0px 4px; /* top right bottom left */
 }
-div.divLbl {    /* LABEL для окон вывода */
-	display: inline-block; /* table-cell == margins отключены */
-	margin: 5px 5px 5px 1px; /* top right bottom left */
-	padding: 5px 5px 5px 1px; /* top right bottom left */
-	height: 1.6em;
-	vertical-align: middle;
-	font-size: 1.1em;  /* Размер шрифта */
-	padding-left: 7px;
-}
-div.divOutPut {    /* СТРОКА ВЫВОДА результата расчета */
+.divOutPut {    /* СТРОКА ВЫВОДА результата расчета */
 	display: inline-block;
 	margin: 5px 1px 5px 0px; /* top right bottom left */
 	padding: 5px; /* top right bottom left */
@@ -100,7 +92,17 @@ div.divOutPut {    /* СТРОКА ВЫВОДА результата расче�
 	background-color: #a5a511;
 	border: 2px solid #84e6bd;	
 }
-div.divOutPutMini {    /* СТРОКА ВЫВОДА результатов расчетов ВСПОМОГАТЕЛЬНАЯ */
+/* .divLbl { */    /* LABEL для окон вывода */
+.divOutPut + div {    /* LABEL для окон вывода */
+	display: inline-block; /* table-cell == margins отключены */
+	margin: 5px 5px 5px 1px; /* top right bottom left */
+	padding: 5px 5px 5px 1px; /* top right bottom left */
+	height: 1.6em;
+	vertical-align: middle;
+	font-size: 1.1em;  /* Размер шрифта */
+	padding-left: 7px;
+}
+.divOutPutMini {    /* СТРОКА ВЫВОДА результатов расчетов ВСПОМОГАТЕЛЬНАЯ */
 	display: inline-block;
 	width: 180px;
 	height: 34px;
@@ -111,7 +113,7 @@ div.divOutPutMini {    /* СТРОКА ВЫВОДА результатов ра�
 	background-color: #a5a511;
 	border: 1px solid #84e6bd;	
 }
-div.divOutPutMLine {    /* многострочное half size ОКНО ВЫВОДА результатов расчетов в сопромате */
+.divOutPutMLine {    /* многострочное half size ОКНО ВЫВОДА результатов расчетов в сопромате */
 	display: inline-block; /* inline-block == height and width EXIST but it inline */
 	margin: 5px 1px 5px 0px; /* top right bottom left */
 	height: 88px;
@@ -122,7 +124,7 @@ div.divOutPutMLine {    /* многострочное half size ОКНО ВЫВ�
 	background-color: #9bcc7580;
 	border: 2px solid #849be6;
 }
-div.divOutPutMLine1 {    /* многострочное full size ОКНО ВЫВОДА результатов расчетов в сопромате */
+.divOutPutMLine1 {    /* многострочное full size ОКНО ВЫВОДА результатов расчетов в сопромате */
 	display: table-cell; /* table-cell == margins отключены */
 	height: 75px;
 	width: 880px;
@@ -133,7 +135,7 @@ div.divOutPutMLine1 {    /* многострочное full size ОКНО ВЫВ
 	background-color: #a3c489;
 	border: 2px solid #849be6;	
 }
-div.divBtn {    /* В качестве button для кнопок главной панели (без текста) */
+.divBtn {    /* В качестве button для кнопок главной панели (без текста) */
 	display: table-cell;
 	width: 143px;
 	height: 148px;
@@ -416,13 +418,13 @@ li {	/* li - элемент списка */
     margin: 0em 0em 0em 0em;	/* top right bottom left */
 	padding: 0em 0em 0em 0em;
 }
-li.sign {	/* li - элемент списка с рисунком */
+.sign {	/* li - элемент списка с рисунком */
     list-style-image: url("../images/diamond_aGIF_16.gif");
 }
-li.sign1 {	/* li - элемент списка с рисунком */
+.sign1 {	/* li - элемент списка с рисунком */
     list-style-image: url("../images/pencil_16.png");
 }
-li.sign2 {	/* li - элемент списка с рисунком */
+.sign2 {	/* li - элемент списка с рисунком */
     list-style-image: url("../images/smile.gif");
 }
 
