@@ -5,10 +5,9 @@ html { background-image: url("../images/background_31.png"); }
 	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY = 900-2*border-2*padding = 880px  !!!!!!!!! */
 body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 	width: 900px;
-	font-family: "Arial"; 		/* Семейство шрифтов */
-	font-size: 16px;			/* Размер шрифтов */
-	color: #b22222;     	  /* Цвет текста */
-	background-color: #ffffff; /* #fffafa color == snow */   
+	font-family: "Arial";
+	color: #b22222;     	    /* Цвет текста */
+	background-color: #ffffff;
 	margin: 30px auto 150px auto; /* top right bottom left */
 	border: 5px solid #aa2222;	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
 	padding: 0px 5px 2px 5px;     /* top right bottom left */
@@ -30,12 +29,15 @@ h1 {
 }
 h2 {
     color: darkviolet;
-    margin: 30px 0px 0px 20px;
-    padding: 20px 15px 8px 40px; /* top right bottom left */
+	padding: 30px 1px 8px 30px;
+    border-bottom: 2px solid rgb(9, 155, 147);
 }
 /* h2::after {
 	content: url("../images/tick_16.png");
 } */
+h2 img, th img {
+	margin-bottom: -0.25em;
+}
 h3 {
     color: darkgreen;
     margin: 0px 0px 0px 0px;
@@ -48,18 +50,17 @@ h4 {
 }
 
 p {
-	text-indent: 25px;		 /* Отступ первой строки */
-	margin: 0px 0px 0px 0px; /* top right bottom left */
-	padding: 4px 0px 4px 0px;/* top right bottom left */
+	text-indent: 1.5em;		 /* Отступ первой строки */
 }
-
 footer p {
 	text-indent: 0px;
 	width: 350px;
 	font-size: 0.8em;
 	text-align: center;
 	margin: 5px auto 0px auto;/* top right bottom left */
-	padding: 0px;             /* top right bottom left */
+}
+footer img {
+margin: 0px auto 0px 317px;
 }
 
 span.small {
@@ -73,9 +74,6 @@ div.adv {
 	margin: 5px 5px 5px 5px;  /* top right bottom left */
 	padding: 5px 5px 5px 5px; /* top right bottom left */
 	vertical-align: middle;
-}
-.center {
-	text-align: center;
 }
 div.smallPaddings {
 	padding: 0px 4px 0px 4px; /* top right bottom left */
@@ -209,7 +207,7 @@ input[type="button"]:focus {
     background-position: 95% center;
 }
 
-label {						 /* default display: inline */
+label {	/* default display: inline */
 	font-size: 1.1em; 		 /* Размер шрифта         */
 	margin: 5px 5px 5px 1px; /* top right bottom left */
 	padding: 4px;            /* top right bottom left */
@@ -299,23 +297,23 @@ img.fs {
 .fs:-webkit-full-screen { width: 100%; cursor: not-allowed; }
 .fs:-moz-full-screen { width: 100%; cursor: not-allowed; }
 
-img.imgBtn128, img.imgBtn128A {	/* For not-transparency and transparency buttons */
+.imgBtn128, img.imgBtn128A {	/* For not-transparency and transparency buttons */
 	width: 128px;
 	height: 128px;
 	transition: 0.1s;
 }
-img.imgBtn128:hover {
+.imgBtn128:hover {
 	/* width: 132px;
 	height: 132px;
 	box-shadow: 6px -4px 3px rgba(0,0,0,0.3); */
 	background-color: lightgreen;
 }
-img.imgBtn128A:hover {	/*For transparency buttons*/
+.imgBtn128A:hover {	/*For transparency buttons*/
 	width: 132px;
 	height: 132px;
 }
 
-img.imgBtn64 {    /* Для значков в правом верхнем углу, например -  Help */
+.imgBtn64 {    /* Для значков в правом верхнем углу, например -  Help */
 	float: right;
 	width: 64px;
 	margin-top: 10px;	
@@ -323,10 +321,10 @@ img.imgBtn64 {    /* Для значков в правом верхнем угл
 	padding: 0px;
 	transition: 0.3s;
 }
-img.imgBtn64:hover {    /* Help Rizing */
+.imgBtn64:hover {    /* Help Rizing */
 	width: 74px;
 }
-img.imgBtn64A {	/* For circle badge with h1 header */
+.imgBtn64A {	/* For circle badge with h1 header */
 	width: 64px;
 	height: 64px;
 	vertical-align: -10px;
@@ -334,7 +332,7 @@ img.imgBtn64A {	/* For circle badge with h1 header */
 	padding: 0px;
     border-radius: 32px;
 }
-img.imgBtn64B {	/* For (border-radius:10px) badge with h1 header */
+.imgBtn64B {	/* For (border-radius:10px) badge with h1 header */
 	width: 64px;
 	height: 64px;
 	vertical-align: -10px;
@@ -342,14 +340,11 @@ img.imgBtn64B {	/* For (border-radius:10px) badge with h1 header */
 	padding: 0px;
     border-radius: 10px;
 }
-img.picInTxt {
+.picInTxt {
     display: block;
 	margin: 5px auto 5px 5px;
 }
-img.low {
-	margin-bottom: -6px;
-}
-img.btnNext {
+.btnNext {
 	cursor: pointer;
 }
 
@@ -417,29 +412,29 @@ li {	/* li - элемент списка */
     margin: 0em 0em 0em 0em;	/* top right bottom left */
 	padding: 0em 0em 0em 0em;
 }
-.sign {	/* li - элемент списка с рисунком */
+.sign {	 /* li - элемент списка с рисунком diamond */
     list-style-image: url("../images/diamond_aGIF_16.gif");
 }
-.sign1 {	/* li - элемент списка с рисунком */
+.sign1 { /* li - элемент списка с рисунком pencil */
     list-style-image: url("../images/pencil_16.png");
 }
-.sign2 {	/* li - элемент списка с рисунком */
+.sign2 { /* li - элемент списка с рисунком smile */
     list-style-image: url("../images/smile.gif");
 }
 
 ul.tblCont {	/* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */
 	font-size: 1.3em;  /* Размер шрифта */
 }
-ul.tblCont li {	/* li - элемент списка */
+.tblCont li {	/* li - элемент списка */
     padding-top: 4px;
     padding-bottom: 4px;
 }
 
-ul.tblCont li > a {	/* li - элемент списка */
+.tblCont li > a {	/* li - элемент списка */
     padding-top: 4px;
     padding-bottom: 4px;
 }
-ul.tblCont li > ul {	/* li - элемент списка */
+.tblCont li > ul {	/* li - элемент списка */
     padding-top: 4px;
 }
 

@@ -100,6 +100,19 @@
 <h2 id="thread">Резьбы <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a></h2>
 <img src="../data/threads-dims.png" alt="Threads">
 
+<fieldset class="input">
+	<legend>Исходные данные</legend>	<!-- Заголовок панели исходных данных -->
+<div>	<!-- INPUT EX DIAMETER, mm -->
+	<input is="hello-input" id="inputDiaEx" placeholder="External diameter" title="Ex Dia">
+	<label for="inputDiaEx">Diameter External d, mm</label>	
+</div>
+<div>	<!-- INPUT Thread, mm -->
+	<input is="hello-input" id="threadPitch" placeholder="Thread" title="Thread">
+	<label for="threadPitch">Thread Pitch, mm</label>
+</div>
+</fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
+
+
 
 <h2 id="inch">Дюйм и трубный дюйм <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a></h2>
 <p>Как и в Великобритании, с 1958 года американский дюйм приравнивается к 2,54 см — для отличия от остальных эта единица называется международный дюйм. Ранее (с 1866 года) был равен 2,54000508 см (точнее, 10000/3937 см); иногда это старое значение используется и ныне под названием геодезический дюйм.</p>
@@ -144,7 +157,7 @@
 </div>
 </fieldset>
 
-<h2 id="angles">Углы конусов <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a></h2>
+<h2 id="angles">Углы конусов <a href="#"><img src="../images/ArrowTop32.png" alt="" title="Top"></a><a href="angle.html" target="_blank"><img src="../images/favicon32angle.svg" alt="" title="Angle"></a></h2>
 <img src="../data/AnglesOfCones.png" width="880" alt="Angle" title="Углы конусов">
 
 <h2 id="keys">Места под ключи <a href="#"> <img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a></h2>
@@ -177,6 +190,8 @@
 
 	<footer><p>Pol Banky &#169; 2020</p></footer>
 	<!--Добавление к пректу JS-->
+	<script src="../js/hello_input.js"></script>
+	<script src="../js/thread.js"></script>
 	<script src="../js/fs.js"></script>
 	<script src="../js/float.js"></script>
 	<script src="../js/calibre.js"></script>
