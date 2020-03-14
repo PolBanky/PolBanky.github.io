@@ -53,17 +53,17 @@ p {
 	padding: 4px 0px 4px 0px;/* top right bottom left */
 }
 
-.copyright {
+footer p {
 	text-indent: 0px;
 	width: 350px;
 	font-size: 0.8em;
 	text-align: center;
-	margin: 5px auto 0px auto; /* top right bottom left */
-	padding: 0px;              /* top right bottom left */
+	margin: 5px auto 0px auto;/* top right bottom left */
+	padding: 0px;             /* top right bottom left */
 }
 
 span.small {
-	font-size: 0.7em;      /* Размер шрифта */
+	font-size: 0.7em;         /* Размер шрифта */
 }
 
 		/* DIV IS WITHOUT ANY PROPERTIES */
@@ -74,7 +74,7 @@ div.adv {
 	padding: 5px 5px 5px 5px; /* top right bottom left */
 	vertical-align: middle;
 }
-div.center {
+.center {
 	text-align: center;
 }
 div.smallPaddings {
@@ -82,24 +82,23 @@ div.smallPaddings {
 }
 .divOutPut {    /* СТРОКА ВЫВОДА результата расчета */
 	display: inline-block;
-	margin: 5px 1px 5px 0px; /* top right bottom left */
-	padding: 5px; /* top right bottom left */
+	margin: 5px 1px 5px 0px;  /* top right bottom left */
+	padding: 5px;             /* top right bottom left */
 	height: 1.6em;
 	width: 250px;
 	vertical-align: middle;
-	font-size: 1.5em;  /* Размер шрифта */
+	font-size: 1.5em;         /* Размер шрифта */
 	color: blue;
 	background-color: #a5a511;
 	border: 2px solid #84e6bd;	
 }
-/* .divLbl { */    /* LABEL для окон вывода */
 .divOutPut + div {    /* LABEL для окон вывода */
-	display: inline-block; /* table-cell == margins отключены */
-	margin: 5px 5px 5px 1px; /* top right bottom left */
+	display: inline-block;    /* table-cell == margins отключены */
+	margin: 5px 5px 5px 1px;  /* top right bottom left */
 	padding: 5px 5px 5px 1px; /* top right bottom left */
 	height: 1.6em;
 	vertical-align: middle;
-	font-size: 1.1em;  /* Размер шрифта */
+	font-size: 1.1em;         /* Размер шрифта */
 	padding-left: 7px;
 }
 .divOutPutMini {    /* СТРОКА ВЫВОДА результатов расчетов ВСПОМОГАТЕЛЬНАЯ */
@@ -108,58 +107,58 @@ div.smallPaddings {
 	height: 34px;
 	margin: 0px 0px 0px 10px;
 	vertical-align: middle;
-	font-size: 1.2em;  /* Размер шрифта */
+	font-size: 1.2em;         /* Размер шрифта */
 	color: blue;
 	background-color: #a5a511;
 	border: 1px solid #84e6bd;	
 }
 .divOutPutMLine {    /* многострочное half size ОКНО ВЫВОДА результатов расчетов в сопромате */
-	display: inline-block; /* inline-block == height and width EXIST but it inline */
-	margin: 5px 1px 5px 0px; /* top right bottom left */
+	display: inline-block;    /* inline-block == height and width EXIST but it inline */
+	margin: 5px 1px 5px 0px;  /* top right bottom left */
 	height: 88px;
 	width: 412px;
 	vertical-align: middle;
-	font-size: 0.875em;  /* Размер шрифта */
+	font-size: 0.875em;       /* Размер шрифта */
 	color: black;
 	background-color: #9bcc7580;
 	border: 2px solid #849be6;
 }
 .divOutPutMLine1 {    /* многострочное full size ОКНО ВЫВОДА результатов расчетов в сопромате */
-	display: table-cell; /* table-cell == margins отключены */
+	display: table-cell;      /* table-cell == margins отключены */
 	height: 75px;
 	width: 880px;
 	vertical-align: text-top;
 	font-family: Consolas, monospace;
-	font-size: 1.0em;  /* Размер шрифта */
+	font-size: 1.0em;         /* Размер шрифта */
 	color: black;
 	background-color: #a3c489;
 	border: 2px solid #849be6;	
 }
-.divBtn {    /* В качестве button для кнопок главной панели (без текста) */
-	display: table-cell;
-	width: 143px;
-	height: 148px;
-	vertical-align: middle;
-}
-div.mainPanelWrap {    /* Обертка главной панели */
+.mainPanelWrap {           /* Обертка главной панели */
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 }
-div.tblOfContent {     /* ОГЛАВЛЕНИЕ */
-    font-size: 1.3em;  /* Размер шрифта */
+.mainPanelWrap div {    /* В качестве button для кнопок главной панели (без текста) */
+	display: table-cell;
+	width: 143px;
+	height: 148px;
+	vertical-align: middle;
+}
+.tblOfContent {     /* ОГЛАВЛЕНИЕ */
+    font-size: 1.3em;         /* Размер шрифта */
     margin: 0px 5px 5px 5px;  /* top right bottom left */
 	padding: 0px 5px 5px 5px; /* top right bottom left */
 }
 div.zero {	/*  */
-	margin: 5px 0px 5px 0px; /* top right bottom left */
+	margin: 5px 0px 5px 0px;  /* top right bottom left */
 	padding: 5px 0px 5px 0px; /* top right bottom left */
 }
 div.alertString {
-	margin: 5px 1px 5px 0px; /* top right bottom left */
-	padding: 5px; /* top right bottom left */
-	color: #065e20;    /* Цвет текста */
+	margin: 5px 1px 5px 0px;  /* top right bottom left */
+	padding: 5px;             /* top right bottom left */
+	color: #065e20;         /* Цвет текста */
 	border: 1px solid #800000;
 }
 .columnLeft {
