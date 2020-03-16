@@ -1,0 +1,37 @@
+/* *{ box-sizing: border-box; } */
+
+#threadTabl {
+	border: 3px solid green;
+	border-collapse: collapse;
+	margin-top: 1rem;
+}
+#threadTabl th {
+	border: 3px solid green;
+}
+#threadTabl td {
+	border: 2px solid green;
+	text-align: center;
+}
+#threadTabl td.left {
+	border: 2px solid green;
+	text-align: left;
+}
+#param {
+	width: 350px;
+}
+#sym {
+	width: 60px;
+}
+#ed {
+	width: 60px;
+}
+#calc {
+	width: 250px;
+}
+#num {
+	width: 129px;
+}
+
+span {
+font: 1.3em bold;
+}

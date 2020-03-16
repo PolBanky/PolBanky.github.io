@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title>Tech Info</title>
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/threadTabl.css">
 	<link rel="shortcut icon" href="../images/favicon_operator.ico" type="images/x-icon">
 </head>
 
@@ -18,6 +19,9 @@
 		<li><a href="#standard">Most Used Standards</a></li>
 		<li><a href="#bearing">Подшипники</a></li>
 		<li><a href="#thread">Резьбы</a></li>
+			<ul>
+				<li class="sign"><a href="#screw1">Параметры резьбы</a></li>
+			</ul>
 		<li><a href="#inch">Дюйм и трубный дюйм</a>
 			<ul>
 				<li class="sign"><a href="#inch1">Калибр в сотых долях дюйма - в миллиметры</a></li>
@@ -100,8 +104,9 @@
 <h2 id="thread">Резьбы <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a></h2>
 <img src="../data/threads-dims.png" alt="Threads">
 
-<fieldset class="input">
-	<legend>Исходные данные</legend>	<!-- Заголовок панели исходных данных -->
+<fieldset class="input" id="screw1">
+	<legend>Параметры резьбы <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a></legend>	<!-- Заголовок панели исходных данных -->
+
 <div>	<!-- INPUT EX DIAMETER, mm -->
 	<input is="hello-input" id="inputDiaEx" placeholder="External diameter" title="Ex Dia">
 	<label for="inputDiaEx">Diameter External d, mm</label>	
@@ -110,6 +115,21 @@
 	<input is="hello-input" id="threadPitch" placeholder="Thread" title="Thread">
 	<label for="threadPitch">Thread Pitch, mm</label>
 </div>
+
+<table id="threadTabl">
+	<tr>	<!-- Заголовок таблицы -->
+		<th id="param">Параметр</th><th id="sym">Сим</th><th id="ed">Ед</th><th id="calc">Формула</th><th id="num">К-во</th>
+	</tr>	<!-- Заголовок таблицы -->
+	<tr>
+		<td class="left">Длина окружности</td><td>L</td><td>mm</td><td><span>&Pi; &times; d</span></td><td id="L"></td>
+	</tr>
+	<tr>
+		<td class="left">Угол подъема линии резьбы</td><td>A</td><td>grad</td><td>&Pi; &times; d</td><td id="A"></td>
+	</tr>
+	
+	
+</table>
+
 </fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
 
 
@@ -145,7 +165,7 @@
 <p>Калибр стрелкового оружия в США принято измерять в сотых долях дюйма, (в Великобритании — традиционно в тысячных долях). Например, знаменитый 45-й калибр — это 0,45 дюйма (или 11,43 мм); 30-й — это 0,30 дюйма (или 7,62 мм); 50-й — это 0,50 дюйма (или 12,7 мм), и т. д.</p>
 
 <fieldset>
-	<legend>Калибр в сотых долях дюйма - в миллиметры</legend>
+	<legend>Калибр в сотых долях дюйма - в миллиметры <a href="#"><img src="../images/ArrowTop32.png" alt="Arrow" title="Top"></a></legend>
 <div>	<!-- INPUT CALIBRE -->
 	<input type="text" id="input_calibre" placeholder="Calibre">
 	<label for="input_calibre" id="lbl_calibre">Калибр в сотых долях дюйма</label>
@@ -188,7 +208,7 @@
 	<tr><td>9</td><td></td><td></td><td></td><td></td><td>297 x 1892</td></tr>
 </table>
 
-	<footer><p>Pol Banky &#169; 2020</p></footer>
+	<footer><div>Pol Banky &#169; 2020</div></footer>
 	<!--Добавление к пректу JS-->
 	<script src="../js/hello_input.js"></script>
 	<script src="../js/thread.js"></script>

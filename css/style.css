@@ -35,7 +35,7 @@ h2 {
 /* h2::after {
 	content: url("../images/tick_16.png");
 } */
-h2 img, th img {
+h2 img, th img, legend img {
 	margin-bottom: -0.25em;
 }
 h3 {
@@ -46,21 +46,27 @@ h3 {
 h4 {
     color: darkred;
     margin: 0px 0px 0px 0px;
-    padding: 5px 0px 3px 15px; /* top right bottom left */
+    padding: 5px 0px 0px 15px; /* top right bottom left */
 }
 
 p {
 	text-indent: 1.5em;		 /* Отступ первой строки */
 }
-footer p {
-	text-indent: 0px;
-	width: 350px;
+
+footer {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+footer div {
 	font-size: 0.8em;
-	text-align: center;
-	margin: 5px auto 0px auto;/* top right bottom left */
+	padding: 3px 2px 0px 2px;
 }
 footer img {
-margin: 0px auto 0px 317px;
+	width: 245px;
+	height: 185px;
 }
 
 span.small {
