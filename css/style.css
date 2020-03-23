@@ -39,9 +39,8 @@ h2 img, th img, legend img {
 	margin-bottom: -0.25em;
 }
 h3 {
-    color: darkgreen;
-    margin: 0px 0px 0px 0px;
-    padding: 8px 0px 5px 15px; /* top right bottom left */    
+    color: rgb(1, 80, 1);
+    /* padding: 8px 0px 5px 15px; */
 }
 h4 {
     color: darkred;
@@ -54,6 +53,8 @@ p {
 }
 
 footer {
+	/* border-top: 2px solid rgb(9, 155, 147); */
+	/* margin-top: 0.5em; */
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -235,6 +236,17 @@ fieldset.input {
 fieldset.output {
     background-color: #a0da55;	/* #f7f1c1  #effdaf */
 }
+.output > div {
+	display: inline-block;
+	/* border: #a5a511 1px solid; */
+	width: 69%;
+}
+.output > div + div {
+	display: inline-block;
+	/* border: #a5a511 1px solid; */
+	width: auto;
+	vertical-align: top;
+}
 legend {
     color: #d2b48c;
     background-color: #322cbe;
@@ -363,18 +375,12 @@ width: 880px;
 th {
 	font-size: 1.2em; /* Размер шрифта */
     background-color: rgba(79, 217, 154, 0.24);
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 3px;
-	padding-right: 3px;
+	padding: 10px 3px 10px 3px;	
 	border: 1px solid black;
 }
 td {
-	font-size: 1.1em; /* Размер шрифта */
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 8px;
-	padding-right: 8px;
+	font-size: 1.1em;
+	padding: 10px 8px 10px 8px;
     border: 1px solid black;
 }
 td.pipe {				/* Трубы круглые для трубопроводов */
@@ -398,15 +404,35 @@ table.compact {
 	border-collapse: collapse;
 	border: 3px solid green;
 }
-table.compact th {	
+.compact th {	
 	border: 2px solid green;	
 }
-table.compact td {
+.compact td {
 	text-align: center;
 	padding-left: 0px;
 	padding-right: 0px;
 	border: 2px solid green;
 }
+table.mini {
+	table-layout: auto;
+	border-collapse: collapse;
+	border: 2px solid green;
+}
+.mini th {	
+	font-size: 1.1em;
+	padding: 8px 6px 8px 6px;
+	border: 2px solid green;	
+}
+.mini td {
+	font-size: 1.0em;
+	padding: 6px 6px 6px 6px;
+	text-align: center;
+	border: 1px solid green;
+}
+.mini td:first-of-type {
+	text-align: left;
+}
+
 
 ul {	/* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */
     margin-top: 0px;

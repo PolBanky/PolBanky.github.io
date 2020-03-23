@@ -15,7 +15,7 @@
 	<h1><img class="imgBtn64B" src="../images/favicon32angle.svg" alt="Pic">Convert Angle</h1>			
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
-<fieldset>
+<fieldset class="input">
 	<legend class="button" id="clear" title="Clear All Inputs (Alt+0)" accesskey="0">Исходные данные</legend>		
 <div>	<!-- INPUT DEC ANGLE, GRAD     type="number" -->
 	<input type="text" id="IDec" placeholder="Angle Decimal (Alt+1)" accesskey="1">	<!-- I(nput)Dec(imal) -->
@@ -38,28 +38,33 @@
 </div>
 </fieldset>
 	<!-- Вывод результатов -->
-<fieldset>
+<fieldset class="output">
 	<legend>Angle's Trigenometry</legend>
+	<div> <!-- .output > div -->
 		<div>	
 			<div class="divOutPut" id="angl_in_rad_output">0.000</div>
 			<div id="in_rad_lbl">Угол в радианах</div>
 		</div>
 		<div>
 			<div class="divOutPut" id="sin_output">0.000</div>
-			<div id="sin_lbl">Синус угла</div>
+			<div id="sin_lbl">Синус угла = AB / OB</div>
 		</div>		
 		<div>
 			<div class="divOutPut" id="cos_output">0.000</div>
-			<div id="cos_lbl">Косинус угла</div>
+			<div id="cos_lbl">Косинус угла = OA / OB</div>
 		</div>
 		<div>
 			<div class="divOutPut" id="tg_output">0.000</div>
-			<div id="tg_lbl">Тангенс угла</div>
+			<div id="tg_lbl">Тангенс угла = AB / OA</div>
 		</div>
 		<div>
 			<div class="divOutPut" id="ctg_output">0.000</div>
-			<div id="ctg_lbl">Котангенс угла</div>
+			<div id="ctg_lbl">Котангенс угла = OA / AB</div>
 		</div>
+	</div> <!-- .output > div -->
+	<div> <!-- .output > div + div -->
+		<img src="../data/Tg.svg" alt="Triangle">
+	</div> <!-- .output > div + div -->
 </fieldset>
 	</form>	<!-- end of Form !!!!! -->
 
