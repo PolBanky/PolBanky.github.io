@@ -1,6 +1,6 @@
 html { background-image: url("../images/background_31.png"); }
 
-*{ box-sizing: border-box; } /* Setting height or width will control the size of the entire element, including its padding and border */
+* { box-sizing: border-box; } /* Setting height or width will control the size of the entire element, including its padding and border */
 
 	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY = 900-2*border-2*padding = 880px  !!!!!!!!! */
 body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
@@ -14,11 +14,11 @@ body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 	box-shadow: 15px -12px 5px rgba(0,0,0,0.2);
 }
 body.color { /* Сделать фон страницы цветным вместо стандартного белого */
-background-color: #d2b48c;;	
+	background-color: #d2b48c;;	
 }
 
 h1 {
-	width: 82%;	
+	width: 75%;	
 	color: #0000ff;    		  /* Цвет текста */
 	font-size: 3.2em;    		/* Размер шрифта */
 	font-family: Times, serif; 	/* Семейство шрифтов */
@@ -31,6 +31,28 @@ h2 {
     color: darkviolet;
 	padding: 30px 1px 8px 30px;
     border-bottom: 2px solid rgb(9, 155, 147);
+}
+h2 > a {
+	position: static;  
+	text-decoration: none;
+}
+h2 > a::after {
+position: relative;
+left: -0px;
+top: -35px;
+font-size: 14px;
+color: rgb(199, 212, 12);
+background: rgba(0, 0, 0, 0.6);
+content: "";
+text-decoration: none;
+padding: 5px;
+border-radius: 5px;
+text-align: center;
+visibility: hidden;
+}
+h2 > a:hover::after { 
+content: "Top";
+visibility: visible;
 }
 /* h2::after {
 	content: url("../images/tick_16.png");
@@ -285,20 +307,24 @@ select.big2 {
 	padding: 8px 3px 8px 3px;	
 }
 
-
-#topnav {    /*  ( # )  => по идентификатору */
+#topnav { /* nav  ( # )  => по идентификатору */
 	font-size: 1.4em; /* Размер шрифта */
 	text-align: center;
-	background-color: #117711;
-	color: #FFFFFF;	/* Цвет текста - в этом случае: вертикальных палочек */
-	height: 35px;
-    margin-top: 10px;
-	margin-left: 5px;
-	margin-right: 5px;
-	padding-top: 3px; /* От бордера до текста */
+	/* height: 45px; */
+	padding: 5px 0px;
+	margin: 10px 5px 1px 5px;
 }
-#topnav a { color: #FFFFFF; }
-#topnav a:hover { color: rgb(255, 187, 0); }
+#topnav a {
+	color: yellow;
+	background-color: blue;
+	text-decoration: none;
+	padding: 4px 8px;
+	border-radius: 8px;
+}
+#topnav a:hover {
+	color: blue;
+	background-color: yellow;
+}
 
 img {
 margin: 0px 0px 0px 0px;
@@ -471,6 +497,9 @@ li {	/* li - элемент списка */
 }
 .sign2 { /* li - элемент списка с рисунком smile */
     list-style-image: url("../images/smile.gif");
+}
+.sign3 { /* li - элемент списка с рисунком smile */
+    list-style-image: url("../images/arrowLeft16.png");
 }
 
 ul.tblCont {	/* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */
