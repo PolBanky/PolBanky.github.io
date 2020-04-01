@@ -1,4 +1,6 @@
 'use strict';
+    // Для: indexRootHelp --- js/indexRootHelp.js
+
 var widthScreen  = screen.width;               // ширина 
 var heightScreen = screen.height;              // высота
 var widthClient  = document.body.clientWidth;  // ширина клиента

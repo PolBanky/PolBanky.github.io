@@ -44,17 +44,6 @@ function inputIDec() {
     }   // inputIDec(event)
 
 
-function I(txt) {
-    inf.innerHTML = txt;
-}   // I(txt)
-
- 
-function cursorPos(event) {  // keyup & click
-    // console.log("\nEvent num " + ++i + ", type = " + event.type + " in Element id = " + event.target.id + "; Cursor position = " + event.target.selectionStart);
-    I('Pos=' + event.target.selectionStart);
-}   // cursorPos(event)
-
-
 function checkFix(inTxt) {
 // console.log("Function checkFix(" + inTxt + ")  (float.js)");
         // Если есть запятые

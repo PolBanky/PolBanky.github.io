@@ -1,4 +1,5 @@
 'use strict';
+    // Для: Info &amp; calculations --- ROOT/index.html
 
 let net = window.navigator.onLine;
 

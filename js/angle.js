@@ -35,8 +35,8 @@ v_iM.addEventListener("input",inputIM);     // Min
 v_iM.addEventListener("keyup",cursorPos);   // keyup
 v_iM.addEventListener("click",cursorPos);   // click
 
-window.addEventListener("load",ld);
-window.addEventListener("beforeunload",bULd);
+window.addEventListener("load",ld);             // load page angle.html
+window.addEventListener("beforeunload",bULd);   // unload page angle.html
 
 var i = 0;          // номера стартов функции события
 
@@ -53,6 +53,16 @@ var deg1 = 0;       // deg в deg-min-sec
 var min1 = 0;       // min в deg-min-sec
 var sec1 = 0;       // sec в deg-min-sec
 var angleInRad = 0; // Угол numDec в радианах
+
+
+function I(txt) {
+    inf.innerHTML = txt;
+}   // I(txt)
+ 
+function cursorPos(event) {  // keyup & click
+    // console.log("\nEvent num " + ++i + ", type = " + event.type + " in Element id = " + event.target.id + "; Cursor position = " + event.target.selectionStart);
+    I('Pos=' + event.target.selectionStart);
+}   // cursorPos(event)
 
 
 function ld() { // load
