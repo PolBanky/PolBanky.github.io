@@ -151,14 +151,14 @@ loadSortSet: function() { // Обработчик события на v_loadSele
 console.log("Method load.loadSortSet(); Event type = " + event.type + " in Element id = " + event.target.id + "; load.selectedLoad = " + load.selectedLoad);
     switch (load.selectedLoad) {
         case 0:     // Растяжение
-    v_loadSelector.setAttribute("src","../images/pic128stretch.svg");
+    v_loadSelector.setAttribute("src","../img/pic128stretch.svg");
     v_loadSelector.title  = "Растяжение";
     v_load.setAttribute("placeholder", "Stretch Force");
     v_loadLbl.innerHTML = " Stretch Force F,";
     // v_measureSelector
             break;
         case 1:     // Изгиб
-    v_loadSelector.setAttribute("src","../images/pic128bend.svg");
+    v_loadSelector.setAttribute("src","../img/pic128bend.svg");
     v_loadSelector.title  = "Изгиб";
     v_load.setAttribute("placeholder", "Bend Force");
     v_loadLbl.innerHTML = " Bend Force F,";
@@ -173,7 +173,7 @@ console.log("Method load.loadSortSet(); Event type = " + event.type + " in Eleme
     v_measureSelector.add(new Option('N\u00D7metr', 'nxm', true, true));
     v_measureSelector.add(new Option('Kg\u00D7metr', 'kgxm', false, false));
     load.measureKoef = 1000.0;
-    v_loadSelector.setAttribute("src","../images/pic128twist.svg");
+    v_loadSelector.setAttribute("src","../img/pic128twist.svg");
     v_loadSelector.title  = "Кручение";
     v_load.setAttribute("placeholder", "Twist Moment");
     v_loadLbl.innerHTML = " Twist Moment M, "; // далее селектор
@@ -187,7 +187,7 @@ console.log("Method load.loadSortSet(); Event type = " + event.type + " in Eleme
     v_measureSelector.add(new Option('N', 'n', true, true));
     v_measureSelector.add(new Option('Kg', 'kg', false, false));
     load.measureKoef = 1.0;
-    v_loadSelector.setAttribute("src","../images/pic128cut.svg");
+    v_loadSelector.setAttribute("src","../img/pic128cut.svg");
     v_loadSelector.title  = "Срез";
     v_load.setAttribute("placeholder", "Cut Force");
     v_loadLbl.innerHTML = " Cut Force F,";

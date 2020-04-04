@@ -1,4 +1,4 @@
-html { background-image: url("../images/background_31.png"); }
+html { background-image: url("../img/background_31.png"); }
 
 * { box-sizing: border-box; } /* Setting height or width will control the size of the entire element, including its padding and border */
 
@@ -43,19 +43,19 @@ font-size: 14px;
 font-weight: 500;
 text-decoration: none;
 padding: 3px 3px 4px 3px;
-border-radius: 4px;
+border-radius: 5px;
 text-align: center;
 visibility: hidden;
 }
 h2 > a:first-child::after {
 left: 40px;
-top: 30px;
+top: 10px;
 color: whitesmoke;
 background: darkgreen;
 }
 legend > a:first-child::after {
 left: 30px;
-top: 20px;
+top: 0px;
 color: yellow;
 background: darkblue;
 }
@@ -204,37 +204,29 @@ pre {						/* Показать текст как есть */
 
 /* INPUT */
 input {		/* input native = display: inline-block */
+	width: 250px;
 	margin: 5px 1px 5px 0px; /* top right bottom left */
 	padding: 5px;      /* top right bottom left */
 	font-size: 1.2em;  /* Размер шрифта */
 }
 input[type="text"],input[type="number"] {
 	color: #b22222;  /* Цвет текста */
-	width: 250px;
-	vertical-align: middle;
 	background-color: #eee;
 	border: 3px solid #bb0000;	/* Параметры border */
 	transition: background-color 1s;
 }
 input[type="number"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
 input[type="text"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
-input[type="text"].grad {
-	width: 100px;	
+input[type="text"].grad { width: 100px;	}   /* Для инпута в Angle = grad */
+input[type="text"].minsec {	width: 100px; } /* Для инпута в Angle = minsec */
+input[type="button"] { 
+	color: #bb00bb;
+	text-align: center;
 }
-input[type="text"].minsec { /* Для инпута в Angle = minsec */	
-	width: 100px;
-}
-input[type="button"] {
-	color: #bb00bb;    /* Цвет ввода */
-    text-align: center;
-    width: 250px;
-}
-input[type="button"]:hover {
-	background-color: bisque;
-}
+/* input[type="button"]:hover { background-color: bisque; } */
 input[type="button"]:focus {
 	background-color: palegreen;
-    background-image: url("../images/tick_16.png");
+    background-image: url("../img/tick_16.png");
     background-repeat: no-repeat;
     background-position: 95% center;
 }
@@ -337,7 +329,7 @@ img {
 margin: 0px 0px 0px 0px;
 }
 img.fs {
-	/* cursor: url("../images/search_48.png"), pointer; */
+	/* cursor: url("../img/search_48.png"), pointer; */
 	cursor: zoom-in;
 }
 .fs:-ms-fullscreen { width: 100%; cursor: not-allowed; }
@@ -497,16 +489,16 @@ li {	/* li - элемент списка */
 	padding: 0em 0em 0em 0em;
 }
 .sign {	 /* li - элемент списка с рисунком diamond */
-    list-style-image: url("../images/diamond_aGIF_16.gif");
+    list-style-image: url("../img/diamond_aGIF_16.gif");
 }
 .sign1 { /* li - элемент списка с рисунком pencil */
-    list-style-image: url("../images/pencil_16.png");
+    list-style-image: url("../img/pencil_16.png");
 }
 .sign2 { /* li - элемент списка с рисунком smile */
-    list-style-image: url("../images/smile.gif");
+    list-style-image: url("../img/smile.gif");
 }
 .sign3 { /* li - элемент списка с рисунком smile */
-    list-style-image: url("../images/arrowLeft16.png");
+    list-style-image: url("../img/arrowLeft16.png");
 }
 
 ul.tblCont {	/* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */
