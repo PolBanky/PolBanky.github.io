@@ -201,7 +201,7 @@ pre {						/* Показать текст как есть */
 	color: #223cb2;   	  /* Цвет текста */
 	font-size: 1.3em; 		/* Размер шрифта */
 }
-/* BUTTON */
+	/* BUTTON */
 button {
 	width: 250px;
 	margin: 5px 1px 5px 0px; /* top right bottom left */
@@ -216,35 +216,20 @@ button:focus {
     background-repeat: no-repeat;
     background-position: 95% center;
 }
-
-/* INPUT */
+	/* INPUT */
 input {		/* input native = display: inline-block */
 	width: 250px;
 	margin: 5px 1px 5px 0px; /* top right bottom left */
 	padding: 5px;      /* top right bottom left */
 	font-size: 1.2em;  /* Размер шрифта */
-}
-input[type="text"],input[type="number"] {
 	color: #b22222;  /* Цвет текста */
 	background-color: #eee;
 	border: 3px solid #bb0000;	/* Параметры border */
 	transition: background-color 1s;
 }
-input[type="number"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
-input[type="text"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
-input[type="text"].grad { width: 100px;	}   /* Для инпута в Angle = grad */
-input[type="text"].minsec {	width: 100px; } /* Для инпута в Angle = minsec */
-/* input[type="button"] { 
-	color: #bb00bb;
-	text-align: center;
-} */
-/* input[type="button"]:hover { background-color: bisque; } */
-/* input[type="button"]:focus {
-	background-color: palegreen;
-    background-image: url("../img/tick_16.png");
-    background-repeat: no-repeat;
-    background-position: 95% center;
-} */
+input:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
+input.grad { width: 100px;	}   /* Для инпута в Angle = grad */
+input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
 
 label {	/* default display: inline */
 	font-size: 1.1em; 		 /* Размер шрифта         */
@@ -288,6 +273,7 @@ legend {
 legend.button {
 	cursor: pointer; 
 }
+	/* SELECT */
 select {
 	margin: 5px 1px 5px 0px; /* top right bottom left */
 	padding: 5px 5px 5px 5px;
@@ -320,11 +306,10 @@ select.big2 {
 	margin-left: 10px;
 	padding: 8px 3px 8px 3px;	
 }
-
+	/* TOPNAV */
 #topnav { /* nav  ( # )  => по идентификатору */
-	font-size: 1.4em; /* Размер шрифта */
+	font-size: 1.4em;
 	text-align: center;
-	/* height: 45px; */
 	padding: 5px 0px;
 	margin: 10px 5px 1px 5px;
 }
@@ -339,12 +324,11 @@ select.big2 {
 	color: blue;
 	background-color: yellow;
 }
-
+	/* I M G */
 img {
 margin: 0px 0px 0px 0px;
 }
 img.fs {
-	/* cursor: url("../img/search_48.png"), pointer; */
 	cursor: zoom-in;
 }
 .fs:-ms-fullscreen { width: 100%; cursor: not-allowed; }
@@ -357,16 +341,12 @@ img.fs {
 	transition: 0.1s;
 }
 .imgBtn128:hover {
-	/* width: 132px;
-	height: 132px;
-	box-shadow: 6px -4px 3px rgba(0,0,0,0.3); */
 	background-color: lightgreen;
 }
 .imgBtn128A:hover {	/*For transparency buttons*/
 	width: 132px;
 	height: 132px;
 }
-
 .imgBtn64 {    /* Для значков в правом верхнем углу, например -  Help */
 	float: right;
 	width: 64px;
