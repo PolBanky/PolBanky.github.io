@@ -201,6 +201,21 @@ pre {						/* Показать текст как есть */
 	color: #223cb2;   	  /* Цвет текста */
 	font-size: 1.3em; 		/* Размер шрифта */
 }
+/* BUTTON */
+button {
+	width: 250px;
+	margin: 5px 1px 5px 0px; /* top right bottom left */
+	padding: 5px;      /* top right bottom left */
+	font-size: 1.2em;  /* Размер шрифта */
+	color: #bb00bb;
+	text-align: center;
+}
+button:focus {
+	background-color: palegreen;
+    background-image: url("../img/tick_16.png");
+    background-repeat: no-repeat;
+    background-position: 95% center;
+}
 
 /* INPUT */
 input {		/* input native = display: inline-block */
@@ -219,17 +234,17 @@ input[type="number"]:focus { background-color: moccasin; border: 3px solid turqu
 input[type="text"]:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
 input[type="text"].grad { width: 100px;	}   /* Для инпута в Angle = grad */
 input[type="text"].minsec {	width: 100px; } /* Для инпута в Angle = minsec */
-input[type="button"] { 
+/* input[type="button"] { 
 	color: #bb00bb;
 	text-align: center;
-}
+} */
 /* input[type="button"]:hover { background-color: bisque; } */
-input[type="button"]:focus {
+/* input[type="button"]:focus {
 	background-color: palegreen;
     background-image: url("../img/tick_16.png");
     background-repeat: no-repeat;
     background-position: 95% center;
-}
+} */
 
 label {	/* default display: inline */
 	font-size: 1.1em; 		 /* Размер шрифта         */

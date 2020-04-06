@@ -28,14 +28,14 @@ function Event_SelectChanged () {
         case 'c':
             document.getElementById('input_grad').title = "\u00B0C";            //  \u00B0 ГРАДУС в JS  !!!!!!
             document.getElementById('input_grad').placeholder = "Цельсий";      // окно ввода
-            document.getElementById('calc').value = "Calculate \u00B0C to \u00B0F"; // button
-            document.getElementById('lbl_grad_out').innerHTML = " \u00B0F";         // Label after OUT
+            document.getElementById('calc').textContent = "Calculate \u00B0C to \u00B0F"; // button
+            document.getElementById('lbl_grad_out').textContent = " \u00B0F";         // Label after OUT
             break;
         case 'f':
             document.getElementById('input_grad').title = "Градусов Фаренгейта";    // окно ввода
             document.getElementById('input_grad').placeholder = "Фаренгейт";        // окно ввода
-            document.getElementById('calc').value = "Calculate \u00B0F to \u00B0C"; // button
-            document.getElementById('lbl_grad_out').innerHTML = " \u00B0C";         // Label after OUT
+            document.getElementById('calc').textContent = "Calculate \u00B0F to \u00B0C"; // button
+            document.getElementById('lbl_grad_out').textContent = " \u00B0C";         // Label after OUT
             break;
         default:
             window.alert("Myswitch = default");
