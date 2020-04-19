@@ -1,0 +1,140 @@
+	/*   T A B L E S   */
+table {
+    table-layout: auto;
+    border-collapse: collapse;
+    border: 2px solid green;
+    caption-side: top;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+th {
+    font-size: 1.2em;
+    background-color: rgba(79, 217, 154, 0.24);
+    padding: 10px 6px 10px 6px;	
+    border: 2px solid green;
+}
+td {
+    font-size: 1.1em;
+    padding: 8px 6px 8px 6px;
+    border: 1px solid green;
+}
+    /* table class  firstColumnLeft */
+.firstColumnLeft td { /* все td по центру кроме левого столбца */
+    text-align: center;
+}
+.firstColumnLeft td:first-of-type {
+    text-align: left;
+}
+    /* table class  firstColumnCenter */
+.firstColumnCenter td:first-of-type {
+    text-align: center;
+}
+    /* table class  lastColumnCenter */
+.lastColumnCenter td:last-of-type {
+    text-align: center;
+}
+    /* table class  mini */
+.mini th {	
+    font-size: 1.1em;
+    padding: 8px 4px 8px 4px;
+}
+.mini td {
+    font-size: 1.0em;
+    padding: 6px 4px 6px 4px;
+    /* text-align: center; */
+}
+
+td.pipe { /* Трубы круглые для трубопроводов */
+    color: #ff00ff;	  /* Цвет текста */
+    background-color: #ff00ff25;
+    font-weight: bold;
+}
+td.hex { /* Болты гайки шайбы */
+    color: #056e1b;   /* Цвет текста */
+    background-color: #056e1b25;
+    font-weight: bold;
+}
+td.weld { /* Сварка */
+    color: #ec0000;   /* Цвет текста */
+    background-color: #ec000025;
+    font-weight: bold;
+}
+    /* table class  wdt */
+table.wdt {	/* wdt == width 880 */
+    width: 880px;
+}
+    /* table class  fix */
+table.fix {
+    table-layout: fixed;
+    text-align: center;
+}
+
+    /* table ID  flangeInfo */
+table#flangeInfo { /* F L A N G E */
+    width: 880px;  /* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
+    table-layout: fixed;
+}
+#flangeInfo td {
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    border: 2px solid green;
+}
+        /*  end  T A B L E S   */
+
+#threadTabl {
+    border: 3px solid green;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+#threadTabl th {
+    border: 3px solid green;
+}
+#threadTabl td {
+    border: 2px solid green;
+    text-align: center;
+}
+#threadTabl td.left {
+    border: 2px solid green;
+    text-align: left;
+}
+#param {
+    width: 350px;
+}
+#sym {
+    width: 60px;
+}
+#ed {
+    width: 60px;
+}
+#calc {
+    width: 250px;
+}
+#num {
+    width: 129px;
+}
+
+span {
+font: 1.3em bold;
+}
+
+#tbl_pc {
+	border: 3px solid green;
+	border-collapse: collapse;
+}
+#tbl_pc th {
+	border: 3px solid green;
+}
+#tbl_pc td {
+	border: 2px solid green;
+}
+#sum {
+	width: 250px;
+}
+#pc {
+	width: 200px;
+}
+.num {
+	width: 30px;
+	text-align: center;
+}

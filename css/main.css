@@ -1,0 +1,315 @@
+html { background-image: url("../img/background_31.png"); }
+
+* { box-sizing: border-box; } /* Setting height or width will control the size of the entire element, including its padding and border */
+/* :root {
+	--main-font: Helvetica, Arial, sans-serif;
+	--btn-inet-wdt: 100px;
+} */
+	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY = 900-2*border-2*padding = 880px  !!!!!!!!! */
+body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
+	width: 900px;
+	font-family: "Arial";
+	color: #b22222;     	    /* Цвет текста */
+	background-color: #ffffff;
+	margin: 30px auto 150px auto; /* top right bottom left */
+	border: 5px solid #aa2222;	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
+	padding: 0px 5px 2px 5px;     /* top right bottom left */
+	box-shadow: 15px -12px 5px rgba(0,0,0,0.2);
+}
+body.color { /* Сделать фон страницы цветным вместо стандартного белого */
+	background-color: #d2b48c;;	
+}
+
+h1 {
+	width: 75%;	
+	color: #0000ff;    		  /* Цвет текста */
+	font-size: 3.2em;    		/* Размер шрифта */
+	font-family: Times, serif; 	/* Семейство шрифтов */
+	text-align: left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 16px 0px 5px 40px; /* top right bottom left */
+}
+h2 {
+    color: darkviolet;
+	padding: 30px 1px 8px 30px;
+    border-bottom: 2px solid rgb(9, 155, 147);
+}
+h2 > a, legend > a {
+	position: relative;  
+	text-decoration: none;
+}
+h2 > a:first-child::after, legend > a:first-child::after {
+position: absolute;
+content: "Top";
+font-size: 14px;
+font-weight: 500;
+text-decoration: none;
+padding: 3px 3px 4px 3px;
+border-radius: 5px;
+text-align: center;
+visibility: hidden;
+}
+h2 > a:first-child::after {
+left: 40px;
+top: 10px;
+color: whitesmoke;
+background: darkgreen;
+}
+legend > a:first-child::after {
+left: 30px;
+top: 0px;
+color: yellow;
+background: darkblue;
+}
+h2 > a:first-child:hover::after, legend > a:first-child:hover::after {
+visibility: visible;
+z-index: 10;
+}
+/* h2 img, th img, legend img { */
+h2 img, th img {
+	margin-bottom: -0.25em;
+}
+h3 {
+    color: rgb(1, 80, 1);
+    padding: 10px 0px 0px 15px;
+}
+h4 {
+    color: darkred;
+}
+
+p {
+	text-indent: 1.5em;		 /* Отступ первой строки */
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+footer div {
+	font-size: 0.8em;
+	padding: 3px 2px 0px 2px;
+}
+footer img {
+	width: 245px;
+	height: 185px;
+}
+
+span.small {
+	font-size: 0.7em;         /* Размер шрифта */
+}
+
+pre {						/* Показать текст как есть */
+	color: #223cb2;   	  /* Цвет текста */
+	font-size: 1.3em; 		/* Размер шрифта */
+}
+
+	/*  B U T T O N  */
+button {
+	width: 250px;
+	margin: 5px 1px 5px 0px; /* top right bottom left */
+	padding: 5px;      /* top right bottom left */
+	font-size: 1.2em;  /* Размер шрифта */
+	color: #bb00bb;
+	text-align: center;
+}
+button:focus {
+	background-color: palegreen;
+    background-image: url("../img/tick_16.png");
+    background-repeat: no-repeat;
+    background-position: 95% center;
+}
+	/*  end  B U T T O N  */
+
+	/*  I N P U T  */
+input {		/* input native = display: inline-block */
+	width: 250px;
+	margin: 5px 1px 5px 0px; /* top right bottom left */
+	padding: 5px;      /* top right bottom left */
+	font-size: 1.2em;  /* Размер шрифта */
+	color: #b22222;  /* Цвет текста */
+	background-color: #eee;
+	border: 3px solid #bb0000;	/* Параметры border */
+	transition: background-color 1s;
+}
+input:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
+input.grad { width: 100px;	}   /* Для инпута в Angle = grad */
+input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
+	/*  end  I N P U T  */
+
+label {	/* default display: inline */
+	font-size: 1.1em; 		 /* Размер шрифта         */
+	margin: 5px 5px 5px 1px; /* top right bottom left */
+	padding: 4px;            /* top right bottom left */
+}
+label.fat {
+	font-size: 1.3em;
+	font-weight: bold;
+	padding: 0px;
+	vertical-align: middle;
+}
+
+fieldset {
+    background-color: #d2b48c;/* #d2b48c don't touch !!! */
+    margin: 10px 0px 5px 0px; 	/* top right bottom left   */
+}
+fieldset.input {
+    background-color: #d4e09e;	/* #f7f1c1 */
+}
+fieldset.output {
+    background-color: #a0da55;	/* #f7f1c1  #effdaf */
+}
+.output > div {
+	display: inline-block;
+	/* border: #a5a511 1px solid; */
+	width: 69%;
+}
+.output > div + div {
+	display: inline-block;
+	/* border: #a5a511 1px solid; */
+	width: auto;
+	vertical-align: top;
+}
+legend {
+    color: #d2b48c;
+    background-color: #322cbe;
+	font-size: 1.2em;  /* Размер шрифта */
+	padding: 3px 7px 3px 7px;
+}
+legend.button {
+	cursor: pointer; 
+}
+	/*  S E L E C T  */
+select {
+	margin: 5px 1px 5px 0px; /* top right bottom left */
+	padding: 5px 5px 5px 5px;
+    font-size: 1.2em; /* Размер шрифта */
+    color: #aa05bb; /* Цвет ввода    */
+	background-color: azure;
+	/* vertical-align: middle; */
+}
+select.in_input {
+	background-color: #d4e09e;
+}
+select.in_output {
+	background-color: #a0da55;
+}
+select.big {
+	width: 250px;
+	padding: 8px 3px 8px 3px;	
+}
+select.big1 {
+	width: 250px;
+	margin-top: 300px;
+	margin-bottom: 4px;
+	margin-left: 10px;
+	padding: 8px 3px 8px 3px;	
+}
+select.big2 {
+	width: 250px;
+	margin-top: 20px;
+	margin-bottom: 4px;
+	margin-left: 10px;
+	padding: 8px 3px 8px 3px;	
+}
+	/*  end  S E L E C T  */
+
+	/*  T O P N A V  */
+#topnav { /* nav  ( # )  => по идентификатору */
+	font-size: 1.4em;
+	text-align: center;
+	padding: 5px 0px;
+	margin: 10px 5px 1px 5px;
+}
+#topnav a {
+	color: yellow;
+	background-color: blue;
+	text-decoration: none;
+	padding: 4px 8px;
+	border-radius: 8px;
+}
+#topnav a:hover {
+	color: blue;
+	background-color: yellow;
+}
+	/*  end  T O P N A V  */
+
+	/*  I M G  */
+img {
+margin: 0px 0px 0px 0px;
+}
+img.fs {
+	cursor: zoom-in;
+}
+.fs:-ms-fullscreen { width: 100%; cursor: not-allowed; }
+.fs:-webkit-full-screen { width: 100%; cursor: not-allowed; }
+.fs:-moz-full-screen { width: 100%; cursor: not-allowed; }
+
+.imgBtn128, img.imgBtn128A {	/* For not-transparency and transparency buttons */
+	width: 128px;
+	height: 128px;
+	transition: 0.1s;
+}
+.imgBtn128:hover {
+	background-color: lightgreen;
+}
+.imgBtn128A:hover {	/*For transparency buttons*/
+	width: 132px;
+	height: 132px;
+}
+.imgBtn64 {    /* Для значков в правом верхнем углу, например -  Help */
+	float: right;
+	width: 64px;
+	margin-top: 10px;	
+	margin-right: 5px;
+	padding: 0px;
+	transition: 0.3s;
+}
+.imgBtn64:hover {    /* Help Rizing */
+	width: 74px;
+}
+.imgBtn64A {	/* For circle badge with h1 header */
+	width: 64px;
+	height: 64px;
+	vertical-align: -10px;
+	margin-right: 12px;
+	padding: 0px;
+    border-radius: 32px;
+}
+.imgBtn64B {	/* For (border-radius:10px) badge with h1 header */
+	width: 64px;
+	height: 64px;
+	vertical-align: -10px;
+	margin-right: 12px;
+	padding: 0px;
+    border-radius: 10px;
+}
+.picInTxt {
+    display: block;
+	margin: 5px auto 5px 5px;
+}
+.btnNext {
+	cursor: pointer;
+}
+caption { /*  IMG caption  */
+	padding: 3px 0px 3px 8px;
+	font-size: 1.3em;
+	text-align: left;
+	color: yellow;
+	background-color: blue;
+}
+	/*  end  I M G  */
+
+iframe {				/* Окно для вывода файла */
+	border: 0px;
+}
+
+a.big1 {				/* Спец ссылка большого размера шрифта */
+	display: block;
+	padding: 10px 0px 10px 50px; /* top right bottom left */
+	font-weight: bold;
+	font-size: 1.5em;  /* Размер шрифта */
+}

@@ -1,0 +1,40 @@
+	/*  L I S T S  */
+ul {	/* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+li {	/* li - элемент списка */
+    margin: 0em 0em 0em 0em;	/* top right bottom left */
+    padding: 0em 0em 0em 0em;
+}
+.sign {	 /* li - элемент списка с рисунком diamond */
+    list-style-image: url("../img/diamond_aGIF_16.gif");
+}
+.sign1 { /* li - элемент списка с рисунком pencil */
+    list-style-image: url("../img/pencil_16.png");
+}
+.sign2 { /* li - элемент списка с рисунком smile */
+    list-style-image: url("../img/smile.gif");
+}
+.sign3 { /* li - элемент списка с рисунком smile */
+    list-style-image: url("../img/arrowLeft16.png");
+}
+
+ul.tblCont {	/* ul - Неупорядоченный список (маркеры а не цифры); ol - упорядоченный (цифры); li - элемент списка */
+    font-size: 1.3em;  /* Размер шрифта */
+}
+.tblCont li {	/* li - элемент списка */
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.tblCont li > a {	/* li - элемент списка */
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.tblCont li > ul {	/* li - элемент списка */
+    padding-top: 4px;
+}
+        /*  end  L I S T S  */
