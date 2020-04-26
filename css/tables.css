@@ -2,7 +2,7 @@
 table {
     table-layout: auto;
     border-collapse: collapse;
-    border: 2px solid green;
+    border: 2px solid #008000;
     caption-side: top;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
@@ -80,7 +80,6 @@ table#flangeInfo { /* F L A N G E */
     padding-right: 0px;
     border: 2px solid green;
 }
-        /*  end  T A B L E S   */
 
 #threadTabl {
     border: 3px solid green;
@@ -138,3 +137,15 @@ font: 1.3em bold;
 	width: 30px;
 	text-align: center;
 }
+    /*  Table caption  */
+caption {
+    border-width: 2px 2px 0px 2px;
+    border-style: solid;
+    border-color: #008000;
+	padding: 4px 0px 4px 12px;
+	font-size: 1.3em;
+	text-align: left;
+	color: #0000ff;
+	background-color: #ffff00aa;
+}
+    /*  Table caption  */

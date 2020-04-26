@@ -1,0 +1,12 @@
+/* :root {
+	--main-font: Helvetica, Arial, sans-serif;
+	--btn-inet-wdt: 100px;
+} */
+
+.inlineBlockIt {
+	display: inline-block;
+}
+
+.small {  /* изначально для - span */
+	font-size: 0.7em;
+}
