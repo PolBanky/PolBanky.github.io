@@ -17,7 +17,7 @@
 <ul class="tblCont">
 	<li><a href="#standard">Most Used Standards</a></li>
 	<li><a href="#bearing">Подшипники</a></li>
-	<li><a href="#thread">Резьбы</a></li>
+	<li><a href="#threadMain">Резьбы</a></li>
 		<ul>
 			<li class="sign"><a href="#screw1">Параметры резьбы</a></li>
 		</ul>
@@ -98,30 +98,36 @@
 <img src="../data/bearings_1760_2.png" width="880" alt="bear">
 <hr>
 
-<h2 id="thread">Резьбы <a href="#"><img src="../img/ArrowTop32.png" alt=""></a></h2>
+
+<h2 id="threadMain">Резьбы <a href="#"><img src="../img/ArrowTop32.png" alt=""></a></h2>
 <img src="../data/threads-dims.png" alt="Threads">
 
 <fieldset class="input" id="screw1">
 	<legend>Параметры резьбы <a href="#"><img src="../img/ArrowTop16.png" alt=""></a></legend>	<!-- Заголовок панели исходных данных -->
 
 <div>	<!-- INPUT EX DIAMETER, mm -->
-	<input is="hello-input" id="inputDiaEx" placeholder="External diameter" title="Ex Dia">
-	<label for="inputDiaEx">Diameter External d, mm</label>	
+	<input is="hello-input" id="inputDiaEx" placeholder="External diameter" title="рисунок a">
+	<label for="inputDiaEx">Diameter External = d, mm</label>	
 </div>
 <div>	<!-- INPUT Thread, mm -->
-	<input is="hello-input" id="threadPitch" placeholder="Thread" title="Thread">
-	<label for="threadPitch">Thread Pitch, mm</label>
+	<input is="hello-input" id="inputPitchBC" placeholder="Thread" title="рисунок a">
+	<label for="threadPitch">Thread Pitch = BC, mm</label>
 </div>
-
-<table id="threadTabl">
+<table id="threadParam01">
 	<tr>	<!-- Заголовок таблицы -->
-		<th id="param">Параметр</th><th id="sym">Сим</th><th id="ed">Ед</th><th id="calc">Формула</th><th id="num">К-во</th>
+		<th>Параметр</th><th title="Обозначение">Об</th><th title="Единица измерения">Ед</th><th>Формула</th><th>Значение</th>
 	</tr>	<!-- Заголовок таблицы -->
 	<tr>
-		<td class="left">Длина окружности</td><td>L</td><td>mm</td><td><span>&Pi; &times; d</span></td><td id="L"></td>
+		<td>Длина окружности</td><td>L</td><td>mm</td><td>L = &#928; &times; d</td><td id="cell_L"></td>
 	</tr>
 	<tr>
-		<td class="left">Угол подъема линии резьбы</td><td>A</td><td>grad</td><td>&Pi; &times; d</td><td id="A"></td>
+		<td>Тангенс угла подъема линии резьбы</td><td>Tg &#945;</td><td title="Просто число">-</td><td>Tg &#945; = BC / L</td><td id="cell_Tg_A"></td>
+	</tr>	
+	<tr>
+		<td>Угол подъема линии резьбы</td><td>&#945;</td><td>rad</td><td>&#945; = Atan(Tg &#945;)</td><td id="cell_A_rad"></td>
+	</tr>	
+	<tr>
+		<td>Угол подъема линии резьбы</td><td>&#945;</td><td>grad</td><td>&#945;(grad) = &#945;(rad) &times; (180 / &#928;)</td><td id="cell_A_grad"></td>
 	</tr>	
 </table>
 </fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
@@ -284,9 +290,9 @@
 	<footer><div>Pol Banky &#169; 2020</div></footer>
 	<!--Добавление к пректу JS-->
 	<script src="../js/hello_input.js"></script>
-	<script src="../js/thread.js"></script>
-	<script src="../js/fs.js"></script>
+	<script src="../js/thread.js"></script>		<!-- Для: Параметры резьбы -->
+	<script src="../js/fs.js"></script> 		<!-- Для: Места под ключи -->
 	<script src="../js/float.js"></script>
-	<script src="../js/calibre.js"></script>
+	<script src="../js/calibre.js"></script>	<!-- Для: Калибр в сотых долях дюйма - в миллиметры -->
 </body>
 </html>

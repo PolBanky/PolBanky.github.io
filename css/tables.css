@@ -8,13 +8,13 @@ table {
     margin-block-end: 0.83em;
 }
 th {
-    font-size: 1.2em;
+    font-size: 1.25em;
     background-color: rgba(79, 217, 154, 0.24);
     padding: 10px 6px 10px 6px;	
     border: 2px solid green;
 }
 td {
-    font-size: 1.1em;
+    font-size: 1.125em;
     padding: 8px 6px 8px 6px;
     border: 1px solid green;
 }
@@ -81,42 +81,39 @@ table#flangeInfo { /* F L A N G E */
     border: 2px solid green;
 }
 
-#threadTabl {
-    border: 3px solid green;
-    border-collapse: collapse;
-    margin-top: 1rem;
+    /* table ID  threadParam01 */
+#threadParam01 {
+    width: 100%;
 }
-#threadTabl th {
-    border: 3px solid green;
+#threadParam01 th {	
+    background: linear-gradient(to bottom, #4fd99a1d, #4fd99a8d);
 }
-#threadTabl td {
-    border: 2px solid green;
+#threadParam01 td:nth-child(1) {
+    width: 40%;
+}
+#threadParam01 td:nth-child(2) {
+    width: 7%;
     text-align: center;
+    background-color: #4fd99a3d;
 }
-#threadTabl td.left {
-    border: 2px solid green;
-    text-align: left;
+#threadParam01 td:nth-child(3) {
+    width: 7%;
+    text-align: center;
+    background-color: #ffd99a3d;
 }
-#param {
-    width: 350px;
+#threadParam01 td:nth-child(4) {
+    width: 28%;
 }
-#sym {
-    width: 60px;
-}
-#ed {
-    width: 60px;
-}
-#calc {
-    width: 250px;
-}
-#num {
-    width: 129px;
+#threadParam01 td:nth-child(5) {
+    width: auto;
+    /* font-weight: 600; */
 }
 
 span {
 font: 1.3em bold;
 }
 
+    /* table ID  tbl_pc */
 #tbl_pc {
 	border: 3px solid green;
 	border-collapse: collapse;

@@ -1,14 +1,6 @@
 	/*  D I V  */
 /* DIV IS WITHOUT ANY PROPERTIES */
-div.adv {	
-	color: #aa05bb;         /* Цвет текста           */
-	margin: 5px 5px 5px 5px;  /* top right bottom left */
-	padding: 5px 5px 5px 5px; /* top right bottom left */
-	vertical-align: middle;
-}
-div.smallPaddings {
-	padding: 0px 4px 0px 4px; /* top right bottom left */
-}
+
 .divOutPut {    /* СТРОКА ВЫВОДА результата расчета */
 	display: inline-block;
 	margin: 5px 1px 5px 0px;  /* top right bottom left */
@@ -43,9 +35,10 @@ div.smallPaddings {
 }
 .divOutPutMLine {    /* многострочное half size ОКНО ВЫВОДА результатов расчетов в сопромате */
 	display: inline-block;    /* inline-block == height and width EXIST but it inline */
-	margin: 5px 1px 5px 0px;  /* top right bottom left */
-	height: 88px;
-	width: 412px;
+	margin: 5px 0px 5px 0px;  /* top right bottom left */
+	padding: 2px;
+	height: 90px;
+	width: 423px;
 	vertical-align: middle;
 	font-size: 0.875em;       /* Размер шрифта */
 	color: black;

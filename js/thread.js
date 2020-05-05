@@ -5,21 +5,35 @@
 //     console.log("\n%c Страница загружена;  Наличие инета = " + net, 'color: limegreen; font-weight: bold; font-size: 1.4em;');  
 // } // function page_onload()
 // ****************************************************************************
-let v_inputDiaEx  = document.getElementById("inputDiaEx"); // HTML Input
-let v_threadPitch = document.getElementById("threadPitch"); // HTML Input
+let v_inputDiaEx = document.getElementById("inputDiaEx");     // HTML Input
+let v_inputPitchBC = document.getElementById("inputPitchBC"); // HTML Input
+let v_cell_L = document.getElementById("cell_L");             // HTML OutPut
+let v_cell_Tg_A = document.getElementById("cell_Tg_A");       // HTML OutPut
+let v_cell_A_rad = document.getElementById("cell_A_rad");     // HTML OutPut
+let v_cell_A_grad = document.getElementById("cell_A_grad");   // HTML OutPut
 
-// let v_srcSum  = document.getElementById("srcSum");  // HTML Input
-// let v_cell_10 = document.getElementById("cell_10"); // HTML ячейка таблицы
-// let v_cell_11 = document.getElementById("cell_11"); // HTML ячейка таблицы
-// let v_cell_20 = document.getElementById("cell_20"); // HTML ячейка таблицы
-// let v_cell_21 = document.getElementById("cell_21"); // HTML ячейка таблицы
-// let v_cell_30 = document.getElementById("cell_30"); // HTML ячейка таблицы
-// let v_cell_31 = document.getElementById("cell_31"); // HTML ячейка таблицы
-// let v_sumAll  = document.getElementById("sumAll");  // HTML ячейка таблицы
-// let v_sumProfit = document.getElementById("sumProfit"); // HTML ячейка таблицы
+const _180_divide_Pi_ = 180 / Math.PI;
+let diaEx = 0.0;
+let pitchBC = 0.0;
+let L = 0.0;    /* Длина окружности = АВ (см. рисунок а) */
+let tgA = 0.0;
+let A_rad = 0.0;
+let A_grad = 0.0;
 
-
-function sol() { // call from => function hello_inputIDec() in hello_input.js
-    console.log('function sol(): v_inputDiaEx.decimal = ',v_inputDiaEx.decimal,';  v_threadPitch.decimal = ',v_threadPitch.decimal);
-    
+        /* function sol() */
+    function sol() { // call from => function hello_inputIDec() in hello_input.js
+diaEx = v_inputDiaEx.decimal;
+pitchBC = v_inputPitchBC.decimal;
+L = diaEx * Math.PI;    /* Длина окружности = АВ (см. рисунок а) */
+tgA = pitchBC / L;
+A_rad = Math.atan(tgA);
+A_grad = A_rad * _180_divide_Pi_;
+console.log('function sol(): diaEx = ',diaEx,'; pitchBC = ',pitchBC,'; L = ',L.toFixed(2),'; tgA = ',tgA.toFixed(6));
+v_cell_L.textContent = L.toFixed(3);
+if(pitchBC>0) {
+v_cell_Tg_A.textContent = tgA.toFixed(6);
+v_cell_Tg_A.textContent = tgA.toFixed(6);
+v_cell_A_rad.textContent = A_rad.toFixed(6);
+v_cell_A_grad.textContent = A_grad.toFixed(6);
+} /* if */
 } // function sol()

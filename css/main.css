@@ -146,14 +146,14 @@ label.fat {
 }
 
 fieldset {
-    background-color: #d2b48c;/* #d2b48c don't touch !!! */
+    background-color: #d2b48c33;/* #d2b48c don't touch !!! */
     margin: 10px 0px 5px 0px; 	/* top right bottom left   */
 }
 fieldset.input {
-    background-color: #d4e09e;	/* #f7f1c1 */
+    background-color: #d4e09e33;	/* #f7f1c1 */
 }
 fieldset.output {
-    background-color: #a0da55;	/* #f7f1c1  #effdaf */
+    background-color: #a0da5533;	/* #f7f1c1  #effdaf */
 }
 .output > div {
 	display: inline-block;
@@ -301,6 +301,7 @@ a.big1 {				/* Спец ссылка большого размера шрифт�
 }
 	/* Style apply to element with id="clock" */
 #clock {
+	display: inline-block;
 	font-weight: bold;
 	font-size: 1.75em;
 	font-family: 'Courier New', Courier, monospace;
@@ -308,4 +309,5 @@ a.big1 {				/* Спец ссылка большого размера шрифт�
 	padding: 2px 10px 2px 10px;
 	border: solid #00ffff 2px;
 	border-radius: 6px;
+	vertical-align: 0.1em;
 }
