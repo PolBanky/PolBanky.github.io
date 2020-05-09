@@ -38,7 +38,7 @@
 	margin: 5px 0px 5px 0px;  /* top right bottom left */
 	padding: 2px;
 	height: 90px;
-	width: 423px;
+	width: 49.6%;
 	vertical-align: middle;
 	font-size: 0.875em;       /* Размер шрифта */
 	color: black;
@@ -78,6 +78,7 @@ div.zero {	/*  */
 	padding: 5px 0px 5px 0px; /* top right bottom left */
 }
 div.alertString {
+	width: 100%;
 	margin: 5px 1px 5px 0px;  /* top right bottom left */
 	padding: 5px;             /* top right bottom left */
 	color: #065e20;         /* Цвет текста */

@@ -145,26 +145,11 @@ label.fat {
 	vertical-align: middle;
 }
 
+	/* fieldset */
 fieldset {
-    background-color: #d2b48c33;/* #d2b48c don't touch !!! */
-    margin: 10px 0px 5px 0px; 	/* top right bottom left   */
-}
-fieldset.input {
-    background-color: #d4e09e33;	/* #f7f1c1 */
-}
-fieldset.output {
-    background-color: #a0da5533;	/* #f7f1c1  #effdaf */
-}
-.output > div {
-	display: inline-block;
-	/* border: #a5a511 1px solid; */
-	width: 69%;
-}
-.output > div + div {
-	display: inline-block;
-	/* border: #a5a511 1px solid; */
-	width: auto;
-	vertical-align: top;
+	background-color: #d4e09e33;/* #d2b48c don't touch !!! */
+	margin-block-start: 0.5em;
+	margin-block-end: 0.5em;
 }
 legend {
     color: #d2b48c;

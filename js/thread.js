@@ -30,10 +30,8 @@ A_rad = Math.atan(tgA);
 A_grad = A_rad * _180_divide_Pi_;
 console.log('function sol(): diaEx = ',diaEx,'; pitchBC = ',pitchBC,'; L = ',L.toFixed(2),'; tgA = ',tgA.toFixed(6));
 v_cell_L.textContent = L.toFixed(3);
-if(pitchBC>0) {
 v_cell_Tg_A.textContent = tgA.toFixed(6);
 v_cell_Tg_A.textContent = tgA.toFixed(6);
 v_cell_A_rad.textContent = A_rad.toFixed(6);
 v_cell_A_grad.textContent = A_grad.toFixed(6);
-} /* if */
 } // function sol()

@@ -15,7 +15,7 @@
 	<h1><img class="imgBtn64B" src="../img/favicon32angle.svg" alt="Pic">Convert Angle</h1>			
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
-<fieldset class="input">
+<fieldset>
 	<legend class="button" id="clear" title="Clear All Inputs (Alt+0)" accesskey="0">Исходные данные</legend>		
 <div>	<!-- INPUT DEC ANGLE, GRAD     type="number" -->
 	<input type="text" id="IDec" placeholder="Angle Decimal (Alt+1)" accesskey="1">	<!-- I(nput)Dec(imal) -->
@@ -33,13 +33,14 @@
 </div>
 <div class="alertString" id="forInfo" title="Cursor Position in active Input">Ready</div>	
 
-<div>	<!-- BUTTON RUN  галочка на кнопке - см. css -->
-	<button type="button" id="btn_calc" title="Alt+2" accesskey="2">Calculate Angle's Trig</button>
-</div>
+<!-- <div>	 -->
+	<button type="button" id="btn_calc" title="Alt+2" accesskey="2">Calculate Angle's Trig</button> <!-- BUTTON RUN  галочка на кнопке - см. css -->
+<!-- </div> -->
 </fieldset>
-	<!-- Вывод результатов -->
-<fieldset class="output">
+	<!-- Расчет тригенометрии угла -->
+<fieldset>
 	<legend>Angle's Trigenometry</legend>
+<div class="flexContainerIt">
 	<div> <!-- .output > div -->
 		<div>	
 			<div class="divOutPut" id="angl_in_rad_output">0.000</div>
@@ -65,6 +66,7 @@
 	<div> <!-- .output > div + div -->
 		<img src="../data/Tg.svg" alt="Triangle">
 	</div> <!-- .output > div + div -->
+</div>
 </fieldset>
 	</form>	<!-- end of Form !!!!! -->
 

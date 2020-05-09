@@ -9,8 +9,9 @@ table {
 }
 th {
     font-size: 1.25em;
-    background-color: rgba(79, 217, 154, 0.24);
-    padding: 10px 6px 10px 6px;	
+    background: linear-gradient(to bottom, #4fd99a1d, #4fd99a8d);
+    /* background-color: rgba(79, 217, 154, 0.24); */
+    padding: 8px 6px 8px 6px;	
     border: 2px solid green;
 }
 td {
@@ -34,34 +35,18 @@ td {
     text-align: center;
 }
     /* table class  mini */
-.mini th {	
+.mini th { /* для - марки сталей */
     font-size: 1.1em;
     padding: 8px 4px 8px 4px;
 }
-.mini td {
+.mini td { /* для - марки сталей */
     font-size: 1.0em;
     padding: 6px 4px 6px 4px;
-    /* text-align: center; */
 }
 
-td.pipe { /* Трубы круглые для трубопроводов */
-    color: #ff00ff;	  /* Цвет текста */
-    background-color: #ff00ff25;
-    font-weight: bold;
-}
-td.hex { /* Болты гайки шайбы */
-    color: #056e1b;   /* Цвет текста */
-    background-color: #056e1b25;
-    font-weight: bold;
-}
-td.weld { /* Сварка */
-    color: #ec0000;   /* Цвет текста */
-    background-color: #ec000025;
-    font-weight: bold;
-}
     /* table class  wdt */
 table.wdt {	/* wdt == width 880 */
-    width: 880px;
+    width: 100%;
 }
     /* table class  fix */
 table.fix {
@@ -71,7 +56,7 @@ table.fix {
 
     /* table ID  flangeInfo */
 table#flangeInfo { /* F L A N G E */
-    width: 880px;  /* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
+    width: 100%;  /* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
     table-layout: fixed;
 }
 #flangeInfo td {
@@ -81,12 +66,24 @@ table#flangeInfo { /* F L A N G E */
     border: 2px solid green;
 }
 
+    /* table ID  tblGOST */
+#tblGOST {
+    width: 100%;
+}
+#tblGOST td:nth-child(1) {
+    width: 19%;
+}
+#tblGOST td:nth-child(2) {
+    width: 73%;
+}
+#tblGOST td:nth-child(3) {
+    width: auto;
+    text-align: center;
+}
+
     /* table ID  threadParam01 */
 #threadParam01 {
     width: 100%;
-}
-#threadParam01 th {	
-    background: linear-gradient(to bottom, #4fd99a1d, #4fd99a8d);
 }
 #threadParam01 td:nth-child(1) {
     width: 40%;
@@ -102,26 +99,22 @@ table#flangeInfo { /* F L A N G E */
     background-color: #ffd99a3d;
 }
 #threadParam01 td:nth-child(4) {
-    width: 28%;
+    width: 30%;
 }
 #threadParam01 td:nth-child(5) {
     width: auto;
     /* font-weight: 600; */
 }
 
-span {
-font: 1.3em bold;
-}
-
-    /* table ID  tbl_pc */
-#tbl_pc {
+    /* table ID  tbl_perCent */
+#tbl_perCent {
 	border: 3px solid green;
 	border-collapse: collapse;
 }
-#tbl_pc th {
+#tbl_perCent th {
 	border: 3px solid green;
 }
-#tbl_pc td {
+#tbl_perCent td {
 	border: 2px solid green;
 }
 #sum {
@@ -134,7 +127,25 @@ font: 1.3em bold;
 	width: 30px;
 	text-align: center;
 }
-    /*  Table caption  */
+
+    /* для таблицы ГОСТов */
+td.pipe { /* Трубы круглые для трубопроводов */
+    color: #ff00ff;	  /* Цвет текста */
+    background-color: #ff00ff25;
+    font-weight: bold;
+}
+td.hex { /* Болты гайки шайбы */
+    color: #056e1b;   /* Цвет текста */
+    background-color: #056e1b25;
+    font-weight: bold;
+}
+td.weld { /* Сварка */
+    color: #ec0000;   /* Цвет текста */
+    background-color: #ec000025;
+    font-weight: bold;
+}
+
+    /* Table caption */
 caption {
     border-width: 2px 2px 0px 2px;
     border-style: solid;
@@ -145,4 +156,18 @@ caption {
 	color: #0000ff;
 	background-color: #ffff00aa;
 }
-    /*  Table caption  */
+    /* Table caption if table is calculation Result */
+caption.calcResult {
+    width: 22%;
+    border-style: none;
+    margin-left: 1.5%;
+	padding: 2px 0px;
+	font-size: 1.2em;
+	text-align: center;
+    color: #d2b48c;
+    background-color: #322cbe;
+}
+
+span {
+    font: 1.3em bold;
+}
