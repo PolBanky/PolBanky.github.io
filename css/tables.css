@@ -144,6 +144,11 @@ td.weld { /* Сварка */
     background-color: #ec000025;
     font-weight: bold;
 }
+td.bear { /* Подшипники */
+    color: #0000ff;   /* Цвет текста */
+    background-color: #0000ff25;
+    font-weight: bold;
+}
 
     /* Table caption */
 caption {
