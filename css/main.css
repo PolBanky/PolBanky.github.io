@@ -103,7 +103,7 @@ pre {						/* Показать текст как есть */
 	/*  B U T T O N  */
 button {
 	width: 250px;
-	margin: 5px 1px 5px 0px; /* top right bottom left */
+	margin: 5px 0px;   /* top right bottom left */
 	padding: 5px;      /* top right bottom left */
 	font-size: 1.2em;  /* Размер шрифта */
 	color: #bb00bb;
@@ -120,7 +120,7 @@ button:focus {
 	/*  I N P U T  */
 input {		/* input native = display: inline-block */
 	width: 250px;
-	margin: 5px 1px 5px 0px; /* top right bottom left */
+	margin: 5px 0px;   /* top right bottom left */
 	padding: 5px;      /* top right bottom left */
 	font-size: 1.2em;  /* Размер шрифта */
 	color: #b22222;  /* Цвет текста */
@@ -134,9 +134,9 @@ input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
 	/*  end  I N P U T  */
 
 label {	/* default display: inline */
-	font-size: 1.1em; 		 /* Размер шрифта         */
-	margin: 5px 5px 5px 1px; /* top right bottom left */
-	padding: 4px;            /* top right bottom left */
+	font-size: 1.1em; /* Размер шрифта         */
+	/* margin: 5px 0px; */  /* top right bottom left */
+	/* padding: 4px; */     /* top right bottom left */
 }
 label.fat {
 	font-size: 1.3em;
@@ -150,6 +150,8 @@ fieldset {
 	background-color: #d4e09e33;/* #d2b48c don't touch !!! */
 	margin-block-start: 0.5em;
 	margin-block-end: 0.5em;
+	padding-inline-start: 0.25em;
+    padding-inline-end: 0.25em;
 }
 legend {
     color: #d2b48c;
@@ -162,22 +164,23 @@ legend.button {
 }
 	/*  S E L E C T  */
 select {
-	margin: 5px 1px 5px 0px; /* top right bottom left */
-	padding: 5px 5px 5px 5px;
-    font-size: 1.2em; /* Размер шрифта */
+	/* padding: 5px 0px; */
+    font-size: 1.2em;
     color: #aa05bb; /* Цвет ввода    */
-	background-color: azure;
+	background-color: #d4e09e;
+	/* background-color: azure; */
 	/* vertical-align: middle; */
 }
-select.in_input {
+/* select.in_input {
 	background-color: #d4e09e;
-}
-select.in_output {
+} */
+/* select.in_output {
 	background-color: #a0da55;
-}
+} */
 select.big {
 	width: 250px;
-	padding: 8px 3px 8px 3px;	
+	margin: 5px 0px;
+	padding: 8px 3px;	
 }
 select.big1 {
 	width: 250px;

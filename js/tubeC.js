@@ -143,6 +143,7 @@ var load = {
     measureKoef: 1.0,
     selectedLoad: -1.0, // выбранный тип нагрузки
     selectedLoadTxt: ["При растяжении ", "При изгибе ", "При кручении ", "При срезе "], // для вывода параметров стали
+    outStressLblTxt: ["нормальное &#963;", "касательное &#964;"], // для вывода параметров стали
     from: 'nxm', // Для селекта с более чем двумя пунктами выбора
 loadSortSet: function() { // Обработчик события на v_loadSelector (эскиз нагрузки): установка типа нагрузки (изгиб, срез и т.п) на панели ввода
     if(load.selectedLoad < 3) {
@@ -154,18 +155,22 @@ console.log("Method load.loadSortSet(); Event type = " + event.type + " in Eleme
     v_loadSelector.setAttribute("src","../img/pic128stretch.svg");
     v_loadSelector.title  = "Растяжение";
     v_load.setAttribute("placeholder", "Stretch Force");
-    v_loadLbl.innerHTML = " Stretch Force F,";
+    v_loadLbl.textContent = "Stretch Force F,";
+    v_out_stress_lbl.innerHTML = 'Напряжение в стержне: <strong>' + load.outStressLblTxt[0] + '</strong>, MPa (N/mm<sup>2</sup>)';
+
     // v_measureSelector
             break;
         case 1:     // Изгиб
     v_loadSelector.setAttribute("src","../img/pic128bend.svg");
     v_loadSelector.title  = "Изгиб";
     v_load.setAttribute("placeholder", "Bend Force");
-    v_loadLbl.innerHTML = " Bend Force F,";
-    v_out_bend_M.style.display='inline-block';  // показать окно вывода момента
-    v_lbl_bend_M.style.display='inline-block';  // показать лебел окна вывода момента
+    v_loadLbl.textContent = "Bend Force F,";
+    v_lbl_bend_M.style.display='inline-block';       // показать лебел окна вывода момента
+    v_out_bend_M.style.display='inline-block';       // показать окно вывода момента
     v_measureSelector1.style.display='inline-block'; // показать селект окна вывода момента
     v_out_bend_M.innerHTML = load.loadAction().toFixed(1);
+    // v_out_stress_lbl.innerHTML = load.selectedLoadTxt[load.selectedLoad];
+    v_out_stress_lbl.innerHTML = 'Напряжение в стержне: <strong>' + load.outStressLblTxt[1] + '</strong>, MPa (N/mm<sup>2</sup>)';
             break;
         case 2:     // Кручение
     v_measureSelector.length = 0;    
@@ -176,7 +181,7 @@ console.log("Method load.loadSortSet(); Event type = " + event.type + " in Eleme
     v_loadSelector.setAttribute("src","../img/pic128twist.svg");
     v_loadSelector.title  = "Кручение";
     v_load.setAttribute("placeholder", "Twist Moment");
-    v_loadLbl.innerHTML = " Twist Moment M, "; // далее селектор
+    v_loadLbl.textContent = "Twist Moment M, "; // далее селектор
     v_load.value = '';
     v_out_bend_M.style.display='none';       // скрыть окно вывода момента
     v_lbl_bend_M.style.display='none';       // скрыть лебел окна вывода момента
@@ -190,7 +195,7 @@ console.log("Method load.loadSortSet(); Event type = " + event.type + " in Eleme
     v_loadSelector.setAttribute("src","../img/pic128cut.svg");
     v_loadSelector.title  = "Срез";
     v_load.setAttribute("placeholder", "Cut Force");
-    v_loadLbl.innerHTML = " Cut Force F,";
+    v_loadLbl.textContent = "Cut Force F,";
     v_load.value = '';
             break;    
         default:
@@ -307,14 +312,15 @@ var v_measureSelector1 = document.getElementById("measureSelector1");// HTML Sel
 var v_buttonRUN   = document.getElementById("buttonRUN");        // HTML Button RUN !!!
 
 var v_out_Calc_Stress = document.getElementById("how_calc_stress"); // HTML Output
-var v_out_stress  = document.getElementById("output_stress");    // HTML Output
-var v_out_area    = document.getElementById("output_area");      // HTML Output
-var v_out_wx      = document.getElementById("output_wx");        // HTML Output
-var v_out_wp      = document.getElementById("output_wp");        // HTML Output
-var v_out_thick   = document.getElementById("output_thick");     // HTML Output
-var v_out_massa   = document.getElementById("output_massa");     // HTML Output
-var v_out_bend_M  = document.getElementById("output_bend_M");    // HTML Output - поле вывода момента изгиба находится справа от поля ввода силы
-var v_lbl_bend_M  = document.getElementById("label_bend_M");     // HTML Label  - лебел поля вывода момента изгиба
+var v_out_stress  = document.getElementById("output_stress");       // HTML Output
+var v_out_stress_lbl  = document.getElementById("output_stress_lbl");       // HTML Output
+var v_out_area    = document.getElementById("output_area");         // HTML Output
+var v_out_wx      = document.getElementById("output_wx");           // HTML Output
+var v_out_wp      = document.getElementById("output_wp");           // HTML Output
+var v_out_thick   = document.getElementById("output_thick");        // HTML Output
+var v_out_massa   = document.getElementById("output_massa");        // HTML Output
+var v_lbl_bend_M  = document.getElementById("label_bend_M");        // HTML Label  - лебел поля вывода момента изгиба
+var v_out_bend_M  = document.getElementById("output_bend_M");       // HTML Output - поле вывода момента изгиба находится справа от поля ввода силы
 
     // События на HTML элементах (и ссылки на функции - обработчики событий)
 window.addEventListener("load",page_onload);                 // onLoad

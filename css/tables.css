@@ -11,12 +11,12 @@ th {
     font-size: 1.25em;
     background: linear-gradient(to bottom, #4fd99a1d, #4fd99a8d);
     /* background-color: rgba(79, 217, 154, 0.24); */
-    padding: 8px 6px 8px 6px;	
+    padding: 8px 6px;	
     border: 2px solid green;
 }
 td {
     font-size: 1.125em;
-    padding: 8px 6px 8px 6px;
+    padding: 8px 6px;
     border: 1px solid green;
 }
     /* table class  firstColumnLeft */
@@ -29,6 +29,12 @@ td {
     /* table class  firstColumnCenter */
 .firstColumnCenter td:first-of-type {
     text-align: center;
+}
+    /* table class  firstColumnCenter12 */
+.firstColumnCenter12 td:first-of-type {
+    padding: 8px 1px;
+    text-align: center;
+    width: 12%;
 }
     /* table class  lastColumnCenter */
 .lastColumnCenter td:last-of-type {
@@ -130,24 +136,31 @@ table#flangeInfo { /* F L A N G E */
 
     /* для таблицы ГОСТов */
 td.pipe { /* Трубы круглые для трубопроводов */
-    color: #ff00ff;	  /* Цвет текста */
+    color: #ff00ff;
     background-color: #ff00ff25;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 td.hex { /* Болты гайки шайбы */
-    color: #056e1b;   /* Цвет текста */
+    color: #056e1b;
     background-color: #056e1b25;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 td.weld { /* Сварка */
-    color: #ec0000;   /* Цвет текста */
+    color: #ec0000;
     background-color: #ec000025;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 td.bear { /* Подшипники */
-    color: #0000ff;   /* Цвет текста */
+    color: #0000ff;
     background-color: #0000ff25;
-    font-weight: bold;
+    /* font-weight: bold; */
+}
+td.roll { /* Прокат */
+    color: #0000ff;
+    /* color: #505000; */
+    background-color: #ffff0025;
+    /* background-color: #50500025; */
+    /* font-weight: bold; */
 }
 
     /* Table caption */
@@ -165,8 +178,8 @@ caption {
 caption.calcResult {
     width: 22%;
     border-style: none;
-    margin-left: 1.5%;
-	padding: 2px 0px;
+    margin-left: 0.8%;
+	padding: 3px 0px;
 	font-size: 1.2em;
 	text-align: center;
     color: #d2b48c;

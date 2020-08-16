@@ -3,15 +3,15 @@
 
 .divOutPut {    /* СТРОКА ВЫВОДА результата расчета */
 	display: inline-block;
-	margin: 5px 1px 5px 0px;  /* top right bottom left */
-	padding: 5px;             /* top right bottom left */
+	margin: 5px 0px;
+	padding: 5px;
 	height: 1.6em;
 	width: 250px;
 	vertical-align: middle;
-	font-size: 1.5em;         /* Размер шрифта */
+	font-size: 1.5em;
 	color: blue;
 	background-color: #a5a511;
-	border: 2px solid #84e6bd;	
+	border: 2px solid #84e6bd;
 }
 .divOutPut + div {    /* LABEL для окон вывода */
 	display: inline-block;    /* table-cell == margins отключены */
@@ -24,23 +24,27 @@
 }
 .divOutPutMini {    /* СТРОКА ВЫВОДА результатов расчетов ВСПОМОГАТЕЛЬНАЯ */
 	display: inline-block;
+	/* margin: 5px 0px; */
+	padding: 5px;
+	/* height: 1.6em; */
 	width: 180px;
-	height: 34px;
-	margin: 0px 0px 0px 10px;
-	vertical-align: middle;
-	font-size: 1.2em;         /* Размер шрифта */
+	/* vertical-align: middle; */
+	font-size: 1.2em;
 	color: blue;
 	background-color: #a5a511;
-	border: 1px solid #84e6bd;	
+	border: 2px solid #84e6bd;
 }
+/* #output_bend_M::before {
+	content: ";  M=";
+} */
 .divOutPutMLine {    /* многострочное half size ОКНО ВЫВОДА результатов расчетов в сопромате */
-	display: inline-block;    /* inline-block == height and width EXIST but it inline */
-	margin: 5px 0px 5px 0px;  /* top right bottom left */
-	padding: 2px;
-	height: 90px;
-	width: 49.6%;
-	vertical-align: middle;
 	font-size: 0.875em;       /* Размер шрифта */
+	display: inline-block;    /* inline-block == height and width EXIST but it inline */
+	margin: 5px 0px;  /* top right bottom left */
+	padding: 2px;
+	height: 7.0em;
+	width: 49.7%;
+	vertical-align: middle;
 	color: black;
 	background-color: #9bcc7580;
 	border: 2px solid #849be6;

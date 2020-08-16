@@ -12,7 +12,7 @@
 	<img class="imgBtn64" src="../img/pic-question_128.png" alt="question"> <!-- знак вопроса -->
 </a>
 			<!-- h1 -->	
-	<h1 id="top"><img class="imgBtn64B" src="../img/beam_on_bearings_128.svg" alt="Beam">Circle Tube</h1>
+	<h1><img class="imgBtn64B" src="../img/beam_on_bearings_128.svg" alt="Beam">Circle Tube</h1>
 
 <figure>	<!-- Эскиз детали + кнопка выбора типа нагрузки: растяжение, изгиб и т.д  -->
 	<img src="../img/pic128ring.svg" height="200" alt="tube">
@@ -20,25 +20,24 @@
 </figure>   <!-- Эскиз детали + кнопка выбора типа нагрузки: растяжение, изгиб и т.д -->
 
 		<!-- Form !!!!! -->
-	<form action="" onsubmit="return false;">
-		
+	<!-- <form action="" onsubmit="return false;"> -->		
 		<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
 <fieldset>
 	<legend>Исходные данные</legend>	<!-- Заголовок панели исходных данных -->
 
 <div>	<!-- INPUT EX DIAMETER, mm -->
 	<input type="text" id="input_dia_ex" placeholder="External diameter" accesskey="1" title="Alt+1" autofocus>	<!-- if Chrome = Alt+1 -->
-	<label for="input_dia_ex"> Diameter External D, mm</label>	
+	<label for="input_dia_ex">Diameter External D, mm</label>	
 </div>
 
 <div>	<!-- INPUT IN DIAMETER, mm -->
 	<input type="text" id="input_dia_in" placeholder="Internal diameter" accesskey="2" title="Alt+2">
-	<label for="input_dia_in"> Diameter Internal d, mm</label>	
+	<label for="input_dia_in">Diameter Internal d, mm</label>	
 </div>
 
 <div>	<!-- INPUT LENGTH, mm -->
 	<input type="text" id="input_length" placeholder="Length" accesskey="3" title="Alt+3">
-	<label for="input_length"> Length L, mm</label>	
+	<label for="input_length">Length L, mm</label>	
 </div>
 
 <div>	<!-- ВЫБОР МАРКИ СТАЛИ -->
@@ -66,7 +65,7 @@
 		<option value="st09g2s">Сталь 09Г2С</option>
 	</optgroup>
 	</select>
-	<label> Марка стали</label>
+	<label>Steel's Grade</label>
 </div>
 
 <div>	<!-- ВЫВОД ДАННЫХ ВЫБРАННОЙ СТАЛИ -->
@@ -76,15 +75,15 @@
 
 <div>	<!-- INPUT LOAD, N or kg or kg*mm -->
 	<input type="text" id="inputLoad" placeholder="Load" accesskey="4" title="Alt+4">
-	<label for="inputLoad" id="label_inputLoad"> Force F,</label>
-	<select id="measureSelector" class="in_input">		<!-- select measure -->
+	<label for="inputLoad" id="label_inputLoad">Force F,</label>
+	<select id="measureSelector">		<!-- select measure -->
 		<option value="n">N</option>
 		<option value="kg">Kg</option>
 	</select>
 		<!-- поле вывода расчетного значения момента при изгибе -->
-	<div class="divOutPutMini" id="output_bend_M" style="display:none">0.0000</div>	<!-- display: inline-block -->
-	<label id="label_bend_M" style="display:none"> Moment M,</label> 	 <!-- default display: inline -->
-	<select id="measureSelector1" class="in_input" style="display:none"> <!-- select measure -->
+	<label id="label_bend_M" style="display:none">; Moment M = </label> 	 			<!-- default display: inline -->
+	<div class="divOutPutMini" id="output_bend_M" style="display:none">0.0000</div> <!-- display: inline-block -->
+	<select id="measureSelector1" style="display:none"> <!-- select measure -->
 		<option value="nxmm">N&#x000D7;mm</option>
 		<option value="nxm" selected>N&#x000D7;metr</option>             
 		<option value="kgxm">Kg&#x000D7;metr</option>
@@ -94,52 +93,49 @@
 <div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) -->
 	<button type="button" id="buttonRUN" accesskey="5" title="Alt+5">Calculate</button>
 </div>
-
 </fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
 
-		<!-- ПАНЕЛЬ ВЫВОДА РЕЗУЛЬТАТОВ РАСЧЕТА -->
-<fieldset>
+
+<fieldset> <!-- ПАНЕЛЬ ВЫВОДА РЕЗУЛЬТАТОВ РАСЧЕТА -->
 	<legend>Результаты расчета</legend>	<!-- Заголовок панели результатов расчета -->
 
 <div>	<!-- ПОЛЕ ДЛЯ НАГЛЯДНОГО ОПИСАНИЯ РАСЧЕТА НАПРЯЖЕНИЯ -->
-	<div class="divOutPutMLine1" id="how_calc_stress">
-	</div>	
+	<div class="divOutPutMLine1" id="how_calc_stress"></div>	
 </div>
 
 <div>	<!-- OUTPUT STRESS, MPa (N/mm2) -->
 	<div class="divOutPut" id="output_stress">0.0000</div>
-	<div> Напряжение в стержне <strong>&#963;</strong> или <strong>&#964;</strong>, MPa (N/mm<sup>2</sup>)</div>
+	<!-- <div id="output_stress_lbl">Напряжение в стержне <strong>&#963;</strong> или <strong>&#964;</strong>, MPa (N/mm<sup>2</sup>)</div> -->
+	<div id="output_stress_lbl">Напряжение в стержне: <strong>нормальное &#963;</strong>, MPa (N/mm<sup>2</sup>)</div>
 </div>
 
 <div>	<!-- OUTPUT AREA, mm2 or cm2 -->
 	<div class="divOutPut" id="output_area">0.0000</div>
-	<div> Площадь сечения стержня, cm<sup>2</sup></div>	 <!-- -->
+	<div>Площадь сечения стержня, cm<sup>2</sup></div>	 <!-- -->
 </div>
 
 <div>	<!-- OUTPUT МОМЕНТ СОПРОТИВЛЕНИЯ ОСЕВОЙ, mm3 -->
 	<div class="divOutPut" id="output_wx">0.0000</div>
-	<div> Момент сопротивления осевой W<sub>x</sub> , cm<sup>3</sup>
-	</div>
+	<div>Момент сопротивления осевой W<sub>x</sub> , cm<sup>3</sup></div>
 </div>
 
 <div>	<!-- OUTPUT МОМЕНТ СОПРОТИВЛЕНИЯ ПОЛЯРНЫЙ, mm3 -->
 	<div class="divOutPut" id="output_wp">0.0000</div>
-	<div> Момент сопротивления полярный W<sub>p</sub> , cm<sup>3</sup>
-	</div>
+	<div>Момент сопротивления полярный W<sub>p</sub> , cm<sup>3</sup></div>
 </div>
 
 <div>	<!-- OUTPUT THICKNESS, mm -->
 	<div class="divOutPut" id="output_thick">0.0000</div>
-	<div> Толщина стенки S, mm</div>
+	<div>Толщина стенки S, mm</div>
 </div>
 
 <div>	<!-- OUTPUT MASSA, kg -->
 	<div class="divOutPut" id="output_massa">0.0000</div>
-	<div> Масса детали, kg</div>
+	<div>Масса детали, kg</div>
 </div>
 
 </fieldset>	<!-- ПАНЕЛЬ ВЫВОДА РЕЗУЛЬТАТОВ РАСЧЕТА -->
-	</form>	<!-- end of Form !!!!! -->
+	<!-- </form> -->	<!-- end of Form !!!!! -->
 
 	<footer><div>Pol Banky &#169; 2020</div></footer>
 	<script src="../js/float.js"></script>

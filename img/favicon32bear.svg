@@ -5,15 +5,15 @@
      width = "32px" height = "32px">
 
 <g fill-opacity="1.0" stroke="blue" stroke-width="2.5">
-    <circle cx="16px" cy="16px" r="14px" fill="yellow" fill-opacity="0.2"/>
-    <circle cx="16px" cy="16px" r="6px" fill="blue" fill-opacity="0.7"/>
-    <circle cx="16px" cy="6px" r="1.5px" fill="blue" fill-opacity="0.7"/>
-    <circle cx="16px" cy="26px" r="1.5px" fill="blue" fill-opacity="0.7"/>
-    <circle cx="6px" cy="16px" r="1.5px" fill="blue" fill-opacity="0.7"/>
-    <circle cx="26px" cy="16px" r="1.5px" fill="blue" fill-opacity="0.7"/>
-    <circle cx="23.07px" cy="8.92px" r="1.5px" fill="blue" fill-opacity="0.7"/>
-    <circle cx="23.07px" cy="23.07px" r="1.5px" fill="blue" fill-opacity="0.7"/>
-    <circle cx="8.92px" cy="23.07px" r="1.5px" fill="blue" fill-opacity="0.7"/>
-    <circle cx="8.92px" cy="8.92px" r="1.5px" fill="blue" fill-opacity="0.7"/>
+    <circle cx="16px" cy="16px" r="14px" fill="white" fill-opacity="0.7"/>
+    <circle cx="16px" cy="16px" r="6px" fill="white" fill-opacity="0.7"/>
+    <circle cx="16px" cy="6px" r="1.5px" fill="blue" fill-opacity="1.0"/>
+    <circle cx="16px" cy="26px" r="1.5px" fill="blue" fill-opacity="1.0"/>
+    <circle cx="6px" cy="16px" r="1.5px" fill="blue" fill-opacity="1.0"/>
+    <circle cx="26px" cy="16px" r="1.5px" fill="blue" fill-opacity="1.0"/>
+    <circle cx="23.07px" cy="8.92px" r="1.5px" fill="blue" fill-opacity="1.0"/>
+    <circle cx="23.07px" cy="23.07px" r="1.5px" fill="blue" fill-opacity="1.0"/>
+    <circle cx="8.92px" cy="23.07px" r="1.5px" fill="blue" fill-opacity="1.0"/>
+    <circle cx="8.92px" cy="8.92px" r="1.5px" fill="blue" fill-opacity="1.0"/>
 </g>
 </svg>
