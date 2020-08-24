@@ -124,11 +124,16 @@ input {		/* input native = display: inline-block */
 	padding: 5px;      /* top right bottom left */
 	font-size: 1.2em;  /* Размер шрифта */
 	color: #b22222;  /* Цвет текста */
-	background-color: #eee;
-	border: 3px solid #bb0000;	/* Параметры border */
-	transition: background-color 1s;
+	background-color: #d4e09e40;
+	border: 3px solid #33cc00;
+    outline: none;
 }
-input:focus { background-color: moccasin; border: 3px solid turquoise; transition: background-color 1s; }
+input:focus { 
+	background-color: #ffe4b5;
+	border: 3px solid #d2691e; 
+	/* border: 3px solid turquoise;  */
+	/* transition: background-color 1s; */
+}
 input.grad { width: 100px;	}   /* Для инпута в Angle = grad */
 input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
 	/*  end  I N P U T  */
@@ -147,7 +152,7 @@ label.fat {
 
 	/* fieldset */
 fieldset {
-	background-color: #d4e09e33;/* #d2b48c don't touch !!! */
+	background-color: #d4e09e40;/* #d2b48c don't touch !!! */
 	margin-block-start: 0.5em;
 	margin-block-end: 0.5em;
 	padding-inline-start: 0.25em;
@@ -171,12 +176,6 @@ select {
 	/* background-color: azure; */
 	/* vertical-align: middle; */
 }
-/* select.in_input {
-	background-color: #d4e09e;
-} */
-/* select.in_output {
-	background-color: #a0da55;
-} */
 select.big {
 	width: 250px;
 	margin: 5px 0px;
@@ -286,6 +285,14 @@ a.big1 {				/* Спец ссылка большого размера шрифт�
 	padding: 10px 0px 10px 50px; /* top right bottom left */
 	font-weight: bold;
 	font-size: 1.5em;  /* Размер шрифта */
+}
+span {
+    font: 1.3em bold;
+}
+.greek {
+	font-size: inherit;
+	font-weight: 800;
+    font-family: GreekC, Symbol, sans-serif;
 }
 	/* Style apply to element with id="clock" */
 #clock {

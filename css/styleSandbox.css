@@ -1,15 +1,40 @@
-/* RGB */
+html {
+    /* background: #ff000004; */
+    border: 1px solid #ff000077;
+}
 body {
-color: #777;
-background-color: #cdd;
+    /* background: #0000ff38; */
+    border: 1px solid #0000ff77;
+    padding: 5px;
 }
-
-p {
-color: #224466;
-background-color: #daa;
+h1, p, div {
+    background: #d4e09e33;
+    border: 1px solid #ff000077;
 }
-
-div {
-color: #224466;
-background-color: #ada;
+/*  I N P U T  */
+input {		/* input native = display: inline-block */
+    width: 250px;
+    margin: 5px 0px;   /* top right bottom left */
+    padding: 5px;      /* top right bottom left */
+    font-size: 1.2em;  /* Размер шрифта */
+    color: #b22222;  /* Цвет текста */
+    background-color: #eee;
+    border: 3px solid #bb0000;
+    /* transition: background-color 2s; */
+    outline: none;
+}
+input:focus { 
+    background-color: moccasin;
+    border: 3px solid turquoise; 
+    /* transition: background-color 2s; */
+    transition: 1s;
+    /* transition: cubic-bezier(0.895, 0.03, 0.685, 0.22) 1s; */
+}
+div::before {
+    /* background-color: #e8e; */
+    content: "M= ";
+}
+div::after {
+    /* background-color: #e8e; */
+    content: " N*m";
 }

@@ -1,10 +1,10 @@
 'use strict';
 //  ../sopromat/tubeC.html
 
-//***  КОНЦЕПТ !!!  Exist:  
+    //***  КОНЦЕПТ !!!  Exist:  
 // 1. Объект cil с геометрическими параметрами и материалом и напряжением в материале  
 // 2. Объект load приложен извне к объекту cil
-//***  КОНЦЕПТ !!!  
+    //***  КОНЦЕПТ !!!  
 // Размеры в mm, площадь в mm2, сила в N, напряжение в N/mm2 (MPa), масса в кг
 
     // Объект Цилиндр !!!
@@ -73,7 +73,7 @@ console.log("Method cil.stress( " + load.selectedLoadTxt[load.selectedLoad] + " 
     case 1: // Bend - изгиб
         v = load.loadAction() / this.w_axial(); // момент изгибающий (N*mm) / момент сопротивления осевой (mm3) = N/mm2 = MPa
         v_out_Calc_Stress.innerText =
-        "Напряжение изгиба \u03C3, MPa (N/mm\u00B2) = " + 
+        "Напряжение изгиба \u03C4, MPa (N/mm\u00B2) = " + 
         "\nМомент изгиба " + load.loadAction() + " N\u00D7mm / Момент сопротивления осевой " + this.w_axial().toFixed(2) + " mm" + "\u00B3 = " + v.toFixed(4) + " MPa (N/mm\u00B2)";
         v_out_bend_M.innerHTML = load.loadAction().toFixed(1);
         return v;
@@ -87,7 +87,7 @@ console.log("Method cil.stress( " + load.selectedLoadTxt[load.selectedLoad] + " 
     case 3:    // Cut - срез
         v = load.loadAction() / this.area(); // сила среза (N) / площадь сечения (mm2) = N/mm2 = MPa
         v_out_Calc_Stress.innerText =
-        "Напряжение среза \u03C3, MPa (N/mm\u00B2) = " + 
+        "Напряжение среза \u03C4, MPa (N/mm\u00B2) = " + 
         "\nСила среза " + load.loadAction() + " N / Площадь сечения " + this.area().toFixed(2) + " mm" + "\u00B2  = " + v.toFixed(4) + " MPa (N/mm\u00B2)";
         return v;    //  сила среза / площадь сечения   // break;         
         } // switch

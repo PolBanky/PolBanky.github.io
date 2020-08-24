@@ -13,20 +13,20 @@
 <a href="help-stmechinfo.html" target="_blank">	<!--H E L P-->
 	<img class="imgBtn64" src="../img/pic-question_128.png" alt="Pic Question">
 </a>
-	<h1><img class="imgBtn64B" src="../img/iso2531_tee.png" alt="Pic">Stmech Info</h1>
+<h1><img class="imgBtn64B" src="../img/iso2531_tee.png" alt="Pic">Stmech Info</h1>
 
-	<h2>Table of Contents</h2>
-    <ul class="tblCont">
-        <li><a href="#SDR">Что такое SDR для ПНД</a>
-    <ul>
-        <li class="sign"><a href="#calcSDR">Расчет трубы ПНД</a></li>
-    </ul>
-        </li>
-        <li><a href="#flanges">Фланцы ГОСТ 33259-2015</a></li>
-		<li><a href="#muftaReg">Муфта регулировочная (вставка демонтажная)</a></li>
-		<li><a href="#muftaOb">Муфта обжимная</a></li>
-		<li><a href="#muftaSoed">Муфта соединительная</a></li>
-	</ul>
+<h2>Table of Contents</h2>
+<ul class="tblCont">
+    <li><a href="#SDR">Что такое SDR для ПНД</a>
+<ul>
+    <li class="sign"><a href="#calcSDR">Расчет трубы ПНД</a></li>
+</ul>
+    </li>
+    <li><a href="#flanges">Фланцы ГОСТ 33259-2015</a></li>
+    <li><a href="#muftaReg">Муфта регулировочная (вставка демонтажная)</a></li>
+    <li><a href="#muftaOb">Муфта обжимная</a></li>
+    <li><a href="#muftaSoed">Муфта соединительная</a></li>
+</ul>
 
 <hr>
 
@@ -35,82 +35,82 @@
 	<img src="../data/What_SDR_for_PND.png" width="880" alt="SDR for PND" title="Что такое SDR для ПНД">
 
 <fieldset id="calcSDR"> <legend>Расчет трубы из ПЭ100</legend>
-        <!-- SELECT SDR -->
-    <div>
-        <select class="bigAndAline" id="SDR_Value">		<!-- select SDR -->
-            <option value="17">SDR17 PN=10bar</option>
-            <option value="13.6">SDR13,6 PN=12,5bar</option>
-            <option value="11">SDR11 PN=16bar</option>
-            <option value="9">SDR9 PN=20bar</option>
-            <option value="7.4">SDR7,4 PN=25bar</option>
-		</select>
-        <label for="SDR_Value"> Значение SDR</label>
-    </div>
-        <!-- INPUT EXT DIAMETER, mm -->
-    <div>
-        <input type="text" id="input_dia_ex" placeholder="Pipe's Diameter">
-        <label for="input_dia_ex" id="lbl_dia_ex"> Наружный диаметр трубы, мм</label>
-    </div>
-        <!-- OUTPUT THICKNESS, mm -->
-    <div>
-        <div class="divOutPut" id="output_thickness">0.0</div>
-        <div id="lbl_thickness"> Толщина стенки трубы, мм</div>
-    </div>
-        <!-- OUTPUT INNER DIAMETER, mm -->
-    <div>
-        <div class="divOutPut" id="output_dia_in">0.0</div>
-        <div> Внутренний диаметр трубы, мм</div>
-    </div>
+    <!-- SELECT SDR -->
+<div>
+    <select class="bigAndAline" id="SDR_Value">		<!-- select SDR -->
+        <option value="17">SDR17 PN=10bar</option>
+        <option value="13.6">SDR13,6 PN=12,5bar</option>
+        <option value="11">SDR11 PN=16bar</option>
+        <option value="9">SDR9 PN=20bar</option>
+        <option value="7.4">SDR7,4 PN=25bar</option>
+    </select>
+    <label for="SDR_Value"> Значение SDR</label>
+</div>
+    <!-- INPUT EXT DIAMETER, mm -->
+<div>
+    <input type="text" id="input_dia_ex" placeholder="Pipe's Diameter">
+    <label for="input_dia_ex" id="lbl_dia_ex"> Наружный диаметр трубы, мм</label>
+</div>
+    <!-- OUTPUT THICKNESS, mm -->
+<div>
+    <div class="divOutPut" id="output_thickness">0.0</div>
+    <div id="lbl_thickness"> Толщина стенки трубы, мм</div>
+</div>
+    <!-- OUTPUT INNER DIAMETER, mm -->
+<div>
+    <div class="divOutPut" id="output_dia_in">0.0</div>
+    <div> Внутренний диаметр трубы, мм</div>
+</div>
 </fieldset>
 
-    <div class="zero">  <!-- iframe -->
-        <img src="../data/sdr_100_256_840_head.png" alt="header">   <!-- Заголовок таблицы  -->
-        <iframe src="../data/sdr_100_256_840.png" width="880" height="200"><p>Not support iframes</p>
-        </iframe>
-    </div>
-        
-    <h2 id="flanges">Фланцы ГОСТ 33259-2015 <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
-    <!-- table - ГОСТы про фланцы -->
+<div class="zero">  <!-- iframe -->
+    <img src="../data/sdr_100_256_840_head.png" alt="header">   <!-- Заголовок таблицы  -->
+    <iframe src="../data/sdr_100_256_840.png" width="880" height="200"><p>Not support iframes</p>
+    </iframe>
+</div>
+    
+<h2 id="flanges">Фланцы ГОСТ 33259-2015 <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<!-- table - ГОСТы про фланцы -->
 <table>
     <tr><th>№ ГОСТ</th><th>Наименование</th></tr>
     <tr><td><a href="../data/33259-2015_flanges_to_pn250.pdf" target="_blank">33259-2015</a></td><td>Фланцы арматуры, соединительных частей и трубопроводов до PN250</td></tr>
     <tr><td><a href="../data/33259-2015_what_changed.pdf" target="_blank">33259-2015</a></td><td>Фланцы - Что изменилось в ГОСТе</td></tr>
 </table> <!-- /table - ГОСТы про фланцы -->
-        <!-- IMG  FLANGE -->
-    <img class="columnLeft" src="../data/Flanges_GOST_33259-2015.png" alt="flange">
-       <!-- select DN -->
-        <select class="big1" id="dn_choice">
-            <!-- <option disabled selected> Выберите DN </option> -->
-            <option value="50"> DN 50 </option>
-            <option value="65"> DN 65 </option>
-            <option value="80"> DN 80 </option>
-            <option value="100"> DN 100 </option>
-            <option value="125"> DN 125 </option>
-            <option value="150"> DN 150 </option>
-            <option value="200"> DN 200 </option>
-            <option value="250"> DN 250 </option>
-            <option value="300"> DN 300 </option>
-            <option value="350"> DN 350 </option>
-            <option value="400" selected> DN 400 </option>
-            <option value="450"> DN 450 </option>
-            <option value="500"> DN 500 </option>
-            <option value="600"> DN 600 </option>
-            <option value="700"> DN 700 </option>
-            <option value="800"> DN 800 </option>
-            <option value="900"> DN 900 </option>
-            <option value="1000"> DN 1000 </option>
-            <option value="1200"> DN 1200 </option>
-            <option value="1400"> DN 1400 </option>
-            <option value="1600"> DN 1600 </option>
-        </select>
-        <label for="dn_choice"> Значение DN</label>
-       <!-- select PN -->
-        <select class="big2" id="pn_choice">
-            <option value='6'> PN 6 bar </option>
-            <option value='10' selected="selected"> PN 10 bar </option>
-            <option value='16'> PN 16 bar </option>
-        </select>
-        <label for="pn_choice"> Значение PN</label>
+    <!-- IMG  FLANGE -->
+<img class="columnLeft" src="../data/Flanges_GOST_33259-2015.png" alt="flange">
+    <!-- select DN -->
+    <select class="big1" id="dn_choice">
+        <!-- <option disabled selected> Выберите DN </option> -->
+        <option value="50"> DN 50 </option>
+        <option value="65"> DN 65 </option>
+        <option value="80"> DN 80 </option>
+        <option value="100"> DN 100 </option>
+        <option value="125"> DN 125 </option>
+        <option value="150"> DN 150 </option>
+        <option value="200"> DN 200 </option>
+        <option value="250"> DN 250 </option>
+        <option value="300"> DN 300 </option>
+        <option value="350"> DN 350 </option>
+        <option value="400" selected> DN 400 </option>
+        <option value="450"> DN 450 </option>
+        <option value="500"> DN 500 </option>
+        <option value="600"> DN 600 </option>
+        <option value="700"> DN 700 </option>
+        <option value="800"> DN 800 </option>
+        <option value="900"> DN 900 </option>
+        <option value="1000"> DN 1000 </option>
+        <option value="1200"> DN 1200 </option>
+        <option value="1400"> DN 1400 </option>
+        <option value="1600"> DN 1600 </option>
+    </select>
+    <label for="dn_choice"> Значение DN</label>
+    <!-- select PN -->
+    <select class="big2" id="pn_choice">
+        <option value='6'> PN 6 bar </option>
+        <option value='10' selected="selected"> PN 10 bar </option>
+        <option value='16'> PN 16 bar </option>
+    </select>
+    <label for="pn_choice"> Значение PN</label>
     <!-- Flange Data Output -->
 <table id="flangeInfo"> <!-- Flange Data Output -->
     <tr>    <!-- Строка наименований -->
@@ -143,25 +143,25 @@
     </tr>
 </table> <!-- Flange Data Output -->
     
-    <h2 id="muftaReg">Муфта регулировочная (вставка демонтажная) <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
-    <ul>
-        <li class="sign1">Корпус муфты = фланец с проточкой + наружная деталь с вальцовкой (или фаской) под уплотнение</li>
-        <li class="sign1">Патрубок муфты = фланец + внутренняя деталь из стандартной трубы (поэтому и патрубок)</li>
-    </ul>
-	<img src="../data/Mufta_Reg_1320.jpg" width="660" alt="Mufta Reg">
+<h2 id="muftaReg">Муфта регулировочная (вставка демонтажная) <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<ul>
+    <li class="sign1">Корпус муфты = фланец с проточкой + наружная деталь с вальцовкой (или фаской) под уплотнение</li>
+    <li class="sign1">Патрубок муфты = фланец + внутренняя деталь из стандартной трубы (поэтому и патрубок)</li>
+</ul>
+<img src="../data/Mufta_Reg_1320.jpg" width="660" alt="Mufta Reg">
 
-	<h2 id="muftaOb">Муфта обжимная <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
-	<img src="../data/Mufta_Obzim_1320.jpg" width="660" alt="Mufta Obzim">
+<h2 id="muftaOb">Муфта обжимная <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<img src="../data/Mufta_Obzim_1320.jpg" width="660" alt="Mufta Obzim">
 
-    <h2 id="muftaSoed">Муфта соединительная <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
-    <img src="../data/Mufta_Soed_1320.jpg" width="660" alt="Mufta Soed">
+<h2 id="muftaSoed">Муфта соединительная <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<img src="../data/Mufta_Soed_1320.jpg" width="660" alt="Mufta Soed">
 
 
-	<footer><div>Pol Banky &#169; 2020</div></footer>
-	<!--Добавление к пректу JS-->
-    <script src="../js/fs.js"></script>
-	<script src="../js/float.js"></script>
-    <script src="../js/calc_SDR.js"></script>
-    <script src="../js/flange.js"></script>
+<footer><div>Pol Banky &#169; 2020</div></footer>
+<!--Добавление к пректу JS-->
+<script src="../js/fs.js"></script>
+<script src="../js/float.js"></script>
+<script src="../js/calc_SDR.js"></script>
+<script src="../js/flange.js"></script>
 </body>
 </html>

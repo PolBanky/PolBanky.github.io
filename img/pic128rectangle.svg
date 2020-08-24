@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version = "1.1"
+     baseProfile="full"
+     xmlns = "http://www.w3.org/2000/svg"     
+     width = "128px" height = "128px">
+
+<!--    COMPLETE Rectangle  - DON'T DEL CAMENT !!!!!
+<svg width="400" height="180">
+    <rect x="50" y="20" width="150" height="150"
+      style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" />
+</svg> 
+--> 
+<!-- Контур и обозначения -->
+<!-- <rect x="0" y="0" width="128" height="128"
+      style="fill:white;stroke:yellow;stroke-width:0.5;fill-opacity:0.3;stroke-opacity:0.9" /> -->
+     
+	<g stroke="black" stroke-width="2px">
+	<rect x="34" y="5" rx="8" ry="8" width="60" height="85"
+		style="fill:yellow;fill-opacity:0.5"/>
+	<rect x="42" y="13" rx="3" ry="3" width="44" height="69"
+		style="fill:blue;fill-opacity:0.3"/>
+</g>
+<g font-family="monospace" font-size="14" fill="blue">	<!-- <g font-family="Verdana"> -->
+	<text x="65" y="120">B</text>
+	<text x="23" y="106">t</text>
+	<text x="60" y="106">b</text>
+	<text x="15" y="54">H</text>
+	<text x="104" y="54">h</text>		
+</g>
+<!-- Линии размеров снизу -->
+<g stroke="red" stroke-width="1px" stroke-opacity="0.9">
+	<line x1="34" y1="85" x2="34" y2="125"/>	<!-- y1=5+85-8=82 -->
+	<line x1="94" y1="85" x2="94" y2="125"/>	<!-- x1=64-60/2=34  x2=x1+60=94 -->
+	<line x1="34" y1="122" x2="94" y2="122"/>
+
+	<line x1="42" y1="81" x2="42" y2="111"/>	<!-- x1=34+8=42 y1=5+8+69-3=79 -->
+	<line x1="86" y1="81" x2="86" y2="111"/>	<!-- x1=42+44=86 y1=5+8+69-3=86 -->
+	<line x1="21" y1="108" x2="86" y2="108"/>
+<!-- Линии размеров с боков -->		
+	<line x1="22" y1="5" x2="39" y2="5"/>		<!-- x2=64-30+8=42 -->
+	<line x1="22" y1="90" x2="39" y2="90"/>
+	<line x1="25" y1="5" x2="25" y2="90"/>
+
+	<line x1="85" y1="13" x2="105" y2="13"/>		<!-- x1=64+44/2-3=83 x2=83+10=93 -->
+	<line x1="85" y1="82" x2="105" y2="82"/>
+	<line x1="102" y1="13" x2="102" y2="82"/>
+</g>
+</svg>
+
+        <!-- <circle cx="64px" cy="48px" r="44px" fill="yellow" fill-opacity="0.5"/> -->
+        <!-- <circle cx="64px" cy="48px" r="36px" fill="DodgerBlue" fill-opacity="0.9"/> -->

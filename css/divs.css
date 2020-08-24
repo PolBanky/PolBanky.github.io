@@ -5,13 +5,12 @@
 	display: inline-block;
 	margin: 5px 0px;
 	padding: 5px;
-	height: 1.6em;
 	width: 250px;
 	vertical-align: middle;
 	font-size: 1.5em;
 	color: blue;
-	background-color: #a5a511;
-	border: 2px solid #84e6bd;
+	background-color: #eeee0040;
+	border: 3px solid #33cc00;
 }
 .divOutPut + div {    /* LABEL для окон вывода */
 	display: inline-block;    /* table-cell == margins отключены */
@@ -50,9 +49,9 @@
 	border: 2px solid #849be6;
 }
 .divOutPutMLine1 {    /* многострочное full size ОКНО ВЫВОДА результатов расчетов в сопромате */
-	display: table-cell;      /* table-cell == margins отключены */
+	margin: 3px 0px 5px 0px;
+	padding: 1px 2px;
 	height: 75px;
-	width: 880px;
 	vertical-align: text-top;
 	font-family: Consolas, monospace;
 	font-size: 1.0em;         /* Размер шрифта */

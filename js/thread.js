@@ -15,7 +15,7 @@ let v_cell_A_grad = document.getElementById("cell_A_grad");   // HTML OutPut
 const _180_divide_Pi_ = 180 / Math.PI;
 let diaEx = 0.0;
 let pitchBC = 0.0;
-let L = 0.0;    /* Длина окружности = АВ (см. рисунок а) */
+let L = 0.0;       /* Длина окружности L = АВ (см. рисунок а) */
 let tgA = 0.0;
 let A_rad = 0.0;
 let A_grad = 0.0;
@@ -24,11 +24,12 @@ let A_grad = 0.0;
     function sol() { // call from => function hello_inputIDec() in hello_input.js
 diaEx = v_inputDiaEx.decimal;
 pitchBC = v_inputPitchBC.decimal;
-L = diaEx * Math.PI;    /* Длина окружности = АВ (см. рисунок а) */
+L = diaEx * Math.PI; /* Длина окружности L = АВ (см. рисунок а) */
 tgA = pitchBC / L;
 A_rad = Math.atan(tgA);
 A_grad = A_rad * _180_divide_Pi_;
-console.log('function sol(): diaEx = ',diaEx,'; pitchBC = ',pitchBC,'; L = ',L.toFixed(2),'; tgA = ',tgA.toFixed(6));
+// console.log(event);
+console.log('function sol(): diaEx = ',diaEx,'; pitchBC = ',pitchBC,'; L = ',L.toFixed(2),'; A_grad = ',A_grad.toFixed(6));
 v_cell_L.textContent = L.toFixed(3);
 v_cell_Tg_A.textContent = tgA.toFixed(6);
 v_cell_Tg_A.textContent = tgA.toFixed(6);

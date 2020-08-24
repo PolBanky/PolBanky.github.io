@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Rectangle Tube</title>
 	<link rel="stylesheet" href="../css/style.css">
-	<link rel="shortcut icon" href="../img/beam_on_bearings_128.ico" type="img/x-icon">
+	<link rel="shortcut icon" href="../img/beam_on_bearings_128.svg" type="img/x-icon">
 </head>
 
 <body class="color">
@@ -13,20 +13,21 @@
 </a>
 	<h1 id="top"><img class="imgBtn64B" src="../img/beam_on_bearings_128.svg" alt="Pic Beam">Rectangle Tube</h1>
 	<figure>    	<!-- Эскиз детали + кнопка выбора типа нагрузки -->
-		<img src="../img/btn128rectangle.svg" height="200" alt="Rod stretched by Force">
+		<img src="../img/pic128rectangle.svg" height="200" alt="Rod stretched by Force">
 		<img class="btnNext" src="../img/pic128stretch.svg" height="200" alt="Load" id="choice_load">		
-	</figure>		
+	</figure>
+	
 		<!-- Form !!!!! -->
 	<form action="" onsubmit="return false;">
 <fieldset>
 	<legend>Исходные данные</legend>	<!-- Исходные данные -->
 <div>	<!-- INPUT EX DIAMETER, mm -->
-	<input type="text" id="input_dia_ex" placeholder="External width" accesskey="1" title="Alt+1" autofocus>	<!-- Chrome = Alt+1 -->
-	<label for="input_dia_ex"> External width B, mm</label>
+	<input is="hello-input" id="input_wdt_ex" placeholder="Width External" accesskey="1" title="Alt+1" autofocus> <!-- Chrome = Alt+1 -->
+	<label for="input_wdt_ex">Width External B, mm</label>
 </div>		
 <div>	<!-- INPUT IN DIAMETER, mm -->
-	<input type="text" id="input_dia_in" placeholder="External height" accesskey="2" title="Alt+2">
-	<label for="input_dia_in"> External height H, mm</label>	
+	<input is="hello-input" id="input_hgt_in" placeholder="Height External" accesskey="2" title="Alt+2"> <!-- Chrome = Alt+2 -->
+	<label for="input_hgt_in">Height External H, mm</label>	
 </div>		
 <div>	<!-- INPUT FORCE, N or kg -->
 	<input type="text" id="input_LOAD" placeholder="Stretch force" accesskey="3" title="Alt+3">
@@ -64,9 +65,9 @@
 </fieldset>
 	</form>	<!-- end of Form !!!!! -->
 
-	<footer>	
-		<div>Pol Banky &#169; 2020</div>
-	</footer>
+<footer> <div>Pol Banky &#169; 2020</div> </footer>
+
+	<script src="../js/hello_input.js"></script>
 	<script src="../js/float.js"></script>
 	<script src="../js/tubeR.js"></script>	
 </body>

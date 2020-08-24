@@ -19,18 +19,18 @@ td {
     padding: 8px 6px;
     border: 1px solid green;
 }
-    /* table class  firstColumnLeft */
+    /* table class = firstColumnLeft */
 .firstColumnLeft td { /* все td по центру кроме левого столбца */
     text-align: center;
 }
 .firstColumnLeft td:first-of-type {
     text-align: left;
 }
-    /* table class  firstColumnCenter */
+    /* table class = firstColumnCenter */
 .firstColumnCenter td:first-of-type {
     text-align: center;
 }
-    /* table class  firstColumnCenter12 */
+    /* table class = firstColumnCenter12 */
 .firstColumnCenter12 td:first-of-type {
     padding: 8px 1px;
     text-align: center;
@@ -47,10 +47,10 @@ td {
 }
 .mini td { /* для - марки сталей */
     font-size: 1.0em;
-    padding: 6px 4px 6px 4px;
+    padding: 6px 4px;
 }
 
-    /* table class  wdt */
+    /* table class = wdt */
 table.wdt {	/* wdt == width 880 */
     width: 100%;
 }
@@ -60,7 +60,7 @@ table.fix {
     text-align: center;
 }
 
-    /* table ID  flangeInfo */
+    /* table ID = flangeInfo */
 table#flangeInfo { /* F L A N G E */
     width: 100%;  /* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
     table-layout: fixed;
@@ -72,7 +72,7 @@ table#flangeInfo { /* F L A N G E */
     border: 2px solid green;
 }
 
-    /* table ID  tblGOST */
+    /* table ID = tblGOST */
 #tblGOST {
     width: 100%;
 }
@@ -87,9 +87,12 @@ table#flangeInfo { /* F L A N G E */
     text-align: center;
 }
 
-    /* table ID  threadParam01 */
+    /* table ID = threadParam01 */
 #threadParam01 {
     width: 100%;
+}
+#threadParam01 td {
+    padding: 8px 2px;
 }
 #threadParam01 td:nth-child(1) {
     width: 40%;
@@ -112,7 +115,7 @@ table#flangeInfo { /* F L A N G E */
     /* font-weight: 600; */
 }
 
-    /* table ID  tbl_perCent */
+    /* table ID = tbl_perCent */
 #tbl_perCent {
 	border: 3px solid green;
 	border-collapse: collapse;
@@ -184,8 +187,4 @@ caption.calcResult {
 	text-align: center;
     color: #d2b48c;
     background-color: #322cbe;
-}
-
-span {
-    font: 1.3em bold;
 }

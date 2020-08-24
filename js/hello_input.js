@@ -8,13 +8,13 @@ var notD_RE = /[^\d]/g;
 
 //**************** superinput !!!
 class HelloInput extends HTMLInputElement {
-    constructor() {
-      super();
-      this.decimal = 0;
-      this.addEventListener('focus', () => workinp());
-      this.addEventListener("input",hello_inputIDec);
-    } // constructor()
-  } // class HelloInput
+constructor() {
+    super();
+    this.decimal = 0;
+    this.addEventListener('focus', () => workinp());
+    this.addEventListener("input",hello_inputIDec);
+} // constructor()
+} // class HelloInput
   
 customElements.define('hello-input', HelloInput, {extends: 'input'});   
 //**************** superinput !!!
@@ -24,17 +24,17 @@ customElements.define('hello-input', HelloInput, {extends: 'input'});
 function hello_inputIDec() {
     // console.log("Function hello_inputIDec(): Event Type = " + event.type + "." + event.inputType + " in HTML_Element id = " + event.target.id + "\nthis.value = " + this.value + "; typeof(this.value) = " + typeof(this.value));
     // console.log(event);
-        this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в файле float.js
-        if((this.value !='') & (this.value !='0')) {
-            this.decimal = parseFloat(this.value);  // mm
-        } // if((v_length.value !='') & (v_length.value !='0'))
-        else {
-            this.decimal = 0.0;
-        } // else
-        // console.log('this of hello-input element = ',this);
-        // console.log('decimal of hello-input element = ',this.decimal,' typeof(this.decimal) = ',typeof(this.decimal));
-        sol(event);  // функция где происходят требуемые расчеты и всякое что надо 
-    } // hello_inputIDec()
+    this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в файле float.js
+    if((this.value !='') & (this.value !='0')) {
+        this.decimal = parseFloat(this.value);  // mm
+    } // if((v_length.value !='') & (v_length.value !='0'))
+    else {
+        this.decimal = 0.0;
+    } // else
+    // console.log('this of hello-input element = ',this);
+    // console.log('decimal of hello-input element = ',this.decimal,' typeof(this.decimal) = ',typeof(this.decimal));
+    sol(event);  // функция где происходят требуемые расчеты и всякое что надо 
+} // hello_inputIDec()
 
 
 function checkFix(inTxt) {
