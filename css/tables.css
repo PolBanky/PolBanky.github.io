@@ -36,6 +36,20 @@ td {
     text-align: center;
     width: 12%;
 }
+    /* table class = firstColumnCenter20 */
+.firstColumnCenter20 td:first-of-type {
+    padding: 8px 1px;
+    text-align: center;
+    width: 20%;
+}
+    /* table class = firstColumn20 */
+.firstColumn20 td:first-of-type {
+    width: 20%;
+}
+    /* table class = firstColumn20 */
+.firstColumn16 td:first-of-type {
+    width: 16%;
+}
     /* table class  lastColumnCenter */
 .lastColumnCenter td:last-of-type {
     text-align: center;

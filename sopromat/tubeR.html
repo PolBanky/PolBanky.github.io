@@ -7,7 +7,7 @@
 	<link rel="shortcut icon" href="../img/beam_on_bearings_128.svg" type="img/x-icon">
 </head>
 
-<body class="color">
+<body>
 <a href="help-sopromat.html" target="_blank">	<!--H E L P-->
 	<img class="imgBtn64" src="../img/pic-question_128.png" alt="question"> <!-- знак вопроса -->
 </a>
@@ -16,9 +16,7 @@
 		<img src="../img/pic128rectangle.svg" height="200" alt="Rod stretched by Force">
 		<img class="btnNext" src="../img/pic128stretch.svg" height="200" alt="Load" id="choice_load">		
 	</figure>
-	
-		<!-- Form !!!!! -->
-	<form action="" onsubmit="return false;">
+
 <fieldset>
 	<legend>Исходные данные</legend>	<!-- Исходные данные -->
 <div>	<!-- INPUT EX DIAMETER, mm -->
@@ -28,7 +26,8 @@
 <div>	<!-- INPUT IN DIAMETER, mm -->
 	<input is="hello-input" id="input_hgt_in" placeholder="Height External" accesskey="2" title="Alt+2"> <!-- Chrome = Alt+2 -->
 	<label for="input_hgt_in">Height External H, mm</label>	
-</div>		
+</div>
+
 <div>	<!-- INPUT FORCE, N or kg -->
 	<input type="text" id="input_LOAD" placeholder="Stretch force" accesskey="3" title="Alt+3">
 		<label for="input_LOAD"> Stretch force F, </label>
@@ -38,7 +37,7 @@
 		</select>
 </div>
 <div>	<!-- BUTTON RUN  (галочка на кнопке - см. css) --> <!-- onclick="Event_PressButton()" -->
-	<button type="button" id="buttonRUN" accesskey="4" title="Alt+4">Calculate Stress</button>
+	<button type="button" id="buttonRUN" accesskey="4" title="Alt+4">Calculate</button>
 </div>
 </fieldset>
 	<!-- Вывод результатов -->
@@ -63,7 +62,6 @@
 			<div> Напряжение в стержне, MPa (N/mm<sup>2</sup>)</div>
 		</div>
 </fieldset>
-	</form>	<!-- end of Form !!!!! -->
 
 <footer> <div>Pol Banky &#169; 2020</div> </footer>
 

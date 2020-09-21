@@ -64,7 +64,8 @@ visibility: visible;
 z-index: 10;
 }
 /* h2 img, th img, legend img { */
-h2 img, th img {
+/* h2 img, th img { */
+h2 img {
 	margin-bottom: -0.25em;
 }
 h3 {
@@ -150,7 +151,7 @@ label.fat {
 	vertical-align: middle;
 }
 
-	/* fieldset */
+	/*  F I E L D S E T  */
 fieldset {
 	background-color: #d4e09e40;/* #d2b48c don't touch !!! */
 	margin-block-start: 0.5em;
@@ -161,7 +162,7 @@ fieldset {
 legend {
     color: #d2b48c;
     background-color: #322cbe;
-	font-size: 1.2em;  /* Размер шрифта */
+	font-size: 1.2em;
 	padding: 3px 7px 3px 7px;
 }
 legend.button {
@@ -169,11 +170,10 @@ legend.button {
 }
 	/*  S E L E C T  */
 select {
-	/* padding: 5px 0px; */
+	padding: 2px 0px;
     font-size: 1.2em;
-    color: #aa05bb; /* Цвет ввода    */
+    color: #aa05bb;
 	background-color: #d4e09e;
-	/* background-color: azure; */
 	/* vertical-align: middle; */
 }
 select.big {

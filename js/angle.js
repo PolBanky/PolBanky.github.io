@@ -40,7 +40,7 @@ window.addEventListener("beforeunload",bULd);   // unload page angle.html
 
 var i = 0;          // номера стартов функции события
 
-var numDec = 0;     // Угол с клавы в ДЕСЯТИЧНЫХ град
+var angleDec = 0;   // Угол с клавы в ДЕСЯТИЧНЫХ град
 var Angle_Sec = 0;  // Угол с клавы в секундах
 var numG = 0;       // Целых градусов в угле
 var degSec = 0;     // Целых градусов в угле - в секундах
@@ -52,7 +52,7 @@ var numS = 0;       // Секунды - то что осталось
 var deg1 = 0;       // deg в deg-min-sec
 var min1 = 0;       // min в deg-min-sec
 var sec1 = 0;       // sec в deg-min-sec
-var angleInRad = 0; // Угол numDec в радианах
+var angleInRad = 0; // Угол angleDec в радианах
 
 
 function I(txt) {
@@ -73,7 +73,7 @@ if(localStorage.getItem('DecStor')) {
     console.log("Value in local storage = " + stor + "; data type = " + typeof(stor));
 if((stor !== '0') & (stor !== null)) {
     v_iDec.value = stor;
-    numDec = parseFloat(v_iDec.value);
+    angleDec = parseFloat(v_iDec.value);
     Solution();
     I('Data from last work session = ' + v_iDec.value);
     v_iDec.focus();
@@ -83,13 +83,13 @@ if((stor !== '0') & (stor !== null)) {
 
 
 function bULd() {   // beforeunload
-    localStorage.setItem('DecStor',numDec);
+    localStorage.setItem('DecStor',angleDec);
 }   // function bULd()
 
 
 function clearAll_angle() {
     // console.log("\nClear All:  Event num " + ++i + ", type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id);
-    v_iDec.value = ""; numDec = 0;
+    v_iDec.value = ""; angleDec = 0;
     v_iG.value = ""; numG = 0;
     v_iM.value = ""; numM = 0;
     v_iS.value = ""; numS = 0;
@@ -105,12 +105,12 @@ if((this.value==='')||((this.value = checkFix(this.value))==='')) {
     clearAll_angle();
     return false;   // Если все символы удалены - maybe by input type = deleteContentBackward
 }   // if(this.value==='')
-    numDec = parseFloat(this.value);
-while(numDec > 359.999) {   // while т.к. может быть копипаста
+    angleDec = parseFloat(this.value);
+while(angleDec > 359.999) {   // while т.к. может быть копипаста
     console.log('if-4: this.value before this.value.substring() = ' + this.value + ' >= 360');
     var tmpTxt = cutty(this.value, event.target.selectionStart);
     this.value = tmpTxt;
-    numDec = parseFloat(this.value);
+    angleDec = parseFloat(this.value);
 }   // while
     Solution();    
 }   // inputIDec(event)
@@ -186,9 +186,9 @@ while(numS > 59.99999) {   // while т.к. может быть копипаст�
 
 
 function Solution() {   // for inputIDec
-    console.log("Значение numDec = " + numDec + "; type = " + typeof(numDec));
-    Angle_Sec = numDec * 3600;      // Угол с клавы в секундах
-    numG = Math.floor(numDec);      // ГРАДУСЫ
+    console.log("Значение angleDec = " + angleDec + "; type = " + typeof(angleDec));
+    Angle_Sec = angleDec * 3600;      // Угол с клавы в секундах
+    numG = Math.floor(angleDec);      // ГРАДУСЫ
     degSec = numG * 3600;           // ГРАДУСЫ - в секундах
     fracSec = Angle_Sec - degSec;   // Дробная часть градуса - в секундах
     fracMin = fracSec / 60;         // Дробная часть градуса - в минутах
@@ -208,8 +208,8 @@ function Solution1() {
     min1 = numM * 60;
     sec1 = numS * 1;
     deg1 = deg1 + min1 + sec1;
-    numDec = deg1 / 3600;
-    v_iDec.value = numDec;
+    angleDec = deg1 / 3600;
+    v_iDec.value = angleDec;
 } // Solution1() for Deg-Min-Sec
 
 
@@ -227,10 +227,10 @@ function calcRun(event) {
 
 function gradInRad() {
     var dFactor = Math.PI / 180;  // = 0,01745329251994329576923690768489
-    console.log("\nЗначение numDec for gradInRad() = " + numDec + "; type = " + typeof(numDec));
-    angleInRad = numDec * dFactor;
+    console.log("\nЗначение angleDec for gradInRad() = " + angleDec + "; type = " + typeof(angleDec));
+    angleInRad = angleDec * dFactor;
     showRad.innerHTML = angleInRad.toFixed(6);
-    showRadLabel.innerHTML = "Угол " + numDec + "\u00B0 - в радианах";
+    showRadLabel.innerHTML = "Угол " + angleDec + "\u00B0 - в радианах";
 } // function gradInRad()
 
 
