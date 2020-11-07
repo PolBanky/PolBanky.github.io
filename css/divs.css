@@ -1,7 +1,7 @@
 	/*  D I V  */
-/* DIV IS WITHOUT ANY PROPERTIES */
+/* DEFAULT DIV = WITHOUT ANY PROPERTIES */
 
-.divOutPut {    /* СТРОКА ВЫВОДА результата расчета */
+.divOutPut {    /* OUTPUT BOX результата расчета */
 	display: inline-block;
 	margin: 5px 0px;
 	padding: 5px;
@@ -9,19 +9,19 @@
 	vertical-align: middle;
 	font-size: 1.5em;
 	color: blue;
-	background-color: #eeee0040;
+	background-color: #eeee0060;
 	border: 3px solid #33cc00;
 }
-.divOutPut + div {    /* LABEL для окон вывода */
+.divOutPut + div {    /* LABEL для OUTPUT BOX */
 	display: inline-block;    /* table-cell == margins отключены */
 	margin: 5px 5px 5px 1px;  /* top right bottom left */
-	padding: 5px 5px 5px 1px; /* top right bottom left */
+	padding: 5px 5px 5px 1px;
 	height: 1.6em;
 	vertical-align: middle;
-	font-size: 1.1em;         /* Размер шрифта */
+	font-size: 1.1em;
 	padding-left: 7px;
 }
-.divOutPutMini {    /* СТРОКА ВЫВОДА результатов расчетов ВСПОМОГАТЕЛЬНАЯ */
+.divOutPutMini {    /* OUTPUT BOX результатов расчетов ВСПОМОГАТЕЛЬНЫЙ */
 	display: inline-block;
 	/* margin: 5px 0px; */
 	padding: 5px;
@@ -39,7 +39,7 @@
 .divOutPutMLine {    /* многострочное half size ОКНО ВЫВОДА результатов расчетов в сопромате */
 	font-size: 0.875em;       /* Размер шрифта */
 	display: inline-block;    /* inline-block == height and width EXIST but it inline */
-	margin: 5px 0px;  /* top right bottom left */
+	margin: 5px 0px;
 	padding: 2px;
 	height: 7.0em;
 	width: 49.7%;
