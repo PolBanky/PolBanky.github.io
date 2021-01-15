@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
 	<title>Tech Info</title>
 	<link rel="stylesheet" href="../css/style.css">
-	<!-- <link rel="shortcut icon" href="../img/favicon_operator.ico" type="img/x-icon"> -->
 	<link rel="shortcut icon" href="../img/machine_operator_128.png" type="img/x-icon">
 </head>
 
@@ -87,6 +86,7 @@
 	<tr><td><a href="../data/17379-2001_ellipticalCaps.pdf" target="_blank">17379-2001</a></td><td class="pipe">Заглушки эллиптические</td><td>O</td></tr>
 	<tr><td><a href="../data/18599-2001_pnd_pipes.pdf" target="_blank">18599-2001</a></td><td>Трубы напорные из полиэтилена. Сортамент + ТУ</td><td>О</td></tr>
 	<tr><td><a href="../data/23360-78_keys_couplings.pdf" target="_blank">23360-78</a></td><td>Шпонки прямоугольные</td><td>О</td></tr>
+	<tr><td><a href="../data/24705-2004_Metric_thread.pdf" target="_blank">24705-2004</a></td><td>Резьба метрическая</td><td>О</td></tr>
 	<tr><td><a href="../data/25577-83_Steel_welded_rectangular_sections.pdf" target="_blank">25577-83</a></td><td class="roll">Профили стальные гнутые прямоугольные</td><td>О</td></tr>
 	<tr><td><a href="../data/26020-83_I-beam_parallel_flange_edges.pdf" target="_blank">26020-83</a></td><td class="roll">Двутавры с параллельными гранями полок</td><td>О</td></tr>
 	<tr><td><a href="../data/30753-2001_curved_bends_type_2D_R=1_DN.pdf" target="_blank">30753-2001</a></td><td class="pipe">Отводы тип 2D (R=1 DN)</td><td>O</td></tr>
@@ -111,14 +111,14 @@
 <img src="../data/threads-dims.png" alt="Threads">
 
 <fieldset id="screw1"> <!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
-	<legend>Параметры резьбы <a href="#"><img src="../img/ArrowTop16.png" alt=""></a></legend>	<!-- Заголовок панели исходных данных -->
+	<legend>Угол подъема метрической резьбы <a href="#"><img src="../img/ArrowTop16.png" alt=""></a></legend>	<!-- Заголовок панели исходных данных -->
 <div>	<!-- INPUT EX DIAMETER, mm -->
-	<input is="hello-input" id="inputDiaEx" placeholder="Diameter External" title="см. рисунок a">
-	<label for="inputDiaEx">Diameter External = d, mm</label>	
+	<input is="hello-input" id="input_d" placeholder="Diameter External d" title="см. рисунок a">
+	<label for="input_d">Diameter External = d, mm</label>	
 </div>
-<div>	<!-- INPUT Thread, mm -->
-	<input is="hello-input" id="inputPitchBC" placeholder="Thread Pitch" title="см. рисунок a">
-	<label for="inputPitchBC">Thread Pitch = BC, mm</label>
+<div>	<!-- INPUT THREAD PITCH P, mm -->
+	<input is="hello-input" id="input_P" placeholder="Thread Pitch P" title="см. рисунок a">
+	<label for="input_P">Thread Pitch = P, mm</label>
 </div>
 </fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
 
@@ -128,17 +128,18 @@
 		<th>Параметр</th><th title="Обозначение">Об</th><th title="Единица измерения">Ед</th><th>Формула</th><th>Значение</th>
 	</tr>	<!-- Заголовок таблицы -->
 	<tr>
-		<td>Длина окружности</td><td>L</td><td>mm</td><td>L = &#960; &times; d</td><td id="cell_L"></td>  <!-- Big Pi = &#928; -->
+		<td>Диаметр средний</td><td>d<sub>2</sub></td><td>mm</td><td>d<sub>2</sub> = d - 0,6495 &times; P</td><td id="cell_d2"></td>
 		<!-- <td>Длина окружности</td><td>L</td><td>mm</td><td>L = <span class="greek">&#960;</span> &times; d</td><td id="cell_L"></td> -->
 	</tr>
 	<tr>
-		<td>Тангенс угла подъема линии резьбы</td><td>Tg &#945;</td><td title="Просто число">-</td><td>Tg &#945; = BC / L</td><td id="cell_Tg_A"></td>
+		<td>Длина средней окружности</td><td>L</td><td>mm</td><td>L = &#960; &times; d<sub>2</sub></td><td id="cell_L"></td>  <!-- Big Pi = &#928; -->
+		<!-- <td>Длина окружности</td><td>L</td><td>mm</td><td>L = <span class="greek">&#960;</span> &times; d</td><td id="cell_L"></td> -->
+	</tr>
+	<tr>
+		<td>Угол подъема резьбы</td><td>&#945;</td><td>rad</td><td>&#945;(rad) = Atan( P / L )</td><td id="cell_A_rad"></td>
 	</tr>	
 	<tr>
-		<td>Угол подъема линии резьбы</td><td>&#945;</td><td>rad</td><td>&#945; = Atan(Tg &#945;)</td><td id="cell_A_rad"></td>
-	</tr>	
-	<tr>
-		<td>Угол подъема линии резьбы</td><td>&#945;</td><td>grad</td><td>&#945;(grad) = &#945;(rad) &times; (180 / &#960;)</td><td id="cell_A_grad"></td>
+		<td>Угол подъема резьбы</td><td>&#945;</td><td>grad</td><td>&#945;(grad) = &#945;(rad) &times; (180 / &#960;)</td><td id="cell_A_grad"></td>
 	</tr>	
 </table> <!-- ТАБЛИЦА РЕЗУЛЬТАТОВ РАСЧЕТА -->
 
@@ -277,7 +278,7 @@
 <table>
 	<caption>Основные форматы</caption>
 	<tr><th>Кратность</th><th>A0</th><th>A1</th><th>A2</th><th>A3</th><th>A4</th></tr>
-	<tr><td>Размеры</td><td>841 x 1189</td><td>594 x 841</td><td>420 x 594</td><td>297 x 420</td><td>210 x 297</td></tr>
+	<tr><td></td><td>841 x 1189</td><td>594 x 841</td><td>420 x 594</td><td>297 x 420</td><td>210 x 297</td></tr>
 </table>
 <table>
 	<caption>Производные форматы</caption>
@@ -295,12 +296,13 @@
 <h2 id="design_examples">Примеры чертежей <a href="#"><img src="../img/ArrowTop32.png" alt=""></a></h2>
 	<img src="../data/bearings_1760_2.png" width="880" alt="bear">
 
-	<footer><div>Pol Banky &#169; 2020</div></footer>
-	<!--Добавление к пректу JS-->
+	<footer><div>Pol Banky &#169; 2021</div></footer>
+
 	<script src="../js/hello_input.js"></script>
 	<script src="../js/thread.js"></script>		<!-- Для: Параметры резьбы -->
 	<script src="../js/fs.js"></script> 		<!-- Для: Места под ключи -->
-	<script src="../js/float.js"></script>
+	<!-- <script src="../js/float.js"></script> -->
+	<!-- float.js закомментирован т.к функция checkFix() и вызываемые далее функции - имеются в файле hello_input.js -->
 	<script src="../js/calibre.js"></script>	<!-- Для: Калибр в сотых долях дюйма - в миллиметры -->
 </body>
 </html>

@@ -24,7 +24,7 @@ customElements.define('hello-input', HelloInput, {extends: 'input'});
 function hello_inputIDec() {
     // console.log("Function hello_inputIDec(): Event Type = " + event.type + "." + event.inputType + " in HTML_Element id = " + event.target.id + "\nthis.value = " + this.value + "; typeof(this.value) = " + typeof(this.value));
     // console.log(event);
-    this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в файле float.js
+    this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в этом файле ( hello_input.js )
     if((this.value !='') & (this.value !='0')) {
         this.decimal = parseFloat(this.value);  // mm
     } // if((v_length.value !='') & (v_length.value !='0'))
@@ -38,7 +38,7 @@ function hello_inputIDec() {
 
 
 function checkFix(inTxt) {
-// console.log("Function checkFix(" + inTxt + ")  (float.js)");
+console.log("Function checkFix(" + inTxt + ")  (hello_input.js)");
         // Если есть запятые
 if(comma_RE.test(inTxt)) {
     inTxt = inTxt.replace(comma_RE,'.'); // Если символ = comma то заменяется на dot; глобально - чтоб два раза не вставать
@@ -113,6 +113,7 @@ function dotCutter(textIn, firstDivider) {
     }   // while ((poz
     return textIn;
 }   // dotCutter()
+
 
 function workinp() { // class HelloInput.addEventListener('click', () => workinp() in updateElems.js
     console.log('hello-input Input id = ',event.target.id,' on focus !');

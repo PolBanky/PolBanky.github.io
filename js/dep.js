@@ -1,7 +1,7 @@
 'use strict';
 
-let v_percent = document.getElementById("percent"); // HTML Input
-let v_srcSum  = document.getElementById("srcSum");  // HTML Input
+let v_percent = document.getElementById("percent");  // HTML Input
+let v_srcSum  = document.getElementById("srcSum");   // HTML Input
 
 let v_cell_0p  = document.getElementById("cell_0p"); // HTML ячейка таблицы
 let v_cell_0   = document.getElementById("cell_0");  // HTML ячейка таблицы

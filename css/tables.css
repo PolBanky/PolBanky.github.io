@@ -106,23 +106,24 @@ table#flangeInfo { /* F L A N G E */
     width: 100%;
 }
 #threadParam01 td {
-    padding: 8px 2px;
+    font-size: 1em;
+    padding: 8px 3px;
 }
 #threadParam01 td:nth-child(1) {
-    width: 40%;
+    width: 28%;
 }
 #threadParam01 td:nth-child(2) {
-    width: 7%;
+    width: 6%;
     text-align: center;
     background-color: #4fd99a3d;
 }
 #threadParam01 td:nth-child(3) {
-    width: 7%;
+    width: 6%;
     text-align: center;
     background-color: #ffd99a3d;
 }
 #threadParam01 td:nth-child(4) {
-    width: 30%;
+    width: 25%;
 }
 #threadParam01 td:nth-child(5) {
     width: auto;
