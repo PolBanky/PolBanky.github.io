@@ -10,9 +10,10 @@ var notD_RE = /[^\d]/g;
 class HelloInput extends HTMLInputElement {
 constructor() {
     super();
-    this.decimal = 0;
-    this.addEventListener('focus', () => workinp());
+    this.decimal = 0.0;
+    this.addEventListener('focus', workinp);
     this.addEventListener("input",hello_inputIDec);
+    this.addEventListener("input",sol);
 } // constructor()
 } // class HelloInput
   
@@ -22,8 +23,7 @@ customElements.define('hello-input', HelloInput, {extends: 'input'});
 
 // inputIDec(event)
 function hello_inputIDec() {
-    // console.log("Function hello_inputIDec(): Event Type = " + event.type + "." + event.inputType + " in HTML_Element id = " + event.target.id + "\nthis.value = " + this.value + "; typeof(this.value) = " + typeof(this.value));
-    // console.log(event);
+    console.log(`Now run: hello_inputIDec();  this.id = ${this.id}`);
     this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в этом файле ( hello_input.js )
     if((this.value !='') & (this.value !='0')) {
         this.decimal = parseFloat(this.value);  // mm
@@ -31,14 +31,12 @@ function hello_inputIDec() {
     else {
         this.decimal = 0.0;
     } // else
-    // console.log('this of hello-input element = ',this);
     // console.log('decimal of hello-input element = ',this.decimal,' typeof(this.decimal) = ',typeof(this.decimal));
-    sol(event);  // функция где происходят требуемые расчеты и всякое что надо 
 } // hello_inputIDec()
 
 
-function checkFix(inTxt) {
-console.log("Function checkFix(" + inTxt + ")  (hello_input.js)");
+function checkFix(inTxt) { // inTxt == this.value
+// console.log("Function checkFix(" + inTxt + ")  (hello_input.js)");
         // Если есть запятые
 if(comma_RE.test(inTxt)) {
     inTxt = inTxt.replace(comma_RE,'.'); // Если символ = comma то заменяется на dot; глобально - чтоб два раза не вставать
@@ -115,6 +113,6 @@ function dotCutter(textIn, firstDivider) {
 }   // dotCutter()
 
 
-function workinp() { // class HelloInput.addEventListener('click', () => workinp() in updateElems.js
-    console.log('hello-input Input id = ',event.target.id,' on focus !');
+function workinp() {
+    console.log(`Now run: workinp();  this.id = ${this.id}`);
 } // function workinp()

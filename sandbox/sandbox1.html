@@ -30,10 +30,36 @@
 		<circle cx="430" cy="50" r="40" stroke="green" stroke-width="2" fill="yellow" />
 	</svg>
 	
-	<div>Еще пример SVG рисунка инлайн</div>
+	<div>Еще примеры SVG рисунка инлайн</div>
 	<svg width="880" height="400">
 		<rect x="220" y="0" width="440" height="400" fill="#56A0D3" />
 		<text x="250" y="150" stroke="red">Text example on SVG picture</text>
+	</svg>
+
+	<svg width="880" height="320">
+		<line x1="5px" y1="100px" x2="200px" y2="50px" stroke="crimson"> 
+            <animate attributeName="x2" dur="4s" begin="1s"
+              values="5;50;100;150;200; 800" repeatCount="indefinite" /></line>
+
+		<path id="P" d="M 0 0 C 100 100 200 100 200 200" stroke="grey"   stroke-opacity=".75"
+		fill="none" stroke-width="10" >
+		<animate attributeName="d" id="QQ"
+		dur="5s" repeatCount="indefinite"
+		values="M 100 200 C 100 100 200 100 200 100; 
+		M 100 100 C 80 150 200 100 150 250;
+		M 200 200 C -80 350 50 20 100 50;
+		M 150 100 C 80 150 350 100 150 50;
+		M 100 200 C 100 100 200 100 200 100" />
+		</path>
+		<circle  r="30" cx="50" cy="50" fill="orange" >
+			<animate  attributeName="cx"
+			  from="50"
+			  to="450" 
+			  dur="1s"
+			  begin="click"
+			  fill="freeze"
+			/>
+		  </circle>
 	</svg>
 
 	<div>Текст минимального корректно сработавшего SVG файла (new.svg) -</div>

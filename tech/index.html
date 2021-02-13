@@ -39,7 +39,7 @@
 </ul>
 
 
-<h2 id="standard">Most Used Standards <a href="#"><img src="../img/ArrowTop32.png" alt=""></a></h2>
+<h2 id="standard">Most Used Standards <a href="#"><i class="arr"></i></a></h2>
 <p>В примечании указывается открывается стандарт в браузере на новой вкладке (O), находится на этой-же вкладке (Tbl), или скачивается на комп (L). На мобильные устройства скачиваются все файлы.</p>
 <table id="tblGOST">  <!-- id = для форматирования таблицы -->
 	<tr><th>№ стандарта</th><th>Наименование</th><th>Прим.</th></tr>
@@ -107,43 +107,138 @@
 </table>
 
 
-<h2 id="threadMain">Резьбы <a href="#"><img src="../img/ArrowTop32.png" alt=""></a></h2>
-<img src="../data/threads-dims.png" alt="Threads">
+<h2 id="threadMain">Резьбы <a href="#"><i class="arr"></i></a></h2>
+	<img src="../data/threads-dims.png" alt="Threads">
 
-<fieldset id="screw1"> <!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
-	<legend>Угол подъема метрической резьбы <a href="#"><img src="../img/ArrowTop16.png" alt=""></a></legend>	<!-- Заголовок панели исходных данных -->
-<div>	<!-- INPUT EX DIAMETER, mm -->
-	<input is="hello-input" id="input_d" placeholder="Diameter External d" title="см. рисунок a">
-	<label for="input_d">Diameter External = d, mm</label>	
-</div>
-<div>	<!-- INPUT THREAD PITCH P, mm -->
-	<input is="hello-input" id="input_P" placeholder="Thread Pitch P" title="см. рисунок a">
-	<label for="input_P">Thread Pitch = P, mm</label>
-</div>
-</fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
+<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ 1 -->
+		<fieldset id="screw1">
+			<legend>Угол подъема метрической резьбы <a href="#"><img src="../img/ArrowTop16.png" alt=""></a></legend>	<!-- Заголовок панели исходных данных -->
+		<div>	<!-- INPUT EX DIAMETER, mm -->
+			<input is="hello-input" id="input_d" placeholder="Diameter External d" title="см. рисунок a">
+			<label for="input_d">Diameter External = d, mm</label>	
+		</div>
+		<div>	<!-- INPUT THREAD PITCH P, mm -->
+			<input is="hello-input" id="input_P" placeholder="Thread Pitch P" title="см. рисунок a">
+			<label for="input_P">Thread Pitch = P, mm</label>
+		</div>
+		</fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
 
-<table id="threadParam01"> <!-- ТАБЛИЦА РЕЗУЛЬТАТОВ РАСЧЕТА -->
-	<caption class="calcResult">Результаты расчета</caption>
-	<tr>	<!-- Заголовок таблицы -->
-		<th>Параметр</th><th title="Обозначение">Об</th><th title="Единица измерения">Ед</th><th>Формула</th><th>Значение</th>
-	</tr>	<!-- Заголовок таблицы -->
-	<tr>
-		<td>Диаметр средний</td><td>d<sub>2</sub></td><td>mm</td><td>d<sub>2</sub> = d - 0,6495 &times; P</td><td id="cell_d2"></td>
-		<!-- <td>Длина окружности</td><td>L</td><td>mm</td><td>L = <span class="greek">&#960;</span> &times; d</td><td id="cell_L"></td> -->
-	</tr>
-	<tr>
-		<td>Длина средней окружности</td><td>L</td><td>mm</td><td>L = &#960; &times; d<sub>2</sub></td><td id="cell_L"></td>  <!-- Big Pi = &#928; -->
-		<!-- <td>Длина окружности</td><td>L</td><td>mm</td><td>L = <span class="greek">&#960;</span> &times; d</td><td id="cell_L"></td> -->
-	</tr>
-	<tr>
-		<td>Угол подъема резьбы</td><td>&#945;</td><td>rad</td><td>&#945;(rad) = Atan( P / L )</td><td id="cell_A_rad"></td>
-	</tr>	
-	<tr>
-		<td>Угол подъема резьбы</td><td>&#945;</td><td>grad</td><td>&#945;(grad) = &#945;(rad) &times; (180 / &#960;)</td><td id="cell_A_grad"></td>
-	</tr>	
+<!-- ТАБЛИЦА РЕЗУЛЬТАТОВ РАСЧЕТА 1 -->
+<table id="tblSolOut1">
+<caption class="calcResult">Результаты расчета</caption>
+<tr>	<!-- Заголовок таблицы -->
+	<th>Параметр</th>
+	<th title="Обозначение">Об.</th>
+	<th title="Единица измерения">Ед.</th>
+	<th>Формула</th>
+	<th>Значение</th>
+</tr>	<!-- Заголовок таблицы -->
+<tr>
+	<td>Диаметр средний</td><!-- Параметр -->
+	<td>d<sub>2</sub></td> 	<!-- Обозначение -->
+	<td>mm</td>				<!-- Единица измерения -->
+	<td>d - ( 0,6495 &times; P ) = d<sub>2</sub></td> <!-- Формула -->
+	<td id="cell_d2"></td>	<!-- Значение -->
+</tr>
+<tr>
+	<td>Длина средней окружности</td><!-- Параметр -->
+	<td>L<sub>2</sub></td> 			 <!-- Обозначение -->
+	<td>mm</td>						 <!-- Единица измерения -->
+	<td>&#960; &times; d<sub>2</sub> = L<sub>2</sub></td> <!-- Формула --> <!-- Big Pi = &#928; -->
+	<td id="cell_L2"></td>			 <!-- Значение -->
+	<!-- <td>Длина окружности</td><td>L</td><td>mm</td><td>L = <span class="greek">&#960;</span> &times; d</td><td id="cell_L"></td> -->
+</tr>
+<tr>
+	<td>Угол подъема резьбы, rad</td>
+	<td>&#945;</td> <!-- Обозначение --> <!-- Буква альфа -->
+	<td>rad</td>	<!-- Единица измерения -->
+	<td>Atan( P / L<sub>2</sub> ) = &#945;(rad)</td>  <!-- Формула -->
+	<td id="cell_A_rad"></td> <!-- Значение -->
+</tr>	
+<tr>
+	<td>Угол подъема резьбы, grad</td>
+	<td>&#945;</td> <!-- Обозначение --> <!-- Буква альфа -->
+	<td>grad</td>	<!-- Единица измерения -->
+	<td>&#945;(rad) &times; (180 / &#960;) = &#945;(grad)</td>  <!-- Формула -->
+	<td id="cell_A_grad"></td>	<!-- Значение -->
+</tr>	
 </table> <!-- ТАБЛИЦА РЕЗУЛЬТАТОВ РАСЧЕТА -->
 
-<h2 id="inch">Дюйм и трубный дюйм <a href="#"><img src="../img/ArrowTop32.png" alt=""></a></h2>
+<img src="../data/multiSimple.svg" width="880" alt="simple">
+
+<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ 2 -->
+		<fieldset id="force1">
+			<legend>Крутящий момент <a href="#"><img src="../img/ArrowTop16.png" alt=""></a></legend>	<!-- Заголовок панели исходных данных -->
+		<div>	<!-- INPUT LEVER'S LENGTH L1, mm -->
+			<input is="hello-input" id="input_L_lever" placeholder="Lever's Length, mm" title="Lever's Length, mm">
+			<label for="input_L_lever">Lever's Length = L<sub>lever</sub>, mm</label>
+		</div>
+		<div>	<!-- INPUT FORCE in, kg -->
+			<input is="hello-input" id="input_F_in" placeholder="Force input, kg" title="Force input, kg">
+			<label for="input_F_in">Force Input = F<sub>in</sub>, kg</label>	
+		</div>
+		<div>	<!-- ANGLE B, grad -->
+			<input is="hello-input" id="input_angle_B" placeholder="Angle &#946;, grad" title="Angle &#946;, grad">
+			<label for="input_angle_B">Angle &#946;, grad</label>	
+		</div>
+		</fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
+
+<!-- ТАБЛИЦА РЕЗУЛЬТАТОВ РАСЧЕТА 2 -->
+<table id="tblSolOut1">
+<caption class="calcResult">Результаты расчета</caption>
+<tr>	<!-- Заголовок таблицы -->
+	<th>Параметр</th>
+	<th title="Обозначение">Об.</th>
+	<th title="Единица измерения">Ед.</th>
+	<th>Формула</th>
+	<th>Значение</th>
+</tr>	<!-- Заголовок таблицы -->
+<tr>
+	<td>Длина хода силы F<sub>in</sub> за оборот</td>
+	<td>L<sub>F_in</sub></td>
+	<td>mm</td>
+	<td>2 &times; L<sub>lever</sub> &times; &#960; = L<sub>F_in</sub></td>
+	<td id="cell_L_F_in"></td>
+</tr>
+<tr>
+	<td>Передаточное число винта</td>
+	<td title="Передаточное число винта">N</td>
+	<td>-</td>
+	<td>L<sub>F_in</sub> / P = N</td>
+	<td id="cell_N"></td>
+</tr>
+<tr>
+	<td>Сила по оси винта</td>
+	<td>F<sub>out</sub></td>
+	<td>kg</td>
+	<td>F<sub>in</sub> &times; N = F<sub>out</sub></td>
+	<td id="cell_F_out"></td>
+</tr>
+<tr>
+	<td>Подъем клина за оборот винта</td>
+	<td>h<sub>k</sub></td>
+	<td>mm</td>
+	<td>P &times; Tan( &#946; ) = h<sub>k</sub></td>
+	<td id="cell_h_k"></td>
+</tr>
+<tr>
+	<td>Передаточное число клина</td>
+	<td title="Передаточное число">N<sub>k</sub></td>
+	<td>-</td>
+	<td>P / h<sub>k</sub> = N<sub>k</sub></td>
+	<td id="cell_N_k"></td>
+</tr>
+<tr>
+	<td>Сила подъема клина</td>
+	<td>F<sub>out_2</sub></td>
+	<td>kg</td>
+	<td>F<sub>out</sub> &times; N<sub>k</sub> = F<sub>out_2</sub></td>
+	<td id="cell_F_out_2"></td>
+</tr>
+</table> <!-- ТАБЛИЦА РЕЗУЛЬТАТОВ РАСЧЕТА -->
+
+
+<h2 id="inch">Дюйм и трубный дюйм <a href="#"><i class="arr"></i></a></h2>
 <p>Как и в Великобритании, с 1958 года американский дюйм приравнивается к 2,54 см — для отличия от остальных эта единица называется международный дюйм. Ранее (с 1866 года) был равен 2,54000508 см (точнее, 10000/3937 см); иногда это старое значение используется и ныне под названием геодезический дюйм.</p>
 
 <h3>Резьба трубная ГОСТ 6357-81 на трубах водогазопроводных ГОСТ 3262-75</h4>
@@ -187,13 +282,15 @@
 </div>
 </fieldset>
 
-<h2 id="angles">Углы конусов <a href="#"><img src="../img/ArrowTop32.png" alt=""></a><a href="angle.html" target="_blank"><img src="../img/favicon32angle.svg" alt="" title="Angle"></a></h2>
+<h2 id="angles">Углы конусов <a href="#"><i class="arr"></i></a><a href="angle.html" target="_blank"><img src="../img/favicon32angle.svg" alt="" title="Angle"></a></h2>
 <img src="../data/AnglesOfCones.png" width="880" alt="Angle" title="Углы конусов">
 
-<h2 id="keys">Места под ключи <a href="#"> <img src="../img/ArrowTop32.png" alt=""></a><a href="../data/13682-80_width_across_flats_dimensions.pdf" target="_blank"><img src="../img/text_32x32.png" alt="" title="ГОСТ 13682-80"></a></h2>
+
+<h2 id="keys">Места под ключи <a href="#"><i class="arr"></i></a><a href="../data/13682-80_width_across_flats_dimensions.pdf" target="_blank"><img src="../img/text_32x32.png" alt="" title="ГОСТ 13682-80"></a></h2>
 <img id="key" class="fs" src="../data/13682-80_width_across_flats_dimensions(table).png" width="880" alt="keys" title="Места под ключи" onclick="fullScreen('key')">
 
-<h2 id="steelsorts">Марки сталей <a href="#"><img src="../img/ArrowTop32.png" alt=""></a></h2>
+
+<h2 id="steelsorts">Марки сталей <a href="#"><i class="arr"></i></a></h2>
 <h3>Условное обозначение сталей</h3>
 <p>Все стали имеют свою маркировку, отражающую в первую очередь их химический состав. В маркировке стали первой цифрой указано содержание углерода в сотых долях процента. Затем следуют буквы русского алфавита, обозначающие наличие легирующего элемента. Если за буквой цифры нет, это означает, что содержание легирующего элемента составляет не более одного процента, а следующие за буквой цифры означают содержание его в процентах. Буква "А" в конце обозначения обозначает высокое качество.</p>
 <table class="fix wdt">
@@ -274,7 +371,8 @@
 	<tr><td>хромоникелевольфрамовые, хромоникелеванадиевые стали</td><td>12Х2НВФА, 20Х2Н4ФА, 30ХН2ВА</td></tr>
 </table>
 
-<h2 id="sheets_formats">Форматы чертежей ГОСТ 2.301-68 <a href="#"><img src="../img/ArrowTop32.png" alt=""></a></h2>
+
+<h2 id="sheets_formats">Форматы чертежей ГОСТ 2.301-68 <a href="#"><i class="arr"></i></a></h2>
 <table>
 	<caption>Основные форматы</caption>
 	<tr><th>Кратность</th><th>A0</th><th>A1</th><th>A2</th><th>A3</th><th>A4</th></tr>
@@ -293,13 +391,13 @@
 	<tr><td>9</td><td></td><td></td><td></td><td></td><td>297 x 1892</td></tr>
 </table>
 
-<h2 id="design_examples">Примеры чертежей <a href="#"><img src="../img/ArrowTop32.png" alt=""></a></h2>
+<h2 id="design_examples">Примеры чертежей <a href="#"><i class="arr"></i></a></h2>
 	<img src="../data/bearings_1760_2.png" width="880" alt="bear">
 
 	<footer><div>Pol Banky &#169; 2021</div></footer>
 
-	<script src="../js/hello_input.js"></script>
 	<script src="../js/thread.js"></script>		<!-- Для: Параметры резьбы -->
+	<script src="../js/hello_input.js"></script>
 	<script src="../js/fs.js"></script> 		<!-- Для: Места под ключи -->
 	<!-- <script src="../js/float.js"></script> -->
 	<!-- float.js закомментирован т.к функция checkFix() и вызываемые далее функции - имеются в файле hello_input.js -->

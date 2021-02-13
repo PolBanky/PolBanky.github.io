@@ -18,4 +18,28 @@
 	font-size: 0.7em;
 }
 
+.cell { /* значок телефонной трубки в тексте */
+	background-image: url(../img/oldCell.png);
+	display: inline-block;
+	width: 22.5px;
+	height: 22.5px;
+	background-size: contain;
+    background-position: center;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	margin-bottom: 0.25em;
+}
+
+.arr { /* Стрелка вверх в заголовках h2 */
+	background-image: url(../img/ArrowTop32.png);
+	display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-position: center;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	margin-bottom: 0.25em;
+}
+
 

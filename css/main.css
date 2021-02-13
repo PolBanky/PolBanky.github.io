@@ -32,11 +32,11 @@ h2 {
 	padding: 30px 1px 8px 30px;
     border-bottom: 2px solid rgb(9, 155, 147);
 }
-h2 > a, legend > a {
+h2 > a, legend > a { /* для тайтла */
 	position: relative;  
 	text-decoration: none;
 }
-h2 > a:first-child::after, legend > a:first-child::after {
+h2 > a:first-child::after, legend > a:first-child::after { /* для тайтла */
 position: absolute;
 content: "Top";
 font-size: 14px;
@@ -47,19 +47,19 @@ border-radius: 5px;
 text-align: center;
 visibility: hidden;
 }
-h2 > a:first-child::after {
+h2 > a:first-child::after { /* для тайтла */
 left: 40px;
 top: 10px;
 color: whitesmoke;
 background: darkgreen;
 }
-legend > a:first-child::after {
+legend > a:first-child::after { /* для тайтла */
 left: 30px;
 top: 0px;
 color: yellow;
 background: darkblue;
 }
-h2 > a:first-child:hover::after, legend > a:first-child:hover::after {
+h2 > a:first-child:hover::after, legend > a:first-child:hover::after { /* для тайтла */
 visibility: visible;
 z-index: 10;
 }
@@ -69,7 +69,8 @@ h2 img {
 	margin-bottom: -0.25em;
 }
 h3 {
-    color: rgb(1, 80, 1);
+    color: rgb(165, 22, 34);
+    /* color: rgb(1, 80, 1); */
     padding: 10px 0px 0px 15px;
 }
 h4 {
@@ -217,66 +218,7 @@ select.big2 {
 }
 	/*  end  T O P N A V  */
 
-	/*  I M G  */
-img {
-margin: 0px 0px 0px 0px;
-}
-img.fs {
-	cursor: zoom-in;
-}
-.fs:-ms-fullscreen { width: 100%; cursor: not-allowed; }
-.fs:-webkit-full-screen { width: 100%; cursor: not-allowed; }
-.fs:-moz-full-screen { width: 100%; cursor: not-allowed; }
-
-.imgBtn128, img.imgBtn128A {	/* For not-transparency and transparency buttons */
-	width: 128px;
-	height: 128px;
-	transition: 0.1s;
-}
-.imgBtn128:hover {
-	background-color: lightgreen;
-}
-.imgBtn128A:hover {	/*For transparency buttons*/
-	width: 132px;
-	height: 132px;
-}
-.imgBtn64 {    /* Для значков в правом верхнем углу, например -  Help */
-	float: right;
-	width: 64px;
-	margin-top: 10px;	
-	margin-right: 5px;
-	padding: 0px;
-	transition: 0.3s;
-}
-.imgBtn64:hover {    /* Help Rizing */
-	width: 74px;
-}
-.imgBtn64A {	/* For circle badge with h1 header */
-	width: 64px;
-	height: 64px;
-	vertical-align: -10px;
-	margin-right: 12px;
-	padding: 0px;
-    border-radius: 32px;
-}
-.imgBtn64B {	/* For (border-radius:10px) badge with h1 header */
-	width: 64px;
-	height: 64px;
-	vertical-align: -10px;
-	margin-right: 12px;
-	padding: 0px;
-    border-radius: 10px;
-}
-.picInTxt {
-    display: block;
-	margin: 5px auto 5px 5px;
-}
-.btnNext {
-	cursor: pointer;
-}
-	/*  end  I M G  */
-
-iframe {				/* Окно для вывода файла */
+iframe { /* Окно для вывода в него файла, например pdf */
 	border: 0px;
 }
 
@@ -290,6 +232,7 @@ span {
     font: 1.3em bold;
 }
 .greek {
+	/* font-size: 1.25em; */
 	font-size: inherit;
 	font-weight: 800;
     font-family: GreekC, Symbol, sans-serif;

@@ -1,0 +1,58 @@
+	/*  I M G  */
+img {
+margin: 0px 0px 0px 0px;
+}
+img.fs {
+	cursor: zoom-in;
+}
+.fs:-ms-fullscreen { width: 100%; cursor: not-allowed; }
+.fs:-webkit-full-screen { width: 100%; cursor: not-allowed; }
+.fs:-moz-full-screen { width: 100%; cursor: not-allowed; }
+
+.imgBtn128, img.imgBtn128A {	/* For not-transparency and transparency buttons */
+	width: 128px;
+	height: 128px;
+	transition: 0.1s;
+}
+.imgBtn128:hover {
+	background-color: lightgreen;
+}
+.imgBtn128A:hover {	/*For transparency buttons*/
+	width: 132px;
+	height: 132px;
+}
+.imgBtn64 {    /* Для значков в правом верхнем углу, например -  Help */
+	float: right;
+	width: 64px;
+	margin-top: 10px;	
+	margin-right: 5px;
+	padding: 0px;
+	transition: 0.3s;
+}
+.imgBtn64:hover {    /* Help Rizing */
+	width: 74px;
+}
+.imgBtn64A {	/* For circle badge with h1 header */
+	width: 64px;
+	height: 64px;
+	vertical-align: -10px;
+	margin-right: 12px;
+	padding: 0px;
+    border-radius: 32px;
+}
+.imgBtn64B {	/* For (border-radius:10px) badge with h1 header */
+	width: 64px;
+	height: 64px;
+	vertical-align: -10px;
+	margin-right: 12px;
+	padding: 0px;
+    border-radius: 10px;
+}
+.picInTxt { /* для картинок (иллюстраций) расположенных внутри текста */
+    display: block;
+	margin: 10px auto 10px 1px;
+}
+.btnNext {
+	cursor: pointer;
+}
+ 	/*  end  I M G  */

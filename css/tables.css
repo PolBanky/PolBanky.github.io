@@ -101,31 +101,31 @@ table#flangeInfo { /* F L A N G E */
     text-align: center;
 }
 
-    /* table ID = threadParam01 */
-#threadParam01 {
+    /* table ID = tblSolOut1 */
+#tblSolOut1 {
     width: 100%;
 }
-#threadParam01 td {
+#tblSolOut1 td {
     font-size: 1em;
     padding: 8px 3px;
 }
-#threadParam01 td:nth-child(1) {
+#tblSolOut1 td:nth-child(1) {
     width: 28%;
 }
-#threadParam01 td:nth-child(2) {
+#tblSolOut1 td:nth-child(2) {
     width: 6%;
     text-align: center;
     background-color: #4fd99a3d;
 }
-#threadParam01 td:nth-child(3) {
+#tblSolOut1 td:nth-child(3) {
     width: 6%;
     text-align: center;
     background-color: #ffd99a3d;
 }
-#threadParam01 td:nth-child(4) {
+#tblSolOut1 td:nth-child(4) {
     width: 25%;
 }
-#threadParam01 td:nth-child(5) {
+#tblSolOut1 td:nth-child(5) {
     width: auto;
     /* font-weight: 600; */
 }
