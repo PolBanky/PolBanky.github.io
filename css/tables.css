@@ -156,29 +156,26 @@ table#flangeInfo { /* F L A N G E */
 td.pipe { /* Трубы круглые для трубопроводов */
     color: #ff00ff;
     background-color: #ff00ff25;
-    /* font-weight: bold; */
 }
 td.hex { /* Болты гайки шайбы */
     color: #056e1b;
     background-color: #056e1b25;
-    /* font-weight: bold; */
 }
 td.weld { /* Сварка */
     color: #ec0000;
     background-color: #ec000025;
-    /* font-weight: bold; */
 }
 td.bear { /* Подшипники */
     color: #0000ff;
     background-color: #0000ff25;
-    /* font-weight: bold; */
 }
 td.roll { /* Прокат */
     color: #0000ff;
-    /* color: #505000; */
     background-color: #ffff0025;
-    /* background-color: #50500025; */
-    /* font-weight: bold; */
+}
+td.thread { /* Прокат */
+    color: #dd7700;
+    background-color: #00ff8020;
 }
 
     /* Table caption */
@@ -194,7 +191,7 @@ caption {
 }
     /* Table caption if table is calculation Result */
 caption.calcResult {
-    width: 22%;
+    width: 32%;
     border-style: none;
     margin-left: 0.8%;
 	padding: 3px 0px;
