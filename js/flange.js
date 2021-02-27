@@ -4,6 +4,15 @@
     // HTML Elements
 var v_DN_choice  = document.getElementById("dn_choice");     // HTML Select DN
 var v_PN_choice  = document.getElementById("pn_choice");     // HTML Select PN
+
+let v_D_fl   = document.getElementById("D_fl");
+let v_D1_fl  = document.getElementById("D1_fl");
+let v_dv_fl  = document.getElementById("dv_fl");
+let v_D2_fl  = document.getElementById("D2_fl");
+let v_n_d_fl = document.getElementById("n_d_fl");
+let v_b_fl   = document.getElementById("b_fl");
+let v_h_fl   = document.getElementById("h_fl");
+
 var v_DN = document.getElementById("_DN");  // HTML Output
 var v_PN = document.getElementById("_PN");  // HTML Output
 var v_D = document.getElementById("_D");    // HTML Output
@@ -99,9 +108,7 @@ var flanges16 = [    // READY
 [1600, 0, 0, 0, 0, 0, 0, 0, 0, 0, '0']
 ];
 
-
 var flanges = flanges10;
-
 
 function page_onload() {
     Event_DN_choice();
@@ -109,18 +116,32 @@ function page_onload() {
 
     // выбор DN
 function Event_DN_choice() {
-    v_DN.innerHTML  = flanges[v_DN_choice.selectedIndex][0];    // подтверждение срабатывания селекта
-    v_PN.innerHTML  = v_PN_choice.value;                        // подтверждение срабатывания селекта
-    v_D.innerHTML   = flanges[v_DN_choice.selectedIndex][1];
-    v_D1.innerHTML  = flanges[v_DN_choice.selectedIndex][2];
-    v_D2.innerHTML  = flanges[v_DN_choice.selectedIndex][3];
-    v_dv.innerHTML  = flanges[v_DN_choice.selectedIndex][4];
-    v_b.innerHTML   = flanges[v_DN_choice.selectedIndex][5];
-    v_h.innerHTML   = flanges[v_DN_choice.selectedIndex][6];
-    v_d.innerHTML   = flanges[v_DN_choice.selectedIndex][7];
-    v_n.innerHTML   = flanges[v_DN_choice.selectedIndex][8];
-    v_M.innerHTML   = flanges[v_DN_choice.selectedIndex][9];
-    v_pin.innerHTML = flanges[v_DN_choice.selectedIndex][10];
+    v_DN.textContent = flanges[v_DN_choice.selectedIndex][0];    // подтверждение срабатывания селекта
+    v_PN.textContent = v_PN_choice.value;                        // подтверждение срабатывания селекта
+
+    v_D.textContent     = flanges[v_DN_choice.selectedIndex][1];
+    v_D_fl.textContent  = `D=ø${flanges[v_DN_choice.selectedIndex][1]}`;
+    v_D1.textContent    = flanges[v_DN_choice.selectedIndex][2];
+    v_D1_fl.textContent = `D₁=ø${flanges[v_DN_choice.selectedIndex][2]}`;
+    
+    v_D2.textContent    = flanges[v_DN_choice.selectedIndex][3];
+    v_D2_fl.textContent = 'D\u2082=ø'+ flanges[v_DN_choice.selectedIndex][3];
+
+    v_dv.textContent    = flanges[v_DN_choice.selectedIndex][4];
+    v_dv_fl.textContent = `dв=ø${flanges[v_DN_choice.selectedIndex][4]}`;
+
+    v_b.textContent    = flanges[v_DN_choice.selectedIndex][5];
+    v_b_fl.textContent = `b=${flanges[v_DN_choice.selectedIndex][5]}`;
+
+    v_h.textContent    = flanges[v_DN_choice.selectedIndex][6];
+    v_h_fl.textContent = `h=${flanges[v_DN_choice.selectedIndex][6]}`;
+
+    v_d.textContent      = flanges[v_DN_choice.selectedIndex][7];
+    v_n.textContent      = flanges[v_DN_choice.selectedIndex][8];
+    v_n_d_fl.textContent = `n=${flanges[v_DN_choice.selectedIndex][8]} отв.d=ø${flanges[v_DN_choice.selectedIndex][7]}`;
+    
+    v_M.textContent   = flanges[v_DN_choice.selectedIndex][9];
+    v_pin.textContent = flanges[v_DN_choice.selectedIndex][10];
 }	// Event_DN_choice()
 
     // выбор PN

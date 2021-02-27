@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version = "1.1"
+     baseProfile="full"
+     xmlns = "http://www.w3.org/2000/svg"     
+     height = "600px" width = "360px">    
+
+<!-- Габарит рисунка -->
+<!-- <g stroke="grey" stroke-width="1.0" fill="none">
+<rect x="0.5" y="0.5" height="599" width="359"/>
+</g> -->
+      <!-- path = Контур основной с заливкой -->
+<path
+   stroke="blue"
+   stroke-width="3.0"
+   fill="lightgreen"
+   fill-opacity="0.5"
+   d="M161,22 v25 h47 v-25 z  M161,94 v70 h55 v-62 l-8,-8 z  M161,384 v70 h47 l8,-8 v-62 z  M161,501 v25 h47 v-25 z "
+/>
+      <!-- path = Контур основной без заливки (отверстия) --> 
+<path
+   stroke="blue"
+   stroke-width="3.0"
+   d="M161,47 v47  M208,47 v47  M161,164 v220  M216,164 v220  M161,454 v47  M208,454 v47 "
+/>
+      <!-- Осевые линии -->
+<path
+   stroke-dasharray="16,4,5,4"
+   stroke-width="1.5"
+   stroke="red"
+   d="M155,70.5 h64  M155,274 h67  M155,477.5 h64 "
+/>
+   <!-- d="M155,70.5 h64  M155,274 h67  M155,477.5 h64 "   Временная осевая = M5,300 h350 -->
+      <!-- Размеры  -->
+<g stroke="red" stroke-width="1" fill="red" fill-opacity="1.0">
+<path d="M161,22 h-115   M161,526 h-115   m5,0 v-504 l-3,15 l6,0 l-3,-15  m0,504 l-3,-15 l6,0 l-3,15 " />      <!-- D   -->
+<path d="M161,70.5 h-75  M161,477.5 h-75  m5,0 v-407 l-3,15 l6,0 l-3,-15  m0,407 l-3,-15 l6,0 l-3,15 " />      <!-- D1  -->
+<path d="M161,164 h-35   M161,384 h-35    m5,0 v-220 l-3,15 l6,0 l-3,-15  m0,220 l-3,-15 l6,0 l-3,15 " />      <!-- dv  -->
+<path d="M216,102 h55  M216,446 h55  m-5,0 v-344 l-3,15 l6,0 l-3,-15  m0,344 l-3,-15 l6,0 l-3,15 " />          <!-- D2  -->
+<path d="M208,94 h105  M208,47 h105  m-5,0 v280  m-0,-280  l-3,15 l6,0 l-3,-15  m0,47 l-3,-15 l6,0 l-3,15 " /> <!-- n_d -->
+   <!-- b  -->
+<path d="M161,526 
+         v60
+         m55,0
+         v-140
+         m0,135
+         h-135
+         m135,0
+         l-15,-3 l0,6 l15,-3
+         m-55,0
+         l15,-3 l0,6 l-15,-3 "
+         />         
+   <!-- h  -->
+<path d="M208,526
+         v30
+         m-25,-5
+         h110
+         m-85,0
+         l-15,-3 l0,6 l15,-3  
+         m8,0
+         l15,-3 l0,6 l-15,-3 "
+         />         
+</g>
+</svg>

@@ -42,4 +42,11 @@
 	margin-bottom: 0.25em;
 }
 
+#svgPic2 {
+	float: left;
+    /* border: 1px solid pink; */
+    /* display: inline-block; */
+    background-image: url(../data/flangeBg.svg);
+}
+
 
