@@ -11,7 +11,7 @@ th {
     font-size: 1.25em;
     background: linear-gradient(to bottom, #4fd99a1d, #4fd99a8d);
     /* background-color: rgba(79, 217, 154, 0.24); */
-    padding: 8px 6px;	
+    padding: 8px 2px;	
     border: 2px solid green;
 }
 td {
@@ -100,6 +100,44 @@ table#flangeInfo { /* F L A N G E */
     width: auto;
     text-align: center;
 }
+
+
+
+    /* table ID = symOften (таблица символов юникода) */
+#symOften {
+    width: 100%;
+    text-align: center;
+}
+#symOften td {
+    padding: 8px 1px;
+    font-size: 1.0em;
+}
+#symOften td:nth-child(1) {
+    width: 7%; /* fix 7  ( Char ) */
+    padding: 0px 2px;
+    font-size: 1.5em;
+}
+#symOften td:nth-child(2) {
+    width: 9%; /* fix 10  ( Dec ) */
+}
+#symOften td:nth-child(3) {
+    width: 13%; /* fix 14  ( Dec )  */
+}
+#symOften td:nth-child(4) {
+    width: 12%; /* fix 11 */
+}
+#symOften td:nth-child(5) {
+    width: 38%;
+}
+#symOften td:nth-child(6) {
+    width: 11%; /* fix 10 */
+}
+#symOften td:nth-child(7) {
+    width: auto; /* fix 11 */
+    background-color: #aa22ee25;
+}
+
+
 
     /* table ID = tblSolOut1 */
 #tblSolOut1 {

@@ -120,12 +120,12 @@ function Event_DN_choice() {
     v_PN.textContent = v_PN_choice.value;                        // подтверждение срабатывания селекта
 
     v_D.textContent     = flanges[v_DN_choice.selectedIndex][1];
-    v_D_fl.textContent  = `D=ø${flanges[v_DN_choice.selectedIndex][1]}`;
+    v_D_fl.textContent  = `D=\u00F8${flanges[v_DN_choice.selectedIndex][1]}`;
     v_D1.textContent    = flanges[v_DN_choice.selectedIndex][2];
     v_D1_fl.textContent = `D₁=ø${flanges[v_DN_choice.selectedIndex][2]}`;
     
     v_D2.textContent    = flanges[v_DN_choice.selectedIndex][3];
-    v_D2_fl.textContent = 'D\u2082=ø'+ flanges[v_DN_choice.selectedIndex][3];
+    v_D2_fl.textContent = 'D\u2082=\u00F8'+ flanges[v_DN_choice.selectedIndex][3];
 
     v_dv.textContent    = flanges[v_DN_choice.selectedIndex][4];
     v_dv_fl.textContent = `dв=ø${flanges[v_DN_choice.selectedIndex][4]}`;

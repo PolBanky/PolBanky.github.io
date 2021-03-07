@@ -322,8 +322,6 @@
 <ol>
     <li>Создать 3D деталь, эскизы должны управляться размерами с переменными.</li>
     <li></li>
-    <li></li>
-    <li></li>
 </ol>
     <!-- Kompas -->
 
@@ -349,17 +347,16 @@
 
 
     <!-- Autocad -->
-<h2 id="autocad"><img class="imgBtn64B" src="../img/autocad-logo-cursor.png" alt="Pic OctoCat">AutoCad - Hot Keys <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<h2 id="autocad"><img class="imgBtn64B" src="../img/autocad-logo-cursor.png" alt="Pic OctoCat">AutoCad - Hot Keys <a href="#"><i class="arr"></i>></a></h2>
 <table>
     <tr><th colspan="2">В чертеже или эскизе</th></tr>
     <tr><td>Alt + K</td><td>Отрезок (Line)</td></tr>
-    <tr><td>Alt + K</td><td>Отрезок (Line)</td></tr>  
 </table>
     <!-- Autocad -->
 
 
     <!-- Foxit Reader -->
-<h2 id="foxit">Foxit Reader - Hot Keys <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<h2 id="foxit">Foxit Reader - Hot Keys <a href="#"><i class="arr"></i></a></h2>
 <table class="wdt">
     <!-- <tr><th colspan="2">В чертеже или эскизе</th></tr> -->
     <tr><td>Alt + &#8592;</td><td>Перейти к предыдущему виду</td></tr>
@@ -372,41 +369,98 @@
 
 
     <!-- Ctrl + key  MicroSoft -->
-<h2 id="micro">MicroSoft - Ctrl + Keys <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<h2 id="micro">MicroSoft - Ctrl + Keys <a href="#"><i class="arr"></i></a></h2>
 <img id="picCtrl" src="../data/Ctrl+keys.png" width="880" alt="Ctrl+">
     <!-- Ctrl + key  MicroSoft -->
 
 
     <!-- Alt + key  MicroSoft -->
-<h2 id="howsymb">MicroSoft - Alt + Keys <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<h2 id="howsymb">MicroSoft - Alt + Keys <a href="#"><i class="arr"></i></a></h2>
 <img id="ports" src="../data/HowSymbFrKey.png" width="880" alt="symbs">
-<table>
+<!-- <table>
     <tr><th colspan="4">Еще Alt + ...</th></tr>
     <tr><th>С клавиатуры</th><th>В тексте html файла</th><th>Сам символ</th><th>Описание символа</th></tr>
-    <tr><td>Alt + 0216</td><td>&amp#216;</td><td>&#216;</td><td>Знак Диаметр</td></tr> <!-- Чтобы показать знак & в тексте надо так => &amp -->
-</table>
+    <tr><td>Alt + 0216</td><td>&amp#216;</td><td>&#216;</td><td>Знак Диаметр</td></tr> 
+</table> -->
     <!-- Alt + key  MicroSoft  Диаметр Alt+0216 -->
 
 
     <!-- How view code in Android -->    
-<h2 id="howview">How view code in Android <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<h2 id="howview">How view code in Android <a href="#"><i class="arr"></i></a></h2>
 <p>Just insert text 'view-source:' before text 'https://'</p>
 <img src="../data/view-src-android-880-.png" alt="how view">
     <!-- How view code in Android -->
 
 
     <!-- Коды символов Unicode -->
-<h2 id="symbols">Коды символов Unicode <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
-<p>Зачетная таблица кодов символов Unicode и для HTML - <a href="https://dev.w3.org/html5/html-author/charref" target="_blank">https://dev.w3.org/html5/html-author/charref</a>. При наведении курсора на квадратик с символом и его аббревиатурой на квадратике кроме этого появляется код символа в десятичной и шестнадцатиричной системах а на всплывающей подсказке - его Unicode код.</p>
-<p>При отсутствии интернета можно посмотреть <a href="Char_Ref_Chart.html" target="_blank"> оффлайн версию</a></p>
+<h2 id="symbols">Коды символов Unicode <a href="#"><i class="arr"></i></a></h2>
+<p>Зачетная таблица кодов основных символов Unicode => <a href="https://dev.w3.org/html5/html-author/charref" target="_blank">https://dev.w3.org/html5/html-author/charref</a>. При наведении курсора на квадратик с символом и его аббревиатурой на квадратике кроме этого появляется код символа в десятичной и шестнадцатиричной системах а на всплывающей подсказке - имя символа и еще код. При отсутствии интернета см. <a href="Char_Ref_Chart.html" target="_blank"> оффлайн версию</a></p> 
+<p>HTML UTF-8 Reference => <a href="https://www.w3schools.com/charsets/ref_html_utf8.asp" target="_blank">https://www.w3schools.com/charsets/ref_html_utf8.asp</a>;  Полный список символов => <a href="https://www.unicode.org/charts" target="_blank">https://www.unicode.org/charts</a></p>
+<p>Чтобы показать на html странице ссылку на какой-нибудь специальный символ в виде текста надо вместо символа & (амперсанд) использовать его аббревиатуру (entity): &ampamp</p>
+
+<style>
+p.str8 {
+    text-indent: 0px;
+    padding: 0px;
+    margin: 0px;
+} 
+</style>
+        
+<table class="wdt"> <caption>Examples</caption>
+<tr><td>Entity</td> <td>d = &ampOslash;50 &ampdeg;</td>      <td>d = &Oslash;50&deg;</td></tr>
+<tr><td>Dec</td>    <td>d = &amp#216;50 &amp#176;</td>       <td>d = &#216;50&#176;</td></tr>
+<tr><td>Hex</td>    <td>d = &amp#x000D8;50 &amp#x000B0;</td> <td>d = &#x000D8;50&#x000B0;</td></tr>
+</table>
+<h4>Инструкция вставки спецсимволов через CSS и JS</h4>
+<p>Для вставки специальных символов через CSS код можно использовать только 16-ричный код и не в том виде, что он дан в таблице. Каждый 16-ричный символ в таблице кодируется так - &#x"шестнадцитиричный код"; если вы хотите добавить символ, то вам нужно скопировать необходимый "шестнадцитиричный код" из таблицы (без приставки &#x), поставить перед ним обратный слеш \ и добавить его при помощи свойства content. Чаше всего также для использования свойства content применяют псевдоклассы :before или :after.</p>
+<p>Для вставки специальных символов через JS вам нужно скопировать необходимый "шестнадцитиричный код" из таблицы (без приставки &#x), поставить перед ним обратный слеш \ и букву 'u', т.е = '\u' и добавить его при помощи кода JS</p>
+<table class="wdt"> <caption>Examples continue</caption>
+<tr><td>CSS</td>
+    <td>&lt;style&gt;p.str8::after{content:'\00B0';}&lt;&#47;style&gt;&lt;p class="str8">A = 50&lt;&#47;p&gt;</td>
+    <td><style>p.str8::after{content:'\00B0';}</style><p class="str8">A = 50</p></td></tr>
+<tr><td>JS</td>
+    <td>v_ex.textContent = 'D\u2081 = \u00D850 - \u03B1 - \u2205';</td>
+    <td id="example1">0</td></tr>
+</table>
+
+<table id="symOften">  <caption>Наиболее часто используемые символы</caption>
+<tr><th>Char</th>   <th>Dec</th>       <th>Hex</th>          <th>Entity</th>      <th>Name</th>                               <th>JS</th>     <th title="Возможность зависит от шрифта">С клавы</th></tr>
+<tr><td>&#034;</td> <td>&amp#034;</td> <td>&amp#x00022;</td> <td>&ampquot;</td>   <td>QUOTATION MARK</td>                     <td>\u0022</td> <td>Alt + 0034</td></tr>
+<tr><td>&#037;</td> <td>&amp#037;</td> <td>&amp#x00025;</td> <td></td>            <td>PERCENT SIGN</td>                       <td>\u0025</td> <td>Alt + 0037</td></tr>
+<tr><td>&#038;</td> <td>&amp#038;</td> <td>&amp#x00026;</td> <td>&ampamp;</td>    <td>AMPERSAND</td>                          <td>\u0026</td> <td>Alt + 0038</td></tr>
+<tr><td>&#176;</td> <td>&amp#176;</td> <td>&amp#x000B0;</td> <td>&ampdeg;</td>    <td>DEGREE SIGN</td>                        <td>\u00B0</td> <td>Alt + 0176</td></tr>
+<tr><td>&#177;</td> <td>&amp#177;</td> <td>&amp#x000B1;</td> <td>&ampplusmn;</td> <td>PLUS-MINUS SIGN</td>                    <td>\u00B1</td> <td>Alt + 0177</td></tr>
+<tr><td>&#178;</td> <td>&amp#178;</td> <td>&amp#x000B2;</td> <td>&ampsup2;</td>   <td>SUPERSCRIPT TWO</td>                    <td>\u00B2</td> <td>Alt + 0178</td></tr>
+<tr><td>&#179;</td> <td>&amp#179;</td> <td>&amp#x000B3;</td> <td>&ampsup3;</td>   <td>SUPERSCRIPT THREE</td>                  <td>\u00B3</td> <td>Alt + 0179</td></tr>
+<tr><td>&#188;</td> <td>&amp#188;</td> <td>&amp#x000BC;</td> <td>&ampfrac14;</td> <td>VULGAR FRACTION ONE QUARTER</td>        <td>\u00BC</td> <td>Alt + 0188</td></tr>
+<tr><td>&#189;</td> <td>&amp#189;</td> <td>&amp#x000BD;</td> <td>&ampfrac12;</td> <td>VULGAR FRACTION ONE HALF</td>           <td>\u00BD</td> <td>Alt + 0189</td></tr>
+<tr><td>&#190;</td> <td>&amp#190;</td> <td>&amp#x000BE;</td> <td>&ampfrac34;</td> <td>VULGAR FRACTION THREE QUARTERS</td>     <td>\u00BD</td> <td>Alt + 0189</td></tr>
+<tr><td>&#215;</td> <td>&amp#215;</td> <td>&amp#x000D7;</td> <td>&amptimes;</td>  <td>MULTIPLICATION SIGN</td>                <td>\u00D8</td> <td>Alt + 0215</td></tr>
+<tr><td>&#216;</td> <td>&amp#216;</td> <td>&amp#x000D8;</td> <td>&ampOslash;</td> <td>LATIN CAPITAL LETTER O WITH STROKE</td> <td>\u00D8</td> <td>Alt + 0216</td></tr>
+<tr><td>&#248;</td> <td>&amp#248;</td> <td>&amp#x000F8;</td> <td>&amposlash;</td> <td>LATIN SMALL LETTER O WITH STROKE</td>   <td>\u00F8</td> <td>Alt + 0248</td></tr>
+<tr><td>&#945;</td> <td>&amp#945;</td> <td>&amp#x003B1;</td> <td>&ampalpha;</td>  <td>GREEK SMALL LETTER ALPHA</td>           <td>\u03B1</td> <td>Alt + 0945</td></tr>
+<tr><td>&#946;</td> <td>&amp#946;</td> <td>&amp#x003B2;</td> <td>&ampbeta;</td>   <td>GREEK SMALL LETTER BETA</td>            <td>\u03B2</td> <td>Alt + 0946</td></tr>
+<tr><td>&#948;</td> <td>&amp#948;</td> <td>&amp#x003B4;</td> <td>&ampdelta;</td>  <td>GREEK SMALL LETTER DELTA</td>           <td>\u03B4</td> <td>Alt + 0948</td></tr>
+<tr><td>&#960;</td> <td>&amp#960;</td> <td>&amp#x003C0;</td> <td>&amppi;</td>     <td>GREEK SMALL LETTER PI</td>              <td>\u03C0</td> <td>Alt + 0960</td></tr>
+<tr><td>&#963;</td> <td>&amp#963;</td> <td>&amp#x003C3;</td> <td>&ampsigma;</td>  <td>GREEK SMALL LETTER SIGMA</td>           <td>\u03C3</td> <td>Alt + 0963</td></tr>
+<tr><td>&#964;</td> <td>&amp#964;</td> <td>&amp#x003C4;</td> <td>&amptau;</td>    <td>GREEK SMALL LETTER TAU</td>             <td>\u03C4</td> <td>Alt + 0964</td></tr>
+<tr><td>&#8321;</td> <td>&amp#8321;</td> <td>&amp#x02081;</td> <td>               </td><td>SUBSCRIPT ONE</td>                 <td>\u2081</td> <td>Alt + 8321</td></tr>
+<tr><td>&#8322;</td> <td>&amp#8322;</td> <td>&amp#x02082;</td> <td>               </td><td>SUBSCRIPT TWO</td>                 <td>\u2082</td> <td>Alt + 8322</td></tr>
+<tr><td>&#8323;</td> <td>&amp#8323;</td> <td>&amp#x02083;</td> <td>               </td><td>SUBSCRIPT THREE</td>               <td>\u2083</td> <td>Alt + 8323</td></tr>
+<tr><td>&#8709;</td> <td>&amp#8709;</td> <td>&amp#x02205;</td> <td>&ampempty;     </td><td>EMPTY SET</td>                     <td>\u2205</td> <td>Alt + 8709</td></tr>
+<tr><td>&#8721;</td> <td>&amp#8721;</td> <td>&amp#x02211;</td> <td>&ampsum;       </td><td>N-ARY SUMMATION</td>               <td>\u2211</td> <td>Alt + 8721</td></tr>
+<tr><td>&#8960;</td> <td>&amp#8960;</td> <td>&amp#x02300;</td> <td></td>          <td>DIAMETER SIGN</td>                      <td>\u2300</td> <td>Alt + 8960</td></tr>
+
+</table>
+
     <!-- Коды символов Unicode -->
 
 
-<h2 id="symbolDim">Symbol's Dimentions <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<h2 id="symbolDim">Symbol's Dimentions <a href="#"><i class="arr"></i></a></h2>
 <img src="../data/font2.png" width="880" alt="symbols">
 
 
-<h2 id="flexBox1">Flexbox <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
+<h2 id="flexBox1">Flexbox <a href="#"><i class="arr"></i></a></h2>
 <img src="../data/flexbox21.png" width="880" alt="symbols">
 
 
@@ -472,5 +526,6 @@
 
 <footer><div>Pol Banky &#169; 2020</div></footer>
     <script src="../js/fs.js"></script>
+    <script src="../js/uni.js"></script>
 </body>
 </html>
