@@ -55,4 +55,8 @@ img.fs {
 .btnNext {
 	cursor: pointer;
 }
- 	/*  end  I M G  */
+	 /*  end  I M G  */
+figure.width880 {
+	margin-inline-start: 0px;
+    margin-inline-end: 0px;
+} 

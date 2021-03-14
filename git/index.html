@@ -347,7 +347,7 @@
 
 
     <!-- Autocad -->
-<h2 id="autocad"><img class="imgBtn64B" src="../img/autocad-logo-cursor.png" alt="Pic OctoCat">AutoCad - Hot Keys <a href="#"><i class="arr"></i>></a></h2>
+<h2 id="autocad"><img class="imgBtn64B" src="../img/autocad-logo-cursor.png" alt="Pic OctoCat">AutoCad - Hot Keys <a href="#"><i class="arr"></i></a></h2>
 <table>
     <tr><th colspan="2">В чертеже или эскизе</th></tr>
     <tr><td>Alt + K</td><td>Отрезок (Line)</td></tr>
@@ -377,12 +377,6 @@
     <!-- Alt + key  MicroSoft -->
 <h2 id="howsymb">MicroSoft - Alt + Keys <a href="#"><i class="arr"></i></a></h2>
 <img id="ports" src="../data/HowSymbFrKey.png" width="880" alt="symbs">
-<!-- <table>
-    <tr><th colspan="4">Еще Alt + ...</th></tr>
-    <tr><th>С клавиатуры</th><th>В тексте html файла</th><th>Сам символ</th><th>Описание символа</th></tr>
-    <tr><td>Alt + 0216</td><td>&amp#216;</td><td>&#216;</td><td>Знак Диаметр</td></tr> 
-</table> -->
-    <!-- Alt + key  MicroSoft  Диаметр Alt+0216 -->
 
 
     <!-- How view code in Android -->    
@@ -394,9 +388,9 @@
 
     <!-- Коды символов Unicode -->
 <h2 id="symbols">Коды символов Unicode <a href="#"><i class="arr"></i></a></h2>
-<p>Зачетная таблица кодов основных символов Unicode => <a href="https://dev.w3.org/html5/html-author/charref" target="_blank">https://dev.w3.org/html5/html-author/charref</a>. При наведении курсора на квадратик с символом и его аббревиатурой на квадратике кроме этого появляется код символа в десятичной и шестнадцатиричной системах а на всплывающей подсказке - имя символа и еще код. При отсутствии интернета см. <a href="Char_Ref_Chart.html" target="_blank"> оффлайн версию</a></p> 
+<p>Зачетная таблица кодов основных символов Unicode => <a href="https://dev.w3.org/html5/html-author/charref" target="_blank">https://dev.w3.org/html5/html-author/charref</a>. При наведении курсора на квадратик с символом и его аббревиатурой на квадратике кроме этого появляется код символа в десятичной и шестнадцатиричной системах а на всплывающей подсказке - имя символа и код для JS (но с лишним нулем). При отсутствии инета см. <a href="Char_Ref_Chart.html" target="_blank"> оффлайн версию</a></p> 
 <p>HTML UTF-8 Reference => <a href="https://www.w3schools.com/charsets/ref_html_utf8.asp" target="_blank">https://www.w3schools.com/charsets/ref_html_utf8.asp</a>;  Полный список символов => <a href="https://www.unicode.org/charts" target="_blank">https://www.unicode.org/charts</a></p>
-<p>Чтобы показать на html странице ссылку на какой-нибудь специальный символ в виде текста надо вместо символа & (амперсанд) использовать его аббревиатуру (entity): &ampamp</p>
+<p>Чтобы показать на html странице ссылку на какой-нибудь специальный символ в виде текста надо вместо символа & (амперсанд) использовать его аббревиатуру (entity): &ampamp. Узнать юникод символа в текстовом файле можно если открыть файл в Word, выделить символ и нажать Alt + x</p>
 
 <style>
 p.str8 {
@@ -419,7 +413,7 @@ p.str8 {
     <td>&lt;style&gt;p.str8::after{content:'\00B0';}&lt;&#47;style&gt;&lt;p class="str8">A = 50&lt;&#47;p&gt;</td>
     <td><style>p.str8::after{content:'\00B0';}</style><p class="str8">A = 50</p></td></tr>
 <tr><td>JS</td>
-    <td>v_ex.textContent = 'D\u2081 = \u00D850 - \u03B1 - \u2205';</td>
+    <td>v_ex.textContent = `D\u2081 = \u00F8${mult(a1, b1)} - \u03B1 - \u2205`;</td>
     <td id="example1">0</td></tr>
 </table>
 

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version = "1.1"
+     baseProfile="full"
+     xmlns = "http://www.w3.org/2000/svg"     
+     width = "880px" height = "330px">    
+
+      <!-- Габарит рисунка -->
+<!-- <g stroke="grey" stroke-width="1.0" fill="none">
+<rect x="0.5" y="0.5" width="879.5" height="329.5"/>
+</g> -->
+      <!-- path = Контур (линия) стены -->
+<path
+   stroke="darkblue"
+   stroke-width="6.0"
+   d="M70,70 v215 m0,-195  "
+/>
+      <!-- path = Штриховка стены -->
+<path
+   stroke="red"
+   stroke-width="1.0"
+   d="M67,70 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 l-15,15 m15,0 "
+/>
+      <!-- path = Контур основной с заливкой -->
+<path
+   stroke="green"
+   stroke-width="5.0"
+   fill="none"
+   d="M73,90  h300 l-300,175  M625,90  h125 l-108.25,62.5 "
+/>
+      <!-- path = Кружки с заливкой -->
+<g stroke="black" stroke-width="0.5px" fill-opacity="0.6">
+   <circle cx="20px" cy="90px"  r="10px" fill="red"   transform="translate( 50, 0)"  />
+   <circle cx="20px" cy="90px"  r="10px" fill="blue"  transform="translate( 353, 0)" />
+   <circle cx="20px" cy="265px" r="10px" fill="green" transform="translate( 50, 0)"  />
+   <circle cx="20px" cy="90px"  r="10px" fill="blue"  transform="translate( 730, 0)" />
+</g>
+      <!-- Стрелка силы -->
+<path
+   stroke-width="3.5"
+   stroke="red"
+   stroke-opacity="1.0"
+   fill="red"
+   fill-opacity="1.0"
+   stroke-linejoin="round"
+   d="M373,78 l-4.43,-20 l8.86,0 Z
+   m 0,-20 v-40 
+   M750,160 l-4.43,-20 l8.86,0 Z
+   m 0,-20 v-40
+   M560,90 l20,-4.43 l0,8.86 Z
+   m 20,0 h40
+   M637.42,155  l-15.13,13.8  l-4.4,-7.62  Z
+   m-17.33,9.8 l-34.62,20
+   "   
+id="path20" />
+      <!-- Размер угла ( линия ) -->
+<path
+   stroke-width="1.5"
+   stroke="red"
+   stroke-opacity="1.0"
+   fill="none"
+   d="M200,92 A5,55 -15 0 0 223,175"
+id="path16" />
+      <!-- Размер угла ( стрелки ) -->
+<path
+   stroke-width="1.5"
+   stroke="red"
+   stroke-opacity="1.0"
+   fill="red"
+   d="M200,92 l-0.2,15 l6,-1 z
+      M223,175 l-8.5,-13 l6.2,-2.5 z "
+id="path18" />
+      <!-- Буквы F and  -->
+<g font-family="Arial" fill="red">	
+<text x="380" y="50"  font-size="40">F</text>
+<text x="757" y="133" font-size="40">F</text>
+<text x="583" y="82"  font-size="40">N&#8321;</text>
+<text x="595" y="215"  font-size="40">N&#8322;</text>
+<text x="181" y="150" font-size="40">&#945;</text>
+<text x="80"  y="82"  font-size="25">C</text>
+<text x="387" y="100" font-size="25">B</text>
+<text x="760" y="85"  font-size="25">B</text>
+<text x="80"  y="290" font-size="25">D</text>
+</g>
+
+</svg>

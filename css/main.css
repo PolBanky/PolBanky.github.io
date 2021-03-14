@@ -37,31 +37,31 @@ h2 > a, legend > a { /* для тайтла */
 	text-decoration: none;
 }
 h2 > a:first-child::after, legend > a:first-child::after { /* для тайтла */
-position: absolute;
-content: "Top";
-font-size: 14px;
-font-weight: 500;
-text-decoration: none;
-padding: 3px 3px 4px 3px;
-border-radius: 5px;
-text-align: center;
-visibility: hidden;
+	position: absolute;
+	content: "Top";
+	font-size: 14px;
+	font-weight: 500;
+	text-decoration: none;
+	padding: 3px 3px 4px 3px;
+	border-radius: 5px;
+	text-align: center;
+	visibility: hidden;
 }
 h2 > a:first-child::after { /* для тайтла */
-left: 40px;
-top: 10px;
-color: whitesmoke;
-background: darkgreen;
+	left: 40px;
+	top: 10px;
+	color: whitesmoke;
+	background: darkgreen;
 }
 legend > a:first-child::after { /* для тайтла */
-left: 30px;
-top: 0px;
-color: yellow;
-background: darkblue;
+	left: 30px;
+	top: 0px;
+	color: yellow;
+	background: darkblue;
 }
 h2 > a:first-child:hover::after, legend > a:first-child:hover::after { /* для тайтла */
-visibility: visible;
-z-index: 10;
+	visibility: visible;
+	z-index: 10;
 }
 /* h2 img, th img, legend img { */
 /* h2 img, th img { */
@@ -70,7 +70,6 @@ h2 img {
 }
 h3 {
     color: rgb(165, 22, 34);
-    /* color: rgb(1, 80, 1); */
     padding: 10px 0px 0px 15px;
 }
 h4 {
@@ -229,12 +228,10 @@ a.big1 {				/* Спец ссылка большого размера шрифт�
 	font-size: 1.5em;  /* Размер шрифта */
 }
 span {
-    font: 1.3em bold;
+	font-size: 1.3em;
+	font-weight: bold;
 }
 .greek {
-	/* font-size: 1.25em; */
-	font-size: inherit;
-	font-weight: 800;
     font-family: GreekC, Symbol, sans-serif;
 }
 	/* Style apply to element with id="clock" */

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Console</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="shortcut icon" href="../img/consoleUnderForce_128.svg" type="img/x-icon">
+</head>
+
+<body>
+<a href="help-sopromat.html" target="_blank">	<!--H E L P-->
+	<img class="imgBtn64" src="../img/pic-question_128.png" alt="question"> <!-- знак вопроса -->
+</a>
+			<!-- h1 -->	
+	<h1><img class="imgBtn64B" src="../img/consoleUnderForce_128.svg" alt="Console">Console</h1>
+
+<figure class="width880">	<!-- Эскиз консоли -->
+	<img src="../data/ConsoleUnderForce.svg" height="330" alt="console">
+</figure>   <!-- Эскиз консоли -->
+
+<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ 1 -->
+<fieldset id="consoleInput">
+	<legend>Параметры консоли <a href="#"><img src="../img/ArrowTop16.png" alt=""></a></legend>	<!-- Заголовок панели исходных данных -->
+<div>	<!-- INPUT FORCE, kg -->
+	<input is="hello-input" id="input_F" placeholder="Force F" title="Force F">
+	<label for="input_F">Force External = F, kg</label>	
+</div>
+<div>	<!-- INPUT THREAD PITCH P, mm -->
+	<input is="hello-input" id="input_A" placeholder="Angle &#945;" title="Angle &#945;">
+	<label for="input_A">Angle = <span class="greek">&#945;</span>, grad</label>
+</div>
+</fieldset>	<!-- ПАНЕЛЬ ВВОДА ИСХОДНЫХ ДАННЫХ -->
+
+
+<!-- ТАБЛИЦА 1 РЕЗУЛЬТАТОВ РАСЧЕТА -->
+<table id="tblSolOut1">
+	<caption class="calcResult">Расчет сил в стержнях консоли </caption>
+	<tr>	<!-- Заголовок таблицы -->
+		<th>Параметр</th>
+		<th title="Обозначение">Об.</th>
+		<th title="Единица измерения">Ед.</th>
+		<th>Формула</th>
+		<th>Значение</th>
+	</tr>	<!-- Заголовок таблицы -->
+
+	<tr>
+		<td>Диаметр средний</td><!-- Параметр -->
+		<td>d<sub>2</sub></td> 	<!-- Обозначение -->
+		<td>mm</td>				<!-- Единица измерения -->
+		<td>d - ( 0,6495 &times; P ) = d<sub>2</sub></td> <!-- Формула -->
+		<td id="cell_d2"></td>	<!-- Значение -->
+	</tr>
+	<tr>
+		<td>Длина средней окружности</td><!-- Параметр -->
+		<td>L<sub>2</sub></td> 			 <!-- Обозначение -->
+		<td>mm</td>						 <!-- Единица измерения -->
+		<td>&#960; &times; d<sub>2</sub> = L<sub>2</sub></td> <!-- Формула --> <!-- Big Pi = &#928; -->
+		<td id="cell_L2"></td>			 <!-- Значение -->
+		<!-- <td>Длина окружности</td><td>L</td><td>mm</td><td>L = <span class="greek">&#960;</span> &times; d</td><td id="cell_L"></td> -->
+	</tr>
+	<tr>
+		<td>Угол подъема резьбы, rad</td>
+		<td>&#945;</td> <!-- Обозначение --> <!-- Буква альфа -->
+		<td>rad</td>	<!-- Единица измерения -->
+		<td>Atan( P / L<sub>2</sub> ) = &#945;(rad)</td>  <!-- Формула -->
+		<td id="cell_A_rad"></td> <!-- Значение -->
+	</tr>	
+	<tr>
+		<td>Угол подъема резьбы, grad</td>
+		<td>&#945;</td> <!-- Обозначение --> <!-- Буква альфа -->
+		<td>grad</td>	<!-- Единица измерения -->
+		<td>&#945;(rad) &times; (180 / &#960;) = &#945;(grad)</td>  <!-- Формула -->
+		<td id="cell_A_grad"></td>	<!-- Значение -->
+	</tr>	
+</table> <!-- ТАБЛИЦА 1 РЕЗУЛЬТАТОВ РАСЧЕТА -->
+
+
+	<footer><div>Pol Banky &#169; 2021</div></footer>
+	<script src="../js/console.js"></script>	
+	<script src="../js/hello_input.js"></script>
+</body>
+</html>
