@@ -1,10 +1,5 @@
 'use strict';
 window.addEventListener("load",page_onload); // onLoad
-function page_onload() { // Обработчик события загрузки страницы
-    let net = window.navigator.onLine;
-    console.log("\n%c Страница загружена;  Наличие инета = " + net, 'color: green; font-weight: bold; font-size: 1.4em;');  
-} // function page_onload()
-// ****************************************************************************
     // HTML Input 1
 let v_input_F = document.getElementById("input_F");         // HTML Input
 let v_input_A = document.getElementById("input_A");         // HTML Input
@@ -47,29 +42,27 @@ F = v_input_F.decimal;
 A = v_input_A.decimal;
 console.log(`A = ${A}`);
 if(A==0) {
-    v_cell_N2.textContent = '';    
-    v_cell_N1.textContent = '';    
+    v_cell_N2.textContent = 'Need angle A';    
+    v_cell_N1.textContent = 'Need angle A';    
     return
 };
-/* расчеты */
-// N2 = F / sin α
+// if(F==0) {
+//     v_cell_N2.textContent = 'Need force F';
+//     v_cell_N1.textContent = 'Need force F';
+//     return
+// };
+    /* расчеты */
 N2 = F / Math.sin( A / _180_divide_Pi_ );
 N1 = F * ( 1 / Math.tan( A / _180_divide_Pi_) );
-// v_cell_N2.textContent = 'N2 = ' + N2.toFixed(3);
-// v_cell_N2.textContent = F + ' / sin( '+ A + ' ) = ' + N2.toFixed(3);
 v_cell_N2.textContent = F + ' / ' + Math.sin( A / _180_divide_Pi_ ).toFixed(5) + ' = ' + N2.toFixed(3);
 v_cell_N1.textContent = F + ' x ' + ( 1 / Math.tan( A / _180_divide_Pi_)).toFixed(5) + ' = ' + N1.toFixed(3);
 
-// d2 = d - (0.6495 * P);              /* Диаметр средний d2 */
-// L2 = d2 * Math.PI;                  /* Длина окружности L2 (см. рисунок а) */
-// A_rad = Math.atan( P / L2 );        /* Угол подъема резьбы в радианах */
-// A_grad = A_rad * _180_divide_Pi_;   /* Угол подъема резьбы в градусах */
-    /* показ результатов расчетов */
-// v_cell_d2.textContent = d + ' - ( 0.6495 x ' + P + ' ) = ' + d2.toFixed(3);
-// v_cell_L2.textContent = _Pi_ + ' x ' + d2.toFixed(3) + ' = ' + L2.toFixed(3);
-// if(P) {
-    // v_cell_A_rad.textContent = 'Atan( ' + P + ' / ' + L2.toFixed(3) + ' ) = ' + A_rad.toFixed(5);
-    // v_cell_A_grad.textContent = A_rad.toFixed(5) + ' x 57.29577 = ' + A_grad.toFixed(5);
-// }
 } // function solN2N1()
+
+function page_onload() { // Обработчик события загрузки страницы
+    let net = window.navigator.onLine;
+    console.log("%c Страница загружена;  Наличие инета = " + net, 'color: green; font-weight: bold; font-size: 1.4em;');
+    // v_input_A.value = 30;
+    // v_input_A.decimal = 30;
+} // function page_onload()
 
