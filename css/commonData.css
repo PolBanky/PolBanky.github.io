@@ -48,5 +48,11 @@
     /* display: inline-block; */
     background-image: url(../data/flangeBg.svg);
 }
+#svgPic3 {
+	/* float: left; */
+    /* border: 1px solid pink; */
+    /* display: inline-block; */
+    background-image: url(../data/ConsoleUnderForce.svg);
+}
 
 

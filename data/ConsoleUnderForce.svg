@@ -69,17 +69,5 @@ id="path16" />
    d="M200,92 l-0.2,15 l6,-1 z
       M223,175 l-8.5,-13 l6.2,-2.5 z "
 id="path18" />
-      <!-- Буквы F and  -->
-<g font-family="Arial" fill="red">	
-<text x="380" y="50"  font-size="40">F</text>
-<text x="757" y="133" font-size="40">F</text>
-<text x="583" y="82"  font-size="40">N&#8321;</text>
-<text x="595" y="215"  font-size="40">N&#8322;</text>
-<text x="181" y="150" font-size="40">&#945;</text>
-<text x="80"  y="82"  font-size="25">C</text>
-<text x="387" y="100" font-size="25">B</text>
-<text x="760" y="85"  font-size="25">B</text>
-<text x="80"  y="290" font-size="25">D</text>
-</g>
 
 </svg>
