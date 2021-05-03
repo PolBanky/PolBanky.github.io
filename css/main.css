@@ -201,14 +201,14 @@ select.big2 {
 #topnav { /* nav  ( # )  => по идентификатору */
 	font-size: 1.25em;
 	text-align: center;
-	padding: 5px 0px;
+	padding: 6px 0px;
 	margin: 10px 5px 10px 5px;
 }
 #topnav a {
 	color: yellow;
 	background-color: blue;
 	text-decoration: none;
-	padding: 4px 6px;
+	padding: 6px 4px;
 	border-radius: 8px;
 }
 #topnav a:hover {
