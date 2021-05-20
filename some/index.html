@@ -74,9 +74,9 @@
 <fieldset id="calcCF"> <legend>Пересчет &#176;C &#8660; &#176;F</legend> 
           <!-- INPUT TEMPERATURE in C or F, grad -->
 <div>
-	<input type="number" id="input_grad" placeholder="Цельсий" step="0.01" title="Градусов Цельсия">  <!-- INPUT => id="input_grad"-->
+	<input type="number" id="input_grad" placeholder="Цельсий" step="1.0" title="Градусов Цельсия">
 	<label for="input_grad" id="lbl_grad_in"> Температура, </label>
-	<select class="big" id="c_or_f" onchange="Event_SelectChanged()"> <!-- select "c_or_f" -->
+	<select class="big" id="c_or_f" onchange="Event_SelectChanged()">
 		<option value="c">&#176;C</option>
 		<option value="f">&#176;F</option>
 	</select>
@@ -86,11 +86,11 @@
 	<button type="button" id="calc" onclick="Event_PressButton()">Calculate &#176;C to &#176;F</button>
 </div>
     <!-- OUTPUT CONVERTED TEMPERATURE, c/f -->
-	<div>
-		<div class="divOutPut" id="temperature_output">0,000</div>
-		<div id="lbl_grad_out"> &#176;F</div>
-	</div>
-</fieldset>
+<div>
+	<div class="divOutPut" id="temperature_output">0,000</div>
+	<div id="lbl_grad_out"> &#176;F</div>
+</div>
+</fieldset> <!-- <fieldset id="calcCF"> -->
 	
 
 <h2 id="copypaste">Как вставить текст без форматирования <a href="#"><i class="arr"></i></a></h2>

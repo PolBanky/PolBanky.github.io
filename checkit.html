@@ -1,24 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CheckIt</title>
+	<link rel="shortcut icon" href="img/drweb.png" type="img/x-icon">
+
 <script language="JavaScript">
   function resultURL() 
   {
     var left = (screen.width - 640)/2
     var top =  (screen.height - 400)/2
     window.open( "", "scan", "width=640"+
-                 ",height=400,left="+left+
-                 ",top="+top+",scrollbars=no,resizable=yes")
+                  ",height=400,left="+left+
+                  ",top="+top+",scrollbars=no,resizable=yes")
     document.getElementById( "drwebscanformURL" ).target = "scan";
     return true;
   } 
 </script>
+</head>
 
-<form id="drwebscanformURL" action="https://online.drweb.com/result/" onSubmit="return resultURL()" method="post">
-<div style="width: 474px; height: 65px; background: url(img/fon_green.gif)">
-	<div style="padding: 30px 0 0 137px;">
-		<div style="float: left;"><input type="text" name="url" value="http://" class=find style="width:200px; border: #9ac461 2px solid;"></div>
-		<div style="float: left; padding: 1px 0 0 5px"><input type="image" src="img/button.gif" width="121" height="21"></div>
-	</div>
-</div>
-</form>
+<body>
+  <form id="drwebscanformURL" action="https://online.drweb.com/result/" onSubmit="return resultURL()" method="post">
+    <div style="width: 474px; height: 65px; background: url(img/fon_green.gif)">
+      <div style="padding: 30px 0 0 137px;">
+        <div style="float: left;"><input type="text" name="url" value="http://" class=find style="width:200px; border: #9ac461 2px solid;"></div>
+        <div style="float: left; padding: 1px 0 0 5px"><input type="image" src="img/button.gif" width="121" height="21"></div>
+      </div>
+    </div>
+    </form>  
+</body>
+</html>
+
+
+
+
 
 
 
