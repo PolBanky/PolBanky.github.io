@@ -165,6 +165,31 @@ table#flangeInfo { /* F L A N G E */
     /* font-weight: 600; */
 }
 
+    /* table ID = tblSmsBank */
+#tblSmsBank {
+    width: 100%;
+}
+#tblSmsBank td {
+    font-size: 1em;
+    padding: 8px 3px;
+}
+#tblSmsBank td:nth-child(1) {
+    width: 27%;
+}
+#tblSmsBank td:nth-child(2) {
+    width: 12%;
+    text-align: center;
+    background-color: #4fd99a3d;
+}
+#tblSmsBank td:nth-child(3) {
+    width: 12%;
+    text-align: center;
+    background-color: #ffd99a3d;
+}
+#tblSmsBank td:nth-child(4) {
+    width: auto;
+}
+
     /* table ID = tbl_perCent */
 #tbl_perCent {
 	border: 3px solid green;
