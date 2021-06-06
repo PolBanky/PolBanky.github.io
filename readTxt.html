@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<!-- Some Info -->
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Read Files</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/explorer.png" type="img/x-icon">
+</head>
+<body>
+<a href="indexRootHelp.html" target="_blank">	<!--H E L P-->
+<img class="imgBtn64" src="img/pic-question_128.png" alt="Pic Question"></a>
+<h1><img class="imgBtn64B" src="img/explorer.png" alt="Pic">Read Files</h1>
+
+<select class="big3" id="codeChoice">
+    <option value="1">DEFAULT</option>
+    <option value="2">WIN 1251</option>
+    <option value="3">UTF-8</option>
+</select>
+<label for="codeChoice"> Кодировка файла</label>
+<table class="wdt">
+    <tr><th>сообщения JS</th></tr>
+    <tr><td id="cell_01">Cell 01</td></tr>
+    <tr><td id="cell_02">Cell 02</td></tr>
+    <tr><td id="cell_03">Cell 03</td></tr>
+    <tr><td id="cell_04">Cell 04</td></tr>
+    <tr><td id="cell_05">Cell 05</td></tr>
+    <tr><td id="cell_06">Cell 06</td></tr>
+    <tr><td id="cell_07">Cell 07</td></tr>
+    <tr><td id="cell_08">Cell 08</td></tr>
+</table>
+
+<h2>Input File</h2>
+<input type="file" id="inputFile" accept=".txt, .html, .css, .js" onchange="readFile(this)">
+
+<div>
+<textarea id="txtArea" rows="20" cols="120" placeholder="text"></textarea>
+</div>
+
+<footer><div>Pol Banky &#169; 2021</div></footer>								
+	<script src="js/readTxt.js"></script>	
+</body></html>

@@ -137,6 +137,9 @@ input:focus {
 }
 input.grad { width: 100px;	}   /* Для инпута в Angle = grad */
 input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
+input#inputFile {
+	width: 500px;
+}
 	/*  end  I N P U T  */
 
 label {	/* default display: inline */
@@ -194,6 +197,13 @@ select.big2 {
 	margin-bottom: 4px;
 	margin-left: 10px;
 	padding: 8px 3px 8px 3px;	
+}
+select.big3 {
+	width: 150px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	margin-left: 10px;
+	padding: 4px 3px 4px 3px;	
 }
 	/*  end  S E L E C T  */
 
