@@ -138,7 +138,10 @@ input:focus {
 input.grad { width: 100px;	}   /* Для инпута в Angle = grad */
 input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
 input#inputFile {
-	width: 500px;
+	margin-left: 10px;
+	width: 530px;
+	background-color: #ffffff;
+	border: none;
 }
 	/*  end  I N P U T  */
 
@@ -243,6 +246,11 @@ span {
 }
 .greek {
     font-family: GreekC, Symbol, sans-serif;
+}
+
+textarea.outTxt {
+	width: 880px;
+	height: 800px;
 }
 	/* Style apply to element with id="clock" */
 #clock {
