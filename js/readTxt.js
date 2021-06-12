@@ -3,6 +3,27 @@
 let v_codeChoice  = document.getElementById("codeChoice");
 v_codeChoice.addEventListener("change",event_codeChoice);
 
+const txtArea = document.getElementById("txtArea");
+const downloadBtn = document.getElementById("downloadFile");
+// здесь будет хранится файл после загрузки
+// нужен для того чтобы взять из него имя загруженного файла (чтобы дать загрузить файл с таким же именем)
+let file = null;
+
+downloadBtn.addEventListener("click", () => {
+  const newFileName = file ? file.name : "newFile.txt"
+  const newFile = new File([txtArea.value], newFileName, {
+    type: "text/plain",
+  });
+  const objectURL = URL.createObjectURL(newFile);
+  const link = document.createElement("a");
+
+  link.href = objectURL;
+  link.download = newFileName;
+  link.click();
+
+  URL.revokeObjectURL(objectURL);
+});
+
 // let reg = /(iPhone|Android|iPad|RIM)/;
 // let result = navigator.userAgent.match(reg);
 // console.log(`navigator result = ${result}`);
@@ -26,7 +47,7 @@ function readFile(inp) {
   console.log(`whatCode now = ${whatCode}, readed = ${readed}`);
   // v_cell_04.textContent = `input type = ${input.type}, input.accept = ${input.accept}`;
   // console.log(`files number = ${input.files.length}`);
-  let file = inp.files[0];
+  file = inp.files[0];
   // v_cell_05.textContent = `file name: ${file.name}, last modified: ${file.lastModifiedDate}`;
   console.log(inp.files[0]);
   let reader = new FileReader();
