@@ -110,6 +110,10 @@ button {
 	color: #bb00bb;
 	text-align: center;
 }
+button#downloadFile {
+	width: 200px;
+	margin-left: 30px;
+}
 button:focus {
 	background-color: palegreen;
     background-image: url("../img/tick_16.png");
@@ -137,16 +141,21 @@ input:focus {
 }
 input.grad { width: 100px;	}   /* Для инпута в Angle = grad */
 input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
+
 input#inputFile {
 	margin-left: 10px;
-	width: 530px;
-	background-color: #ffffff;
+	width: 600px;
+	background-color: #ffffbbaa;
 	border: none;
+}
+input#inputFileName {
+	width: 350px;
 }
 	/*  end  I N P U T  */
 
 label {	/* default display: inline */
 	font-size: 1.1em; /* Размер шрифта         */
+	background-color: #ffffbbaa;
 	/* margin: 5px 0px; */  /* top right bottom left */
 	/* padding: 4px; */     /* top right bottom left */
 }
@@ -248,9 +257,9 @@ span {
     font-family: GreekC, Symbol, sans-serif;
 }
 
-textarea.outTxt {
+textarea#txtArea {
 	width: 880px;
-	height: 800px;
+	height: 600px;
 }
 	/* Style apply to element with id="clock" */
 #clock {

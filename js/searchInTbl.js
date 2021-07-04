@@ -1,13 +1,11 @@
 'use strict';
 
-let v_txtInput = document.getElementById("txtInput");     // HTML Input
-v_txtInput.addEventListener("keyup",SearchInTbl);
-let v_table = document.getElementById("tblGOST"); // HTML Table
+let v_txtInput = document.getElementById("txtInput"); // HTML Input
+let v_table = document.getElementById("tblGOST");     // HTML Table
 let v_tr = v_table.getElementsByTagName("tr");
 let i, td, filter, txtValue;
 
-function SearchInTbl() {
-    // console.log('Searching');
+v_txtInput.addEventListener("keyup", () => {
 filter = v_txtInput.value.toUpperCase();
 for (i=0; i<v_tr.length; i++) {
     td = v_tr[i].getElementsByTagName("td")[1];
@@ -18,4 +16,4 @@ for (i=0; i<v_tr.length; i++) {
         } else { v_tr[i].style.display = "none"; }
         } /* if(td) */
     } /* for */
-} /* function SearchInTbl() */
+});   /* v_txtInput.addEventListener */

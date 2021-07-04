@@ -3,30 +3,44 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Read File</title>
+	<title>.txt Editor</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="img/explorer.png" type="img/x-icon">
 </head>
 <body>
 <a href="indexRootHelp.html" target="_blank">	<!--H E L P-->
 <img class="imgBtn64" src="img/pic-question_128.png" alt="Pic Question"></a>
-<h1><img class="imgBtn64B" src="img/explorer.png" alt="Pic">Read File</h1>
+<h1><img class="imgBtn64B" src="img/explorer.png" alt="Pic">.txt Editor</h1>
+
 <div>
-<select class="big3" id="codeChoice">
-    <option value='1'>DEFAULT</option>
-    <option value='2'>WIN-1251</option>
-    <option value='3'>UTF-8</option>
+<select id="selectCode" title="Кодировка прочитанного файла">
+    <option value='UTF-8'>UTF-8</option>
+    <option value='WIN-1251'>WIN-1251</option>
 </select>
-<label for="codeChoice"> Кодировка файла</label>
-
-<input type="file" id="inputFile" accept=".txt, .html, .css, .js" onchange="readFile(this)">
-
-<button id="downloadFile" type="button">Скачать файл</button>
+<label for="selectCode"> Кодировка файла</label>
+<input type="file" id="inputFile" accept=".txt, .html, .css, .js, .svg" onchange="readFile(this)">
 </div>
+
 <div>
-<textarea id="txtArea" class="outTxt" title="Текст открытого файла" placeholder="text"></textarea>  
+<input type="text" id="inputFileName" value="newFile" title="Имя файла для записи">
+<label for="inputFileName"> Имя</label>
+
+<select id="selectExt" title="Расширение файла для записи">
+		<option value='txt'>txt</option>
+		<option value='html'>html</option>
+		<option value='css'>css</option>
+		<option value='js'>js</option>
+		<option value='svg'>svg</option>
+</select>
+<label for="selectExt"> Расширение</label>
+
+<button id="buttonDownloadFile" type="button">Скачать файл</button>
 </div>
-<!-- placeholder="text" -->
+
+<div>
+<textarea id="txtArea" placeholder="text"></textarea>  
+</div>
+
 <footer><div>Pol Banky &#169; 2021</div></footer>								
 	<script src="js/readTxt.js"></script>	
 </body></html>
