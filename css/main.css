@@ -136,8 +136,6 @@ input {		/* input native = display: inline-block */
 input:focus { 
 	background-color: #ffe4b5;
 	border: 3px solid #d2691e; 
-	/* border: 3px solid turquoise;  */
-	/* transition: background-color 1s; */
 }
 input.grad { width: 100px;	}   /* Для инпута в Angle = grad */
 input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
@@ -145,7 +143,7 @@ input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
 input#inputFile {
 	margin-left: 10px;
 	width: 600px;
-	background-color: #ffffbbaa;
+	background-color: #ffffff;
 	border: none;
 }
 input#inputFileName {
@@ -154,10 +152,8 @@ input#inputFileName {
 	/*  end  I N P U T  */
 
 label {	/* default display: inline */
-	font-size: 1.1em; /* Размер шрифта         */
-	background-color: #ffffbbaa;
-	/* margin: 5px 0px; */  /* top right bottom left */
-	/* padding: 4px; */     /* top right bottom left */
+	font-size: 1.1em; /* Размер шрифта */
+	/* background-color: #ffffbbaa; */
 }
 label.fat {
 	font-size: 1.3em;
@@ -168,7 +164,7 @@ label.fat {
 
 	/*  F I E L D S E T  */
 fieldset {
-	background-color: #d4e09e40;/* #d2b48c don't touch !!! */
+	background-color: #d4e09e40; /* #d2b48c don't touch !!! */
 	margin-block-start: 0.5em;
 	margin-block-end: 0.5em;
 	padding-inline-start: 0.25em;
