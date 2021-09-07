@@ -18,32 +18,45 @@
 <body>
 	<h1><img class="imgBtn64A" src="img/pic-question_128.png" alt="Pic">Help</h1>
 		<h3>Параметры экрана</h3>
-		<div>
-			<div class="divOutPut" id="screenHere"></div>
-			<div>- разрешение экрана, пикселей</div>			
-		</div>
-		<div>
-			<div class="divOutPut" id="clientHere"></div>
-			<div>- разрешение клиента, пикселей</div>
-		</div>
-		<div>
-			<div class="divOutPutMLine" id="whatBase"></div>
-			<div>- It's adress of Base for This Page</div>
-		</div>
-		<div class="alertString" id="forInfo">Определение типа устройства..</div>
-		<div class="alertString" id="forInfo1"></div>
-	<figure>
-		<img src="img/triangle_256.gif" height="256" alt="deep">
-	</figure>	
-	<h3>Интерфейс главного окна сайта включает в себя</h3>
-	<ol>
-		<li>Строка меню со ссылками на разделы сайта и (если Инет подключен) на сайты в Инете</li>
-		<li>Часы</li>
-		<li>Панель кнопок со ссылками на разделы сайта</li>
-	</ol>
+
+	<!-- ТАБЛИЦА ПАРАМЕТРОВ -->
+<table id="tblDeviceParams">
+	<tr>
+		<td>Разрешение экрана, пикселей</td> <!-- Параметр -->		
+		<td id="screenHere"></td>			 <!-- Значение -->
+	</tr>
+	<tr>
+		<td>Разрешение клиента, пикселей</td> <!-- Параметр -->		
+		<td id="clientHere"></td>			  <!-- Значение -->
+	</tr>
+	<tr>
+		<td>Adress of Base for This Page</td> <!-- Параметр -->		
+		<td id="whatBase"></td>			      <!-- Значение -->
+	</tr>
+	<tr>
+		<td id="forInfo" colspan="2">Определение типа устройства..</td> <!-- Значение -->
+	</tr>
+	<tr>
+		<td id="forInfo1" colspan="2"></td> <!-- Значение -->
+	</tr>
+	<tr>
+		<td id="forInfo2" colspan="2"></td> <!-- Значение -->
+	</tr>
+</table> <!-- ТАБЛИЦА ПАРАМЕТРОВ -->
+
+<figure>
+	<img src="img/triangle_256.gif" height="256" alt="deep">
+</figure>	
+
+<h3>Интерфейс главного окна сайта включает в себя</h3>
+<ol>
+	<li>Строка меню со ссылками на разделы сайта и (если Инет подключен) на сайты в Инете</li>
+	<li>Часы</li>
+	<li>Панель кнопок со ссылками на разделы сайта</li>
+</ol>
 
 <footer>
-	<div>Programm ver. 2021_07_31</div>
+	<div>Programm ver. 2021_09_15</div>
 	<div>Pol Banky &#169; 2021</div>
 </footer>
 		<!-- JS для определения разрешений экрана и клиента -->

@@ -1,37 +1,36 @@
 'use strict';
     // Для: indexRootHelp --- js/indexRootHelp.js
 
-var widthScreen  = screen.width;               // ширина 
-var heightScreen = screen.height;              // высота
-var widthClient  = document.body.clientWidth;  // ширина клиента
-var heightClient = document.body.clientHeight; // высота клиента
+let widthScreen  = screen.width;               // ширина 
+let heightScreen = screen.height;              // высота
+let widthClient  = document.body.clientWidth;  // ширина клиента
+let heightClient = document.body.clientHeight; // высота клиента
 
-var scr = document.getElementById('screenHere');
-var cli = document.getElementById('clientHere');
-var inf = document.getElementById("forInfo");
-var inf1 = document.getElementById("forInfo1");
-var bs = document.getElementById("whatBase");
+let scr = document.getElementById('screenHere');
+let cli = document.getElementById('clientHere');
+let inf = document.getElementById("forInfo");
+let inf1 = document.getElementById("forInfo1");
+let inf2 = document.getElementById("forInfo2");
+let bs = document.getElementById("whatBase");
 
 this.addEventListener("load",where);
 
-scr.innerHTML = widthScreen + " x " + heightScreen;
-cli.innerHTML = widthClient + " x " + heightClient;
+scr.textContent = widthScreen + " x " + heightScreen;
+cli.textContent = widthClient + " x " + heightClient;
 
 
 function where() {
-var txt = document.baseURI;
-bs.innerHTML = txt;
+let txt = document.baseURI;
+bs.textContent = txt;
 let reg = /(iPhone|Android|iPad|RIM)/;
-console.log(reg);
-console.log(navigator.userAgent.match(reg));
-
+// console.log(reg);
+// console.log(navigator.userAgent.match(reg));
 if (navigator.userAgent.match(reg)) {
-    inf.innerHTML = "Сайт открыт на мобильном устройстве";
-}
+    inf.textContent = "Сайт открыт на мобильном устройстве";
+} // if
 else {
-    inf.innerHTML = "Сайт открыт на десктопе";
-}
-// let br = navigator.platform;
-inf1.innerHTML = navigator.userAgent;
-// inf1.innerHTML = navigator.platform;
-}   // where()
+    inf.textContent = "Сайт открыт на десктопе";
+} // else
+inf1.textContent = navigator.userAgent;
+inf2.textContent = navigator.platform;
+} // function where()

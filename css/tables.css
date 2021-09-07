@@ -101,6 +101,18 @@ table#flangeInfo { /* F L A N G E */
     text-align: center;
 }
 
+    /* table ID = tblDeviceParams */
+#tblDeviceParams {
+    width: 100%;
+}
+#tblDeviceParams td:nth-child(1) {
+    width: 35%;
+}
+#tblDeviceParams td:nth-child(2) {
+    width: auto;
+    text-align: center;
+}
+
     /* table ID = symOften (таблица символов юникода) */
 #symOften {
     width: 100%;
@@ -122,13 +134,13 @@ table#flangeInfo { /* F L A N G E */
     width: 13%; /* fix 14  ( Dec )  */
 }
 #symOften td:nth-child(4) {
-    width: 12%; /* fix 11 */
+    width: 11%; /* fix 11 */
 }
 #symOften td:nth-child(5) {
     width: 38%;
 }
 #symOften td:nth-child(6) {
-    width: 11%; /* fix 10 */
+    width: 9%; /* fix 10 */
 }
 #symOften td:nth-child(7) {
     width: auto; /* fix 11 */
