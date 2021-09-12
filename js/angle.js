@@ -1,19 +1,19 @@
 'use strict';
 // Для совместимости с мобильными устройствами события keypress не используются, используется только событие input
     // Переменные = ссылки на HTML элементы
-var v_iDec = document.getElementById("IDec");   // HTML Input = i(nput)Dec(imal)
-var v_iG   = document.getElementById('IG');
-var v_iM   = document.getElementById('IM');
-var v_iS   = document.getElementById('IS');
-var cl  = document.getElementById('clear');     // элемент legend панели ввода данных
-var inf = document.getElementById('forInfo');   // строка состояния
-var btn = document.getElementById('btn_calc');  // кнопка считать тригенометрию
-var showRad = document.getElementById('angl_in_rad_output');    // Вывод значения угла в радианах
-var showRadLabel = document.getElementById('in_rad_lbl');       // Лебел вывода значения угла в радианах
-var showSin = document.getElementById('sin_output');
-var showCos = document.getElementById('cos_output');
-var showTg  = document.getElementById('tg_output');
-var showCtg = document.getElementById('ctg_output');
+let v_iDec = document.getElementById("IDec");   // HTML Input = i(nput)Dec(imal)
+let v_iG   = document.getElementById('IG');
+let v_iM   = document.getElementById('IM');
+let v_iS   = document.getElementById('IS');
+let cl  = document.getElementById('clear');     // элемент legend панели ввода данных
+let inf = document.getElementById('forInfo');   // строка состояния
+let btn = document.getElementById('btn_calc');  // кнопка считать тригенометрию
+let showRad = document.getElementById('angl_in_rad_output');    // Вывод значения угла в радианах
+let showRadLabel = document.getElementById('in_rad_lbl');       // Лебел вывода значения угла в радианах
+let showSin = document.getElementById('sin_output');
+let showCos = document.getElementById('cos_output');
+let showTg  = document.getElementById('tg_output');
+let showCtg = document.getElementById('ctg_output');
 
     // События на HTML элементах (и ссылки на функции - обработчики событий)
 cl.addEventListener("click",clearAll_angle);
@@ -38,25 +38,25 @@ v_iM.addEventListener("click",cursorPos);   // click
 window.addEventListener("load",ld);             // load page angle.html
 window.addEventListener("beforeunload",bULd);   // unload page angle.html
 
-var i = 0;          // номера стартов функции события
+let i = 0;          // номера стартов функции события
 
-var angleDec = 0;   // Угол с клавы в ДЕСЯТИЧНЫХ град
-var Angle_Sec = 0;  // Угол с клавы в секундах
-var numG = 0;       // Целых градусов в угле
-var degSec = 0;     // Целых градусов в угле - в секундах
-var fracSec = 0;    // Дробная часть градуса - в секундах
-var fracMin = 0;    // Дробная часть градуса - в минутах
-var numM = 0;       // Целых минут в дробной части
-var minSec = 0;     // Целых минут в дробной части - в секундах
-var numS = 0;       // Секунды - то что осталось
-var deg1 = 0;       // deg в deg-min-sec
-var min1 = 0;       // min в deg-min-sec
-var sec1 = 0;       // sec в deg-min-sec
-var angleInRad = 0; // Угол angleDec в радианах
+let angleDec = 0;   // Угол с клавы в ДЕСЯТИЧНЫХ град
+let Angle_Sec = 0;  // Угол с клавы в секундах
+let numG = 0;       // Целых градусов в угле
+let degSec = 0;     // Целых градусов в угле - в секундах
+let fracSec = 0;    // Дробная часть градуса - в секундах
+let fracMin = 0;    // Дробная часть градуса - в минутах
+let numM = 0;       // Целых минут в дробной части
+let minSec = 0;     // Целых минут в дробной части - в секундах
+let numS = 0;       // Секунды - то что осталось
+let deg1 = 0;       // deg в deg-min-sec
+let min1 = 0;       // min в deg-min-sec
+let sec1 = 0;       // sec в deg-min-sec
+let angleInRad = 0; // Угол angleDec в радианах
 
 
 function I(txt) {
-    inf.innerHTML = txt;
+    inf.textContent = txt;
 }   // I(txt)
  
 function cursorPos(event) {  // keyup & click
@@ -69,7 +69,7 @@ function ld() { // load
     console.log('Window loaded');
     // console.log(window);
 if(localStorage.getItem('DecStor')) {
-    var stor = localStorage.getItem('DecStor'); // string
+    let stor = localStorage.getItem('DecStor'); // string
     console.log("Value in local storage = " + stor + "; data type = " + typeof(stor));
 if((stor !== '0') & (stor !== null)) {
     v_iDec.value = stor;
@@ -108,7 +108,7 @@ if((this.value==='')||((this.value = checkFix(this.value))==='')) {
     angleDec = parseFloat(this.value);
 while(angleDec > 359.999) {   // while т.к. может быть копипаста
     console.log('if-4: this.value before this.value.substring() = ' + this.value + ' >= 360');
-    var tmpTxt = cutty(this.value, event.target.selectionStart);
+    let tmpTxt = cutty(this.value, event.target.selectionStart);
     this.value = tmpTxt;
     angleDec = parseFloat(this.value);
 }   // while
@@ -130,7 +130,7 @@ numG = 0;
     else numG = parseInt(this.value);
 while(numG > 359) {   // while т.к. может быть копипаста
     console.log('if-4: this.value before this.value.substring() = ' + this.value + ' > 359');
-    var tmpTxt = cutty(this.value, event.target.selectionStart);
+    let tmpTxt = cutty(this.value, event.target.selectionStart);
     this.value = tmpTxt;
     numG = parseInt(this.value);
     console.log("Значение numG == " + numG + "; type == " + typeof(numG));
@@ -153,7 +153,7 @@ numM = 0;
     else numM = parseInt(this.value);
 while(numM > 59) {   // while т.к. может быть копипаста
     console.log('if-4: this.value before this.value.substring() = ' + this.value + ' > 59');
-    var tmpTxt = cutty(this.value, event.target.selectionStart);
+    let tmpTxt = cutty(this.value, event.target.selectionStart);
     this.value = tmpTxt;
     numM = parseInt(this.value);
     console.log("Значение numM == " + numM + "; type == " + typeof(numM));
@@ -176,7 +176,7 @@ numS = 0;
     else numS = parseFloat(this.value);
 while(numS > 59.99999) {   // while т.к. может быть копипаста
     console.log('if-4: this.value before this.value.substring() = ' + this.value + ' >= 60');
-    var tmpTxt = cutty(this.value, event.target.selectionStart);
+    let tmpTxt = cutty(this.value, event.target.selectionStart);
     this.value = tmpTxt;
     numS = parseFloat(this.value);
     console.log("Значение numS == " + numS + "; type == " + typeof(numS));
@@ -226,35 +226,35 @@ function calcRun(event) {
 
 
 function gradInRad() {
-    var dFactor = Math.PI / 180;  // = 0,01745329251994329576923690768489
+    let dFactor = Math.PI / 180;  // = 0,01745329251994329576923690768489
     console.log("\nЗначение angleDec for gradInRad() = " + angleDec + "; type = " + typeof(angleDec));
     angleInRad = angleDec * dFactor;
-    showRad.innerHTML = angleInRad.toFixed(6);
-    showRadLabel.innerHTML = "Угол " + angleDec + "\u00B0 - в радианах";
+    showRad.textContent = `${angleDec} \u00D7 (\u03C0 / 180) = ${angleInRad.toFixed(6)}`; 
+    showRadLabel.textContent = `Угол ${angleDec}\u00B0 - в радианах`;
 } // function gradInRad()
 
 
 function sin() {
-    var sin1 = Math.sin(angleInRad).toFixed(6); 
-    showSin.innerHTML = sin1;
-}   // sin
+    let sin1 = Math.sin(angleInRad).toFixed(6); 
+    showSin.textContent = sin1;
+} // sin
 
 
 function cos() {
-    var cos1 = Math.cos(angleInRad).toFixed(6); 
-    showCos.innerHTML = cos1;
-}   // cos
+    let cos1 = Math.cos(angleInRad).toFixed(6); 
+    showCos.textContent = cos1;
+} // cos
 
 
 function tg() {
-    var tg1 = Math.tan(angleInRad).toFixed(6); 
-    showTg.innerHTML = tg1;
-}   // tg
+    let tg1 = Math.tan(angleInRad).toFixed(6); 
+    showTg.textContent = tg1;
+} // tg
 
 
 function ctg() {
-    var ctg1 = 'ctg = 1 / 0';
+    let ctg1 = 'ctg = 1 / 0';
 if((Math.tan(angleInRad).toFixed(6))!=0)
     ctg1 = (1/Math.tan(angleInRad)).toFixed(6);
-    showCtg.innerHTML = ctg1;
-}   // ctg
+    showCtg.textContent = ctg1;
+} // ctg

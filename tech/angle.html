@@ -13,64 +13,81 @@
 	<img class="imgBtn64" src="../img/pic-question_128.png" alt="question">
 </a>
 	<h1><img class="imgBtn64B" src="../img/favicon32angle.svg" alt="Pic">Convert Angle</h1>			
-		<!-- Form !!!!! -->
-	<form action="" onsubmit="return false;">
-<fieldset>
-	<legend class="button" id="clear" title="Clear All Inputs (Alt+0)" accesskey="0">Исходные данные</legend>		
-<div>	<!-- INPUT DEC ANGLE, GRAD     type="number" -->
-	<input type="text" id="IDec" placeholder="Angle Decimal (Alt+1)" accesskey="1">	<!-- I(nput)Dec(imal) -->
-		<label class="fat"> &#176; </label>
-		<label for="IDec"> Angle in decimal grad</label>	
-</div>		
-<div>	<!-- INPUT MIN/SEC ANGLE, GRAD -->
-	<input type="text" class="grad" id="IG" placeholder="Grad">
-		<label class="fat"> &#176; </label>
-	<input type="text" class="minsec" id="IM" placeholder="Min">
-		<label class="fat"> &#39; </label>
-	<input type="text" class="minsec" id="IS" placeholder="Sec">
-		<label class="fat"> &#34; </label>
-		<label for="IG"> Angle in grad, min, sec.</label>	
-</div>
-<div class="alertString" id="forInfo" title="Cursor Position in active Input">Ready</div>	
-
-<!-- <div>	 -->
-	<button type="button" id="btn_calc" title="Alt+2" accesskey="2">Calculate Angle's Trig</button> <!-- BUTTON RUN  галочка на кнопке - см. css -->
-<!-- </div> -->
-</fieldset>
-	<!-- Расчет тригенометрии угла -->
-<fieldset>
-	<legend>Angle's Trigenometry</legend>
+	<!-- I N P U T  A N G L E --> 
+<fieldset><legend class="button" id="clear" title="Clear All Inputs (Alt+0)" accesskey="0">Исходные данные</legend>
 <div class="flexContainerIt">
-	<div> <!-- .output > div -->
-		<div>	
-			<div class="divOutPut" id="angl_in_rad_output">0.000</div>
-			<div id="in_rad_lbl">Угол в радианах</div>
-		</div>
-		<div>
-			<div class="divOutPut" id="sin_output">0.000</div>
-			<div id="sin_lbl">Синус угла = AB / OB</div>
+	<div>	
+		<div>	<!-- INPUT DEC ANGLE, GRAD     type="number" -->
+			<input type="text" id="IDec" placeholder="Angle Decimal (Alt+1)" accesskey="1">	<!-- I(nput)Dec(imal) -->
+				<label class="fat"> &#176; </label>
+				<label for="IDec"> Angle in decimal grad</label>	
 		</div>		
-		<div>
-			<div class="divOutPut" id="cos_output">0.000</div>
-			<div id="cos_lbl">Косинус угла = OA / OB</div>
+		<div>	<!-- INPUT MIN/SEC ANGLE, GRAD -->
+			<input type="text" class="grad" id="IG" placeholder="Grad">
+				<label class="fat"> &#176; </label>
+			<input type="text" class="minsec" id="IM" placeholder="Min">
+				<label class="fat"> &#39; </label>
+			<input type="text" class="minsec" id="IS" placeholder="Sec">
+				<label class="fat"> &#34; </label>
+				<label for="IG"> Angle in grad, min, sec.</label>	
 		</div>
-		<div>
-			<div class="divOutPut" id="tg_output">0.000</div>
-			<div id="tg_lbl">Тангенс угла = AB / OA</div>
-		</div>
-		<div>
-			<div class="divOutPut" id="ctg_output">0.000</div>
-			<div id="ctg_lbl">Котангенс угла = OA / AB</div>
-		</div>
-	</div> <!-- .output > div -->
-	<div> <!-- .output > div + div -->
-		<img src="../data/Tg.svg" alt="Triangle">
-	</div> <!-- .output > div + div -->
+		<div class="alertString" id="forInfo" title="Cursor Position in active Input">Ready</div>
+	<!-- B U T T O N   R U N   галочка на кнопке - см. css -->
+		<button type="button" id="btn_calc" title="Alt+2" accesskey="2">Calculate Angle's Trig</button>
 </div>
+	<div>	<!-- .output > div + div -->
+		<img src="../data/Tg.svg" alt="Triangle">
+	</div>	<!-- .output > div + div -->
+</div> <!-- <div class="flexContainerIt"></div> -->
 </fieldset>
-	</form>	<!-- end of Form !!!!! -->
+	
+<!-- Расчет & show тригенометрии угла -->
+<table id="tblAngleOut">
+	<tr>	<!-- Заголовок таблицы -->
+		<th>Параметр</th>
+		<th title="Обозначение">Об.</th>
+		<th title="Единица измерения">Ед.</th>
+		<th>Формула</th>
+		<th>Значение</th>
+	</tr>	<!-- Заголовок таблицы -->
+	<tr>	<!-- Угол в радианах -->
+		<td id="in_rad_lbl">Угол в радианах</td> <!-- Параметр -->
+		<td>&#945;</td>		<!-- Буква альфа --> <!-- Обозначение -->
+		<td>rad</td>							 <!-- Единица измерения -->
+		<td>&#945;(grad) &times; (&#960; / 180) = &#945;(rad)</td> <!-- Формула -->
+		<td id="angl_in_rad_output"></td>		 <!-- Значение -->
+	</tr>
+	<tr>	<!-- Синус угла -->
+		<td>Синус угла = AB / OB</td> <!-- Параметр -->
+		<td>sin &#945;</td>			  <!-- Обозначение -->
+		<td>-</td>					  <!-- Единица измерения -->
+		<td>sin &#945;</td> 		  <!-- Формула -->
+		<td id="sin_output"></td>	  <!-- Значение -->		
+	</tr>
+	<tr>	<!-- Косинус угла -->
+		<td>Косинус угла = OA / OB</td> <!-- Параметр -->
+		<td>cos &#945;</td>			  	<!-- Обозначение -->
+		<td>-</td>					  	<!-- Единица измерения -->
+		<td>cos &#945;</td> 		  	<!-- Формула -->
+		<td id="cos_output"></td>	  	<!-- Значение -->		
+	</tr>
+	<tr>	<!-- Тангенс угла -->
+		<td>Тангенс угла = AB / OA</td> <!-- Параметр -->
+		<td>tg &#945;</td>			  	<!-- Обозначение -->
+		<td>-</td>					  	<!-- Единица измерения -->
+		<td>tg &#945;</td> 		  		<!-- Формула -->
+		<td id="tg_output"></td>	  	<!-- Значение -->		
+	</tr>
+	<tr>	<!-- Котангенс угла -->
+		<td>Котангенс угла = OA / AB</td> <!-- Параметр -->
+		<td>ctg &#945;</td>			  	  <!-- Обозначение -->
+		<td>-</td>					  	  <!-- Единица измерения -->
+		<td>ctg &#945;</td> 		  	  <!-- Формула -->
+		<td id="ctg_output"></td>	  	  <!-- Значение -->		
+	</tr>
+</table> <!-- ТАБЛИЦА РЕЗУЛЬТАТОВ РАСЧЕТА -->	
 
-	<footer><div>Pol Banky &#169; 2021</div></footer>
-	<script src="../js/float.js"></script>	
-	<script src="../js/angle.js"></script>	
+<footer><div>Pol Banky &#169; 2021</div></footer>
+<script src="../js/float.js"></script>	
+<script src="../js/angle.js"></script>	
 </body></html>

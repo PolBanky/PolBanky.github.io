@@ -333,7 +333,7 @@
 
     <!-- E X C E L  &  V B A -->
 <h2 id="excelVba">Excel & VBA - Hot Keys <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
-<table class="wdt firstColumn16">
+<table class="wdt firstColumn20">
     <tr><th colspan="2">Excel</th></tr>
     <tr><td><kbd>Alt</kbd> + F11</td><td>VBA Editor</td></tr>
     <tr><td><kbd>Alt</kbd> + F8</td><td>Панель списка макросов для их выполнения или редактирования</td></tr>
@@ -397,13 +397,13 @@
 <p>HTML UTF-8 Reference => <a href="https://www.w3schools.com/charsets/ref_html_utf8.asp" target="_blank">https://www.w3schools.com/charsets/ref_html_utf8.asp</a>;  Полный список символов => <a href="https://www.unicode.org/charts" target="_blank">https://www.unicode.org/charts</a></p>
 <p>Чтобы показать на html странице ссылку на какой-нибудь специальный символ в виде текста надо вместо символа & (амперсанд) использовать его аббревиатуру (entity): &ampamp. Узнать юникод символа в текстовом файле можно если открыть файл в Word, выделить символ и нажать <kbd>Alt</kbd> + x</p>
 
-<style>
+<!-- <style>
 p.str8 {
     text-indent: 0px;
     padding: 0px;
     margin: 0px;
-} 
-</style>
+}
+</style> -->
         
 <table class="wdt"> <caption>Examples</caption>
 <tr><td>Entity</td> <td>d = &ampOslash;50 &ampdeg;</td>      <td>d = &Oslash;50&deg;</td></tr>
@@ -413,13 +413,14 @@ p.str8 {
 <h4>Инструкция вставки спецсимволов через CSS и JS</h4>
 <p>Для вставки специальных символов через CSS код можно использовать только 16-ричный код и не в том виде, что он дан в таблице. Каждый 16-ричный символ в таблице кодируется так - &#x"шестнадцитиричный код"; если вы хотите добавить символ, то вам нужно скопировать необходимый "шестнадцитиричный код" из таблицы (без приставки &#x), поставить перед ним обратный слеш \ и добавить его при помощи свойства content. Чаше всего также для использования свойства content применяют псевдоклассы :before или :after.</p>
 <p>Для вставки специальных символов через JS вам нужно скопировать необходимый "шестнадцитиричный код" из таблицы (без приставки &#x), поставить перед ним обратный слеш \ и букву 'u', т.е = '\u' и добавить его при помощи кода JS</p>
-<table class="wdt"> <caption>Examples continue</caption>
+<table class="wdt"> <caption>Examples - continue</caption>
 <tr><td>CSS</td>
     <td>&lt;style&gt;p.str8::after{content:'\00B0';}&lt;&#47;style&gt;&lt;p class="str8">A = 50&lt;&#47;p&gt;</td>
-    <td><style>p.str8::after{content:'\00B0';}</style><p class="str8">A = 50</p></td></tr>
+    <td><p class="str8">A = 50</p></td></tr>
+    <!-- <td><style>p.str8::after{content:'\00B0';}</style><p class="str8">A = 50</p></td></tr> -->
 <tr><td>JS</td>
     <td>v_ex.textContent = `D\u2081 = \u00F8${mult(a1, b1)} - \u03B1 - \u2205`;</td>
-    <td id="example1">0</td></tr>
+    <td id="example1"></td></tr>
 </table>
 
 <table id="symOften">  <caption>Наиболее часто используемые символы</caption>
@@ -434,7 +435,7 @@ p.str8 {
 <tr><td>&#188;</td> <td>&amp#188;</td> <td>&amp#x000BC;</td> <td>&ampfrac14;</td> <td>VULGAR FRACTION ONE QUARTER</td>        <td>\u00BC</td> <td><kbd>Alt</kbd> + 0188</td></tr>
 <tr><td>&#189;</td> <td>&amp#189;</td> <td>&amp#x000BD;</td> <td>&ampfrac12;</td> <td>VULGAR FRACTION ONE HALF</td>           <td>\u00BD</td> <td><kbd>Alt</kbd> + 0189</td></tr>
 <tr><td>&#190;</td> <td>&amp#190;</td> <td>&amp#x000BE;</td> <td>&ampfrac34;</td> <td>VULGAR FRACTION THREE QUARTERS</td>     <td>\u00BD</td> <td><kbd>Alt</kbd> + 0189</td></tr>
-<tr><td>&#215;</td> <td>&amp#215;</td> <td>&amp#x000D7;</td> <td>&amptimes;</td>  <td>MULTIPLICATION SIGN</td>                <td>\u00D8</td> <td><kbd>Alt</kbd> + 0215</td></tr>
+<tr><td>&#215;</td> <td>&amp#215;</td> <td>&amp#x000D7;</td> <td>&amptimes;</td>  <td>MULTIPLICATION SIGN</td>                <td>\u00D7</td> <td><kbd>Alt</kbd> + 0215</td></tr>
 <tr><td>&#216;</td> <td>&amp#216;</td> <td>&amp#x000D8;</td> <td>&ampOslash;</td> <td>LATIN CAPITAL LETTER O WITH STROKE</td> <td>\u00D8</td> <td><kbd>Alt</kbd> + 0216</td></tr>
 <tr><td>&#248;</td> <td>&amp#248;</td> <td>&amp#x000F8;</td> <td>&amposlash;</td> <td>LATIN SMALL LETTER O WITH STROKE</td>   <td>\u00F8</td> <td><kbd>Alt</kbd> + 0248</td></tr>
 <tr><td>&#945;</td> <td>&amp#945;</td> <td>&amp#x003B1;</td> <td>&ampalpha;</td>  <td>GREEK SMALL LETTER ALPHA</td>           <td>\u03B1</td> <td><kbd>Alt</kbd> + 0945</td></tr>
@@ -501,7 +502,7 @@ p.str8 {
 
 <!-- Brackets -->
 <h2 id="brackets">Brackets &amp; Embed - Hot Keys <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2>
-<table>
+<table class="wdt firstColumn25">
     <tr><th colspan="2">Brackets - Keys</th></tr>
     <tr><td><kbd>Ctrl</kbd> + E</td><td>Быстрое редактирование</td></tr>
     <tr><td><kbd>Ctrl</kbd> + K</td><td>Быстрая документация</td></tr>
@@ -530,7 +531,7 @@ p.str8 {
 </table>
     <!-- Brackets -->
 
-<footer><div>Pol Banky &#169; 2020</div></footer>
+<footer><div>Pol Banky &#169; 2021</div></footer>
     <script src="../js/fs.js"></script>
     <script src="../js/uni.js"></script>
 </body>

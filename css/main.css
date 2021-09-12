@@ -79,6 +79,16 @@ h4 {
 p {
 	text-indent: 1.5em;		 /* Отступ первой строки */
 }
+/* Для - Инструкция вставки спецсимволов через CSS и JS */
+p.str8 {
+    text-indent: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+/* Для - Инструкция вставки спецсимволов через CSS и JS */
+p.str8::after {
+	content:'\00B0';
+}
 
 footer {
 	display: flex;

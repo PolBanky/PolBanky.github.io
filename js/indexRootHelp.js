@@ -31,6 +31,6 @@ if (navigator.userAgent.match(reg)) {
 else {
     inf.textContent = "Сайт открыт на десктопе";
 } // else
-inf1.textContent = navigator.userAgent;
-inf2.textContent = navigator.platform;
+inf1.textContent = `Сайт открыт на платформе: ${navigator.platform}`;
+inf2.textContent = `User Agent: ${navigator.userAgent}`;
 } // function where()

@@ -10,7 +10,8 @@
 .flexContainerIt {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: top;
+	/* align-items: center; */
 	justify-content: space-between;
 }
 
@@ -65,7 +66,8 @@ kbd {
     font-weight: 700;
     line-height: 1.4;
     padding: 2px 4px;
-    white-space: nowrap;
+	white-space: nowrap;
+	text-indent: 0px;
 }
 
 abbr {
