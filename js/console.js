@@ -1,11 +1,11 @@
 'use strict';
 window.addEventListener("load",page_onload); // onLoad
     // HTML Input 1
-let v_input_F = document.getElementById("input_F");         // HTML Input
-let v_input_A = document.getElementById("input_A");         // HTML Input
+let v_input_F = document.getElementById("input_F"); // HTML Input
+let v_input_A = document.getElementById("input_A"); // HTML Input
     // HTML OutPut 1
-let v_cell_N2 = document.getElementById("cell_N2");         // HTML OutPut
-let v_cell_N1 = document.getElementById("cell_N1");         // HTML OutPut
+let v_cell_N2 = document.getElementById("cell_N2"); // HTML OutPut
+let v_cell_N1 = document.getElementById("cell_N1"); // HTML OutPut
     // LETTERS
 let v_F_left  = document.getElementById("F_left");
 let v_F_right = document.getElementById("F_right");

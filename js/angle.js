@@ -54,6 +54,8 @@ let min1 = 0;       // min в deg-min-sec
 let sec1 = 0;       // sec в deg-min-sec
 let angleInRad = 0; // Угол angleDec в радианах
 
+let digits = 5;     // знаков после разделителя при выводе чисел
+
 
 function I(txt) {
     inf.textContent = txt;
@@ -215,8 +217,8 @@ function Solution1() {
 
     // КНОПКА = input type="button" id="btn_calc"
 function calcRun(event) {
-    console.log("\nEvent num " + ++i + ", type = " + event.type + " in Element id == " + event.target.id);
-    console.log("X = " + event.clientX + " Y = " + event.clientY);
+    // console.log("\nEvent num " + ++i + ", type = " + event.type + " in Element id == " + event.target.id);
+    // console.log("X = " + event.clientX + " Y = " + event.clientY);
     gradInRad();
     sin();
     cos();
@@ -227,34 +229,37 @@ function calcRun(event) {
 
 function gradInRad() {
     let dFactor = Math.PI / 180;  // = 0,01745329251994329576923690768489
-    console.log("\nЗначение angleDec for gradInRad() = " + angleDec + "; type = " + typeof(angleDec));
+    // console.log("\nЗначение angleDec for gradInRad() = " + angleDec + "; type = " + typeof(angleDec));
     angleInRad = angleDec * dFactor;
-    showRad.textContent = `${angleDec} \u00D7 (\u03C0 / 180) = ${angleInRad.toFixed(6)}`; 
+    /* showRad.textContent = `${angleDec} \u00D7 (\u03C0 / 180) = ${angleInRad.toFixed(digits)}`; */ // \u00D7=multSign  \u03C0=Pi
+    showRad.textContent = `${angleDec} \u00D7 0,017453 = ${angleInRad.toFixed(digits)}`;
     showRadLabel.textContent = `Угол ${angleDec}\u00B0 - в радианах`;
 } // function gradInRad()
 
 
 function sin() {
-    let sin1 = Math.sin(angleInRad).toFixed(6); 
+    let sin1 = Math.sin(angleInRad).toFixed(digits); 
     showSin.textContent = sin1;
+    return sin1;
 } // sin
 
 
 function cos() {
-    let cos1 = Math.cos(angleInRad).toFixed(6); 
+    let cos1 = Math.cos(angleInRad).toFixed(digits); 
     showCos.textContent = cos1;
+    return cos1;
 } // cos
 
 
 function tg() {
-    let tg1 = Math.tan(angleInRad).toFixed(6); 
-    showTg.textContent = tg1;
+    let tg1 = Math.tan(angleInRad).toFixed(digits); 
+    showTg.textContent = `${sin()} / ${cos()}  = ${tg1}`;
 } // tg
 
 
 function ctg() {
-    let ctg1 = 'ctg = 1 / 0';
-if((Math.tan(angleInRad).toFixed(6))!=0)
-    ctg1 = (1/Math.tan(angleInRad)).toFixed(6);
-    showCtg.textContent = ctg1;
+    let ctg1 = 'Infinity';
+if((Math.tan(angleInRad).toFixed(digits))!=0)
+    ctg1 = (1/Math.tan(angleInRad)).toFixed(digits);
+    showCtg.textContent = `${cos()} / ${sin()}  = ${ctg1}`;
 } // ctg
