@@ -70,39 +70,43 @@ if(logsView) console.log(`Method cil.w_polar()`);
 }, // w_polar, mm3
 stress: function() {    // S T R E S S  !!!  расчет напряжения в MPa (N/mm2)
 if(logsView) console.log(`Method cil.stress( ${load.selectedLoadTxt[load.selectedLoad]}); load.selectedLoad == ${load.selectedLoad}`);
-    let v = 0;  // технологическая переменная 
-        switch (load.selectedLoad) {                
+    let v = 0;  // технологическая переменная
+
+        switch (load.selectedLoad) { // Выбранная нагрузка
+
     case 0: // Stretch - растяжение
         v = load.loadAction() / this.area(); // сила растяжения (N) / площадь сечения (mm2) = N/mm2 = MPa
         v_out_Calc_Stress.innerHTML =
         `Напряжение растяжения:  F / A = &sigma;, MPa (N/mm<sup>2</sup>) =<br>
         Сила растяжения `+load.loadAction()+` N / Площадь сечения `+format1.format(this.area())+` mm<sup>2</sup> = `+format2.format(v)+` MPa (N/mm<sup>2</sup>)`;
-
         // v_out_Calc_Stress.innerHTML =
         // "Напряжение растяжения \u03C3, MPa (N/mm\u00B2) = " + 
         // "\nСила растяжения " + load.loadAction() + " N / Площадь сечения " + format2.format(this.area()) + " mm" + "\u00B2 = " + v.toFixed(4) + " MPa (N/mm\u00B2)";
-
         return v;
+
     case 1: // Bend - изгиб
         v = load.loadAction() / this.w_axial(); // момент изгибающий (N*mm) / момент сопротивления осевой (mm3) = N/mm2 = MPa
-        v_out_Calc_Stress.innerHTML =
+        v_out_Calc_Stress.innerText =
         "Напряжение изгиба \u03C4, MPa (N/mm\u00B2) = " + 
-        "\nМомент изгиба " + load.loadAction() + " N\u00D7mm / Момент сопротивления осевой " + this.w_axial().toFixed(2) + " mm" + "\u00B3 = " + v.toFixed(4) + " MPa (N/mm\u00B2)";
+        "\nМомент изгиба "+load.loadAction()+" N\u00D7mm / Момент сопротивления осевой "+this.w_axial().toFixed(2)+" mm"+"\u00B3 = "+v.toFixed(4)+" MPa (N/mm\u00B2)";
         v_out_bend_M.innerHTML = load.loadAction().toFixed(1);
         return v;
+
     case 2: // Twist - кручение
         v = load.loadAction() / this.w_polar(); // момент крутящий (N*mm) / момент сопротивления полярный (mm3) = N/mm2 = MPa
-        v_out_Calc_Stress.innerHTML =
+        v_out_Calc_Stress.innerText =
         "Напряжение кручения \u03C4, MPa (N/mm\u00B2) = " + 
         "\nМомент кручения " + load.loadAction() + " N\u00D7mm / Момент сопротивления полярный " + this.w_polar().toFixed(2) + " mm"+"\u00B3  = " + 
         v.toFixed(4) + " MPa (N/mm\u00B2)";
         return v;
+
     case 3:    // Cut - срез
         v = load.loadAction() / this.area(); // сила среза (N) / площадь сечения (mm2) = N/mm2 = MPa
-        v_out_Calc_Stress.innerHTML =
+        v_out_Calc_Stress.innerText =
         "Напряжение среза \u03C4, MPa (N/mm\u00B2) = " + 
         "\nСила среза " + load.loadAction() + " N / Площадь сечения " + this.area().toFixed(2) + " mm" + "\u00B2  = " + v.toFixed(4) + " MPa (N/mm\u00B2)";
-        return v;    //  сила среза / площадь сечения   // break;         
+        return v;    //  сила среза / площадь сечения   // break;
+
         } // switch
 }, // stress: function() in N/mm2 (MPa)
 thickness: function() { // расчет толщины стенки в mm        
@@ -117,10 +121,12 @@ massa: function() {     // расчет массы трубы в gramm
 if(logsView) console.log(`Method cil.massa()`);
     return this.volume() * this.density;  // gramm !!!
 }, // mass()
+
         // OUTPUT
 output_steel: function() { // Обработчик события на v_steelSelector (Select марка стали)
 if(logsView) console.log(`Method cil.output_steel(); v_steelSelector.selectedIndex == ${v_steelSelector.selectedIndex}`);
-v_out_steel.innerHTML = 
+// при innerHTML "\n" не срабатывает
+v_out_steel.innerText = 
 "Марка стали = " + steels[v_steelSelector.selectedIndex][0] +
 "\nВременное сопротивление = " + steels[v_steelSelector.selectedIndex][1] + " MPa" +
 "\nПредел текучести = " + steels[v_steelSelector.selectedIndex][2] + " MPa\n" +
@@ -137,13 +143,13 @@ output_w_polar: function() {
 v_out_wp.innerHTML=`(`+this._Pi_+`&times;`+this.dia_ex()+`<sup>3</sup>/16)&times;(1-(`+this.dia_in()+`/`+this.dia_ex()+`)<sup>4</sup>) = `+format2.format(this.w_polar())+` mm<sup>3</sup>`; // mm3
 },      // output_w_axial()
 output_stress: function() {
-    v_out_stress.innerHTML = load.loadAction()+` / `+format2.format(this.area())+` = `+format2.format(this.stress())+` N/mm<sup>2</sup>`; // mm2
+v_out_stress.innerHTML = load.loadAction()+` / `+format2.format(this.area())+` = `+format2.format(this.stress())+` N/mm<sup>2</sup>`; // mm2
 },      // output_stress()
 output_thick: function() {
 v_out_thick.innerHTML = `(`+this.dia_ex()+` - `+this.dia_in()+`) / 2 = ` + format2.format(this.thickness())+` mm`; // mm
 },      // output_thick()
 output_massa: function() {
-    v_out_massa.innerHTML =  format2.format(this.area())+` &times; `+this.length()+` &times; 0,00782 &times; 0,001 = ` + format3.format(this.massa()*0.001)+` kg`; // g -> kg
+v_out_massa.innerHTML = format2.format(this.area())+` &times; `+this.length()+` &times; 0,00782 &times; 0,001 = ` + format3.format(this.massa()*0.001)+` kg`; // g -> kg
     // v_out_massa.innerHTML = (0.001 * this.massa()).toFixed(4); // g -> kg
 },      // output_massa()
 toString: function() {  // overload function toString()
@@ -155,7 +161,7 @@ toString: function() {  // overload function toString()
     // Объект Нагрузка на Объект Цилиндр !!!
 let load = {
     measureKoef: 1.0,
-    selectedLoad: -1.0, // выбранный тип нагрузки
+    selectedLoad: -1.0, // выбранный тип нагрузки; -1.0 т.к при старте программный клик
     selectedLoadTxt: ["При растяжении ", "При изгибе ", "При кручении ", "При срезе "], // для вывода параметров стали
     outStressLblTxt: ["нормальное &#963;", "касательное &#964;"], // для вывода параметров стали
     from: 'nxm', // Для селекта с более чем двумя пунктами выбора
@@ -184,7 +190,7 @@ if(logsView) console.log(`Method load.loadSortSet(); Event type == ${event.type}
     v_measureSelector1.style.display='inline-block'; // показать селект окна вывода момента
     v_out_bend_M.innerHTML = load.loadAction().toFixed(1);
     // v_out_stress_lbl.innerHTML = load.selectedLoadTxt[load.selectedLoad];
-    v_out_stress_lbl.innerHTML = 'Напряжение в стержне: <strong>' + load.outStressLblTxt[1] + '</strong>, MPa (N/mm<sup>2</sup>)';
+    // v_out_stress_lbl.innerHTML = 'Напряжение в стержне: <strong>' + load.outStressLblTxt[1] + '</strong>, MPa (N/mm<sup>2</sup>)';
             break;
         case 2:     // Кручение
     v_measureSelector.length = 0;    
@@ -318,8 +324,10 @@ let v_dia_in        = document.getElementById("input_dia_in");       // HTML Inp
 let v_length        = document.getElementById("input_length");       // HTML Input: длина
 let v_steelSelector = document.getElementById("steelSelector");      // HTML Select: steelSort - выбор стали из списка
 let v_out_steel     = document.getElementById("steel_data");         // HTML Output: вывод данных выбранной стали 
+
 let v_load          = document.getElementById("inputLoad");          // HTML Input: ввод величины нагрузки в выбраных единицах измерения
 let v_loadLbl       = document.getElementById("inputLoad_Label");    // HTML Label: лебел ввода величины нагрузки, меняется при смене типа нагрузки
+
 let v_measureSelector  = document.getElementById("measureSelector"); // HTML Select: выбор единиц измерения нагрузки => N или Kg 
 let v_measureSelector1 = document.getElementById("measureSelector1");// HTML Select: выбор единиц измерения нагрузки => N x mm или N x metr или Kg x metr
 
@@ -338,7 +346,7 @@ let v_out_bend_M  = document.getElementById("output_bend_M");       // HTML Outp
 
     // События на HTML элементах (и ссылки на функции - обработчики событий)
 window.addEventListener("load",page_onload);                 // onLoad
-v_loadSelector.addEventListener("click",load.loadSortSet);   // Pictures changes
+v_loadSelector.addEventListener("click",load.loadSortSet);   // Pictures changed
 v_dia_ex.addEventListener("input",inputIDec);                // Input v_dia_ex
 v_dia_in.addEventListener("input",inputIDec);                // Input v_dia_in
 v_length.addEventListener("input",inputIDec);                // Input v_length
@@ -347,15 +355,11 @@ v_load.addEventListener("input",inputIDec);                  // Input v_load
 v_measureSelector.addEventListener("change",load.loadMeasureSet); // Select - change measure
 v_buttonRUN.addEventListener("click",Event_click_Button);    // Клик на кнопке
 
-// Переменные массивы, индексы, и всякое такое
 let event1 = new Event("click");
-
 
 function page_onload() { // Обработчик события загрузки страницы
     console.log("page_onload()");    
     v_loadSelector.dispatchEvent(event1); // Клик на кнопке с эскизом нагрузки. Обработчик load.loadSortSet()
-    // console.log('v_dia_ex client Height = ' + v_dia_ex.clientHeight);
-    // load.loadSortSet();
 }   // page_onload()
 
 
