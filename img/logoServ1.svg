@@ -2,13 +2,15 @@
 <svg version = "1.1"
      baseProfile="full"
      xmlns = "http://www.w3.org/2000/svg"     
-     width = "92px" height = "32px">
+     width = "100px" height = "32px">
 
     <g stroke="greenyellow" stroke-width="2px">
-      <rect x="2" y="2" height="28" width="88" fill="linen"/>
+      <rect x="2" y="2" rx="5" ry="5" width="96" height="28" fill="linen"/>
+      <!-- <rect x="2" y="5" rx="3" ry="5" height="28" width="96" fill="linen"/> -->
     </g>
 		
     <g font-family="monospace" font-size="22" fill="red">	<!-- <g font-family="Verdana"> -->
-		  <text x="3.5" y="23">Service</text>
+		  <text text-anchor="middle" x="50" y="23">Service</text>
+		  <!-- <text x="3.5" y="23">Service</text> -->
     </g>
 </svg>

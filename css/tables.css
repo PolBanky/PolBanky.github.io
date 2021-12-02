@@ -16,7 +16,8 @@ th {
 }
 td {
     font-size: 1.125em;
-    padding: 8px 6px;
+    padding: 9.6px 6px 6.4px 6px;
+    /* padding: 8px 6px; */
     border: 1px solid green;
 }
     /* table class = firstColumnLeft */
