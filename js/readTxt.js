@@ -7,7 +7,8 @@ let v_inputFile     = document.getElementById("inputFile");     // <input type="
 let v_inputFileName = document.getElementById('inputFileName'); // <input type="text" id="inputFileName"
 let v_selectExt     = document.getElementById("selectExt");     // <select id="selectExt"> select File extension
 const v_buttonDownloadFile = document.getElementById("buttonDownloadFile"); // button Download File
-const v_txtArea     = document.getElementById("txtArea");
+let v_selectFS      = document.getElementById("selectFS");      // <select id="selectFS"> select Font size
+const v_txtArea     = document.getElementById("txtArea");       // <textarea id="txtArea">
 
 // здесь будет хранится файл после загрузки
 // нужен для того чтобы взять из него имя загруженного файла (чтобы дать загрузить файл с таким же именем)
@@ -149,6 +150,41 @@ v_selectExt.addEventListener("change", () => {
     console.log(`File Extension now = ${fileName.fileOnlyExt}`);
 });   // function event_codeSelect()
 
-// let reg = /(iPhone|Android|iPad|RIM)/;
-// if (window.navigator.userAgent.match(reg)) { console.log('Сайт открыт на мобильном устройстве'); }
-// else { console.log('Сайт открыт на десктопе'); }
+// S E L E C T   S I Z E   ! ! !
+v_selectFS.addEventListener("change", () => {
+  switch(v_selectFS.value) {
+      case '1rem':
+        v_txtArea.style.fontSize = '1rem';
+    break;
+      case '1.25rem':
+        v_txtArea.style.fontSize = '1.25rem';        
+    break;
+      case '1.5rem':
+        v_txtArea.style.fontSize = '1.5rem';        
+    break;
+      case '1.75rem':
+        v_txtArea.style.fontSize = '1.75rem';        
+    break;
+      case '2rem':
+        v_txtArea.style.fontSize = '2rem';        
+    break;
+      default:
+    break;
+  } // switch(v_selectExt.value)  
+    console.log(`File Extension now = ${fileName.fileOnlyExt}`);
+});   // function event_codeSelect()
+
+
+window.addEventListener("load",page_onload);                 // onLoad
+
+function page_onload() { // Обработчик события загрузки страницы
+  console.log("page_onload()");
+  console.log(`Key == ${v_txtArea.id}`);
+  v_txtArea.style.fontSize = '1rem';
+  console.log(`Key == ${v_txtArea.style.fontSize}`);
+  }   // page_onload()
+
+if(debug) {
+  console.log("\nВыведем все свойства объекта v_txtArea with: 'for (let key in v_txtArea)'");
+  for (let key in v_txtArea) { console.log(`Key "${key}" => value Of Key == "${v_txtArea[key]}"`); } // for (let key in ref)
+}   // if(debug)

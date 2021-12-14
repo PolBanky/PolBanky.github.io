@@ -10,14 +10,16 @@ table {
 th {
     font-size: 1.25em;
     background: linear-gradient(to bottom, #4fd99a1d, #4fd99a8d);
-    /* background-color: rgba(79, 217, 154, 0.24); */
     padding: 8px 2px;	
     border: 2px solid green;
 }
+th img {
+    vertical-align: middle;
+    margin-bottom: 0.15em;
+}
 td {
     font-size: 1.125em;
-    padding: 9.6px 6px 6.4px 6px;
-    /* padding: 8px 6px; */
+    padding: 0.5em 0.35em 0.3em 0.35em;
     border: 1px solid green;
 }
     /* table class = firstColumnLeft */

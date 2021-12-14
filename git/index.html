@@ -35,7 +35,10 @@
     <li><a href="#howsymb">MicroSoft - <kbd>Alt</kbd> + Keys</a></li>
     <li><a href="#howview">How view code in Android</a></li>    
     <li class="sign3"><a href="html_1.html" target="_blank">HTML Info</a></li>    
-    <li><a href="#symbols">Коды символов Unicode</a></li> 
+    <li><a href="#symbols">Коды символов Unicode</a></li>
+    <ul>
+        <li><a href="#symbolsTips">Инструкция вставки спецсимволов через CSS и JS</a></li> 
+    </ul>
     <li><a href="#symbolDim">Symbol's Dimentions</a></li> 
     <li><a href="#flexBox1">Flexbox</a></li> 
     <li><a href="#colors">Коды цветов для CSS JS</a></li>    
@@ -411,7 +414,7 @@ p.str8 {
 <tr><td>Dec</td>    <td>d = &amp#216;50 &amp#176;</td>       <td>d = &#216;50&#176;</td></tr>
 <tr><td>Hex</td>    <td>d = &amp#x000D8;50 &amp#x000B0;</td> <td>d = &#x000D8;50&#x000B0;</td></tr>
 </table>
-<h4>Инструкция вставки спецсимволов через CSS и JS</h4>
+<h4 id="symbolsTips">Инструкция вставки спецсимволов через CSS и JS</h4>
 <p>Для вставки специальных символов через CSS код можно использовать только 16-ричный код и не в том виде, что он дан в таблице. Каждый 16-ричный символ в таблице кодируется так - &#x"шестнадцитиричный код"; если вы хотите добавить символ, то вам нужно скопировать необходимый "шестнадцитиричный код" из таблицы (без приставки &#x), поставить перед ним обратный слеш \ и добавить его при помощи свойства content. Чаше всего также для использования свойства content применяют псевдоклассы :before или :after.</p>
 <p>Для вставки специальных символов через JS вам нужно скопировать необходимый "шестнадцитиричный код" из таблицы (без приставки &#x), поставить перед ним обратный слеш \ и букву 'u', т.е = '\u' и добавить его при помощи кода JS</p>
 <table class="wdt"> <caption>Examples - continue</caption>

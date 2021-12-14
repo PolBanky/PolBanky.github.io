@@ -266,7 +266,11 @@ span {
 textarea#txtArea {
 	width: 880px;
 	height: 600px;
+	background: #00ffff22;
+	border: solid #00ffff 2px;
+	border-radius: 10px;
 }
+/* font-size: 1.0rem; */
 	/* Style apply to element with id="clock" */
 #clock {
 	display: inline-block;

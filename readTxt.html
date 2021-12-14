@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="img/explorer.png" type="img/x-icon">
 </head>
 <body>
-<a href="indexRootHelp.html" target="_blank">	<!--H E L P-->
+<a href="help-readTxt.html" target="_blank">	<!--H E L P-->
 <img class="imgBtn64" src="img/pic-question_128.png" alt="Pic Question"></a>
 <h1><img class="imgBtn64B" src="img/explorer.png" alt="Pic">.txt Editor</h1>
 
@@ -22,9 +22,9 @@
 </div>
 
 <div>
-<input type="text" id="inputFileName" value="newFile" title="Имя файла для записи">
+<input type="text" id="inputFileName" value="newFile" title="Имя файла для записи" style="width: 150px;">
 <label for="inputFileName"> Имя</label>
-<select id="selectExt" title="Расширение файла для записи">
+<select id="selectExt" title="Расширение файла для записи"style="width: 60px; margin-left: 20px;">
 		<option value='txt'>txt</option>
 		<option value='html'>html</option>
 		<option value='css'>css</option>
@@ -33,11 +33,20 @@
 		<option value='java'>java</option>
 </select>
 <label for="selectExt"> Расширение</label>
-<button id="buttonDownloadFile" type="button">Скачать файл</button>
+<button id="buttonDownloadFile" type="button" style="width: 150px; margin-left: 20px;">Скачать файл</button>
+<select id="selectFS" title="Размер шрифта" style="width: 60px; margin-left: 20px;">
+	<option value='1rem'>16</option>
+	<option value='1.25rem'>20</option>
+	<option value='1.5rem'>24</option>
+	<option value='1.75rem'>28</option>
+	<option value='2rem'>32</option>
+</select>
+<label for="selectFS"> Размер шрифта</label>
 </div>
 
 <div>
-<textarea id="txtArea" placeholder="text"></textarea>  
+	<!-- <textarea id="txtArea">Text in textarea</textarea>   -->
+	<textarea id="txtArea" placeholder="text"></textarea>  
 </div>
 
 <footer><div>Pol Banky &#169; 2021</div></footer>								
