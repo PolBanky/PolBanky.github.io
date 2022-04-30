@@ -133,7 +133,7 @@ button:focus {
 	/*  end  B U T T O N  */
 
 	/*  I N P U T  */
-input {		/* input native = display: inline-block */
+input[type="text"] {
 	width: 250px;
 	margin: 5px 0px;   /* top right bottom left */
 	padding: 5px;      /* top right bottom left */
@@ -141,9 +141,9 @@ input {		/* input native = display: inline-block */
 	color: #b22222;  /* Цвет текста */
 	background-color: #d4e09e40;
 	border: 3px solid #33cc00;
-    outline: none;
+    outline: none; /* без рамки появляющейся когда фокус */
 }
-input:focus { 
+input[type="text"]:focus { 
 	background-color: #ffe4b5;
 	border: 3px solid #d2691e; 
 }
@@ -151,13 +151,10 @@ input.grad { width: 100px;	}   /* Для инпута в Angle = grad */
 input.minsec {	width: 100px; } /* Для инпута в Angle = minsec */
 
 input#inputFile {
-	margin-left: 10px;
-	width: 600px;
-	background-color: #ffffff;
-	border: none;
-}
-input#inputFileName {
-	width: 350px;
+	font-size: 1.2rem;
+	margin-left: 15px;
+	width: 550px;
+	/* border: 1px solid #33cc00;	 */
 }
 	/*  end  I N P U T  */
 
@@ -264,9 +261,10 @@ span {
 }
 
 textarea#txtArea {
+	margin-top: 10px;
 	width: 880px;
 	height: 600px;
-	background: #00ffff22;
+	background: #dddddd22;
 	border: solid #00ffff 2px;
 	border-radius: 10px;
 }

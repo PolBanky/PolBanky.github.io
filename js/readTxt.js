@@ -8,6 +8,7 @@ let v_inputFileName = document.getElementById('inputFileName'); // <input type="
 let v_selectExt     = document.getElementById("selectExt");     // <select id="selectExt"> select File extension
 const v_buttonDownloadFile = document.getElementById("buttonDownloadFile"); // button Download File
 let v_selectFS      = document.getElementById("selectFS");      // <select id="selectFS"> select Font size
+let v_selectFC      = document.getElementById("selectFC");      // <select id="selectFC"> select Font color
 const v_txtArea     = document.getElementById("txtArea");       // <textarea id="txtArea">
 
 // здесь будет хранится файл после загрузки
@@ -168,6 +169,28 @@ v_selectFS.addEventListener("change", () => {
       case '2rem':
         v_txtArea.style.fontSize = '2rem';        
     break;
+      default:
+    break;
+  } // switch(v_selectExt.value)  
+    console.log(`File Extension now = ${fileName.fileOnlyExt}`);
+});   // function event_codeSelect()
+
+
+// S E L E C T   С O L O R   ! ! !
+v_selectFC.addEventListener("change", () => {
+  switch(v_selectFC.value) {
+      case 'black':
+        v_txtArea.style.color = 'black';        
+    break;
+      case 'blue':
+        v_txtArea.style.color = 'blue';        
+    break;    
+      case 'red':
+        v_txtArea.style.color = 'red';        
+    break;    
+      case 'green':
+        v_txtArea.style.color = 'green';        
+    break;    
       default:
     break;
   } // switch(v_selectExt.value)  

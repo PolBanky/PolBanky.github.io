@@ -12,36 +12,49 @@
 <img class="imgBtn64" src="img/pic-question_128.png" alt="Pic Question"></a>
 <h1><img class="imgBtn64B" src="img/explorer.png" alt="Pic">.txt Editor</h1>
 
-<div>
-<select id="selectCode" title="Кодировка прочитанного файла">
-    <option value='UTF-8'>UTF-8</option>
-    <option value='WIN-1251'>WIN-1251</option>
-</select>
-<label for="selectCode"> Кодировка файла</label>
-<input type="file" id="inputFile" accept=".txt, .html, .css, .js, .svg, .java" onchange="readFile(this)">
+	<!-- Верхняя панель -->
+<div class="panelTools">
+	<select id="selectCode" title="Кодировка прочитанного файла">
+		<option value='UTF-8'>UTF-8</option>
+		<option value='WIN-1251'>WIN-1251</option>
+	</select>
+	<label for="selectCode"> Кодировка файла</label>
+	<input type="file" id="inputFile" accept=".txt, .html, .css, .js, .svg, .java" onchange="readFile(this)">
 </div>
 
-<div>
-<input type="text" id="inputFileName" value="newFile" title="Имя файла для записи" style="width: 150px;">
-<label for="inputFileName"> Имя</label>
-<select id="selectExt" title="Расширение файла для записи"style="width: 60px; margin-left: 20px;">
-		<option value='txt'>txt</option>
-		<option value='html'>html</option>
-		<option value='css'>css</option>
-		<option value='js'>js</option>
-		<option value='svg'>svg</option>
-		<option value='java'>java</option>
-</select>
-<label for="selectExt"> Расширение</label>
-<button id="buttonDownloadFile" type="button" style="width: 150px; margin-left: 20px;">Скачать файл</button>
-<select id="selectFS" title="Размер шрифта" style="width: 60px; margin-left: 20px;">
-	<option value='1rem'>16</option>
-	<option value='1.25rem'>20</option>
-	<option value='1.5rem'>24</option>
-	<option value='1.75rem'>28</option>
-	<option value='2rem'>32</option>
-</select>
-<label for="selectFS"> Размер шрифта</label>
+	<!-- Средняя панель -->
+<div class="panelTools">
+	<input type="text" id="inputFileName" value="newFile" title="Имя файла для записи">
+	<label for="inputFileName"> Имя</label>
+	<select id="selectExt" title="Расширение файла для записи" style="width: 60px; margin-left: 20px;">
+			<option value='txt'>txt</option>
+			<option value='html'>html</option>
+			<option value='css'>css</option>
+			<option value='js'>js</option>
+			<option value='svg'>svg</option>
+			<option value='java'>java</option>
+	</select>
+	<label for="selectExt"> Расширение</label>
+	<button id="buttonDownloadFile" type="button" style="width: 250px; margin-left: 20px;">Скачать файл</button>
+</div>
+
+	<!-- Нижняя панель -->
+<div class="panelTools">
+	<select id="selectFS" title="Размер шрифта" style="width: 70px; margin: 10px 0px;">
+		<option value='1rem'>16</option>
+		<option value='1.25rem'>20</option>
+		<option value='1.5rem'>24</option>
+		<option value='1.75rem'>28</option>
+		<option value='2rem'>32</option>
+	</select>
+	<label for="selectFS"> Размер шрифта</label>
+	<select id="selectFC" title="Цвет шрифта" style="width: 80px; margin: 10px 0px;">
+		<option value='black'>black</option>
+		<option value='blue'>blue</option>
+		<option value='red'>red</option>
+		<option value='green'>green</option>
+	</select>
+	<label for="selectFC"> Цвет шрифта</label>
 </div>
 
 <div>

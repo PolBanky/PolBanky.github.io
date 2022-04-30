@@ -11,13 +11,29 @@ class HelloInput extends HTMLInputElement {
 constructor() {
     super();
     this.decimal = 0.0;
-    this.addEventListener('focus', workinp);
+    this.style.fontSize = '1.25rem';
+    this.style.width = '250px';
+    this.style.margin = '5px 0px';
+    this.style.padding = '5px';
+    this.style.color = '#b22222';
+    this.style.backgroundColor = '#d4e09e40';
+    this.style.border = '3px solid #33cc00';
+    this.style.outline = 'none';    // без рамки появляющейся когда фокус
+    this.addEventListener('focus', ()=> { 
+        this.style.backgroundColor = '#ffe4b5';
+        this.style.border = '3px solid #d2691e';
+    });
+    this.addEventListener('blur', ()=> { 
+        this.style.backgroundColor = '#d4e09e40';
+        this.style.border = '3px solid #33cc00';
+
+    });
     this.addEventListener("input",hello_inputIDec);
     this.addEventListener("input",sol);
-} // constructor()
+    } // constructor()
 } // class HelloInput
   
-customElements.define('hello-input', HelloInput, {extends: 'input'});   
+customElements.define('hello-input', HelloInput, {extends: 'input'});
 //**************** superinput !!!
 
 
