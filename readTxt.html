@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<!-- Some Info -->
+	<!-- read and write Txt (and html, css, js, +) -->
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
@@ -14,19 +14,21 @@
 
 	<!-- Верхняя панель -->
 <div class="panelTools">
-	<select id="selectCode" title="Кодировка прочитанного файла">
+	<!-- <select id="selectCode" title="Кодировка файла"> -->
+	<select id="selectCode" title="Кодировка файла" style="width: 110px;">
 		<option value='UTF-8'>UTF-8</option>
 		<option value='WIN-1251'>WIN-1251</option>
 	</select>
 	<label for="selectCode"> Кодировка файла</label>
 	<input type="file" id="inputFile" accept=".txt, .html, .css, .js, .svg, .java" onchange="readFile(this)">
 </div>
+	<!-- end of Верхняя панель -->
 
 	<!-- Средняя панель -->
 <div class="panelTools">
 	<input type="text" id="inputFileName" value="newFile" title="Имя файла для записи">
 	<label for="inputFileName"> Имя</label>
-	<select id="selectExt" title="Расширение файла для записи" style="width: 60px; margin-left: 20px;">
+	<select id="selectExt" title="Расширение файла для записи" style="width: 60px;">
 			<option value='txt'>txt</option>
 			<option value='html'>html</option>
 			<option value='css'>css</option>
@@ -37,31 +39,34 @@
 	<label for="selectExt"> Расширение</label>
 	<button id="buttonDownloadFile" type="button" style="width: 250px; margin-left: 20px;">Скачать файл</button>
 </div>
+	<!-- end of Средняя панель -->
 
 	<!-- Нижняя панель -->
 <div class="panelTools">
-	<select id="selectFS" title="Размер шрифта" style="width: 70px; margin: 10px 0px;">
-		<option value='1rem'>16</option>
+	<select id="selectFS" title="Размер шрифта" style="width: 70px;">
+		<option value='0.75rem'>12</option>
+		<option value='1rem' selected>16</option>
 		<option value='1.25rem'>20</option>
 		<option value='1.5rem'>24</option>
 		<option value='1.75rem'>28</option>
 		<option value='2rem'>32</option>
 	</select>
 	<label for="selectFS"> Размер шрифта</label>
-	<select id="selectFC" title="Цвет шрифта" style="width: 80px; margin: 10px 0px;">
+	<select id="selectFC" title="Цвет шрифта" style="width: 80px;">
 		<option value='black'>black</option>
-		<option value='blue'>blue</option>
 		<option value='red'>red</option>
 		<option value='green'>green</option>
+		<option value='blue'>blue</option>
 	</select>
 	<label for="selectFC"> Цвет шрифта</label>
 </div>
+	<!-- end of Нижняя панель -->
 
 <div>
-	<!-- <textarea id="txtArea">Text in textarea</textarea>   -->
+	<!-- <textarea id="txtArea">Text in textarea</textarea> -->
 	<textarea id="txtArea" placeholder="text"></textarea>  
 </div>
 
-<footer><div>Pol Banky &#169; 2021</div></footer>								
+<footer><div>Pol Banky &#169; 2022</div></footer>								
 	<script src="js/readTxt.js"></script>	
 </body></html>

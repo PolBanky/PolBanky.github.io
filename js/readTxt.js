@@ -154,6 +154,9 @@ v_selectExt.addEventListener("change", () => {
 // S E L E C T   S I Z E   ! ! !
 v_selectFS.addEventListener("change", () => {
   switch(v_selectFS.value) {
+      case '0.75rem':
+        v_txtArea.style.fontSize = '0.75rem';
+    break;
       case '1rem':
         v_txtArea.style.fontSize = '1rem';
     break;
@@ -182,14 +185,14 @@ v_selectFC.addEventListener("change", () => {
       case 'black':
         v_txtArea.style.color = 'black';        
     break;
-      case 'blue':
-        v_txtArea.style.color = 'blue';        
+    case 'red':
+      v_txtArea.style.color = 'red';        
     break;    
-      case 'red':
-        v_txtArea.style.color = 'red';        
+    case 'green':
+      v_txtArea.style.color = 'green';        
     break;    
-      case 'green':
-        v_txtArea.style.color = 'green';        
+    case 'blue':
+      v_txtArea.style.color = 'blue';        
     break;    
       default:
     break;
