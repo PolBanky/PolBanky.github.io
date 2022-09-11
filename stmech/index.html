@@ -82,8 +82,8 @@
     <tr><td><a href="../data/12820-80_flanges.pdf" target="_blank">12820-80</a></td><td>Фланцы (ГОСТ заменен на <a href="../data/33259-2015_flanges_to_pn250.pdf" target="_blank">33259-2015</a>)</td></tr>
 </table> <!-- /table - ГОСТы про фланцы -->
 
-<div class="grid_container">
-    <div class="item1">
+<div class="gridContainerFlan">
+    <div class="gridItemPicFlan">
         <svg width="360" height="600" id="svgPic2">
             <g font-family="Arial, sans-serif" font-size="28" fill="red" text-anchor="middle">	
                 <text x="45"  y="274" transform="rotate(-90,45,274)"  id="D_fl" >0</text>
@@ -95,8 +95,8 @@
                 <text x="260" y="545" id="h_fl">0</text>
             </g>
         </svg>
-    </div> <!-- class="item1" -->
-    <div class="item2">
+    </div> <!-- class="gridItemPicFlan" -->
+    <div class="gridItemDn">
             <!-- select DN -->
         <select class="big1" id="dn_choice">
             <!-- <option disabled selected> Выберите DN </option> -->
@@ -123,8 +123,8 @@
             <option value="1600"> DN 1600 </option>
         </select>
         <label for="dn_choice"> Значение DN</label>
-    </div> <!-- class="item2" -->
-    <div class="item4">
+    </div> <!-- class="gridItemDn" -->
+    <div class="gridItemPn">
             <!-- select PN -->
         <select class="big1" id="pn_choice">
             <option value='6'> PN 6 bar </option>
@@ -132,8 +132,8 @@
             <option value='16'> PN 16 bar </option>
         </select>
         <label for="pn_choice"> Значение PN</label>
-    </div> <!-- class="item4" -->
-</div> <!-- class="grid_container" -->
+    </div> <!-- class="gridItemPn" -->
+</div> <!-- class="gridContainerFlan" -->
 
     <!-- Flange Data Output -->
 <table id="flangeInfo"> <!-- Flange Data Output -->
@@ -196,11 +196,10 @@
 </table>
     <!-- WATER JET -->
 
-<footer><div>Pol Banky &#169; 2021</div></footer>
+<footer><div>Pol Banky &#169; 2022</div></footer>
 
 <script src="../js/fs.js"></script>
 <script src="../js/float.js"></script>
 <script src="../js/calc_SDR.js"></script>
 <script src="../js/flange.js"></script>
-</body>
-</html>
+</body></html>
