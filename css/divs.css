@@ -107,4 +107,30 @@ div.alertString {
 	width: 360px;
 	float: left;
 }
+
+.grid_container {
+    display: grid;
+	border: 2px solid #008000;
+    background-color: #22dd6622;
+    grid-template-columns: 1fr 1.2fr;
+	grid-template-rows: 3fr 1fr;
+}
+.item1 {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+    grid-row-end: 3;
+}
+.item2 {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+    grid-row-end: 2;
+}
+.item4 {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+    grid-row-end: 3;
+}
 	/*  end  D I V  */

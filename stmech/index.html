@@ -82,53 +82,58 @@
     <tr><td><a href="../data/12820-80_flanges.pdf" target="_blank">12820-80</a></td><td>Фланцы (ГОСТ заменен на <a href="../data/33259-2015_flanges_to_pn250.pdf" target="_blank">33259-2015</a>)</td></tr>
 </table> <!-- /table - ГОСТы про фланцы -->
 
-<div>
-<svg width="360" height="600" id="svgPic2">
-    <g font-family="Arial, sans-serif" font-size="28" fill="red" text-anchor="middle">	
-        <text x="45"  y="274" transform="rotate(-90,45,274)"  id="D_fl" >0</text>
-        <text x="85"  y="274" transform="rotate(-90,85,274)"  id="D1_fl">0</text>
-        <text x="125" y="274" transform="rotate(-90,125,274)" id="dv_fl">0</text>
-        <text x="260" y="274" transform="rotate(-90,260,274)" id="D2_fl">0</text>
-        <text x="302" y="105" text-anchor="end" transform="rotate(-90,302,105)" id="n_d_fl">0</text>            
-        <text x="150" y="574" text-anchor="end" id="b_fl">0</text>
-        <text x="260" y="545" id="h_fl">0</text>
-    </g>
-</svg>
-
-    <!-- select DN -->
-<select class="big1" id="dn_choice">
-    <!-- <option disabled selected> Выберите DN </option> -->
-    <option value="50"> DN 50 </option>
-    <option value="65"> DN 65 </option>
-    <option value="80"> DN 80 </option>
-    <option value="100"> DN 100 </option>
-    <option value="125"> DN 125 </option>
-    <option value="150"> DN 150 </option>
-    <option value="200"> DN 200 </option>
-    <option value="250"> DN 250 </option>
-    <option value="300"> DN 300 </option>
-    <option value="350"> DN 350 </option>
-    <option value="400"> DN 400 </option>
-    <option value="450"> DN 450 </option>
-    <option value="500"> DN 500 </option>
-    <option value="600" selected> DN 600 </option>
-    <option value="700"> DN 700 </option>
-    <option value="800"> DN 800 </option>
-    <option value="900"> DN 900 </option>
-    <option value="1000"> DN 1000 </option>
-    <option value="1200"> DN 1200 </option>
-    <option value="1400"> DN 1400 </option>
-    <option value="1600"> DN 1600 </option>
-</select>
-<label for="dn_choice"> Значение DN</label>
-    <!-- select PN -->
-<select class="big2" id="pn_choice">
-    <option value='6'> PN 6 bar </option>
-    <option value='10' selected="selected"> PN 10 bar </option>
-    <option value='16'> PN 16 bar </option>
-</select>
-<label for="pn_choice"> Значение PN</label>
-</div>
+<div class="grid_container">
+    <div class="item1">
+        <svg width="360" height="600" id="svgPic2">
+            <g font-family="Arial, sans-serif" font-size="28" fill="red" text-anchor="middle">	
+                <text x="45"  y="274" transform="rotate(-90,45,274)"  id="D_fl" >0</text>
+                <text x="85"  y="274" transform="rotate(-90,85,274)"  id="D1_fl">0</text>
+                <text x="125" y="274" transform="rotate(-90,125,274)" id="dv_fl">0</text>
+                <text x="260" y="274" transform="rotate(-90,260,274)" id="D2_fl">0</text>
+                <text x="302" y="105" text-anchor="end" transform="rotate(-90,302,105)" id="n_d_fl">0</text>            
+                <text x="150" y="574" text-anchor="end" id="b_fl">0</text>
+                <text x="260" y="545" id="h_fl">0</text>
+            </g>
+        </svg>
+    </div> <!-- class="item1" -->
+    <div class="item2">
+            <!-- select DN -->
+        <select class="big1" id="dn_choice">
+            <!-- <option disabled selected> Выберите DN </option> -->
+            <option value="50"> DN 50 </option>
+            <option value="65"> DN 65 </option>
+            <option value="80"> DN 80 </option>
+            <option value="100"> DN 100 </option>
+            <option value="125"> DN 125 </option>
+            <option value="150"> DN 150 </option>
+            <option value="200"> DN 200 </option>
+            <option value="250"> DN 250 </option>
+            <option value="300"> DN 300 </option>
+            <option value="350"> DN 350 </option>
+            <option value="400"> DN 400 </option>
+            <option value="450"> DN 450 </option>
+            <option value="500"> DN 500 </option>
+            <option value="600" selected> DN 600 </option>
+            <option value="700"> DN 700 </option>
+            <option value="800"> DN 800 </option>
+            <option value="900"> DN 900 </option>
+            <option value="1000"> DN 1000 </option>
+            <option value="1200"> DN 1200 </option>
+            <option value="1400"> DN 1400 </option>
+            <option value="1600"> DN 1600 </option>
+        </select>
+        <label for="dn_choice"> Значение DN</label>
+    </div> <!-- class="item2" -->
+    <div class="item4">
+            <!-- select PN -->
+        <select class="big1" id="pn_choice">
+            <option value='6'> PN 6 bar </option>
+            <option value='10' selected="selected"> PN 10 bar </option>
+            <option value='16'> PN 16 bar </option>
+        </select>
+        <label for="pn_choice"> Значение PN</label>
+    </div> <!-- class="item4" -->
+</div> <!-- class="grid_container" -->
 
     <!-- Flange Data Output -->
 <table id="flangeInfo"> <!-- Flange Data Output -->
