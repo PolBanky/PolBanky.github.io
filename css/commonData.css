@@ -1,7 +1,9 @@
-/* :root {
-	--main-font: Helvetica, Arial, sans-serif;
-	--btn-inet-wdt: 100px;
-} */
+:root {
+	--bkgroundhtml: #333333;
+	--bkground: #dddddd;
+	/* --main-font: Helvetica, Arial, sans-serif; */
+	/* --btn-inet-wdt: 100px; */
+}
 
 .inlineBlockIt {
 	display: inline-block;

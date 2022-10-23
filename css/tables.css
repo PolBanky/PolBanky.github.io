@@ -19,6 +19,7 @@ th img {
 }
 td {
     font-size: 1.125em;
+	background-color: var(--bkgrndgray);
     padding: 0.5em 0.35em 0.3em 0.35em;
     border: 1px solid green;
 }

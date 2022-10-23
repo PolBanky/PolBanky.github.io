@@ -1,4 +1,7 @@
-html { background-image: url("../img/background_31.png"); }
+html { 
+	/* background-image: url("../img/background_35.png");  */
+	background-color: var(--bkgroundhtml);
+}
 
 * { box-sizing: border-box; } /* Setting height or width will control the size of the entire element, including its padding and border */
 
@@ -7,14 +10,14 @@ body {	/* RGB */ /* R+G = Yellow */ /* R+B = Magenta */ /* G+B = Cyan */
 	width: 900px;
 	font-family: Arial, sans-serif;
 	color: #b22222;     	    /* Цвет текста */
-	background-color: #ffffff;
+	background-color: var(--bkground);
 	margin: 30px auto 150px auto; /* top right bottom left */
 	border: 5px solid #aa2222;	/* !!!!!!!!!  CONTEXT'S WIDTH in BODY == 880px  !!!!!!!!! */
 	padding: 0px 5px 2px 5px;     /* top right bottom left */
-	box-shadow: 15px -12px 5px rgba(0,0,0,0.2);
+	/* box-shadow: 15px -12px 5px rgba(0,0,0,0.2); */
 }
 body.color { /* Сделать фон страницы цветным вместо стандартного белого */
-	background-color: #d2b48c;;	
+	background-color: #d2b48c;
 }
 
 h1 {

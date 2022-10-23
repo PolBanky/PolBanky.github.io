@@ -12,10 +12,11 @@
     </g> -->
 
     <g stroke="greenyellow" stroke-width="2px">
-        <rect x="2" y="2" height="28" width="28" fill="linen"/></g>
+        <!-- <rect x="2" y="2" height="28" width="28" fill="linen"/></g> -->
+        <rect x="2" y="2" height="28" width="28" fill="none"/></g>
 		
     <g font-family="monospace" font-size="22" fill="red">	<!-- <g font-family="Verdana"> -->
-		<text x="3.5" y="23">En</text>
+		<text x="3" y="23">En</text>
 		<!-- <text x="65" y="120">"&alpha;"</text> -->
     </g>
 </svg>
