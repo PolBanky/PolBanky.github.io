@@ -21,6 +21,7 @@
         <li><a href="#vscodeExt">Установка расширений VS Code - offline</a></li>
         <li><a href="#chromeStandaloneSetup64">Как установить Chrome 64-bit в офлайн-режиме</a></li>
     </ul>
+    <li><a href="#linux">Linux - Terminal</a></li>
     <li><a href="#git">Git - Hot Keys</a></li>
     <li class="sign2"><a href="#kompas">Компас 3D - Hot Keys</a></li>
     <ul>
@@ -29,7 +30,6 @@
         <li id="kMV"><a href="#kompasMadeVariable">Создание моделей с внешними переменными</a></li>
     </ul>
     <li><a href="#excelVba">Excel & VBA - Hot Keys</a></li>
-    <li><a href="#autocad">AutoCad - Hot Keys</a></li>
     <li><a href="#foxit">Foxit Reader - Hot Keys</a></li>
     <li><a href="#micro">MicroSoft - <kbd>Ctrl</kbd> + Keys</a></li>
     <li><a href="#howsymb">MicroSoft - <kbd>Alt</kbd> + Keys</a></li>
@@ -118,6 +118,58 @@
     </ul>
 </ul>
 <!-- Как установить Chrome 64-bit -->
+
+<!-- Linux - Terminal -->
+<h2 id="linux"><img class="imgBtn64B" src="../img/linux400.png" alt="Linux">Linux - Terminal <a href="#"><i class="arr"></i></a></h2>
+    <table class="wdt firstColumn20">
+        <tr><th colspan="2"><a href="https://wiki.gnome.org/Apps/Terminal" target="_blank">Linux - Terminal</a></th></tr>
+        <tr><td><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + T</td><td>Старт терминала Linux</td></tr>
+        <tr><td><kbd>Tab</kbd> 2 раза</td><td>Автодополнение команд</td></tr>
+        <tr><td>whoami</td><td>Print the user name associated with the current effective user ID</td></tr>
+        <tr><td>sudo -i</td><td>Режим root</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + D</td><td>Выход из режима root</td></tr>
+        <tr><td>Стрелки &#8593; / &#8595;</td><td>Выбрать предыдущую / следующую команду терминала</td></tr>
+        <tr><td>history</td><td>Список предыдущих команд</td></tr>
+        <tr><td>! + number</td><td>Выполнение команды из списка предыдущих команд</td></tr>
+        <tr><td>pwd</td><td>Print the name of the current working directory</td></tr>
+        <tr><td>ls</td><td>List  information  about  the FILEs (the current directory by default)</td></tr>
+        <tr><td>ls -a</td><td>Показать в т.ч скрытые файлы</td></tr>
+        <tr><td>cd + "dir"</td><td>Change the shell working directory</td></tr>
+        <tr><td>cd + ..</td><td>На 1 каталог вверх</td></tr>
+        <tr><td>cd + ~</td><td>В корневой каталог</td></tr>
+        <tr><td>cd + -</td><td>В предыдущий каталог</td></tr>
+        <tr><td>mkdir</td><td>Create the DIRECTORY(ies), if they do not already exist</td></tr>
+        <tr><td>apt list --upgradable</td><td>Апгрейд нада?</td></tr>
+        <tr><td>sudo apt update && sudo apt upgrade -y</td><td>Update && Upgrade Now !</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + C</td><td>Прерывание команды в терминале</td></tr>
+        <tr><td>exit</td><td>Закрыть терминал или закрыть процесс в терминале</td></tr>
+        <tr><td>q</td><td>Закрыть процесс в терминале</td></tr>
+            <!-- Сторонние и интегрированные программы -->
+        <tr><th colspan="2">Сторонние и интегрированные программы</th></tr>        
+        <tr><td>cd /android-studio/bin/</td><td>Переход в каталог старта Адроид студии</td></tr>
+        <tr><td>./studio.sh</td><td>Старт Адроид студии</td></tr>
+        <tr><td title="sudo apt install mc">mc</td><td title="Midnight Commander">Norton Commander в терминале</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + O</td><td>Скрыть панели Norton Commander</td></tr>
+        <tr><td>F10 на панели</td><td>Выход из Norton Commander в терминале</td></tr>
+        <tr><td>nano</td><td>Встроенный в терминал текстовый редактор nano</td></tr>
+        <tr><td><kbd>Ctrl</kbd> + X</td><td>Выход из nano</td></tr>
+        <tr><td>top</td><td>Встроенная утилита типа == системный монитор</td></tr>
+        <tr title="sudo apt install htop"><td>htop</td><td>Утилита как top, но круче</td></tr>
+        <tr><td>node -v</td><td>Версия node</td></tr>
+        <tr><td>npm -v</td><td>Версия npm</td></tr>
+        <tr><td>dotnet --list-sdks</td><td>Версия среды разработки dotnet</td></tr>
+        <tr><td>dotnet --list-runtimes</td><td>Версия среды выполнения dotnet</td></tr>
+        <!-- H E L P -->
+        <tr><th colspan="2">H E L P</th></tr>
+        <tr><td>help</td><td>Display information about builtin commands</td></tr>
+        <tr><td>help + "name"</td><td>Хелп по команде "name" терминала</td></tr>
+        <tr><td>man + "name"</td><td>Мануал по команде "name" терминала</td></tr>
+        <tr><td>neofetch</td><td>Display information about system</td></tr>
+        <tr><td>date</td><td>Текущая дата</td></tr>
+        <tr title="The system load averages for the past 1, 5, and 15 minutes"><td>uptime</td><td>Инфа о текущем сеансе Linux</td></tr>
+    </table>
+<!-- Linux - Terminal -->
+
 
 <!--   Git -->
 <h2 id="git">Git - Hot Keys <a href="#"><img src="../img/ArrowTop32.png" alt="Arrow"></a></h2> 
@@ -349,15 +401,6 @@
     <tr><td><kbd>Ctrl</kbd> + Tab</td><td>Переключение между окнами редактора VBA</td></tr>
 </table>
     <!-- end of  E X C E L  &  V B A -->
-
-
-    <!-- Autocad -->
-<h2 id="autocad"><img class="imgBtn64B" src="../img/autocad-logo-cursor.png" alt="Pic OctoCat">AutoCad - Hot Keys <a href="#"><i class="arr"></i></a></h2>
-<table>
-    <tr><th colspan="2">В чертеже или эскизе</th></tr>
-    <tr><td><kbd>Alt</kbd> + K</td><td>Отрезок (Line)</td></tr>
-</table>
-    <!-- Autocad -->
 
 
     <!-- Foxit Reader -->
