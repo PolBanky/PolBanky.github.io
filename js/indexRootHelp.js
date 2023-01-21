@@ -26,10 +26,10 @@ let reg = /(iPhone|Android|iPad|RIM)/;
 // console.log(reg);
 // console.log(navigator.userAgent.match(reg));
 if (navigator.userAgent.match(reg)) {
-    inf.textContent = "Сайт открыт на мобильном устройстве";
+    inf.textContent = "Сайт открыт на: мобильное устройство";
 } // if
 else {
-    inf.textContent = "Сайт открыт на десктопе";
+    inf.textContent = "Сайт открыт на: десктоп";
 } // else
 inf1.textContent = `Сайт открыт на платформе: ${navigator.platform}`;
 inf2.textContent = `User Agent: ${navigator.userAgent}`;

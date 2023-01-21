@@ -1,2 +1,2 @@
 # PolBanky.github.io
-This site made for Engeneering solutions
+This site made for Info & Fun
