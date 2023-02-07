@@ -7,8 +7,10 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="shortcut icon" href="../img/icon_radar.gif" type="img/x-icon">
   <style>
-    .big { font: bold 27px monospace;  fill: darkgreen; text-anchor: middle}
-    .small { font: bold 14px monospace;  fill: darkgreen; text-anchor: middle}
+    .panel { width: 160px; height: 50px; stroke:#0000ff; stroke-width:3px; fill:#ddddaa; }
+    .panel2 { width: 200px; height: 50px; stroke:#0000ff; stroke-width:3px; fill:#ddddaa; }
+    .big { font: bold 36px monospace; fill:darkgreen; text-anchor: middle}
+    .small { font: bold 14px monospace; fill:darkgreen; text-anchor: middle}
   </style>
 </head>
 
@@ -54,7 +56,7 @@
   <td>
     <svg width="160" height="50" xmlns="http://www.w3.org/2000/svg">
       <a xlink:href="https://html.spec.whatwg.org/" target="_blank">        
-      <rect x="0" y="0" width="160" height="50" rx="10" ry="10" stroke="#0000ff" stroke-width="1" fill="#ddddaa"/>
+      <rect x="0" y="0" class="panel"/>
       <text x="80" y="31" class="big">HTML</text>
       <text x="80" y="45" class="small">Living Standard</text>
     </a></svg>
@@ -64,11 +66,20 @@
   <td>
     <svg width="160" height="50" xmlns="http://www.w3.org/2000/svg">
       <a xlink:href="https://dom.spec.whatwg.org/" target="_blank">       
-      <rect x="0" y="0" width="160" height="50" rx="10" ry="10" stroke="#0000ff" stroke-width="1" fill="#ddddaa"/>
+      <rect x="0" y="0" class="panel"/>
       <text x="80" y="31" class="big">DOM</text>
       <text x="80" y="45" class="small">Living Standard</text>      
     </a></svg>
   </td><td>Спецификация DOM</td>
+</tr>
+<tr>
+  <td>
+    <svg width="200" height="50" xmlns="http://www.w3.org/2000/svg">
+      <a xlink:href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank">       
+      <rect x="0" y="0" class="panel2"/>
+      <text x="100" y="38" class="big">ECMA-262</text>
+    </a></svg>
+  </td><td>Спецификация JS ECMA-262</td>
 </tr>
 <tr>
   <td><a href="https://caniuse.com/" target="_blank"><img src="../img/google.png" height="55" alt="google"></a></td>
@@ -217,6 +228,14 @@
   <td><a href="https://www.techinsider.ru/" target="_blank"><img src="../img/Book_128.png" height="55" alt="popMech"></a></td>
   <td>Популярная Механика</td>
 </tr>
+<tr>
+  <td><a href="https://www.nkj.ru/" target="_blank"><img src="../img/Book_128.png" height="55" alt="НиЖ"></a></td>
+  <td>Наука и жизнь</td>
+</tr>
+<tr>
+  <td><a href="https://naukatehnika.com/" target="_blank"><img src="../img/Book_128.png" height="55" alt="НиТ"></a></td>
+  <td>Наука и техника</td>
+</tr>
     <!-- Third Part -->
 <tr id="learn">
   <th colspan="2">Some Lessons <a href="#"><img src="../img/ArrowTop16.png" alt="Arrow" title="Top"></a></th>
@@ -279,10 +298,10 @@
 </tr>
 <tr>
   <td>
-    <svg width="160" height="44" xmlns="http://www.w3.org/2000/svg">
+    <svg width="200" height="50" xmlns="http://www.w3.org/2000/svg">
       <a xlink:href="http://gilkomservis1pushkin.ru/" target="_blank">
-      <rect x="0" y="0" width="160" height="44" rx="10" ry="10" stroke="#0000ff" stroke-width="1" fill="#ddddaa"/>
-      <text x="80" y="35" class="big">Service</text>
+      <rect x="0" y="0" class="panel2"/>
+      <text x="100" y="38" class="big">Service</text>
     </a></svg>
   </td><td>ЖилКомСервис №1 Пушкинского р-на СПб</td>
 </tr>
@@ -371,20 +390,12 @@
   <td>Московская Биржа</td>
 </tr>
 <tr>
-  <td><a href="https://pfr.gov.ru/" target="_blank"><img src="../img/logo_PFR.svg" height="55" alt="pfr"></a></td>
-  <td>Пенсионный фонд РФ</td>
+  <td><a href="https://sfr.gov.ru/" target="_blank"><img src="../img/logoSFR.svg" height="55" alt="pfr"></a></td>
+  <td>Социальный фонд РФ. Сервисы. Вход в Личный Кабинет</td>
 </tr>
 <tr>
-  <td><a href="https://pfr.gov.ru/branches/spb/" target="_blank"><img src="../img/logo_PFR.svg" height="55" alt="pfr"></a></td>
-  <td>Пенсионный фонд РФ - СПб</td>
-</tr>
-<tr>
-  <td><a href="https://es.pfrf.ru/" target="_blank"><img src="../img/logo_PFR.svg" height="55" alt="pfr"></a></td>
-  <td>Пенсионный фонд. Сервисы</td>
-</tr>
-<tr>
-  <td><a href="https://es.pfrf.ru/login/" target="_blank"><img src="../img/logo_PFR.svg" height="55" alt="pfr"></a></td>
-  <td>Пенсионный фонд. Сервисы. Вход в Личный Кабинет</td>
+  <td><a href="https://sfr.gov.ru/branches/spb/" target="_blank"><img src="../img/logoSFR.svg" height="55" alt="pfr"></a></td>
+  <td>Социальный фонд РФ - СПб</td>
 </tr>
 <tr>
   <td><a href="https://gorzdrav.spb.ru/" target="_blank"><img src="../img/gorzdrav.ico" height="55" alt="gorzdrav"></a></td>
@@ -444,11 +455,10 @@
 </tr>
 <tr>
   <td>
-  <svg width="160" height="44" xmlns="http://www.w3.org/2000/svg">
+  <svg width="160" height="50" xmlns="http://www.w3.org/2000/svg">
     <a xlink:href="https://www.dns-shop.ru/" target="_blank">
-    <style> .big { font: bold 36px monospace;  fill: darkgreen; text-anchor: middle} </style>  
-    <rect x="0" y="0" width="160" height="44" rx="10" ry="10" stroke="#0000ff" stroke-width="1" fill="#ddddaa"/>
-    <text x="80" y="35" class="big">DNS</text>
+    <rect x="0" y="0" class="panel"/>
+    <text x="80" y="38" class="big">DNS</text>
   </a></svg>
   </td><td>DNS</td>
 </tr>
