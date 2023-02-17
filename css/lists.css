@@ -9,6 +9,11 @@ li {	/* li - элемент списка */
     margin: 0em 0em 0em 0em;	/* top right bottom left */
     padding: 0em 0em 0em 0em;
 }
+li#opnWnd {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
 .sign {	 /* li - элемент списка с рисунком diamond */
     list-style-image: url("../img/diamond_aGIF_16.gif");
 }
