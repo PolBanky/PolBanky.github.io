@@ -24,11 +24,10 @@ constructor() {
         this.style.border = '3px solid #d2691e';
     });
     this.addEventListener('blur', ()=> { 
-        this.style.backgroundColor = '#d4e09e40';
-        this.style.border = '3px solid #33cc00';
-
+        this.style.backgroundColor = '';
+        this.style.border = '';
     });
-    this.addEventListener("input",hello_inputIDec);
+    this.addEventListener("input",inpIDec);
     this.addEventListener("input",sol);
     } // constructor()
 } // class HelloInput
@@ -38,8 +37,8 @@ customElements.define('hello-input', HelloInput, {extends: 'input'});
 
 
 // inputIDec(event)
-function hello_inputIDec() {
-    console.log(`Now run: hello_inputIDec();  this.id = ${this.id}`);
+function inpIDec() {
+    console.log(`Now run: inpIDec();  this.id = ${this.id}`);
     this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в этом файле ( hello_input.js )
     if((this.value !='') & (this.value !='0')) {
         this.decimal = parseFloat(this.value);  // mm
@@ -48,7 +47,7 @@ function hello_inputIDec() {
         this.decimal = 0.0;
     } // else
     // console.log('decimal of hello-input element = ',this.decimal,' typeof(this.decimal) = ',typeof(this.decimal));
-} // hello_inputIDec()
+} // inpIDec()
 
 
 function checkFix(inTxt) { // inTxt == this.value

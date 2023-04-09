@@ -1,5 +1,9 @@
 'use strict';
-// если false => no debuging this
+const att = 'color: darkorange; font-weight: bold; font-size: 1.4em;'; // attention
+const grn = 'color: green; font-weight: bold; font-size: 1.4em;';
+const blu = 'color: lightblue; font-weight: bold; font-size: 1.4em;';
+let num = 0; // для нумерации логов
+// if debug == false => no console.log
 const debug = false;
 
 let v_selectCode    = document.getElementById("selectCode");    // <select id="selectCode"> <option value='1'>UTF-8</option>
@@ -27,14 +31,14 @@ let fileName = {
   // I N S E R T   F I L E  only  N A M E   ! ! !
 v_inputFileName.addEventListener("keyup", () => {
   fileName.fileOnlyName = v_inputFileName.value;
-      console.log(`new File only Name = ${fileName.fileOnlyName}`);
-    });   /* v_inputFileName.addEventListener */
+  if(debug) console.log(`%c${++num}. new File only Name = ${fileName.fileOnlyName}`,att);
+});   /* v_inputFileName.addEventListener */
 
 
   // W R I T E   F I L E   ! ! !
 v_buttonDownloadFile.addEventListener("click", () => {
   fileName.fileFullName = `${fileName.fileOnlyName}.${fileName.fileOnlyExt}`
-      console.log(`new File Name = ${fileName.fileFullName}`);
+  if(debug) console.log(`%c${++num}. new File Name = ${fileName.fileFullName}`,grn);
   const newFile = new File([v_txtArea.value.replace(/\n/g,"\r\n")], fileName.fileFullName, { type: "text/plain" });
   const objectURL = URL.createObjectURL(newFile);
   const link = document.createElement("a");
@@ -53,10 +57,10 @@ function readFile(inp) {  // onchange="readFile(this)" в файле readTxt.htm
   let lastPoint = file.name.lastIndexOf('.');
       // console.log(`Num last point = ${lastPoint}`);
   fileName.fileOnlyName = file.name.slice(0,lastPoint);
-      console.log(`File Name = ${fileName.fileOnlyName}`);
+  if(debug) console.log(`%c${++num}. File Name = ${fileName.fileOnlyName}`,grn);
   v_inputFileName.value = fileName.fileOnlyName;
   fileName.fileOnlyExt = file.name.slice(lastPoint+1);
-      console.log(`File Ext = ${fileName.fileOnlyExt}`);
+  if(debug) console.log(`%c${++num}. File Ext = ${fileName.fileOnlyExt}`,grn);
       switch(fileName.fileOnlyExt) {
         case 'txt':
           v_selectExt.value = 'txt';
@@ -77,9 +81,9 @@ function readFile(inp) {  // onchange="readFile(this)" в файле readTxt.htm
       break;
     }   // switch(whatCode)
   if(debug) {
-    console.log("\nВыведем все свойства и методы объекта file with: 'for (let prop in file)'");
+    console.log(`\n%c${++num}. Выведем все свойства и методы объекта file with: 'for (let prop in file)'`,att);
     for (let prop in file) {
-        console.log(`Property name = "${prop}" =>\t\t\t\t Property = "${file[prop]}"`); 
+        console.log(`%c${++num}. Property name = "${prop}" =>\t\t\t\t Property = "${file[prop]}"`,blu); 
     } // for
   }   // if(debug)
   let reader = new FileReader();
@@ -97,21 +101,21 @@ function readFile(inp) {  // onchange="readFile(this)" в файле readTxt.htm
   v_txtArea.textContent = reader.result; // Вывод на страницу сайта
   // console.log( v_txtArea.textContent );
   if(debug) {
-    console.log("\nВыведем все свойства и методы объекта v_txtArea with: 'for (let prop in v_txtArea)'");
+    console.log(`\n%c${++num}. Выведем все свойства и методы объекта v_txtArea with: 'for (let prop in v_txtArea)'`,att);
     for (let prop in v_txtArea) {
-        console.log(`Property name = "${prop}" =>\t\t\t\t Property = "${v_txtArea[prop]}"`); 
+        console.log(`%c${++num}. Property name = "${prop}" =>\t\t\t\t Property = "${v_txtArea[prop]}"`,blu); 
     } // for
   }   // if(debug)
   if(debug) {
-    console.log("\nВыведем все свойства и методы объекта v_inputFile with: 'for (let prop in v_inputFile)'");
+    console.log(`\n%c${++num}. Выведем все свойства и методы объекта v_inputFile with: 'for (let prop in v_inputFile)'`,att);
     for (let prop in v_inputFile) {
-        console.log(`Property name = "${prop}" =>\t\t\t\t Property = "${v_inputFile[prop]}"`); 
+        console.log(`%c${++num}. Property name = "${prop}" =>\t\t\t\t Property = "${v_inputFile[prop]}"`,blu); 
     } // for
   }   // if(debug)
   if(debug) {
-    console.log("\nВыведем все свойства и методы объекта window.navigator with: 'for (let prop in window.navigator)'");
+    console.log(`\n%c${++num}. Выведем все свойства и методы объекта window.navigator with: 'for (let prop in window.navigator)'`,att);
     for (let prop in window.navigator) {
-        console.log(`Property name = "${prop}" =>\t\t\t\t Property = "${window.navigator[prop]}"`); 
+        console.log(`%c${++num}. Property name = "${prop}" =>\t\t\t\t Property = "${window.navigator[prop]}"`,blu); 
     } // for
   }   // if(debug)
 }     // reader.onload = function()
@@ -123,7 +127,7 @@ reader.onerror = function() { console.log(reader.error); }
   // S E L E C T   C O D E   ! ! !
 v_selectCode.addEventListener("change", () => {  
   if (readed) { readFile(lf); } // if 
-    console.log(`v_selectCode.value now = ${v_selectCode.value}, readed = ${readed}`);
+  if(debug) console.log(`v_selectCode.value now = ${v_selectCode.value}, readed = ${readed}`);
 }); // v_selectCode.addEventListener
 
 
@@ -148,7 +152,7 @@ v_selectExt.addEventListener("change", () => {
       default:
     break;
   } // switch(v_selectExt.value)  
-    console.log(`File Extension now = ${fileName.fileOnlyExt}`);
+  if(debug) console.log(`File Extension now = ${fileName.fileOnlyExt}`);
 });   // function event_codeSelect()
 
 // S E L E C T   S I Z E   ! ! !
@@ -175,7 +179,7 @@ v_selectFS.addEventListener("change", () => {
       default:
     break;
   } // switch(v_selectExt.value)  
-    console.log(`File Extension now = ${fileName.fileOnlyExt}`);
+  if(debug) console.log(`File Extension now = ${fileName.fileOnlyExt}`);
 });   // function event_codeSelect()
 
 

@@ -1,19 +1,25 @@
 "use strict";
+const att = 'color: darkorange; font-weight: bold; font-size: 1.4em;'; // attention
+const grn = 'color: green; font-weight: bold; font-size: 1.4em;';
+const blu = 'color: lightblue; font-weight: bold; font-size: 1.4em;';
+let num = 0; // для нумерации логов
+// if debug == false => no console.log
+const debug = false;
 
 function makePage() {
-    console.log("Working Open Window");
+    if(debug) console.log("Working Open Window",att);
     let adr = document.baseURI;
-    console.dir(adr);
+    if(debug) console.dir(adr);
     let i = adr.lastIndexOf('/');
-    console.log(`Номер последнего символа '/' == ${i}`);
+    if(debug) console.log(`Номер последнего символа '/' == ${i}`,grn);
     let adr2 = adr.slice(0,i);
-    console.log(adr2);
+    if(debug) console.log(adr2);
     i = adr2.lastIndexOf('/');
-    console.log(`Номер последнего символа '/' == ${i}`);
+    if(debug) console.log(`Номер последнего символа '/' == ${i}`,grn);
     adr2 = adr2.slice(0,i+1);
-    console.log(adr2);
+    if(debug) console.log(adr2);
     adr2 = adr2 + 'data/grid_001B.png'
-    console.log(adr2);
+    if(debug) console.log(adr2);
 
     let myWindow = window.open("","","");
     myWindow.document.title='Grid';
@@ -22,7 +28,7 @@ function makePage() {
     v_img01.alt="pic";
     v_img01.setAttribute('width','100%');
     v_img01.setAttribute('id','createElementIMG');
-    console.log(`createElement('img') == ${v_img01}`);
-    console.dir(v_img01);
+    if(debug) console.log(`createElement('img') == ${v_img01}`);
+    if(debug) console.dir(v_img01);
     myWindow.document.body.append(v_img01);
 }   // makePage()
