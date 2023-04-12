@@ -24,8 +24,8 @@ constructor() {
         this.style.border = '3px solid #d2691e';
     });
     this.addEventListener('blur', ()=> { 
-        this.style.backgroundColor = '';
-        this.style.border = '';
+        this.style.backgroundColor = '#d4e09e40';
+        this.style.border = '3px solid #33cc00';
     });
     this.addEventListener("input",inpIDec);
     this.addEventListener("input",sol);
