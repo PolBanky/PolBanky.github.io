@@ -6,7 +6,7 @@ var v_out = document.getElementById("calibre_output");  // ссылка на HTM
 v_in.addEventListener("input",Event_Input_Num); // Decimal number
 
    // Объект калибр !!!!!!!
-var calibre = {
+const calibre = {
     calibreINCH: 0,   // 
     calibreMM: 0,     //    
     eval_calibre: function () {
@@ -17,7 +17,7 @@ var calibre = {
 
     // Событие ввод числа
 function Event_Input_Num(event) {
-    console.log("\nEvent type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id + "; this.value = " + this.value);
+    // console.log("\nEvent type = " + event.type + "." + event.inputType + " in Element id = " + event.target.id + "; this.value = " + this.value);
     if((this.value==='')||((this.value = checkFix(this.value))==='')) { // checkFix() и вызываемые далее функции - в файле hello_input.js
         v_out.innerHTML = '0.00';
         return false;   // Если все символы удалены - maybe by input type = deleteContentBackward

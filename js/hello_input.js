@@ -1,10 +1,10 @@
 'use strict';
 
 // var numDot_RE = /[^\d.]/;   // not g - поиск в строке из 1 символа
-var a_RE = /[^\d.]/g;
+const a_RE = /[^\d.]/g;
 // var dot_RE = /[.]/g;
-var comma_RE = /[,]/g;
-var notD_RE = /[^\d]/g;
+const comma_RE = /[,]/g;
+const notD_RE = /[^\d]/g;
 
 //**************** superinput !!!
 class HelloInput extends HTMLInputElement {
@@ -22,13 +22,15 @@ constructor() {
     this.addEventListener('focus', ()=> { 
         this.style.backgroundColor = '#ffe4b5';
         this.style.border = '3px solid #d2691e';
+        if(debug) console.log(`%c${++num}. Now run: focus();  this.id = ${this.id}`,grn);
     });
     this.addEventListener('blur', ()=> { 
         this.style.backgroundColor = '#d4e09e40';
         this.style.border = '3px solid #33cc00';
+        if(debug) console.log(`%c${++num}. Now run: blur();  this.id = ${this.id}`,grn);
     });
     this.addEventListener("input",inpIDec);
-    this.addEventListener("input",sol);
+    this.addEventListener("input",this.run);
     } // constructor()
 } // class HelloInput
   
@@ -38,7 +40,7 @@ customElements.define('hello-input', HelloInput, {extends: 'input'});
 
 // inputIDec(event)
 function inpIDec() {
-    console.log(`Now run: inpIDec();  this.id = ${this.id}`);
+    if(debug) console.log(`%c${++num}. Now run: inpIDec();  this.id = ${this.id}`,grn);
     this.value = checkFix(this.value); // checkFix() и вызываемые далее функции - в этом файле ( hello_input.js )
     if((this.value !='') & (this.value !='0')) {
         this.decimal = parseFloat(this.value);  // mm

@@ -1,8 +1,13 @@
 'use strict';
 
 let v_percent = document.getElementById("percent");  // HTML Input
+v_percent.run=percentSol;
+console.dir(v_percent);
+console.dir(v_percent.run);
 let v_srcSum  = document.getElementById("srcSum");   // HTML Input
-
+v_srcSum.run=percentSol;
+console.dir(v_srcSum);
+console.dir(v_srcSum.run);
 let v_cell_0p  = document.getElementById("cell_0p"); // HTML ячейка таблицы
 let v_cell_0   = document.getElementById("cell_0");  // HTML ячейка таблицы
 let v_cell_1p  = document.getElementById("cell_1p"); // HTML ячейка таблицы
@@ -61,7 +66,8 @@ function percentToMonthSum (percent, sum) {
 } // percentToMonthSum (percent, sum)
 
 
-function sol() { // call from => function hello_inputIDec() in hello_input.js
+function percentSol() { // call from => function hello_inputIDec() in hello_input.js
+    console.log(`Now run: percentSol()`);
 ar[0][1] = v_srcSum.decimal; /* Исходная сумма */
 ar[1][0] = percentToMonthSum(v_percent.decimal, ar[0][1]);
 ar[1][1] = ar[0][1] + ar[1][0];

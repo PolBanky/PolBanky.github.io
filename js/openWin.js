@@ -7,19 +7,19 @@ let num = 0; // для нумерации логов
 const debug = false;
 
 function makePage() {
-    if(debug) console.log("Working Open Window",att);
+        if(debug) console.log(`%c${++num}. Working Open Window`,att);
     let adr = document.baseURI;
-    if(debug) console.dir(adr);
+        if(debug) console.dir(adr);
     let i = adr.lastIndexOf('/');
-    if(debug) console.log(`Номер последнего символа '/' == ${i}`,grn);
+        if(debug) console.log(`%c${++num}. Номер последнего символа '/' == ${i}`,grn);
     let adr2 = adr.slice(0,i);
-    if(debug) console.log(adr2);
+        if(debug) console.log(adr2);
     i = adr2.lastIndexOf('/');
-    if(debug) console.log(`Номер последнего символа '/' == ${i}`,grn);
+        if(debug) console.log(`%c${++num}. Номер последнего символа '/' == ${i}`,grn);
     adr2 = adr2.slice(0,i+1);
-    if(debug) console.log(adr2);
+        if(debug) console.log(adr2);
     adr2 = adr2 + 'data/grid_001B.png'
-    if(debug) console.log(adr2);
+        if(debug) console.log(adr2);
 
     let myWindow = window.open("","","");
     myWindow.document.title='Grid';

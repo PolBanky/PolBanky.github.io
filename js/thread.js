@@ -1,13 +1,25 @@
 'use strict';
+
+const att = 'color: darkorange; font-weight: bold; font-size: 1.4em;'; // attention
+const grn = 'color: green; font-weight: bold; font-size: 1.4em;';
+const blu = 'color: lightblue; font-weight: bold; font-size: 1.4em;';
+let num = 0; // для нумерации логов
+// if debug == false => no console.log
+const debug = false;
 // window.addEventListener("load",page_onload); // onLoad
 // function page_onload() { // Обработчик события загрузки страницы
 //     let net = window.navigator.onLine;
-//     console.log("\n%c Страница загружена;  Наличие инета = " + net, 'color: limegreen; font-weight: bold; font-size: 1.4em;');  
+//     if(debug) console.log(`\n%c${++num}. Страница tech/index.html загружена; Наличие инета == ` + net, att);
 // } // function page_onload()
 // ****************************************************************************
+
     // HTML Input 1
 let v_input_d = document.getElementById("input_d");         // HTML Input
+v_input_d.run=riseThread;
+if(debug) console.dir(v_input_d);
+if(debug) console.dir(v_input_d.run);
 let v_input_P = document.getElementById("input_P");         // HTML Input
+v_input_P.run=riseThread;
     // HTML OutPut 1
 let v_cell_d2 = document.getElementById("cell_d2");         // HTML OutPut
 let v_cell_L2 = document.getElementById("cell_L2");         // HTML OutPut
@@ -15,8 +27,11 @@ let v_cell_A_rad = document.getElementById("cell_A_rad");   // HTML OutPut
 let v_cell_A_grad = document.getElementById("cell_A_grad"); // HTML OutPut
     // HTML Input 2
 let v_input_L_lever = document.getElementById("input_L_lever"); // HTML Input = Длина рычага
+v_input_L_lever.run=axeForce;
 let v_input_F_in = document.getElementById("input_F_in");       // HTML Input = Cила F_in приложенная к рычагу, кг
+v_input_F_in.run=axeForce;
 let v_input_angle_B = document.getElementById("input_angle_B"); // HTML Input = Угол основания клина B, град
+v_input_angle_B.run=axeForce;
     // HTML OutPut 2
 let v_cell_L_F_in = document.getElementById("cell_L_F_in"); // HTML OutPut
 let v_cell_N = document.getElementById("cell_N");           // HTML OutPut
@@ -26,7 +41,7 @@ let v_cell_N_k = document.getElementById("cell_N_k");       // HTML OutPut = П�
 let v_cell_F_out_2 = document.getElementById("cell_F_out_2"); // HTML OutPut = Сила F_out_2 подъема клина, кг
 
 const _180_divide_Pi_ = 180 / Math.PI;  // = 57,29577951
-const _Pi_ = 3.14159;
+const _Pi_ = Math.PI;
     // 1 IN
 let d = 0.0;        // Диаметр наружный d
 let P = 0.0;        // Шаг резьбы P
@@ -48,33 +63,9 @@ let N_k = 0.0;      // Передаточное число клина
 let F_out_2 = 0.0;  // Cила F_out_2 подъема клина, кг
 
 
-        /* function sol() */
-function sol() {
-    console.log(`Now run: sol();  this.id = ${this.id}`);
-switch (this.id) {
-    case 'input_d':
-        riseThread();        
-        break;
-    case 'input_P':
-        riseThread();        
-        break;
-    case 'input_L_lever':
-        axeForce();        
-        break;
-    case 'input_F_in':
-        axeForce();        
-        break;
-    case 'input_angle_B':
-        axeForce();        
-        break;
-    default:
-        break;
-} // switch (inp)
-} // function sol()
-
-
         /* function riseThread() */
-    function riseThread() { // console.log(`Now run: riseThread()`);
+    function riseThread() { 
+    if(debug) console.log(`%c${++num}. Now run: riseThread()`,grn);
     /* присваивание заданных значений переменным */
 d = v_input_d.decimal;
 P = v_input_P.decimal;
@@ -94,7 +85,9 @@ v_cell_L2.textContent = _Pi_ + ' x ' + d2.toFixed(3) + ' = ' + L2.toFixed(3);
 
 
         /* function axeForce() */
-    function axeForce() { //console.log(`Now run: axeForce()`); // console.log(`B_grad = ${B_grad}`);
+    function axeForce() { 
+    if(debug) console.log(`%c${++num}. Now run: axeForce()`,grn);
+    // console.log(`B_grad = ${B_grad}`);
     /* присваивание заданных значений переменным */
 L_lever = v_input_L_lever.decimal;
 F_in = v_input_F_in.decimal;
