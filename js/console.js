@@ -1,14 +1,23 @@
 'use strict';
+
+const att = 'color: darkorange; font-weight: bold; font-size: 1.4em;'; // attention
+const grn = 'color: green; font-weight: bold; font-size: 1.4em;';
+const blu = 'color: lightblue; font-weight: bold; font-size: 1.4em;';
+let num = 0; // для нумерации логов
+// if debug == false => no console.log
+const debug = true;
+// const debug = false;
+
 window.addEventListener("load",page_onload); // onLoad
     // HTML Input 1
 let v_input_F = document.getElementById("input_F"); // HTML Input
 v_input_F.run=solN2N1;
-console.dir(v_input_F);
-console.dir(v_input_F.run);
+    if(debug) console.dir(v_input_F);
+    if(debug) console.dir(v_input_F.run);
 let v_input_A = document.getElementById("input_A"); // HTML Input
 v_input_A.run=solN2N1;
-console.dir(v_input_A);
-console.dir(v_input_A.run);
+    if(debug) console.dir(v_input_A);
+    if(debug) console.dir(v_input_A.run);
 
     // HTML OutPut 1
 let v_cell_N2 = document.getElementById("cell_N2"); // HTML OutPut
@@ -22,8 +31,8 @@ let v_Alfa = document.getElementById("Alfa");
 
 
 
-const _180_divide_Pi_ = 180 / Math.PI;  // = 57,29577951
-const _Pi_ = 3.14159;
+const _180_divide_Pi_ = (180/Math.PI).toFixed(5);   // == 57,29577
+const _Pi_ = Math.PI.toFixed(5);                    // ==  3,14159
     // 1 IN
 let F = 0.0;        // Сила наружная F
 let A = 0.0;        // Угол A
@@ -34,7 +43,7 @@ let N1 = 0.0;       // Сила в стержне N1
 
         /* function riseThread() */
     function solN2N1() { 
-    console.log(`Now run: solN2N1()`);
+    if(debug) console.log(`%c${++num}. Now run: solN2N1()`,att);
     /* присваивание заданных значений переменным */
     F = v_input_F.decimal;
 v_F_left.textContent  = `F=${F} kg`;
@@ -76,7 +85,7 @@ v_cell_N1.textContent = F + ' x ' + ( 1 / Math.tan( A / _180_divide_Pi_)).toFixe
 
 function page_onload() { // Обработчик события загрузки страницы
     let net = window.navigator.onLine;
-    console.log("%c Страница загружена;  Наличие инета = " + net, 'color: green; font-weight: bold; font-size: 1.4em;');
+    console.log(`%c${++num}. Страница загружена;  Наличие инета = ` + net, att);
     // v_input_A.value = 30;
     // v_input_A.decimal = 30;
 } // function page_onload()

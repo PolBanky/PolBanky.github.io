@@ -1,13 +1,23 @@
 'use strict';
 
+const att = 'color: darkorange; font-weight: bold; font-size: 1.4em;'; // attention
+const grn = 'color: green; font-weight: bold; font-size: 1.4em;';
+const blu = 'color: lightblue; font-weight: bold; font-size: 1.4em;';
+let num = 0; // для нумерации логов
+// if debug == false => no console.log
+const debug = true;
+// const debug = false;
+
 let v_percent = document.getElementById("percent");  // HTML Input
 v_percent.run=percentSol;
-console.dir(v_percent);
-console.dir(v_percent.run);
+if(debug) console.dir(v_percent);
+if(debug) console.dir(v_percent.run);
+
 let v_srcSum  = document.getElementById("srcSum");   // HTML Input
 v_srcSum.run=percentSol;
-console.dir(v_srcSum);
-console.dir(v_srcSum.run);
+if(debug) console.dir(v_srcSum);
+if(debug) console.dir(v_srcSum.run);
+
 let v_cell_0p  = document.getElementById("cell_0p"); // HTML ячейка таблицы
 let v_cell_0   = document.getElementById("cell_0");  // HTML ячейка таблицы
 let v_cell_1p  = document.getElementById("cell_1p"); // HTML ячейка таблицы
@@ -66,8 +76,8 @@ function percentToMonthSum (percent, sum) {
 } // percentToMonthSum (percent, sum)
 
 
-function percentSol() { // call from => function hello_inputIDec() in hello_input.js
-    console.log(`Now run: percentSol()`);
+function percentSol() {
+    if(debug) console.log(`%c${++num}. Now run: percentSol()`,att);
 ar[0][1] = v_srcSum.decimal; /* Исходная сумма */
 ar[1][0] = percentToMonthSum(v_percent.decimal, ar[0][1]);
 ar[1][1] = ar[0][1] + ar[1][0];
@@ -129,4 +139,4 @@ v_sumProfit_03.textContent = ar[13][0].toFixed(2).replace(RE, '$1 ');
 v_sumAll_03.textContent = ar[13][1].toFixed(2).replace(RE, '$1 ');
 v_sumProfit_12.textContent = ar[14][0].toFixed(2).replace(RE, '$1 ');
 v_sumAll_12.textContent = ar[14][1].toFixed(2).replace(RE, '$1 ');
-} // function sol() 
+} // function percentSol()

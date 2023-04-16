@@ -5,7 +5,8 @@ const grn = 'color: green; font-weight: bold; font-size: 1.4em;';
 const blu = 'color: lightblue; font-weight: bold; font-size: 1.4em;';
 let num = 0; // для нумерации логов
 // if debug == false => no console.log
-const debug = false;
+const debug = true;
+// const debug = false;
 // window.addEventListener("load",page_onload); // onLoad
 // function page_onload() { // Обработчик события загрузки страницы
 //     let net = window.navigator.onLine;
@@ -40,8 +41,8 @@ let v_cell_h_k = document.getElementById("cell_h_k");       // HTML OutPut = П�
 let v_cell_N_k = document.getElementById("cell_N_k");       // HTML OutPut = Передаточное число клина
 let v_cell_F_out_2 = document.getElementById("cell_F_out_2"); // HTML OutPut = Сила F_out_2 подъема клина, кг
 
-const _180_divide_Pi_ = 180 / Math.PI;  // = 57,29577951
-const _Pi_ = Math.PI;
+const _180_divide_Pi_ = (180/Math.PI).toFixed(5);   // == 57,29577
+const _Pi_ = Math.PI.toFixed(5);                    // ==  3,14159
     // 1 IN
 let d = 0.0;        // Диаметр наружный d
 let P = 0.0;        // Шаг резьбы P
