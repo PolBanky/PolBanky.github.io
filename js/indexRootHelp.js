@@ -11,6 +11,7 @@ let cli = document.getElementById('clientHere');
 let inf = document.getElementById("forInfo");
 let inf1 = document.getElementById("forInfo1");
 let inf2 = document.getElementById("forInfo2");
+let inf3 = document.getElementById("forInfo3");
 let bs = document.getElementById("whatBase");
 
 this.addEventListener("load",where);
@@ -33,3 +34,8 @@ if (navigator.userAgent.match(reg)) {
 inf1.textContent = `Сайт открыт на платформе == ${navigator.platform}`;
 inf2.textContent = `User Agent == ${navigator.userAgent}`;
 } // function where()
+if (navigator.onLine) {
+    inf3.textContent = "This device is online";
+  } else {
+    inf3.textContent = "This device is offline";
+  }
