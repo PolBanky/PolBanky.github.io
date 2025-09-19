@@ -3,9 +3,10 @@ html {
     border: 1px solid #ff000077;
 }
 body {
-    /* background: #0000ff38; */
-    border: 1px solid #0000ff77;
-    padding: 5px;
+    color: #eee;
+    background: #111;
+    border: 3px solid #0202ff;
+    padding: 20px;
 }
 h1, p, div {
     background: #d4e09e33;
@@ -30,11 +31,11 @@ input:focus {
     transition: 1s;
     /* transition: cubic-bezier(0.895, 0.03, 0.685, 0.22) 1s; */
 }
-div::before {
+div.in::before {
     /* background-color: #e8e; */
     content: "M= ";
 }
-div::after {
+div.in::after {
     /* background-color: #e8e; */
     content: " N*m";
 }
