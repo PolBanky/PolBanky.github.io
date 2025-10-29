@@ -21,8 +21,8 @@ let score = 0;	// Счет в игре
 const dead = new Audio();
 const eat = new Audio();
 
-dead.src = "audio/dead.mp3";
-eat.src = "audio/eat.mp3";
+dead.src = "../audio/dead.mp3";
+eat.src = "../audio/eat.mp3";
 
 let drawScore = function () {
 	v_result.innerHTML = "Счет: " + score;
