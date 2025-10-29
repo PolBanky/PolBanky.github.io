@@ -1,0 +1,70 @@
+html {
+    background-color: #222;
+	border: 1px solid #ffd700; /* gold */
+}
+body {
+    color: azure;
+    background-color: #333;
+	padding: 10px;
+	border: 3px solid #ffa500; /* orange */
+}
+h3 {
+    padding: 0px 10px;
+}
+div#res {
+    margin-top: 1em;
+    padding: 5px;
+    background-color: blue;
+}
+
+canvas {
+    margin: auto;
+    border: 1px solid lightcoral;
+    background-size: 50%;
+	background-image: url(../img/background_35.png);
+}
+
+        /* G R I D */
+div.grid01 {    /* wrap */
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 402px 124px 124px 124px;
+    grid-template-rows: 124px 124px 124px;
+}
+
+div.item00 {
+grid-row-start: 1;
+grid-row-end: 4;
+grid-column: 1;
+}
+div.item01 {  /* button top-center */
+grid-row: 1;
+grid-column: 3;
+background-color: orange;
+}
+div.item02 {
+grid-row: 2;
+grid-column: 4;
+background-color: teal;
+}
+div.item03 {
+grid-row: 3;
+grid-column: 3;
+background-color: blueviolet;
+}
+div.item04 {
+grid-row: 2;
+grid-column: 2;
+background-color: crimson;
+}
+div.item05 {
+grid-row: 2;
+grid-column: 3;
+background-color: brown;
+}
+
+[class^='item'] {
+outline: 1px dashed #f90;
+font-size: 24px;
+color: #aaa;
+}
