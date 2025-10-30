@@ -3,7 +3,7 @@
 document.addEventListener('keydown', function(event) {
 	// Click body for activate moving and function keyDown !!!!!
 // console.log(`%c${++num}. event.keyCode == ${event.keyCode}`,att);
-console.log(`%c${++num}. event.code == ${event.code}`,grn);
+// console.log(`%c${++num}. event.code == ${event.code}`,grn);
 	let newDirection = keyActions[event.code]; // tmp variable
 	if (newDirection != undefined) { snake.setDirection(newDirection); } // if
 }  // function(event)
@@ -179,24 +179,25 @@ let gameOver = function() {
 } // gameOver()
 
 		// C L I C K
-
-v_top.addEventListener("click", () => {
-	console.log(`%c${++num}. Click ${v_top.innerText}`,grn);
+// mousedown  vs  click
+// v_top.addEventListener("click", () => {
+v_top.addEventListener("mousedown", () => {
+	// console.log(`%c${++num}. Click ${v_top.innerText}`,grn);
 	snake.setDirection(keyActions.ArrowUp);
 }); // v_top.addEventListener
 
-v_right.addEventListener("click", () => {
-	console.log(`%c${++num}. Click ${v_right.innerText}`,grn);
+v_right.addEventListener("mousedown", () => {
+	// console.log(`%c${++num}. Click ${v_right.innerText}`,grn);
 	snake.setDirection(keyActions.ArrowRight);
 }); // v_right.addEventListener
 
-v_down.addEventListener("click", () => {
-	console.log(`%c${++num}. Click ${v_down.innerText}`,grn);
+v_down.addEventListener("mousedown", () => {
+	// console.log(`%c${++num}. Click ${v_down.innerText}`,grn);
 	snake.setDirection(keyActions.ArrowDown);
 }); // v_down.addEventListener
 
-v_left.addEventListener("click", () => {
-	console.log(`%c${++num}. Click ${v_left.innerText}`,grn);
+v_left.addEventListener("mousedown", () => {
+	// console.log(`%c${++num}. Click ${v_left.innerText}`,grn);
 	snake.setDirection(keyActions.ArrowLeft);
 }); // v_left.addEventListener
 

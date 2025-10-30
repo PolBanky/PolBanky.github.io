@@ -64,7 +64,7 @@ background-color: brown;
 }
 
 [class^='item'] {
-outline: 1px dashed #f90;
+/* outline: 1px dashed #f90; */
 font-size: 24px;
 color: #aaa;
 }
