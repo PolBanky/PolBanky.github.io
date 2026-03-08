@@ -143,7 +143,11 @@ Apple.prototype.move = function () {
 	randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
 	for (let i = 0; i < snake.segments.length; i++) {
 		if (randomCol === snake.segments[i].col && randomRow === snake.segments[i].row) {
-			console.log(` !!! Apple collision in snake's segment ${i}, col==${randomCol}, row==${randomRow}`);
+			console.log(` !!! Score = ${score}, Apple collision in Snake's Segment ${i}, col==${randomCol}, row==${randomRow}`);
+			
+			txtOut = `!!! Score = ${score}, Apple collision in Snake's Segment ${i}, col==${randomCol}, row==${randomRow}\n`;
+			v_txtArea.append(txtOut);	
+			
 			done = false;
 			break; // break from for - works
 		} // if

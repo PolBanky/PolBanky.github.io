@@ -47,3 +47,6 @@ let v_right = document.getElementById('right');
 let v_down = document.getElementById('down');
 let v_left = document.getElementById('left');
 let v_pause = document.getElementById('pause');
+
+const v_txtArea = document.getElementById("txtArea"); // <textarea id="txtArea">
+let txtOut = '';
